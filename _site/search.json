@@ -12,5 +12,89 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "introduction.html",
+    "href": "introduction.html",
+    "title": "Project Foundation",
+    "section": "",
+    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nPharmaceutical and Medicine Manufacturing\n\n\nNAICS Code\n3254\n\n\nCareer Pathway\nTeam to complete\n\n\nPrimary Focus Area\nTeam to complete\n\n\nTarget User\nTeam to complete\n\n\nProduct Question\nTeam to complete\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why pharmaceutical manufacturing is a relevant industry for analytics careers."
+  },
+  {
+    "objectID": "introduction.html#project-at-a-glance",
+    "href": "introduction.html#project-at-a-glance",
+    "title": "Project Foundation",
+    "section": "",
+    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nPharmaceutical and Medicine Manufacturing\n\n\nNAICS Code\n3254\n\n\nCareer Pathway\nTeam to complete\n\n\nPrimary Focus Area\nTeam to complete\n\n\nTarget User\nTeam to complete\n\n\nProduct Question\nTeam to complete\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why pharmaceutical manufacturing is a relevant industry for analytics careers."
+  },
+  {
+    "objectID": "introduction.html#career-pathway",
+    "href": "introduction.html#career-pathway",
+    "title": "Project Foundation",
+    "section": "1. Career Pathway",
+    "text": "1. Career Pathway\n\n\nSelected career pathway:\nEnter the team’s selected pathway here.\nWhy we selected it:\nExplain in approximately 2–3 sentences why the team selected this career pathway."
+  },
+  {
+    "objectID": "introduction.html#industry-selection",
+    "href": "introduction.html#industry-selection",
+    "title": "Project Foundation",
+    "section": "2. Industry Selection",
+    "text": "2. Industry Selection\n\n\nSelected industry: Pharmaceutical and Medicine Manufacturing\nNAICS code: 3254\n\nIndustry Justification\nWrite 2–3 sentences explaining why pharmaceutical and medicine manufacturing is relevant to analytics, business intelligence, data science, or machine-learning careers.\n\n\nRole of Analytics in This Industry\nDescribe examples of how pharmaceutical manufacturers use data. Possible areas include manufacturing performance, quality, supply chain, clinical research, forecasting, regulatory compliance, or commercial analytics."
+  },
+  {
+    "objectID": "introduction.html#target-user",
+    "href": "introduction.html#target-user",
+    "title": "Project Foundation",
+    "section": "3. Target User",
+    "text": "3. Target User\n\n\n\nUser Profile\nDescribe the target user’s education, experience level, current skills, and career goals.\n\n\nUser Needs\nExplain what the target user needs to understand before applying for analytics positions in pharmaceutical manufacturing."
+  },
+  {
+    "objectID": "introduction.html#product-question",
+    "href": "introduction.html#product-question",
+    "title": "Project Foundation",
+    "section": "4. Product Question",
+    "text": "4. Product Question\n\n\n\nPrimary Question\n\nInsert the final product question here.\n\n\n\nSupporting Questions\n\nWhat analytics roles appear most frequently in pharmaceutical and medicine manufacturing?\nWhich technical and professional skills are most commonly requested?\nHow do salary, experience, location, and remote-work patterns vary?\nWhere does the target user have skill gaps?\nWhich skills should the target user prioritize?"
+  },
+  {
+    "objectID": "introduction.html#project-rationale",
+    "href": "introduction.html#project-rationale",
+    "title": "Project Foundation",
+    "section": "5. Project Rationale",
+    "text": "5. Project Rationale\n\n\n\nProblem Statement\nExplain the career decision or job-market problem that the product will address.\n\n\nWhy the Question Matters\nExplain why this question is important to students seeking analytics careers.\n\n\nValue of the Product\nExplain how the finished website will help a user decide where to apply, what to learn, and how to position themselves."
+  },
+  {
+    "objectID": "introduction.html#literature-review",
+    "href": "introduction.html#literature-review",
+    "title": "Project Foundation",
+    "section": "6. Literature Review",
+    "text": "6. Literature Review\n\n\n\nSource 1: Analytics Careers in Pharmaceutical Manufacturing\nCitation: Add the citation here.\nSummary and relevance:\nSummarize the source and explain how it supports the project.\n\n\nSource 2: Skills Required for Analytics Roles\nCitation: Add the citation here.\nSummary and relevance:\nSummarize the source and explain how it supports the project.\n\n\nSource 3: Pharmaceutical Workforce or Labor-Market Trends\nCitation: Add the citation here.\nSummary and relevance:\nSummarize the source and explain how it supports the project.\n\n\nAdditional Sources\n\nAdd additional literature-review material here if needed."
+  },
+  {
+    "objectID": "introduction.html#expected-dataset-fields",
+    "href": "introduction.html#expected-dataset-fields",
+    "title": "Project Foundation",
+    "section": "7. Expected Dataset Fields",
+    "text": "7. Expected Dataset Fields\n\n\n\n\n\n\n\n\n\nField or Variable\nHow the Team Expects to Use It\n\n\n\n\nIndustry or NAICS code\nFilter postings to pharmaceutical and medicine manufacturing\n\n\nJob title\nIdentify positions within the selected analytics career family\n\n\nSalary\nCompare compensation across relevant positions\n\n\nExperience\nEvaluate experience requirements and role attainability\n\n\nLocation\nIdentify geographic concentrations of opportunity\n\n\nRemote-work status\nCompare remote, hybrid, and onsite opportunities\n\n\nSkills\nIdentify demanded tools, technologies, and qualifications\n\n\nEducation\nEvaluate degree and education expectations\n\n\nEmployer\nCompare hiring activity across organizations\n\n\nOther field\nAdd another relevant field if available"
+  },
+  {
+    "objectID": "introduction.html#what-we-expect-to-explore",
+    "href": "introduction.html#what-we-expect-to-explore",
+    "title": "Project Foundation",
+    "section": "8. What We Expect to Explore",
+    "text": "8. What We Expect to Explore\n\n\nExplain what the team expects to discover about analytics careers in pharmaceutical and medicine manufacturing."
+  },
+  {
+    "objectID": "introduction.html#project-scope-and-boundaries",
+    "href": "introduction.html#project-scope-and-boundaries",
+    "title": "Project Foundation",
+    "section": "9. Project Scope and Boundaries",
+    "text": "9. Project Scope and Boundaries\n\n\n\nIncluded\n\nJob postings connected to the selected career pathway\nPharmaceutical and medicine manufacturing under NAICS 3254\nRelevant skills, experience, salary, geography, and work arrangements\nCareer-readiness recommendations for the target user\n\n\n\nNot Included\n\nThe entire labor market\nCareers unrelated to the selected pathway\nIndustries outside the selected industry scope unless needed for context\nClaims that cannot be supported by the available data"
+  },
+  {
+    "objectID": "introduction.html#module-1-completion-checklist",
+    "href": "introduction.html#module-1-completion-checklist",
+    "title": "Project Foundation",
+    "section": "Module 1 Completion Checklist",
+    "text": "Module 1 Completion Checklist\n\n\nCareer pathway selected\nNAICS 3254 selected\nIndustry identified\nTarget user defined\nProduct question approved by the team\nProject rationale completed\nThree to five sources reviewed\nExpected dataset fields documented\nGitHub repository created\nQuarto website created\nInitial website published\nAll sections reviewed by the team"
   }
 ]

@@ -2,20 +2,53 @@ project:
   type: website
 
 website:
-  title: "METAD 688 Group 2"
+  title: "Pharmaceutical Analytics Career Pathways"
+
   navbar:
+    background: "#123B4A"
+    foreground: "#FFFFFF"
+
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+
+      - href: introduction.qmd
+        text: Project Foundation
+
+      - text: Market Analysis
+        menu:
+          - href: data_preparation.qmd
+            text: Data Preparation
+          - href: market_baseline.qmd
+            text: Market Baseline
+
+      - text: Career Evaluation
+        menu:
+          - href: skill_gap_analysis.qmd
+            text: Skill-Gap Analysis
+          - href: career_evaluation.qmd
+            text: Career Scorecard
+
+      - href: final_recommendations.qmd
+        text: Recommendations
+
+      - href: about.qmd
+        text: Team
+
+    right:
+      - icon: github
+        href: https://github.com/JennaDer/METAD688_Group2
+        aria-label: GitHub Repository
+
+  page-footer:
+    left: "MET AD 688 | Group 2"
+    right: "NAICS 3254 — Pharmaceutical and Medicine Manufacturing"
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
     toc: true
+    smooth-scroll: true
 
-
-
+editor: visual
