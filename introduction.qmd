@@ -1,0 +1,191 @@
+---
+title: "Project Foundation"
+subtitle: "Module 1 — Product Framing and Industry Scope"
+bibliography: references.bib
+---
+
+## Project at a Glance
+
+| Project Element | Team Selection |
+|---|---|
+| Industry | Pharmaceutical and Medicine Manufacturing |
+| NAICS Code | 3254 |
+| Career Pathway | **Team to complete** |
+| Primary Focus Area | **Team to complete** |
+| Target User | **Team to complete** |
+| Product Question | **Team to complete** |
+
+::: {.callout-tip}
+## Purpose of This Page
+
+This page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why pharmaceutical manufacturing is a relevant industry for analytics careers.
+:::
+
+## 1. Career Pathway
+
+<!-- SECTION OWNER: Entire team -->
+<!-- INSTRUCTIONS: Select one career pathway related to analytics, business intelligence, data science, machine learning, or data engineering. -->
+
+**Selected career pathway:**  
+*Enter the team's selected pathway here.*
+
+**Why we selected it:**  
+*Explain in approximately 2–3 sentences why the team selected this career pathway.*
+
+## 2. Industry Selection
+
+<!-- SECTION OWNER: Jenna -->
+<!-- INSTRUCTIONS: Explain why NAICS 3254 is relevant to the selected analytics career pathway. -->
+
+**Selected industry:** Pharmaceutical and Medicine Manufacturing  
+**NAICS code:** 3254
+
+### Industry Justification
+
+*Write 2–3 sentences explaining why pharmaceutical and medicine manufacturing is relevant to analytics, business intelligence, data science, or machine-learning careers.*
+
+### Role of Analytics in This Industry
+
+*Describe examples of how pharmaceutical manufacturers use data. Possible areas include manufacturing performance, quality, supply chain, clinical research, forecasting, regulatory compliance, or commercial analytics.*
+
+## 3. Target User
+
+<!-- SECTION OWNER: Partner 1 -->
+<!-- INSTRUCTIONS: Describe the type of student or job seeker who would use this career-evaluation product. -->
+
+### User Profile
+
+*Describe the target user's education, experience level, current skills, and career goals.*
+
+### User Needs
+
+*Explain what the target user needs to understand before applying for analytics positions in pharmaceutical manufacturing.*
+
+## 4. Product Question
+
+<!-- SECTION OWNER: Entire team -->
+<!-- INSTRUCTIONS: Agree on one primary product question and supporting analytical questions. -->
+
+### Primary Question
+
+> *Insert the final product question here.*
+
+### Supporting Questions
+
+1. What analytics roles appear most frequently in pharmaceutical and medicine manufacturing?
+2. Which technical and professional skills are most commonly requested?
+3. How do salary, experience, location, and remote-work patterns vary?
+4. Where does the target user have skill gaps?
+5. Which skills should the target user prioritize?
+
+<!-- EDITING NOTE: Revise or replace these supporting questions after the team selects its primary focus area. -->
+
+## 5. Project Rationale
+
+<!-- SECTION OWNER: Jenna -->
+<!-- INSTRUCTIONS: Explain the problem, why it matters, and how the finished product will help its intended user. -->
+
+### Problem Statement
+
+*Explain the career decision or job-market problem that the product will address.*
+
+### Why the Question Matters
+
+*Explain why this question is important to students seeking analytics careers.*
+
+### Value of the Product
+
+*Explain how the finished website will help a user decide where to apply, what to learn, and how to position themselves.*
+
+## 6. Literature Review
+
+<!-- SECTION OWNER: Partner 2 -->
+<!-- INSTRUCTIONS: Summarize 3–5 scholarly articles, industry reports, or reputable workforce sources. Connect every source directly to the project. -->
+
+### Source 1: Analytics Careers in Pharmaceutical Manufacturing
+
+**Citation:** *Add the citation here.*
+
+**Summary and relevance:**  
+*Summarize the source and explain how it supports the project.*
+
+### Source 2: Skills Required for Analytics Roles
+
+**Citation:** *Add the citation here.*
+
+**Summary and relevance:**  
+*Summarize the source and explain how it supports the project.*
+
+### Source 3: Pharmaceutical Workforce or Labor-Market Trends
+
+**Citation:** *Add the citation here.*
+
+**Summary and relevance:**  
+*Summarize the source and explain how it supports the project.*
+
+### Additional Sources
+
+<!-- OPTIONAL: Add one or two additional sources if needed. -->
+
+*Add additional literature-review material here if needed.*
+
+## 7. Expected Dataset Fields
+
+<!-- SECTION OWNER: Partner 1 -->
+<!-- INSTRUCTIONS: Review the MET Employability Career Match dataset and confirm which available fields will support the analysis. -->
+
+| Field or Variable | How the Team Expects to Use It |
+|---|---|
+| Industry or NAICS code | Filter postings to pharmaceutical and medicine manufacturing |
+| Job title | Identify positions within the selected analytics career family |
+| Salary | Compare compensation across relevant positions |
+| Experience | Evaluate experience requirements and role attainability |
+| Location | Identify geographic concentrations of opportunity |
+| Remote-work status | Compare remote, hybrid, and onsite opportunities |
+| Skills | Identify demanded tools, technologies, and qualifications |
+| Education | Evaluate degree and education expectations |
+| Employer | Compare hiring activity across organizations |
+| Other field | *Add another relevant field if available* |
+
+## 8. What We Expect to Explore
+
+<!-- SECTION OWNER: Entire team -->
+<!-- INSTRUCTIONS: Write one short paragraph describing the team's initial expectations. These are expectations, not final conclusions. -->
+
+*Explain what the team expects to discover about analytics careers in pharmaceutical and medicine manufacturing.*
+
+## 9. Project Scope and Boundaries
+
+<!-- SECTION OWNER: Jenna -->
+<!-- INSTRUCTIONS: Review and revise the included and excluded project boundaries. -->
+
+### Included
+
+- Job postings connected to the selected career pathway
+- Pharmaceutical and medicine manufacturing under NAICS 3254
+- Relevant skills, experience, salary, geography, and work arrangements
+- Career-readiness recommendations for the target user
+
+### Not Included
+
+- The entire labor market
+- Careers unrelated to the selected pathway
+- Industries outside the selected industry scope unless needed for context
+- Claims that cannot be supported by the available data
+
+## Module 1 Completion Checklist
+
+<!-- EDITING NOTE: Change each empty box from [ ] to [x] when the item is completed. -->
+
+- [ ] Career pathway selected
+- [x] NAICS 3254 selected
+- [x] Industry identified
+- [ ] Target user defined
+- [ ] Product question approved by the team
+- [ ] Project rationale completed
+- [ ] Three to five sources reviewed
+- [ ] Expected dataset fields documented
+- [x] GitHub repository created
+- [x] Quarto website created
+- [x] Initial website published
+- [ ] All sections reviewed by the team
