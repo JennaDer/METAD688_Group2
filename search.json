@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "METAD 688 Group 2",
@@ -39,21 +46,21 @@
     "href": "introduction.html#target-user",
     "title": "Project Foundation",
     "section": "3. Target User",
-    "text": "3. Target User\n\n\n\nUser Profile\nDescribe the target user’s education, experience level, current skills, and career goals.\n\n\nUser Needs\nExplain what the target user needs to understand before applying for analytics positions in pharmaceutical manufacturing."
+    "text": "3. Target User\n\n\n\nUser Profile\nThe target user is a student, recent graduate, or early-career professional interested in pursuing an analytics-related career within the pharmaceutical and medicine manufacturing industry. The user may have foundational experience with data analysis, statistics, business analytics, or related disciplines and some exposure to tools such as Excel, SQL, Python, R, or data visualization platforms. However, they may have limited experience within the pharmaceutical industry and may not yet understand how their existing skills align with available analytics roles.\n\n\nUser Needs\nBefore applying for analytics positions in pharmaceutical and medicine manufacturing, the target user needs a clearer understanding of the types of analytics roles available, the technical and professional skills employers commonly request, typical experience and education requirements, salary expectations, geographic and remote work patterns, and potential skill gaps. This information can help the user evaluate their current qualifications and identify which skills or experiences they should prioritize to become a more competitive candidate."
   },
   {
     "objectID": "introduction.html#product-question",
     "href": "introduction.html#product-question",
     "title": "Project Foundation",
     "section": "4. Product Question",
-    "text": "4. Product Question\n\n\n\nPrimary Question\n\nInsert the final product question here.\n\n\n\nSupporting Questions\n\nWhat analytics roles appear most frequently in pharmaceutical and medicine manufacturing?\nWhich technical and professional skills are most commonly requested?\nHow do salary, experience, location, and remote-work patterns vary?\nWhere does the target user have skill gaps?\nWhich skills should the target user prioritize?"
+    "text": "4. Product Question\n\n\n\nPrimary Question\n\nHow can an aspiring analytics professional evaluate career opportunities in pharmaceutical and medicine manufacturing and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?\n\n\n\nSupporting Questions\n\nWhat analytics roles appear most frequently in pharmaceutical and medicine manufacturing?\nWhich technical and professional skills are most commonly requested?\nHow do salary, experience, location, and remote-work patterns vary?\nWhere does the target user have skill gaps?\nWhich skills should the target user prioritize?"
   },
   {
     "objectID": "introduction.html#project-rationale",
     "href": "introduction.html#project-rationale",
     "title": "Project Foundation",
     "section": "5. Project Rationale",
-    "text": "5. Project Rationale\n\n\n\nProblem Statement\nExplain the career decision or job-market problem that the product will address.\n\n\nWhy the Question Matters\nExplain why this question is important to students seeking analytics careers.\n\n\nValue of the Product\nExplain how the finished website will help a user decide where to apply, what to learn, and how to position themselves."
+    "text": "5. Project Rationale\n\n\n\nProblem Statement\nStudents and early-career professionals may not have a clear understanding of the skills and job-market needs required for analytics roles within pharmaceutical and medicine manufacturing, which can result in difficulty identifying appropriate roles and determining how well their qualifications align with employer expectations.\n\n\nWhy the Question Matters\nUnderstanding these requirements is important because students and early-career professionals may need more than general analytics knowledge when preparing for a career in a specific industry. Knowing which skills, qualifications, and experience employers are seeking can help job seekers make more informed decisions about their career preparation and identify areas they may need to develop before applying. It also enables them to better communicate their own skill sets to align with market needs.\n\n\nValue of the Product\nThe finished product will provide job seekers with the insights and information needed to better position themselves in the job market, assess their skills and identify areas for self-improvement, and better communicate their strengths based on what employers are seeking. By bringing together information about available roles, required skills and qualifications, salary, location, and work arrangements, the product can support users in their job search and help them better understand current market needs."
   },
   {
     "objectID": "introduction.html#literature-review",
@@ -89,12 +96,5 @@
     "title": "Project Foundation",
     "section": "Module 1 Completion Checklist",
     "text": "Module 1 Completion Checklist\n\n\nCareer pathway selected\nNAICS 3254 selected\nIndustry identified\nTarget user defined\nProduct question approved by the team\nProject rationale completed\nThree to five sources reviewed\nExpected dataset fields documented\nGitHub repository created\nQuarto website created\nInitial website published\nAll sections reviewed by the team"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   }
 ]
