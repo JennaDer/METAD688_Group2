@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "METAD 688 Group 2",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   },
   {
     "objectID": "introduction.html",
@@ -67,21 +67,21 @@
     "href": "introduction.html#literature-review",
     "title": "Project Foundation",
     "section": "6. Literature Review",
-    "text": "6. Literature Review\n\n\n\nSource 1: Analytics Careers in Pharmaceutical Manufacturing\nCitation: Add the citation here.\nSummary and relevance:\nSummarize the source and explain how it supports the project.\n\n\nSource 2: Skills Required for Analytics Roles\nCitation: Add the citation here.\nSummary and relevance:\nSummarize the source and explain how it supports the project.\n\n\nSource 3: Pharmaceutical Workforce or Labor-Market Trends\nCitation: Add the citation here.\nSummary and relevance:\nSummarize the source and explain how it supports the project.\n\n\nAdditional Sources\n\nAdd additional literature-review material here if needed."
+    "text": "6. Literature Review\n\n\nSource 1: Digitalization in pharmaceutical manufacturing\nCitation: Gong, S.-J., Kim, H. R., Park, Y.-J., & Kim, J.-E. (2025). Recent trends in continuous manufacturing and digitalization in pharmaceutical process development and manufacturing. Journal of Pharmaceutical Investigation, 55(3), 397-414.\nSummary and relevance: This review examines how Pharma 4.0 technologies are changing pharmaceutical production, covering big data, artificial intelligence, digital twins, continuous manufacturing, process analytical technology, and quality by design (Gong et al. 2025). Its argument is that these tools work best when integrated rather than adopted piecemeal. For our project it establishes that analytics in this industry is embedded in the production process itself, not confined to a business reporting function. That shapes what we expect to see in postings, since roles may sit closer to manufacturing operations than a student would assume.\n\n\nSource 2: Machine learning across pharmaceutical R&D\nCitation: Kolluri, S., Lin, J., Liu, R., Zhang, Y., & Zhang, W. (2022). Machine learning and artificial intelligence in pharmaceutical research and development: A review. The AAPS Journal, 24, 1-10.\nSummary and relevance: The authors review where machine learning and AI are applied across drug discovery, clinical development, and regulatory work (Kolluri et al. 2022). It matters to us because it shows the demand for analytics skills in this sector is not limited to the factory floor. A company classified under NAICS 3254 may be hiring for clinical data work, commercial forecasting, or process analytics under similar job titles, which is one reason our skill analysis has to look past the title.\n\n\nSource 3: Regulatory readiness and the smart factory\nCitation: Arden, N. S., Fisher, A. C., Tyner, K., Yu, L. X., Lee, S. L., & Kopcha, M. (2021). Industry 4.0 for pharmaceutical manufacturing: Preparing for the smart factories of the future. International Journal of Pharmaceutics, 602, 120554.\nSummary and relevance: Written by authors affiliated with the FDA, this paper looks at what adopting Industry 4.0 technologies means for a regulated manufacturing environment, including data integrity and validation (Arden et al. 2021). It gives our project the regulatory dimension that separates pharmaceutical analytics from analytics in less regulated sectors. We expect this to show up in postings as requirements around GMP, validation, documentation, or compliance, alongside the usual technical skills.\n\n\nSource 4: Reading skill demand from job postings\nCitation: Verma, A., Yurov, K. M., Lane, P. L., & Yurova, Y. V. (2019). An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements. Journal of Education for Business, 94(4), 243-250.\nSummary and relevance: This study analyzes job advertisements across business analyst, data analyst, and data scientist roles and finds that some competencies are shared across all of them while others separate the titles (Verma et al. 2019). It supports the method our project uses, which is treating posting text as evidence of what employers actually want. It also warns against assuming a job title means the same thing at every company, which is directly relevant to how we group roles in Module 2.\n\n\nSource 5: Industry labor-market baseline\nCitation: U.S. Bureau of Labor Statistics. (2026). Occupational employment and wage statistics: Pharmaceutical and medicine manufacturing (NAICS 325400).\nSummary and relevance: The OEWS series reports employment counts and wage distributions by occupation within this specific industry code (U.S. Bureau of Labor Statistics 2026). We plan to use it as an external check on our posting data. If our Career Match findings on salary or role mix diverge sharply from the BLS picture, that tells us something about our sample rather than about the market, which is a useful guard against overstating what a set of job postings can prove."
   },
   {
     "objectID": "introduction.html#expected-dataset-fields",
     "href": "introduction.html#expected-dataset-fields",
     "title": "Project Foundation",
     "section": "7. Expected Dataset Fields",
-    "text": "7. Expected Dataset Fields\n\n\n\n\n\n\n\n\n\nField or Variable\nHow the Team Expects to Use It\n\n\n\n\nIndustry or NAICS code\nFilter postings to pharmaceutical and medicine manufacturing\n\n\nJob title\nIdentify positions within the selected analytics career family\n\n\nSalary\nCompare compensation across relevant positions\n\n\nExperience\nEvaluate experience requirements and role attainability\n\n\nLocation\nIdentify geographic concentrations of opportunity\n\n\nRemote-work status\nCompare remote, hybrid, and onsite opportunities\n\n\nSkills\nIdentify demanded tools, technologies, and qualifications\n\n\nEducation\nEvaluate degree and education expectations\n\n\nEmployer\nCompare hiring activity across organizations\n\n\nOther field\nAdd another relevant field if available"
+    "text": "7. Expected Dataset Fields\n\nThe table below lists the fields we expect to use and what each one supports. Exact column names will be confirmed against the tool in Module 2.\n\n\n\n\n\n\n\nField or Variable\nHow the Team Expects to Use It\n\n\n\n\nIndustry or NAICS code\nFilter postings to NAICS 3254, Pharmaceutical and Medicine Manufacturing\n\n\nJob title\nIdentify which analytics roles appear and group them into a role family\n\n\nCompany or employer\nCheck how concentrated hiring is across pharmaceutical manufacturers\n\n\nSkills\nPrimary input to the skill-gap analysis; rank the tools and competencies employers request\n\n\nSoftware or specialized skills\nSeparate tool requirements such as SQL, Python, R, Tableau, and Power BI from general competencies\n\n\nCertifications\nCapture regulated-industry requirements such as GMP or validation experience where they appear\n\n\nExperience (minimum and maximum years)\nJudge which roles are realistic for an early-career candidate\n\n\nEducation level\nRecord degree expectations, which we expect to run higher in this industry than in analytics generally\n\n\nSalary (minimum and maximum)\nDescribe compensation ranges and compare them against the BLS baseline\n\n\nCity, state, and metropolitan area\nMap where roles concentrate, which we expect to cluster around established pharmaceutical hubs\n\n\nRemote-work status\nCompare remote, hybrid, and onsite postings\n\n\nPosting date and duration\nConfirm the postings are recent and check whether the sample is spread evenly over time\n\n\n\n\nNote on Data Volume\nBefore we commit to salary and geography comparisons, we will run a posting count on the filtered NAICS 3254 slice in Module 2. If the count is too small to support distribution-level claims, we will treat skills and role mix as our primary findings and report salary and location as descriptive context rather than as conclusions."
   },
   {
     "objectID": "introduction.html#what-we-expect-to-explore",
     "href": "introduction.html#what-we-expect-to-explore",
     "title": "Project Foundation",
     "section": "8. What We Expect to Explore",
-    "text": "8. What We Expect to Explore\n\n\nExplain what the team expects to discover about analytics careers in pharmaceutical and medicine manufacturing."
+    "text": "8. What We Expect to Explore\n\nWe expect to find that analytics roles in pharmaceutical manufacturing ask for a familiar technical core, with SQL, Python, and a visualization tool appearing in most postings, but that the industry adds requirements a general analytics job would not. We anticipate seeing regulated-environment language around GMP, validation, and data integrity, and we expect education requirements to sit higher than in analytics roles overall, with more postings asking for a master’s degree or a life-sciences background. We also expect hiring to concentrate geographically around a small number of established pharmaceutical regions rather than spreading evenly across the country. These are expectations we intend to test against the data, not conclusions, and we are prepared to revise them if the postings show something different."
   },
   {
     "objectID": "introduction.html#project-scope-and-boundaries",
@@ -96,5 +96,12 @@
     "title": "Project Foundation",
     "section": "Module 1 Completion Checklist",
     "text": "Module 1 Completion Checklist\n\n\nCareer pathway selected\nNAICS 3254 selected\nIndustry identified\nTarget user defined\nProduct question approved by the team\nProject rationale completed\nThree to five sources reviewed\nExpected dataset fields documented\nGitHub repository created\nQuarto website created\nInitial website published\nAll sections reviewed by the team"
+  },
+  {
+    "objectID": "introduction.html#references",
+    "href": "introduction.html#references",
+    "title": "Project Foundation",
+    "section": "References",
+    "text": "References\n\n\nArden, Nariman S., Adam C. Fisher, Katherine Tyner, Lawrence X. Yu, Sau L. Lee, and Michael Kopcha. 2021. “Industry 4.0 for Pharmaceutical Manufacturing: Preparing for the Smart Factories of the Future.” International Journal of Pharmaceutics 602: 120554. https://doi.org/10.1016/j.ijpharm.2021.120554.\n\n\nGong, Seong-June, Ha Rin Kim, Young-Joon Park, and Joo-Eun Kim. 2025. “Recent Trends in Continuous Manufacturing and Digitalization in Pharmaceutical Process Development and Manufacturing.” Journal of Pharmaceutical Investigation 55 (3): 397–414. https://doi.org/10.1007/s40005-025-00728-8.\n\n\nKolluri, Sheela, Jianchang Lin, Rachael Liu, Yanwei Zhang, and Wenwen Zhang. 2022. “Machine Learning and Artificial Intelligence in Pharmaceutical Research and Development: A Review.” The AAPS Journal 24: 1–10. https://doi.org/10.1208/s12248-021-00644-3.\n\n\nU.S. Bureau of Labor Statistics. 2026. Occupational Employment and Wage Statistics: Pharmaceutical and Medicine Manufacturing (NAICS 325400). Https://www.bls.gov/oes/current/naics4_325400.htm.\n\n\nVerma, Amit, Kirill M. Yurov, Peggy L. Lane, and Yuliya V. Yurova. 2019. “An Investigation of Skill Requirements for Business and Data Analytics Positions: A Content Analysis of Job Advertisements.” Journal of Education for Business 94 (4): 243–50. https://doi.org/10.1080/08832323.2018.1520685."
   }
 ]
