@@ -4,14 +4,35 @@
     "href": "index.html",
     "title": "METAD 688 Group 2",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "MET AD 688 · GROUP 2 · NAICS 3254\n\n\nWe are examining how employment demand, technical skills, and career pathways are changing across the U.S. pharmaceutical and medicine manufacturing industry.\nExplore the research View our methodology\n\n\n\n3254\nIndustry focus\nPharmaceutical and Medicine Manufacturing\n\n\n\n165,386 job postings\n115 source variables\n17 Parquet files\n:::"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
+    "objectID": "index.html#where-is-the-pharmaceutical-workforce-heading",
+    "href": "index.html#where-is-the-pharmaceutical-workforce-heading",
+    "title": "METAD 688 Group 2",
+    "section": "Where is the pharmaceutical workforce heading?",
+    "text": "Where is the pharmaceutical workforce heading?\nOur analysis connects employer demand with the skills and career opportunities shaping pharmaceutical manufacturing. Rather than examining job counts alone, we evaluate what companies need, where opportunities are concentrated, and how candidates can prepare."
+  },
+  {
+    "objectID": "index.html#from-raw-postings-to-career-intelligence",
+    "href": "index.html#from-raw-postings-to-career-intelligence",
+    "title": "METAD 688 Group 2",
+    "section": "From raw postings to career intelligence",
+    "text": "From raw postings to career intelligence"
+  },
+  {
+    "objectID": "index.html#what-the-evidence-will-show",
+    "href": "index.html#what-the-evidence-will-show",
+    "title": "METAD 688 Group 2",
+    "section": "What the evidence will show",
+    "text": "What the evidence will show\nThis area will become the front door to our final visual analysis as each team member completes their section."
+  },
+  {
+    "objectID": "index.html#evidence-translated-into-action",
+    "href": "index.html#evidence-translated-into-action",
+    "title": "METAD 688 Group 2",
+    "section": "Evidence translated into action",
+    "text": "Evidence translated into action\nOur final recommendations will connect labor-market patterns with practical steps for candidates considering careers in pharmaceutical manufacturing.\nView final recommendations"
   },
   {
     "objectID": "introduction.html",
@@ -103,5 +124,180 @@
     "title": "Project Foundation",
     "section": "References",
     "text": "References\n\n\nArden, Nariman S., Adam C. Fisher, Katherine Tyner, Lawrence X. Yu, Sau L. Lee, and Michael Kopcha. 2021. “Industry 4.0 for Pharmaceutical Manufacturing: Preparing for the Smart Factories of the Future.” International Journal of Pharmaceutics 602: 120554. https://doi.org/10.1016/j.ijpharm.2021.120554.\n\n\nGong, Seong-June, Ha Rin Kim, Young-Joon Park, and Joo-Eun Kim. 2025. “Recent Trends in Continuous Manufacturing and Digitalization in Pharmaceutical Process Development and Manufacturing.” Journal of Pharmaceutical Investigation 55 (3): 397–414. https://doi.org/10.1007/s40005-025-00728-8.\n\n\nKolluri, Sheela, Jianchang Lin, Rachael Liu, Yanwei Zhang, and Wenwen Zhang. 2022. “Machine Learning and Artificial Intelligence in Pharmaceutical Research and Development: A Review.” The AAPS Journal 24: 1–10. https://doi.org/10.1208/s12248-021-00644-3.\n\n\nU.S. Bureau of Labor Statistics. 2026. Occupational Employment and Wage Statistics: Pharmaceutical and Medicine Manufacturing (NAICS 325400). Https://www.bls.gov/oes/current/naics4_325400.htm.\n\n\nVerma, Amit, Kirill M. Yurov, Peggy L. Lane, and Yuliya V. Yurova. 2019. “An Investigation of Skill Requirements for Business and Data Analytics Positions: A Content Analysis of Job Advertisements.” Journal of Education for Business 94 (4): 243–50. https://doi.org/10.1080/08832323.2018.1520685."
+  },
+  {
+    "objectID": "market_baseline.html",
+    "href": "market_baseline.html",
+    "title": "Market Baseline",
+    "section": "",
+    "text": "This page describes the current market for the team’s selected career pathway within Pharmaceutical and Medicine Manufacturing.\n\n\n\n\n\n\nNoteAnalytical Scope\n\n\n\nIndustry: Pharmaceutical and Medicine Manufacturing\nNAICS code: 3254\nCareer pathway: Insert the team’s selected career pathway\nAnalysis period: Insert the selected date range\nFinal dataset size: Insert the number of cleaned job postings"
+  },
+  {
+    "objectID": "market_baseline.html#market-overview",
+    "href": "market_baseline.html#market-overview",
+    "title": "Market Baseline",
+    "section": "Market Overview",
+    "text": "Market Overview\n\nSummarize what the filtered job-posting data reveals about the selected market.\n\nKey Findings\n\nInsert the most important demand finding.\nInsert the most important salary finding.\nInsert the most important location or remote-work finding.\nInsert the most important experience finding."
+  },
+  {
+    "objectID": "market_baseline.html#job-volume",
+    "href": "market_baseline.html#job-volume",
+    "title": "Market Baseline",
+    "section": "Job Volume",
+    "text": "Job Volume\n\n\nJob Postings by Title or Segment\nInsert the job-volume visualization here.\nInterpretation:\nExplain which roles appear most frequently and what this means for the target job seeker.\n\n\nJob-Volume Summary\n\n\n\nRank\nJob Title or Segment\nNumber of Postings\nShare of Market\n\n\n\n\n1\nInsert\nInsert\nInsert\n\n\n2\nInsert\nInsert\nInsert\n\n\n3\nInsert\nInsert\nInsert\n\n\n4\nInsert\nInsert\nInsert\n\n\n5\nInsert\nInsert\nInsert"
+  },
+  {
+    "objectID": "market_baseline.html#salary-distribution",
+    "href": "market_baseline.html#salary-distribution",
+    "title": "Market Baseline",
+    "section": "Salary Distribution",
+    "text": "Salary Distribution\n\n\nSalary Range\nInsert the salary-distribution visualization here.\nInterpretation:\nExplain the typical salary range, variation and any differences between roles or segments.\n\n\nSalary Summary\n\n\n\nSalary Measure\nResult\n\n\n\n\nPostings with usable salary data\nInsert\n\n\nMedian minimum salary\nInsert\n\n\nMedian maximum salary\nInsert\n\n\n25th percentile\nInsert\n\n\n75th percentile\nInsert\n\n\nHighest retained salary\nInsert\n\n\n\n\n\n\n\n\n\nWarningSalary-data limitation\n\n\n\nExplain how missing salaries, different pay periods or outlier treatment affect interpretation."
+  },
+  {
+    "objectID": "market_baseline.html#geographic-patterns",
+    "href": "market_baseline.html#geographic-patterns",
+    "title": "Market Baseline",
+    "section": "Geographic Patterns",
+    "text": "Geographic Patterns\n\n\nLeading Hiring Locations\nInsert the location visualization here.\nInterpretation:\nExplain where opportunities are concentrated and whether the pattern is relevant to the target user.\n\n\nTop Locations\n\n\n\nRank\nLocation\nNumber of Postings\nShare of Market\n\n\n\n\n1\nInsert\nInsert\nInsert\n\n\n2\nInsert\nInsert\nInsert\n\n\n3\nInsert\nInsert\nInsert\n\n\n4\nInsert\nInsert\nInsert\n\n\n5\nInsert\nInsert\nInsert"
+  },
+  {
+    "objectID": "market_baseline.html#experience-requirements",
+    "href": "market_baseline.html#experience-requirements",
+    "title": "Market Baseline",
+    "section": "Experience Requirements",
+    "text": "Experience Requirements\n\n\nDistribution of Required Experience\nInsert the experience-requirement visualization here.\nInterpretation:\nExplain whether the market is concentrated in entry-level, mid-career or experienced roles.\n\n\nExperience Summary\n\n\n\nExperience Category\nDefinition\nNumber of Postings\nShare\n\n\n\n\nEntry level\nInsert definition\nInsert\nInsert\n\n\nEarly career\nInsert definition\nInsert\nInsert\n\n\nMid-career\nInsert definition\nInsert\nInsert\n\n\nSenior\nInsert definition\nInsert\nInsert\n\n\nNot specified\nNo usable requirement\nInsert\nInsert"
+  },
+  {
+    "objectID": "market_baseline.html#remote-hybrid-and-onsite-work",
+    "href": "market_baseline.html#remote-hybrid-and-onsite-work",
+    "title": "Market Baseline",
+    "section": "Remote, Hybrid and Onsite Work",
+    "text": "Remote, Hybrid and Onsite Work\n\n\nWork-Arrangement Distribution\nInsert the remote, hybrid and onsite visualization here.\nInterpretation:\nExplain how common remote opportunities are and whether work arrangement varies by role or employer.\n\n\n\nWork Arrangement\nNumber of Postings\nShare\n\n\n\n\nRemote\nInsert\nInsert\n\n\nHybrid\nInsert\nInsert\n\n\nOnsite\nInsert\nInsert\n\n\nNot specified\nInsert\nInsert"
+  },
+  {
+    "objectID": "market_baseline.html#top-employers",
+    "href": "market_baseline.html#top-employers",
+    "title": "Market Baseline",
+    "section": "Top Employers",
+    "text": "Top Employers\n\n\nEmployers with the Most Postings\nInsert the top-employer visualization here.\nInterpretation:\nExplain which employers appear most active and whether staffing firms influence the results.\n\n\n\nRank\nEmployer\nNumber of Postings\nStaffing Firm?\n\n\n\n\n1\nInsert\nInsert\nInsert\n\n\n2\nInsert\nInsert\nInsert\n\n\n3\nInsert\nInsert\nInsert\n\n\n4\nInsert\nInsert\nInsert\n\n\n5\nInsert\nInsert\nInsert"
+  },
+  {
+    "objectID": "market_baseline.html#implications-for-job-seekers",
+    "href": "market_baseline.html#implications-for-job-seekers",
+    "title": "Market Baseline",
+    "section": "Implications for Job Seekers",
+    "text": "Implications for Job Seekers\n\n\n\nWhere to Apply\nExplain which job titles, employers or locations appear most promising.\n\n\nHow to Position a Candidate Profile\nExplain what the market baseline suggests about experience, flexibility or role positioning.\n\n\nQuestions for the Next Project Step\n\nWhich skills distinguish attractive or attainable roles?\nWhere does the target user’s current profile differ from market demand?\nWhich opportunities should receive the highest career-evaluation scores?"
+  },
+  {
+    "objectID": "market_baseline.html#analytical-limitations",
+    "href": "market_baseline.html#analytical-limitations",
+    "title": "Market Baseline",
+    "section": "Analytical Limitations",
+    "text": "Analytical Limitations\n\n\nInsert limitation involving dataset coverage.\nInsert limitation involving missing salary or experience data.\nInsert limitation involving role or industry classification.\nInsert any limitation involving location or remote-work labels."
+  },
+  {
+    "objectID": "market_baseline.html#job-market-snapshot",
+    "href": "market_baseline.html#job-market-snapshot",
+    "title": "Market Baseline",
+    "section": "Job Market Snapshot",
+    "text": "Job Market Snapshot\n\n\nTotal Job Postings\n[Insert value]\nNAICS 3254 postings in the selected period\n\n\nMedian Salary\n$[Insert value]\nBased on postings with usable salary data\n\n\nRemote Availability\n[Insert %]\nShare of remote or hybrid opportunities"
+  },
+  {
+    "objectID": "market_baseline.html#job-volume-1",
+    "href": "market_baseline.html#job-volume-1",
+    "title": "Market Baseline",
+    "section": "Job Volume",
+    "text": "Job Volume\n\nData\nMeasure: Number of relevant job postings by [month/quarter].\n\nChart to insert: Job-posting volume over time\nRecommended format: line chart or column chart.\n\nFinding\n[Explain the most important pattern shown in the chart.]\nImplication\n[Explain what this means for someone pursuing this career pathway.]\nLimitation\n[Explain any missing dates, duplicate postings, or sampling limitations.]"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "data_preparation.html",
+    "href": "data_preparation.html",
+    "title": "Data Preparation",
+    "section": "",
+    "text": "This page documents how the raw MET Employability Career Match job-posting data was filtered and cleaned to create the analytical dataset used throughout this project.\n\n\n\n\n\n\nNoteProject Scope\n\n\n\nIndustry: Pharmaceutical and Medicine Manufacturing\nNAICS code: 3254\nCareer pathway: Insert the team’s selected career pathway\nAnalysis period: Insert the selected date range"
+  },
+  {
+    "objectID": "data_preparation.html#data-source-and-connection",
+    "href": "data_preparation.html#data-source-and-connection",
+    "title": "Data Preparation",
+    "section": "Data Source and Connection",
+    "text": "Data Source and Connection\nThe project uses job-posting data from the MET Employability Career Match dataset. The raw data contains 165,386 job-posting records across 17 Parquet partition files.\nThe files are stored privately and are not included in the public GitHub repository. A shared loading script connects each authorized team member’s environment to the data without exposing API credentials or private file locations.\nShared connection script: scripts/load_data.py"
+  },
+  {
+    "objectID": "data_preparation.html#industry-filter",
+    "href": "data_preparation.html#industry-filter",
+    "title": "Data Preparation",
+    "section": "Industry Filter",
+    "text": "Industry Filter\nThe project is limited to Pharmaceutical and Medicine Manufacturing under NAICS 3254.\n\n\nFiltering Method\nDescribe how the NAICS industry filter was applied.\n\n\nFiltering Results\n\n\n\nMeasure\nResult\n\n\n\n\nRecords before industry filtering\nInsert result\n\n\nRecords after applying NAICS 3254\nInsert result\n\n\nPercentage retained\nInsert result"
+  },
+  {
+    "objectID": "data_preparation.html#career-pathway-filter",
+    "href": "data_preparation.html#career-pathway-filter",
+    "title": "Data Preparation",
+    "section": "Career-Pathway Filter",
+    "text": "Career-Pathway Filter\n\n\nTarget Roles\nList and explain the titles or occupation categories included in the analysis.\n\n\nRole-Selection Logic\nExplain the keywords, occupation codes, or other rules used to identify relevant roles.\n\n\nCareer-Filter Results\n\n\n\nMeasure\nResult\n\n\n\n\nIndustry records before career filtering\nInsert result\n\n\nRecords in the final career-market dataset\nInsert result\n\n\nPercentage retained\nInsert result"
+  },
+  {
+    "objectID": "data_preparation.html#date-window",
+    "href": "data_preparation.html#date-window",
+    "title": "Data Preparation",
+    "section": "Date Window",
+    "text": "Date Window\n\nSelected period: Insert start and end dates.\nExplain how posting dates and expiration dates were handled."
+  },
+  {
+    "objectID": "data_preparation.html#cleaning-decisions",
+    "href": "data_preparation.html#cleaning-decisions",
+    "title": "Data Preparation",
+    "section": "Cleaning Decisions",
+    "text": "Cleaning Decisions\n\nDuplicate Records\n\nExplain how duplicate job postings were identified and handled.\n\n\n\nDuplicate Check\nResult\n\n\n\n\nRecords before duplicate removal\nInsert result\n\n\nDuplicate records identified\nInsert result\n\n\nRecords after duplicate removal\nInsert result\n\n\n\n\n\nSalary Fields\n\nExplain how salary fields were standardized and how missing or extreme values were handled.\n\n\nExperience Requirements\n\nExplain how experience requirements were cleaned and categorized.\n\n\nEducation Requirements\n\nExplain how education requirements were standardized.\n\n\nSkill Fields\n\nExplain how skill lists, duplicates, capitalization and missing values were handled.\n\n\nRemote and Onsite Indicators\n\nExplain how remote, hybrid and onsite postings were classified.\n\n\nLocation Fields\n\nExplain how missing, inconsistent or incomplete location information was handled.\n\n\nIndustry and Occupation Fields\n\nExplain how industry and occupation labels were standardized."
+  },
+  {
+    "objectID": "data_preparation.html#missing-value-summary",
+    "href": "data_preparation.html#missing-value-summary",
+    "title": "Data Preparation",
+    "section": "Missing-Value Summary",
+    "text": "Missing-Value Summary\n\n\n\n\n\n\n\n\n\n\nVariable\nMissing Before Cleaning\nMissing After Cleaning\nTreatment\n\n\n\n\nSalary\nInsert\nInsert\nInsert treatment\n\n\nExperience\nInsert\nInsert\nInsert treatment\n\n\nEducation\nInsert\nInsert\nInsert treatment\n\n\nSkills\nInsert\nInsert\nInsert treatment\n\n\nRemote status\nInsert\nInsert\nInsert treatment\n\n\nLocation\nInsert\nInsert\nInsert treatment"
+  },
+  {
+    "objectID": "data_preparation.html#outlier-treatment",
+    "href": "data_preparation.html#outlier-treatment",
+    "title": "Data Preparation",
+    "section": "Outlier Treatment",
+    "text": "Outlier Treatment\n\nDescribe the outlier-detection method, and explain whether records were removed, capped or retained."
+  },
+  {
+    "objectID": "data_preparation.html#final-analytical-dataset",
+    "href": "data_preparation.html#final-analytical-dataset",
+    "title": "Data Preparation",
+    "section": "Final Analytical Dataset",
+    "text": "Final Analytical Dataset\nThe completed cleaning process produces the dataset used for the market-baseline analysis.\nPlanned output: data/processed/career_market_panel.csv\n\n\n\nFinal Dataset Measure\nResult\n\n\n\n\nNumber of records\nInsert result\n\n\nNumber of variables\nInsert result\n\n\nUnique employers\nInsert result\n\n\nUnique job titles or segments\nInsert result\n\n\nDate range\nInsert result"
+  },
+  {
+    "objectID": "data_preparation.html#data-dictionary",
+    "href": "data_preparation.html#data-dictionary",
+    "title": "Data Preparation",
+    "section": "Data Dictionary",
+    "text": "Data Dictionary\n\nThe project data dictionary documents each retained variable, its meaning, source field and cleaning treatment.\nDownload the data dictionary"
+  },
+  {
+    "objectID": "data_preparation.html#limitations",
+    "href": "data_preparation.html#limitations",
+    "title": "Data Preparation",
+    "section": "Limitations",
+    "text": "Limitations\n\nExplain any important limitations involving missing values, inferred classifications, inconsistent labels, geographic coverage or salary reporting."
+  },
+  {
+    "objectID": "data_preparation.html#reproducibility",
+    "href": "data_preparation.html#reproducibility",
+    "title": "Data Preparation",
+    "section": "Reproducibility",
+    "text": "Reproducibility\nThe analytical dataset can be reproduced using the documented filtering and cleaning process, the private raw files and the shared project scripts. Sensitive credentials and large raw files are excluded from GitHub."
   }
 ]

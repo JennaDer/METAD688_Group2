@@ -1,1 +1,499 @@
-/* css styles */
+/* =========================================================
+   GROUP 2 — BIOTECH INTELLIGENCE DESIGN
+   Data-first, serious, modern, credible
+   ========================================================= */
+
+:root {
+  --bio-navy: #0b1f33;
+  --bio-blue: #176b87;
+  --bio-cyan: #31b7b5;
+  --bio-aqua: #dff5f2;
+  --bio-ice: #f3f8f9;
+  --bio-white: #ffffff;
+  --bio-text: #172a35;
+  --bio-muted: #637782;
+  --bio-border: #d7e2e6;
+  --bio-shadow: 0 12px 32px rgba(11, 31, 51, 0.08);
+}
+
+/* ---------- Overall page ---------- */
+
+body {
+  color: var(--bio-text);
+  background: var(--bio-white);
+}
+
+main.content {
+  counter-reset: project-section;
+}
+
+p {
+  line-height: 1.75;
+}
+
+a {
+  color: var(--bio-blue);
+  text-decoration-color: rgba(23, 107, 135, 0.35);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--bio-navy);
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar {
+  background: var(--bio-navy) !important;
+  border-bottom: 3px solid var(--bio-cyan);
+  box-shadow: 0 4px 16px rgba(11, 31, 51, 0.15);
+}
+
+.navbar-brand,
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar-brand {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.navbar .nav-link {
+  font-size: 0.9rem;
+  font-weight: 550;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--bio-white) !important;
+}
+
+.navbar .nav-link.active {
+  border-bottom: 2px solid var(--bio-cyan);
+}
+
+/* ---------- Page title ---------- */
+
+.quarto-title-block {
+  position: relative;
+  overflow: hidden;
+  color: var(--bio-white);
+  background:
+    linear-gradient(
+      110deg,
+      var(--bio-navy) 0%,
+      #103b50 65%,
+      var(--bio-blue) 100%
+    );
+
+  border: 0;
+  border-radius: 2px;
+  padding: 2.8rem 3rem;
+  margin: 0 0 2.5rem;
+  box-shadow: var(--bio-shadow);
+}
+
+/* Scientific grid embedded in title */
+
+.quarto-title-block::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 58%;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.35) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.35) 1px,
+      transparent 1px
+    );
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.quarto-title-block::before {
+  content: "GROUP 2 • PHARMACEUTICAL WORKFORCE INTELLIGENCE";
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: var(--bio-cyan);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+}
+
+.quarto-title-block .title {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  color: var(--bio-white);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.quarto-title-block .subtitle {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ---------- Section headings ---------- */
+
+main.content > section > h2 {
+  counter-increment: project-section;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--bio-navy);
+  font-size: 1.65rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  border-bottom: 1px solid var(--bio-border);
+  padding-bottom: 0.7rem;
+  margin-top: 3rem;
+}
+
+main.content > section > h2::before {
+  content: counter(project-section, decimal-leading-zero);
+  color: var(--bio-cyan);
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+main.content h3 {
+  color: var(--bio-blue);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+/* ---------- Data metrics ---------- */
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  background: var(--bio-border);
+  border: 1px solid var(--bio-border);
+  border-radius: 4px;
+  margin: 1.75rem 0 2.5rem;
+  box-shadow: var(--bio-shadow);
+}
+
+.metric-card {
+  position: relative;
+  min-height: 175px;
+  background: var(--bio-white);
+  border: 0;
+  border-radius: 0;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42%;
+  height: 4px;
+  background: var(--bio-cyan);
+}
+
+.metric-card h3 {
+  color: var(--bio-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  margin: 0 0 1.2rem;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  display: block;
+  color: var(--bio-navy);
+  font-size: 2.5rem;
+  font-weight: 780;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.metric-note {
+  display: block;
+  color: var(--bio-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin-top: 0.8rem;
+}
+
+/* ---------- Charts and analysis ---------- */
+
+.analysis-panel {
+  background: var(--bio-white);
+  border: 1px solid var(--bio-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin: 1.75rem 0;
+  box-shadow: 0 8px 24px rgba(11, 31, 51, 0.06);
+}
+
+.analysis-panel h3 {
+  color: var(--bio-navy);
+  margin-top: 0;
+}
+
+.cell-output-display {
+  overflow: hidden;
+  background: var(--bio-white);
+  border: 1px solid var(--bio-border);
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1.25rem 0;
+  box-shadow: 0 6px 20px rgba(11, 31, 51, 0.05);
+}
+
+.cell-output-display img,
+.cell-output-display svg {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+.chart-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 260px;
+  color: var(--bio-muted);
+  background:
+    linear-gradient(
+      rgba(23, 107, 135, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(23, 107, 135, 0.055) 1px,
+      transparent 1px
+    ),
+    var(--bio-ice);
+
+  background-size: 32px 32px;
+  border: 1px dashed #91b6c2;
+  border-radius: 4px;
+  padding: 2rem;
+  margin: 1.25rem 0;
+  text-align: center;
+}
+
+/* ---------- Key findings ---------- */
+
+.key-finding {
+  position: relative;
+  background: var(--bio-aqua);
+  border: 0;
+  border-left: 5px solid var(--bio-cyan);
+  border-radius: 0 4px 4px 0;
+  padding: 1.4rem 1.6rem;
+  margin: 1.75rem 0;
+}
+
+.key-finding::before {
+  content: "KEY FINDING";
+  display: block;
+  color: var(--bio-blue);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.55rem;
+}
+
+.key-finding p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Evidence labels ---------- */
+
+.evidence-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--bio-blue);
+  background: var(--bio-ice);
+  border: 1px solid #b9d5dc;
+  border-radius: 3px;
+  padding: 0.3rem 0.65rem;
+  margin: 0 0.3rem 0.4rem 0;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.evidence-label::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--bio-blue);
+  border-radius: 50%;
+}
+
+.evidence-label.finding {
+  color: #17635f;
+  background: #e4f5f2;
+  border-color: #a7d8d2;
+}
+
+.evidence-label.finding::before {
+  background: var(--bio-cyan);
+}
+
+.evidence-label.decision {
+  color: #754d0b;
+  background: #fff5d9;
+  border-color: #e6cf92;
+}
+
+.evidence-label.decision::before {
+  background: #d8a835;
+}
+
+.evidence-label.limitation {
+  color: #6b4350;
+  background: #f8edf0;
+  border-color: #dabdc5;
+}
+
+.evidence-label.limitation::before {
+  background: #a56c7c;
+}
+
+/* ---------- Career pathway ---------- */
+
+.career-step {
+  position: relative;
+  background: var(--bio-white);
+  border: 1px solid var(--bio-border);
+  border-left: 4px solid var(--bio-blue);
+  border-radius: 0 4px 4px 0;
+  padding: 1.25rem 1.4rem;
+  margin: 0 0 1rem 1rem;
+}
+
+.career-step::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 1.35rem;
+  width: 15px;
+  height: 15px;
+  background: var(--bio-white);
+  border: 3px solid var(--bio-cyan);
+  border-radius: 50%;
+}
+
+/* ---------- Tables ---------- */
+
+table {
+  width: 100%;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--bio-border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+thead {
+  color: var(--bio-white);
+  background: var(--bio-navy);
+}
+
+thead th {
+  border: 0;
+  padding: 0.85rem 1rem !important;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+tbody td {
+  padding: 0.8rem 1rem !important;
+  border-color: #e7edef !important;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--bio-ice);
+}
+
+tbody tr:hover {
+  background: var(--bio-aqua);
+}
+
+/* ---------- Callouts ---------- */
+
+.callout {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.callout-note {
+  border-left-color: var(--bio-blue);
+}
+
+.callout-tip {
+  border-left-color: var(--bio-cyan);
+}
+
+/* ---------- Code ---------- */
+
+pre {
+  background: #f5f8f9;
+  border: 1px solid var(--bio-border);
+  border-radius: 4px;
+}
+
+/* ---------- Footer ---------- */
+
+.nav-footer {
+  color: rgba(255, 255, 255, 0.72);
+  background: var(--bio-navy);
+  border-top: 3px solid var(--bio-cyan);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .quarto-title-block {
+    padding: 2rem 1.4rem;
+  }
+
+  .quarto-title-block::after {
+    display: none;
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card {
+    min-height: auto;
+  }
+
+  main.content > section > h2 {
+    align-items: flex-start;
+  }
+}

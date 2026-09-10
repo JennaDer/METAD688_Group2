@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>data_preparation – Pharmaceutical Analytics Career Pathways</title>
+<title>Data Preparation – Pharmaceutical Analytics Career Pathways</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b6702f791c3d41e5b398c65af8f053e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b04a93be6098906e613ea8999f442834.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -160,17 +160,368 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-source-and-connection" id="toc-data-source-and-connection" class="nav-link active" data-scroll-target="#data-source-and-connection">Data Source and Connection</a></li>
+  <li><a href="#industry-filter" id="toc-industry-filter" class="nav-link" data-scroll-target="#industry-filter">Industry Filter</a>
+  <ul class="collapse">
+  <li><a href="#filtering-method" id="toc-filtering-method" class="nav-link" data-scroll-target="#filtering-method">Filtering Method</a></li>
+  <li><a href="#filtering-results" id="toc-filtering-results" class="nav-link" data-scroll-target="#filtering-results">Filtering Results</a></li>
+  </ul></li>
+  <li><a href="#career-pathway-filter" id="toc-career-pathway-filter" class="nav-link" data-scroll-target="#career-pathway-filter">Career-Pathway Filter</a>
+  <ul class="collapse">
+  <li><a href="#target-roles" id="toc-target-roles" class="nav-link" data-scroll-target="#target-roles">Target Roles</a></li>
+  <li><a href="#role-selection-logic" id="toc-role-selection-logic" class="nav-link" data-scroll-target="#role-selection-logic">Role-Selection Logic</a></li>
+  <li><a href="#career-filter-results" id="toc-career-filter-results" class="nav-link" data-scroll-target="#career-filter-results">Career-Filter Results</a></li>
+  </ul></li>
+  <li><a href="#date-window" id="toc-date-window" class="nav-link" data-scroll-target="#date-window">Date Window</a></li>
+  <li><a href="#cleaning-decisions" id="toc-cleaning-decisions" class="nav-link" data-scroll-target="#cleaning-decisions">Cleaning Decisions</a>
+  <ul class="collapse">
+  <li><a href="#duplicate-records" id="toc-duplicate-records" class="nav-link" data-scroll-target="#duplicate-records">Duplicate Records</a></li>
+  <li><a href="#salary-fields" id="toc-salary-fields" class="nav-link" data-scroll-target="#salary-fields">Salary Fields</a></li>
+  <li><a href="#experience-requirements" id="toc-experience-requirements" class="nav-link" data-scroll-target="#experience-requirements">Experience Requirements</a></li>
+  <li><a href="#education-requirements" id="toc-education-requirements" class="nav-link" data-scroll-target="#education-requirements">Education Requirements</a></li>
+  <li><a href="#skill-fields" id="toc-skill-fields" class="nav-link" data-scroll-target="#skill-fields">Skill Fields</a></li>
+  <li><a href="#remote-and-onsite-indicators" id="toc-remote-and-onsite-indicators" class="nav-link" data-scroll-target="#remote-and-onsite-indicators">Remote and Onsite Indicators</a></li>
+  <li><a href="#location-fields" id="toc-location-fields" class="nav-link" data-scroll-target="#location-fields">Location Fields</a></li>
+  <li><a href="#industry-and-occupation-fields" id="toc-industry-and-occupation-fields" class="nav-link" data-scroll-target="#industry-and-occupation-fields">Industry and Occupation Fields</a></li>
+  </ul></li>
+  <li><a href="#missing-value-summary" id="toc-missing-value-summary" class="nav-link" data-scroll-target="#missing-value-summary">Missing-Value Summary</a></li>
+  <li><a href="#outlier-treatment" id="toc-outlier-treatment" class="nav-link" data-scroll-target="#outlier-treatment">Outlier Treatment</a></li>
+  <li><a href="#final-analytical-dataset" id="toc-final-analytical-dataset" class="nav-link" data-scroll-target="#final-analytical-dataset">Final Analytical Dataset</a></li>
+  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary">Data Dictionary</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Preparation</h1>
+<p class="subtitle lead">Industry and Career Dataset Development</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<!-- SECTION OWNER: Data preparation and cleaning partner -->
+<!-- Do not display ownership notes on the published website. -->
+<section id="purpose" class="level4">
+<h4 class="anchored" data-anchor-id="purpose">Purpose</h4>
+<p>This page documents how the raw MET Employability Career Match job-posting data was filtered and cleaned to create the analytical dataset used throughout this project.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Project Scope
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Industry:</strong> Pharmaceutical and Medicine Manufacturing<br>
+<strong>NAICS code:</strong> 3254<br>
+<strong>Career pathway:</strong> <em>Insert the team’s selected career pathway</em><br>
+<strong>Analysis period:</strong> <em>Insert the selected date range</em></p>
+</div>
+</div>
+</section>
+<section id="data-source-and-connection" class="level2">
+<h2 class="anchored" data-anchor-id="data-source-and-connection">Data Source and Connection</h2>
+<p>The project uses job-posting data from the MET Employability Career Match dataset. The raw data contains 165,386 job-posting records across 17 Parquet partition files.</p>
+<p>The files are stored privately and are not included in the public GitHub repository. A shared loading script connects each authorized team member’s environment to the data without exposing API credentials or private file locations.</p>
+<p><strong>Shared connection script:</strong> <code>scripts/load_data.py</code></p>
+<!-- PARTNER INSTRUCTIONS:
+Confirm the final record and column counts after loading.
+Describe any additional datasets used.
+Do not include API keys or private file paths.
+-->
+</section>
+<section id="industry-filter" class="level2">
+<h2 class="anchored" data-anchor-id="industry-filter">Industry Filter</h2>
+<p>The project is limited to Pharmaceutical and Medicine Manufacturing under NAICS 3254.</p>
+<!-- PARTNER INSTRUCTIONS:
+Explain the exact field and logic used to apply the NAICS 3254 filter.
+Report the number of records before and after filtering.
+-->
+<section id="filtering-method" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-method">Filtering Method</h3>
+<p><em>Describe how the NAICS industry filter was applied.</em></p>
+</section>
+<section id="filtering-results" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-results">Filtering Results</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Records before industry filtering</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="even">
+<td>Records after applying NAICS 3254</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="odd">
+<td>Percentage retained</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="career-pathway-filter" class="level2">
+<h2 class="anchored" data-anchor-id="career-pathway-filter">Career-Pathway Filter</h2>
+<!-- PARTNER INSTRUCTIONS:
+Document the selected role keywords, SOC/O*NET mappings, skill logic, or combination used.
+Explain why the filtering method fits the team's career pathway.
+-->
+<section id="target-roles" class="level3">
+<h3 class="anchored" data-anchor-id="target-roles">Target Roles</h3>
+<p><em>List and explain the titles or occupation categories included in the analysis.</em></p>
+</section>
+<section id="role-selection-logic" class="level3">
+<h3 class="anchored" data-anchor-id="role-selection-logic">Role-Selection Logic</h3>
+<p><em>Explain the keywords, occupation codes, or other rules used to identify relevant roles.</em></p>
+</section>
+<section id="career-filter-results" class="level3">
+<h3 class="anchored" data-anchor-id="career-filter-results">Career-Filter Results</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Industry records before career filtering</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="even">
+<td>Records in the final career-market dataset</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="odd">
+<td>Percentage retained</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="date-window" class="level2">
+<h2 class="anchored" data-anchor-id="date-window">Date Window</h2>
+<!-- PARTNER INSTRUCTIONS:
+State the posting-date window and explain why it was selected.
+-->
+<p><strong>Selected period:</strong> <em>Insert start and end dates.</em></p>
+<p><em>Explain how posting dates and expiration dates were handled.</em></p>
+</section>
+<section id="cleaning-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-decisions">Cleaning Decisions</h2>
+<section id="duplicate-records" class="level3">
+<h3 class="anchored" data-anchor-id="duplicate-records">Duplicate Records</h3>
+<!-- Document duplicate-identification fields and removal logic. -->
+<p><em>Explain how duplicate job postings were identified and handled.</em></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Duplicate Check</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Records before duplicate removal</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="even">
+<td>Duplicate records identified</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="odd">
+<td>Records after duplicate removal</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="salary-fields" class="level3">
+<h3 class="anchored" data-anchor-id="salary-fields">Salary Fields</h3>
+<!-- Document SALARY_FROM, SALARY_TO, pay period, missing salaries and outliers. -->
+<p><em>Explain how salary fields were standardized and how missing or extreme values were handled.</em></p>
+</section>
+<section id="experience-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="experience-requirements">Experience Requirements</h3>
+<!-- Document MIN_YEARS_EXPERIENCE and MAX_YEARS_EXPERIENCE. -->
+<p><em>Explain how experience requirements were cleaned and categorized.</em></p>
+</section>
+<section id="education-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="education-requirements">Education Requirements</h3>
+<!-- Document education-level fields and inconsistent or missing labels. -->
+<p><em>Explain how education requirements were standardized.</em></p>
+</section>
+<section id="skill-fields" class="level3">
+<h3 class="anchored" data-anchor-id="skill-fields">Skill Fields</h3>
+<!-- Document SKILLS, SPECIALIZED_SKILLS and SOFTWARE_SKILLS. -->
+<p><em>Explain how skill lists, duplicates, capitalization and missing values were handled.</em></p>
+</section>
+<section id="remote-and-onsite-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="remote-and-onsite-indicators">Remote and Onsite Indicators</h3>
+<!-- Document REMOTE_TYPE or REMOTE_TYPE_NAME and final work-arrangement categories. -->
+<p><em>Explain how remote, hybrid and onsite postings were classified.</em></p>
+</section>
+<section id="location-fields" class="level3">
+<h3 class="anchored" data-anchor-id="location-fields">Location Fields</h3>
+<!-- Document city, state, county and complete-location fields. -->
+<p><em>Explain how missing, inconsistent or incomplete location information was handled.</em></p>
+</section>
+<section id="industry-and-occupation-fields" class="level3">
+<h3 class="anchored" data-anchor-id="industry-and-occupation-fields">Industry and Occupation Fields</h3>
+<!-- Document final NAICS and occupation fields retained in the cleaned dataset. -->
+<p><em>Explain how industry and occupation labels were standardized.</em></p>
+</section>
+</section>
+<section id="missing-value-summary" class="level2">
+<h2 class="anchored" data-anchor-id="missing-value-summary">Missing-Value Summary</h2>
+<!-- Add rows for the final variables used in the analysis. -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th style="text-align: right;">Missing Before Cleaning</th>
+<th style="text-align: right;">Missing After Cleaning</th>
+<th>Treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Salary</td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td><em>Insert treatment</em></td>
+</tr>
+<tr class="even">
+<td>Experience</td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td><em>Insert treatment</em></td>
+</tr>
+<tr class="odd">
+<td>Education</td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td><em>Insert treatment</em></td>
+</tr>
+<tr class="even">
+<td>Skills</td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td><em>Insert treatment</em></td>
+</tr>
+<tr class="odd">
+<td>Remote status</td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td><em>Insert treatment</em></td>
+</tr>
+<tr class="even">
+<td>Location</td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td style="text-align: right;"><em>Insert</em></td>
+<td><em>Insert treatment</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="outlier-treatment" class="level2">
+<h2 class="anchored" data-anchor-id="outlier-treatment">Outlier Treatment</h2>
+<!-- Identify the rules used for salary, experience or other numeric outliers. -->
+<p><em>Describe the outlier-detection method, and explain whether records were removed, capped or retained.</em></p>
+</section>
+<section id="final-analytical-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="final-analytical-dataset">Final Analytical Dataset</h2>
+<p>The completed cleaning process produces the dataset used for the market-baseline analysis.</p>
+<p><strong>Planned output:</strong> <code>data/processed/career_market_panel.csv</code></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Final Dataset Measure</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of records</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="even">
+<td>Number of variables</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="odd">
+<td>Unique employers</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="even">
+<td>Unique job titles or segments</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+<tr class="odd">
+<td>Date range</td>
+<td style="text-align: right;"><em>Insert result</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-dictionary" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary">Data Dictionary</h2>
+<!-- PARTNER INSTRUCTIONS:
+Add or link the required variable-description file.
+Suggested output: outputs/data_dictionary.csv
+-->
+<p>The project data dictionary documents each retained variable, its meaning, source field and cleaning treatment.</p>
+<p><a href="outputs/data_dictionary.csv">Download the data dictionary</a></p>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<!-- Document data-quality limitations that remain after cleaning. -->
+<p><em>Explain any important limitations involving missing values, inferred classifications, inconsistent labels, geographic coverage or salary reporting.</em></p>
+</section>
+<section id="reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
+<p>The analytical dataset can be reproduced using the documented filtering and cleaning process, the private raw files and the shared project scripts. Sensitive credentials and large raw files are excluded from GitHub.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
