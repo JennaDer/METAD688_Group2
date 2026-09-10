@@ -1,0 +1,279 @@
+---
+title: "Market Baseline"
+subtitle: "Analytics Careers in Pharmaceutical Manufacturing"
+bibliography: references.bib
+toc: true
+---
+
+<!-- SECTION OWNER: Market analysis and visualization partner -->
+<!-- Do not display ownership notes on the published website. -->
+
+#### Purpose
+
+This page describes the current market for the team’s selected career pathway within Pharmaceutical and Medicine Manufacturing.
+
+::: {.callout-note}
+## Analytical Scope
+
+**Industry:** Pharmaceutical and Medicine Manufacturing  
+**NAICS code:** 3254  
+**Career pathway:** *Insert the team's selected career pathway*  
+**Analysis period:** *Insert the selected date range*  
+**Final dataset size:** *Insert the number of cleaned job postings*
+:::
+
+## Market Overview
+
+<!-- PARTNER INSTRUCTIONS:
+Write a short overview after completing the analysis.
+Summarize the most important findings without repeating every chart.
+-->
+
+*Summarize what the filtered job-posting data reveals about the selected market.*
+
+### Key Findings
+
+- *Insert the most important demand finding.*
+- *Insert the most important salary finding.*
+- *Insert the most important location or remote-work finding.*
+- *Insert the most important experience finding.*
+
+## Job Volume
+
+<!-- PARTNER INSTRUCTIONS:
+Show job volume by cleaned title, role segment or another defensible category.
+Suggested figure filename: figures/job_volume_by_title.png
+Include a written interpretation beneath the figure.
+-->
+
+### Job Postings by Title or Segment
+
+*Insert the job-volume visualization here.*
+
+**Interpretation:**  
+*Explain which roles appear most frequently and what this means for the target job seeker.*
+
+### Job-Volume Summary
+
+| Rank | Job Title or Segment | Number of Postings | Share of Market |
+|---:|---|---:|---:|
+| 1 | *Insert* | *Insert* | *Insert* |
+| 2 | *Insert* | *Insert* | *Insert* |
+| 3 | *Insert* | *Insert* | *Insert* |
+| 4 | *Insert* | *Insert* | *Insert* |
+| 5 | *Insert* | *Insert* | *Insert* |
+
+## Salary Distribution
+
+<!-- PARTNER INSTRUCTIONS:
+Analyze valid standardized salary records.
+State how many postings contain usable salary information.
+Suggested figure filename: figures/salary_distribution.png
+-->
+
+### Salary Range
+
+*Insert the salary-distribution visualization here.*
+
+**Interpretation:**  
+*Explain the typical salary range, variation and any differences between roles or segments.*
+
+### Salary Summary
+
+| Salary Measure | Result |
+|---|---:|
+| Postings with usable salary data | *Insert* |
+| Median minimum salary | *Insert* |
+| Median maximum salary | *Insert* |
+| 25th percentile | *Insert* |
+| 75th percentile | *Insert* |
+| Highest retained salary | *Insert* |
+
+::: {.callout-warning}
+## Salary-data limitation
+
+*Explain how missing salaries, different pay periods or outlier treatment affect interpretation.*
+:::
+
+## Geographic Patterns
+
+<!-- PARTNER INSTRUCTIONS:
+Analyze job volume by state, city, county or another appropriate geography.
+Suggested figure filename: figures/jobs_by_location.png
+-->
+
+### Leading Hiring Locations
+
+*Insert the location visualization here.*
+
+**Interpretation:**  
+*Explain where opportunities are concentrated and whether the pattern is relevant to the target user.*
+
+### Top Locations
+
+| Rank | Location | Number of Postings | Share of Market |
+|---:|---|---:|---:|
+| 1 | *Insert* | *Insert* | *Insert* |
+| 2 | *Insert* | *Insert* | *Insert* |
+| 3 | *Insert* | *Insert* | *Insert* |
+| 4 | *Insert* | *Insert* | *Insert* |
+| 5 | *Insert* | *Insert* | *Insert* |
+
+## Experience Requirements
+
+<!-- PARTNER INSTRUCTIONS:
+Use cleaned minimum and/or maximum years-of-experience fields.
+Suggested figure filename: figures/experience_distribution.png
+-->
+
+### Distribution of Required Experience
+
+*Insert the experience-requirement visualization here.*
+
+**Interpretation:**  
+*Explain whether the market is concentrated in entry-level, mid-career or experienced roles.*
+
+### Experience Summary
+
+| Experience Category | Definition | Number of Postings | Share |
+|---|---|---:|---:|
+| Entry level | *Insert definition* | *Insert* | *Insert* |
+| Early career | *Insert definition* | *Insert* | *Insert* |
+| Mid-career | *Insert definition* | *Insert* | *Insert* |
+| Senior | *Insert definition* | *Insert* | *Insert* |
+| Not specified | No usable requirement | *Insert* | *Insert* |
+
+## Remote, Hybrid and Onsite Work
+
+<!-- PARTNER INSTRUCTIONS:
+Use the cleaned work-arrangement variable.
+Suggested figure filename: figures/remote_work_distribution.png
+-->
+
+### Work-Arrangement Distribution
+
+*Insert the remote, hybrid and onsite visualization here.*
+
+**Interpretation:**  
+*Explain how common remote opportunities are and whether work arrangement varies by role or employer.*
+
+| Work Arrangement | Number of Postings | Share |
+|---|---:|---:|
+| Remote | *Insert* | *Insert* |
+| Hybrid | *Insert* | *Insert* |
+| Onsite | *Insert* | *Insert* |
+| Not specified | *Insert* | *Insert* |
+
+## Top Employers
+
+<!-- PARTNER INSTRUCTIONS:
+Show the employers with the greatest number of relevant job postings.
+Review staffing-company indicators before interpreting results.
+Suggested figure filename: figures/top_employers.png
+-->
+
+### Employers with the Most Postings
+
+*Insert the top-employer visualization here.*
+
+**Interpretation:**  
+*Explain which employers appear most active and whether staffing firms influence the results.*
+
+| Rank | Employer | Number of Postings | Staffing Firm? |
+|---:|---|---:|---|
+| 1 | *Insert* | *Insert* | *Insert* |
+| 2 | *Insert* | *Insert* | *Insert* |
+| 3 | *Insert* | *Insert* | *Insert* |
+| 4 | *Insert* | *Insert* | *Insert* |
+| 5 | *Insert* | *Insert* | *Insert* |
+
+## Implications for Job Seekers
+
+<!-- SECTION OWNER: Entire team -->
+<!-- PARTNER INSTRUCTIONS:
+Connect the market findings to decisions a job seeker can make.
+Do not present generic labor-market observations.
+-->
+
+### Where to Apply
+
+*Explain which job titles, employers or locations appear most promising.*
+
+### How to Position a Candidate Profile
+
+*Explain what the market baseline suggests about experience, flexibility or role positioning.*
+
+### Questions for the Next Project Step
+
+- *Which skills distinguish attractive or attainable roles?*
+- *Where does the target user’s current profile differ from market demand?*
+- *Which opportunities should receive the highest career-evaluation scores?*
+
+## Analytical Limitations
+
+<!-- PARTNER INSTRUCTIONS:
+Document limitations specific to the market-baseline analysis.
+-->
+
+- *Insert limitation involving dataset coverage.*
+- *Insert limitation involving missing salary or experience data.*
+- *Insert limitation involving role or industry classification.*
+- *Insert any limitation involving location or remote-work labels.*
+
+## Job Market Snapshot
+
+::: {.metric-grid}
+
+::: {.metric-card}
+### Total Job Postings
+
+<span class="metric-value">[Insert value]</span>
+
+<span class="metric-note">NAICS 3254 postings in the selected period</span>
+:::
+
+::: {.metric-card}
+### Median Salary
+
+<span class="metric-value">$[Insert value]</span>
+
+<span class="metric-note">Based on postings with usable salary data</span>
+:::
+
+::: {.metric-card}
+### Remote Availability
+
+<span class="metric-value">[Insert %]</span>
+
+<span class="metric-note">Share of remote or hybrid opportunities</span>
+:::
+
+:::
+
+## Job Volume
+
+::: {.analysis-panel}
+
+<span class="evidence-label">Data</span>
+
+**Measure:** Number of relevant job postings by [month/quarter].
+
+::: {.chart-placeholder}
+**Chart to insert:** Job-posting volume over time
+
+Recommended format: line chart or column chart.
+:::
+
+<span class="evidence-label finding">Finding</span>
+
+[Explain the most important pattern shown in the chart.]
+
+<span class="evidence-label decision">Implication</span>
+
+[Explain what this means for someone pursuing this career pathway.]
+
+<span class="evidence-label limitation">Limitation</span>
+
+[Explain any missing dates, duplicate postings, or sampling limitations.]
+
+:::

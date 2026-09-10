@@ -1,0 +1,200 @@
+---
+title: "Data Preparation"
+subtitle: "Industry and Career Dataset Development"
+bibliography: references.bib
+toc: true
+---
+
+<!-- SECTION OWNER: Data preparation and cleaning partner -->
+<!-- Do not display ownership notes on the published website. -->
+
+#### Purpose
+
+This page documents how the raw MET Employability Career Match job-posting data was filtered and cleaned to create the analytical dataset used throughout this project.
+
+::: {.callout-note}
+## Project Scope
+
+**Industry:** Pharmaceutical and Medicine Manufacturing  
+**NAICS code:** 3254  
+**Career pathway:** *Insert the team's selected career pathway*  
+**Analysis period:** *Insert the selected date range*
+:::
+
+## Data Source and Connection
+
+The project uses job-posting data from the MET Employability Career Match dataset. The raw data contains 165,386 job-posting records across 17 Parquet partition files.
+
+The files are stored privately and are not included in the public GitHub repository. A shared loading script connects each authorized team member’s environment to the data without exposing API credentials or private file locations.
+
+**Shared connection script:** `scripts/load_data.py`
+
+<!-- PARTNER INSTRUCTIONS:
+Confirm the final record and column counts after loading.
+Describe any additional datasets used.
+Do not include API keys or private file paths.
+-->
+
+## Industry Filter
+
+The project is limited to Pharmaceutical and Medicine Manufacturing under NAICS 3254.
+
+<!-- PARTNER INSTRUCTIONS:
+Explain the exact field and logic used to apply the NAICS 3254 filter.
+Report the number of records before and after filtering.
+-->
+
+### Filtering Method
+
+*Describe how the NAICS industry filter was applied.*
+
+### Filtering Results
+
+| Measure | Result |
+|---|---:|
+| Records before industry filtering | *Insert result* |
+| Records after applying NAICS 3254 | *Insert result* |
+| Percentage retained | *Insert result* |
+
+## Career-Pathway Filter
+
+<!-- PARTNER INSTRUCTIONS:
+Document the selected role keywords, SOC/O*NET mappings, skill logic, or combination used.
+Explain why the filtering method fits the team's career pathway.
+-->
+
+### Target Roles
+
+*List and explain the titles or occupation categories included in the analysis.*
+
+### Role-Selection Logic
+
+*Explain the keywords, occupation codes, or other rules used to identify relevant roles.*
+
+### Career-Filter Results
+
+| Measure | Result |
+|---|---:|
+| Industry records before career filtering | *Insert result* |
+| Records in the final career-market dataset | *Insert result* |
+| Percentage retained | *Insert result* |
+
+## Date Window
+
+<!-- PARTNER INSTRUCTIONS:
+State the posting-date window and explain why it was selected.
+-->
+
+**Selected period:** *Insert start and end dates.*
+
+*Explain how posting dates and expiration dates were handled.*
+
+## Cleaning Decisions
+
+### Duplicate Records
+
+<!-- Document duplicate-identification fields and removal logic. -->
+
+*Explain how duplicate job postings were identified and handled.*
+
+| Duplicate Check | Result |
+|---|---:|
+| Records before duplicate removal | *Insert result* |
+| Duplicate records identified | *Insert result* |
+| Records after duplicate removal | *Insert result* |
+
+### Salary Fields
+
+<!-- Document SALARY_FROM, SALARY_TO, pay period, missing salaries and outliers. -->
+
+*Explain how salary fields were standardized and how missing or extreme values were handled.*
+
+### Experience Requirements
+
+<!-- Document MIN_YEARS_EXPERIENCE and MAX_YEARS_EXPERIENCE. -->
+
+*Explain how experience requirements were cleaned and categorized.*
+
+### Education Requirements
+
+<!-- Document education-level fields and inconsistent or missing labels. -->
+
+*Explain how education requirements were standardized.*
+
+### Skill Fields
+
+<!-- Document SKILLS, SPECIALIZED_SKILLS and SOFTWARE_SKILLS. -->
+
+*Explain how skill lists, duplicates, capitalization and missing values were handled.*
+
+### Remote and Onsite Indicators
+
+<!-- Document REMOTE_TYPE or REMOTE_TYPE_NAME and final work-arrangement categories. -->
+
+*Explain how remote, hybrid and onsite postings were classified.*
+
+### Location Fields
+
+<!-- Document city, state, county and complete-location fields. -->
+
+*Explain how missing, inconsistent or incomplete location information was handled.*
+
+### Industry and Occupation Fields
+
+<!-- Document final NAICS and occupation fields retained in the cleaned dataset. -->
+
+*Explain how industry and occupation labels were standardized.*
+
+## Missing-Value Summary
+
+<!-- Add rows for the final variables used in the analysis. -->
+
+| Variable | Missing Before Cleaning | Missing After Cleaning | Treatment |
+|---|---:|---:|---|
+| Salary | *Insert* | *Insert* | *Insert treatment* |
+| Experience | *Insert* | *Insert* | *Insert treatment* |
+| Education | *Insert* | *Insert* | *Insert treatment* |
+| Skills | *Insert* | *Insert* | *Insert treatment* |
+| Remote status | *Insert* | *Insert* | *Insert treatment* |
+| Location | *Insert* | *Insert* | *Insert treatment* |
+
+## Outlier Treatment
+
+<!-- Identify the rules used for salary, experience or other numeric outliers. -->
+
+*Describe the outlier-detection method, and explain whether records were removed, capped or retained.*
+
+## Final Analytical Dataset
+
+The completed cleaning process produces the dataset used for the market-baseline analysis.
+
+**Planned output:** `data/processed/career_market_panel.csv`
+
+| Final Dataset Measure | Result |
+|---|---:|
+| Number of records | *Insert result* |
+| Number of variables | *Insert result* |
+| Unique employers | *Insert result* |
+| Unique job titles or segments | *Insert result* |
+| Date range | *Insert result* |
+
+## Data Dictionary
+
+<!-- PARTNER INSTRUCTIONS:
+Add or link the required variable-description file.
+Suggested output: outputs/data_dictionary.csv
+-->
+
+The project data dictionary documents each retained variable, its meaning, source field and cleaning treatment.
+
+[Download the data dictionary](outputs/data_dictionary.csv)
+
+## Limitations
+
+<!-- Document data-quality limitations that remain after cleaning. -->
+
+*Explain any important limitations involving missing values, inferred classifications, inconsistent labels, geographic coverage or salary reporting.*
+
+## Reproducibility
+
+The analytical dataset can be reproduced using the documented filtering and cleaning process, the private raw files and the shared project scripts. Sensitive credentials and large raw files are excluded from GitHub.

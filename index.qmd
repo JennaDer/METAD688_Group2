@@ -1,7 +1,216 @@
 ---
-title: "METAD 688 Group 2"
+title: false
+page-layout: full
 ---
 
-This is a Quarto website.
+::: {.project-hero}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+::: {.hero-copy}
+
+<span class="eyebrow">MET AD 688 · GROUP 2 · NAICS 3254</span>
+
+# Mapping opportunity in pharmaceutical manufacturing
+
+We are examining how employment demand, technical skills, and career pathways are changing across the U.S. pharmaceutical and medicine manufacturing industry.
+
+[Explore the research](introduction.qmd){.hero-button}
+[View our methodology](data_preparation.qmd){.hero-link}
+
+:::
+
+::: {.hero-index}
+
+<span class="index-number">3254</span>
+
+**Industry focus**
+
+Pharmaceutical and Medicine Manufacturing
+
+<div class="signal-line"></div>
+
+165,386 job postings  
+115 source variables  
+17 Parquet files
+
+:::
+
+:::
+
+::: {.research-strip}
+
+<span>LABOR MARKET</span>
+<span>SKILL DEMAND</span>
+<span>CAREER PATHWAYS</span>
+<span>INDUSTRY OUTLOOK</span>
+
+:::
+
+::: {.homepage-content}
+
+::: {.section-intro}
+
+<span class="section-code">01 / RESEARCH QUESTION</span>
+
+## Where is the pharmaceutical workforce heading?
+
+Our analysis connects employer demand with the skills and career opportunities shaping pharmaceutical manufacturing. Rather than examining job counts alone, we evaluate what companies need, where opportunities are concentrated, and how candidates can prepare.
+
+:::
+
+::: {.feature-grid}
+
+::: {.feature feature-primary}
+
+<span class="feature-number">01</span>
+
+### Establish the market baseline
+
+Measure employment activity, employer concentration, occupational demand, and geographic patterns across the pharmaceutical manufacturing sector.
+
+[Open market analysis →](market_baseline.qmd)
+
+:::
+
+::: {.feature}
+
+<span class="feature-number">02</span>
+
+### Identify emerging skill gaps
+
+Compare the technical, analytical, regulatory, and operational capabilities requested across pharmaceutical job postings.
+
+[Explore skill demand →](skill_gap_analysis.qmd)
+
+:::
+
+::: {.feature}
+
+<span class="feature-number">03</span>
+
+### Evaluate career pathways
+
+Translate market evidence into practical career options and evaluate how roles differ in demand, accessibility, and future potential.
+
+[Review career pathways →](career_evaluation.qmd)
+
+:::
+
+:::
+
+::: {.data-stage}
+
+::: {.data-stage-heading}
+
+<span class="section-code section-code-light">02 / ANALYTICAL FOUNDATION</span>
+
+## From raw postings to career intelligence
+
+:::
+
+::: {.data-flow}
+
+::: {.flow-step}
+<span class="flow-marker">A</span>
+
+**Source**
+
+17 Parquet files containing U.S. job-posting data
+:::
+
+::: {.flow-step}
+<span class="flow-marker">B</span>
+
+**Prepare**
+
+Clean, filter, validate, and classify relevant records
+:::
+
+::: {.flow-step}
+<span class="flow-marker">C</span>
+
+**Analyze**
+
+Compare employers, locations, occupations, and skills
+:::
+
+::: {.flow-step}
+<span class="flow-marker">D</span>
+
+**Recommend**
+
+Convert findings into evidence-based career guidance
+:::
+
+:::
+
+:::
+
+::: {.findings-preview}
+
+::: {.findings-heading}
+
+<span class="section-code">03 / FINDINGS</span>
+
+## What the evidence will show
+
+This area will become the front door to our final visual analysis as each team member completes their section.
+
+:::
+
+::: {.finding-row}
+
+<span class="finding-id">F.01</span>
+
+<div>
+<strong>Market structure</strong>
+
+Which employers, roles, and locations account for the strongest demand?
+</div>
+
+<span class="finding-status">IN DEVELOPMENT</span>
+
+:::
+
+::: {.finding-row}
+
+<span class="finding-id">F.02</span>
+
+<div>
+<strong>Skill signals</strong>
+
+Which capabilities consistently appear across pharmaceutical job postings?
+</div>
+
+<span class="finding-status">IN DEVELOPMENT</span>
+
+:::
+
+::: {.finding-row}
+
+<span class="finding-id">F.03</span>
+
+<div>
+<strong>Career opportunity</strong>
+
+Which pathways offer the strongest combination of demand and accessibility?
+</div>
+
+<span class="finding-status">IN DEVELOPMENT</span>
+
+:::
+
+:::
+
+::: {.final-cta}
+
+<span class="section-code section-code-light">FINAL OUTPUT</span>
+
+## Evidence translated into action
+
+Our final recommendations will connect labor-market patterns with practical steps for candidates considering careers in pharmaceutical manufacturing.
+
+[View final recommendations](final_recommendations.qmd){.cta-button}
+
+:::
+
+:::
