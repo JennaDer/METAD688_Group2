@@ -35,6 +35,13 @@
     "text": "Evidence translated into action\nOur final recommendations will connect labor-market patterns with practical steps for candidates considering careers in pharmaceutical manufacturing.\nView final recommendations"
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
     "objectID": "introduction.html",
     "href": "introduction.html",
     "title": "Project Foundation",
@@ -158,7 +165,7 @@
     "href": "market_baseline.html#geographic-patterns",
     "title": "Market Baseline",
     "section": "Geographic Patterns",
-    "text": "Geographic Patterns\n\n\nLeading Hiring Locations\nInsert the location visualization here.\nInterpretation:\nExplain where opportunities are concentrated and whether the pattern is relevant to the target user.\n\n\nTop Locations\n\n\n\nRank\nLocation\nNumber of Postings\nShare of Market\n\n\n\n\n1\nInsert\nInsert\nInsert\n\n\n2\nInsert\nInsert\nInsert\n\n\n3\nInsert\nInsert\nInsert\n\n\n4\nInsert\nInsert\nInsert\n\n\n5\nInsert\nInsert\nInsert"
+    "text": "Geographic Patterns\n\nLeading Hiring Locations\nAmong the five Data Analytics-related postings identified within Pharmaceutical and Medicine Manufacturing (NAICS 3254), four postings (80%) are located in New Jersey and one posting (20%) is located in Missouri.\nWithin New Jersey, Rahway accounts for two postings, while Bridgewater and Morris Plains each account for one. The Missouri posting is located in Kansas City.\nInterpretation:\nThe observed opportunities are strongly concentrated in New Jersey. However, because the filtered sample contains only five postings, this pattern should be interpreted as a snapshot of the available dataset rather than a complete representation of the national pharmaceutical analytics labor market.\n\n\nTop Locations\n\n\n\nRank\nLocation\nNumber of Postings\nShare of Market\n\n\n\n\n1\nNew Jersey\n4\n80%\n\n\n2\nMissouri\n1\n20%"
   },
   {
     "objectID": "market_baseline.html#experience-requirements",
@@ -172,7 +179,7 @@
     "href": "market_baseline.html#remote-hybrid-and-onsite-work",
     "title": "Market Baseline",
     "section": "Remote, Hybrid and Onsite Work",
-    "text": "Remote, Hybrid and Onsite Work\n\n\nWork-Arrangement Distribution\nInsert the remote, hybrid and onsite visualization here.\nInterpretation:\nExplain how common remote opportunities are and whether work arrangement varies by role or employer.\n\n\n\nWork Arrangement\nNumber of Postings\nShare\n\n\n\n\nRemote\nInsert\nInsert\n\n\nHybrid\nInsert\nInsert\n\n\nOnsite\nInsert\nInsert\n\n\nNot specified\nInsert\nInsert"
+    "text": "Remote, Hybrid and Onsite Work\n\nWork-Arrangement Distribution\nOnly one of the five postings (20%) is explicitly classified as Hybrid. The remaining four postings (80%) are classified as Unknown.\nInterpretation:\nThe Unknown category should not be interpreted as onsite work. Instead, it indicates that the dataset does not provide a clear work-arrangement classification for those postings. The available data therefore supports identifying one hybrid opportunity, but it does not support estimating the true share of onsite or fully remote positions.\n\n\n\nWork Arrangement\nNumber of Postings\nShare\n\n\n\n\nRemote\n0\n0%\n\n\nHybrid\n1\n20%\n\n\nOnsite\n0\n0%\n\n\nUnknown / not specified\n4\n80%"
   },
   {
     "objectID": "market_baseline.html#top-employers",
@@ -208,13 +215,6 @@
     "title": "Market Baseline",
     "section": "Job Volume",
     "text": "Job Volume\n\nData\nMeasure: Number of relevant job postings by [month/quarter].\n\nChart to insert: Job-posting volume over time\nRecommended format: line chart or column chart.\n\nFinding\n[Explain the most important pattern shown in the chart.]\nImplication\n[Explain what this means for someone pursuing this career pathway.]\nLimitation\n[Explain any missing dates, duplicate postings, or sampling limitations.]"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   },
   {
     "objectID": "data_preparation.html",
