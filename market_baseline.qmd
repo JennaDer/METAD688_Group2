@@ -97,27 +97,21 @@ Suggested figure filename: figures/salary_distribution.png
 
 ## Geographic Patterns
 
-<!-- PARTNER INSTRUCTIONS:
-Analyze job volume by state, city, county or another appropriate geography.
-Suggested figure filename: figures/jobs_by_location.png
--->
-
 ### Leading Hiring Locations
 
-*Insert the location visualization here.*
+Among the five Data Analytics-related postings identified within Pharmaceutical and Medicine Manufacturing (NAICS 3254), four postings (80%) are located in New Jersey and one posting (20%) is located in Missouri.
+
+Within New Jersey, Rahway accounts for two postings, while Bridgewater and Morris Plains each account for one. The Missouri posting is located in Kansas City.
 
 **Interpretation:**  
-*Explain where opportunities are concentrated and whether the pattern is relevant to the target user.*
+The observed opportunities are strongly concentrated in New Jersey. However, because the filtered sample contains only five postings, this pattern should be interpreted as a snapshot of the available dataset rather than a complete representation of the national pharmaceutical analytics labor market.
 
 ### Top Locations
 
 | Rank | Location | Number of Postings | Share of Market |
 |---:|---|---:|---:|
-| 1 | *Insert* | *Insert* | *Insert* |
-| 2 | *Insert* | *Insert* | *Insert* |
-| 3 | *Insert* | *Insert* | *Insert* |
-| 4 | *Insert* | *Insert* | *Insert* |
-| 5 | *Insert* | *Insert* | *Insert* |
+| 1 | New Jersey | 4 | 80% |
+| 2 | Missouri | 1 | 20% |
 
 ## Experience Requirements
 
@@ -145,24 +139,19 @@ Suggested figure filename: figures/experience_distribution.png
 
 ## Remote, Hybrid and Onsite Work
 
-<!-- PARTNER INSTRUCTIONS:
-Use the cleaned work-arrangement variable.
-Suggested figure filename: figures/remote_work_distribution.png
--->
-
 ### Work-Arrangement Distribution
 
-*Insert the remote, hybrid and onsite visualization here.*
+Only one of the five postings (20%) is explicitly classified as Hybrid. The remaining four postings (80%) are classified as Unknown.
 
 **Interpretation:**  
-*Explain how common remote opportunities are and whether work arrangement varies by role or employer.*
+The Unknown category should not be interpreted as onsite work. Instead, it indicates that the dataset does not provide a clear work-arrangement classification for those postings. The available data therefore supports identifying one hybrid opportunity, but it does not support estimating the true share of onsite or fully remote positions.
 
 | Work Arrangement | Number of Postings | Share |
 |---|---:|---:|
-| Remote | *Insert* | *Insert* |
-| Hybrid | *Insert* | *Insert* |
-| Onsite | *Insert* | *Insert* |
-| Not specified | *Insert* | *Insert* |
+| Remote | 0 | 0% |
+| Hybrid | 1 | 20% |
+| Onsite | 0 | 0% |
+| Unknown / not specified | 4 | 80% |
 
 ## Top Employers
 
