@@ -24,19 +24,14 @@ This page describes the current market for the team’s selected career pathway 
 
 ## Market Overview
 
-<!-- PARTNER INSTRUCTIONS:
-Write a short overview after completing the analysis.
-Summarize the most important findings without repeating every chart.
--->
-
-*Summarize what the filtered job-posting data reveals about the selected market.*
+The market analysis identified five Data Analytics-related job postings within Pharmaceutical and Medicine Manufacturing (NAICS 3254). The postings span roles involving analytics, commercial analysis, global access insights, program management/financial analysis, and biostatistics. The observed opportunities are concentrated geographically, with four postings (80%) located in New Jersey and one (20%) in Missouri. Work-arrangement information is limited: one posting (20%) is explicitly classified as hybrid, while four (80%) have an unknown work-arrangement classification. Because the filtered sample contains only five postings, these findings represent a snapshot of the available dataset rather than the full national market for pharmaceutical analytics careers.
 
 ### Key Findings
 
-- *Insert the most important demand finding.*
-- *Insert the most important salary finding.*
-- *Insert the most important location or remote-work finding.*
-- *Insert the most important experience finding.*
+- **Demand:** Five Data Analytics-related postings were identified within the NAICS 3254 industry subset.
+- **Location:** Four postings (80%) are located in New Jersey, with one (20%) in Missouri.
+- **Work arrangement:** One posting (20%) is explicitly hybrid; four (80%) have an unknown work-arrangement classification.
+- **Sample limitation:** The five-posting sample should be interpreted as a snapshot rather than a complete representation of the national market.
 
 ## Job Volume
 
