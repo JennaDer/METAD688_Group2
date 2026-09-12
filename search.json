@@ -144,7 +144,7 @@
     "href": "market_baseline.html#market-overview",
     "title": "Market Baseline",
     "section": "Market Overview",
-    "text": "Market Overview\n\nSummarize what the filtered job-posting data reveals about the selected market.\n\nKey Findings\n\nInsert the most important demand finding.\nInsert the most important salary finding.\nInsert the most important location or remote-work finding.\nInsert the most important experience finding."
+    "text": "Market Overview\nThe market analysis identified five Data Analytics-related job postings within Pharmaceutical and Medicine Manufacturing (NAICS 3254). The postings span roles involving analytics, commercial analysis, global access insights, program management/financial analysis, and biostatistics. The observed opportunities are concentrated geographically, with four postings (80%) located in New Jersey and one (20%) in Missouri. Work-arrangement information is limited: one posting (20%) is explicitly classified as hybrid, while four (80%) have an unknown work-arrangement classification. Because the filtered sample contains only five postings, these findings represent a snapshot of the available dataset rather than the full national market for pharmaceutical analytics careers.\n\nKey Findings\n\nDemand: Five Data Analytics-related postings were identified within the NAICS 3254 industry subset.\nLocation: Four postings (80%) are located in New Jersey, with one (20%) in Missouri.\nWork arrangement: One posting (20%) is explicitly hybrid; four (80%) have an unknown work-arrangement classification.\nSample limitation: The five-posting sample should be interpreted as a snapshot rather than a complete representation of the national market."
   },
   {
     "objectID": "market_baseline.html#job-volume",
