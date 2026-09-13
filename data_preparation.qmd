@@ -1,200 +1,330 @@
 ---
 title: "Data Preparation"
-subtitle: "Industry and Career Dataset Development"
+subtitle: "Module 2 — Filtering and Cleaning the Career Market Panel"
 bibliography: references.bib
-toc: true
 ---
 
-<!-- SECTION OWNER: Data preparation and cleaning partner -->
-<!-- Do not display ownership notes on the published website. -->
-
-#### Purpose
-
-This page documents how the raw MET Employability Career Match job-posting data was filtered and cleaned to create the analytical dataset used throughout this project.
-
-::: {.callout-note}
 ## Project Scope
 
-**Industry:** Pharmaceutical and Medicine Manufacturing  
-**NAICS code:** 3254  
-**Career pathway:** *Insert the team's selected career pathway*  
-**Analysis period:** *Insert the selected date range*
-:::
+This page documents how the raw CareerCompass extract was reduced to the analytical panel used throughout the rest of the site. The panel covers one industry and one career pathway, as the project scope requires.
+
+| Element | Selection |
+|---|---|
+| Industry | Computer Systems Design and Related Services |
+| NAICS 2022 code | 5415 |
+| Career pathway | Analytics roles: data analyst, data scientist, data engineer, business intelligence, business analyst |
+| Date window | 2026-03-25 to 2026-06-29 |
+| Final panel size | 287 postings |
+
+### Note on the industry change
+
+This project was originally scoped to Pharmaceutical and Medicine Manufacturing (NAICS 3254). We abandoned that scope in Module 2 after a volume check returned only 39 postings across the entire extract, falling to between 2 and 5 once analytics roles were isolated. A sample that small cannot support salary, geographic, or skill analysis.
+
+We checked every manufacturing code before moving on. The sector as a whole held 313 analytics postings, and no single four-digit manufacturing code exceeded 57. We selected NAICS 5415 because it is a standard four-digit code, it appears in the assignment's own list of relevant industries, and it carries enough volume to support the required analysis.
 
 ## Data Source and Connection
 
-The project uses job-posting data from the MET Employability Career Match dataset. The raw data contains 165,386 job-posting records across 17 Parquet partition files.
+The source is the MET CareerCompass 2026 job-postings extract, supplied as 17 Parquet partitions holding 165,386 postings and 115 variables.
 
-The files are stored privately and are not included in the public GitHub repository. A shared loading script connects each authorized team member’s environment to the data without exposing API credentials or private file locations.
+The raw files are not committed to this repository. Each team member downloads them from the course-provided folder and points a local path at the download location, as described in the README. The processed panel produced by this page is committed, so the rest of the site renders without access to the raw extract.
 
-**Shared connection script:** `scripts/load_data.py`
+Filtering and cleaning run in PySpark through `scripts/build_panel.py`, which imports two helper modules, `scripts/clean_location.py` and `scripts/clean_salary.py`. The script writes one output file, `data/processed/career_market_panel.csv`.
 
-<!-- PARTNER INSTRUCTIONS:
-Confirm the final record and column counts after loading.
-Describe any additional datasets used.
-Do not include API keys or private file paths.
--->
+```{python}
+#| label: setup
+#| echo: false
+
+import json
+import pandas as pd
+
+panel = pd.read_csv("data/processed/career_market_panel.csv")
+n = len(panel)
+```
 
 ## Industry Filter
 
-The project is limited to Pharmaceutical and Medicine Manufacturing under NAICS 3254.
-
-<!-- PARTNER INSTRUCTIONS:
-Explain the exact field and logic used to apply the NAICS 3254 filter.
-Report the number of records before and after filtering.
--->
-
-### Filtering Method
-
-*Describe how the NAICS industry filter was applied.*
-
-### Filtering Results
-
-| Measure | Result |
-|---|---:|
-| Records before industry filtering | *Insert result* |
-| Records after applying NAICS 3254 | *Insert result* |
-| Percentage retained | *Insert result* |
+We filtered on `NAICS_2022_4`, the four-digit 2022 NAICS code attached to each posting. The extract also carries two-, three-, five-, and six-digit variants. We used the four-digit field because the assignment specifies four- or six-digit codes, and because `NAICS_2022_4_NAME` is blank throughout the extract while `NAICS_2022_6_NAME` is populated and supplies the industry label.
 
 ## Career-Pathway Filter
 
-<!-- PARTNER INSTRUCTIONS:
-Document the selected role keywords, SOC/O*NET mappings, skill logic, or combination used.
-Explain why the filtering method fits the team's career pathway.
--->
+Filtering on the word "analyst" alone was not workable. Within NAICS 5415 it returned 621 postings, but the results included security analysts, QA analysts, trade compliance analysts, and IT support analysts. "Analyst" functions as a generic corporate suffix, and including those roles would distort both the skill analysis and the salary distribution.
 
-### Target Roles
+We therefore defined the role family positively, matching titles that name an analytics role directly rather than excluding unwanted ones after the fact.
 
-*List and explain the titles or occupation categories included in the analysis.*
+**Included patterns:** `data analyst`, `data scien`, `business intelligence`, `bi analyst`, `data engineer`, `analytics engineer`, `business analyst`, `reporting analyst`
 
-### Role-Selection Logic
+**Excluded patterns:** `security`, `qa`, `quality assurance`, `support`, `trade`, `exploitation`, `acceptance testing`, `network`
 
-*Explain the keywords, occupation codes, or other rules used to identify relevant roles.*
+The exclusion rule removed only two further postings, which confirms the positive definition was doing the work. We kept it in place as a documented check.
 
-### Career-Filter Results
+## Record Counts
 
-| Measure | Result |
-|---|---:|
-| Industry records before career filtering | *Insert result* |
-| Records in the final career-market dataset | *Insert result* |
-| Percentage retained | *Insert result* |
+```{python}
+#| label: tbl-funnel
+#| echo: false
+
+funnel = pd.DataFrame(
+    {
+        "Step": [
+            "Raw extract",
+            "After NAICS 5415 filter",
+            "After role-family inclusion",
+            "After role-family exclusion",
+            "After valid posted date",
+        ],
+        "Postings": [165386, 8855, 289, 287, n],
+    }
+)
+funnel["Retained"] = (funnel["Postings"] / 165386 * 100).round(2).astype(str) + "%"
+funnel
+```
 
 ## Date Window
 
-<!-- PARTNER INSTRUCTIONS:
-State the posting-date window and explain why it was selected.
--->
+Every posting in the panel carries a valid `POSTED` date, so no records were lost at this stage.
 
-**Selected period:** *Insert start and end dates.*
+```{python}
+#| label: date-window
+#| echo: false
 
-*Explain how posting dates and expiration dates were handled.*
+dates = pd.to_datetime(panel["posted_date"])
+print(f"Earliest posting: {dates.min().date()}")
+print(f"Latest posting:   {dates.max().date()}")
+print(f"Span:             {(dates.max() - dates.min()).days} days")
+```
+
+The extract covers a single quarter. Rather than impose a narrower window on an already narrow range, we kept the full span and recorded it. Any seasonal pattern in analytics hiring cannot be observed in three months of data, and we note this as a limitation rather than attempting to correct for it.
 
 ## Cleaning Decisions
 
 ### Duplicate Records
 
-<!-- Document duplicate-identification fields and removal logic. -->
+All 287 postings carry a unique `ID`, so the panel contains no exact duplicates. The `DUPLICATES` field supplied with the extract is blank on every row and provided no help.
 
-*Explain how duplicate job postings were identified and handled.*
+Grouping by title, employer, and posted date does surface repeats. Inspection showed these are multi-location postings rather than duplicates: Esri, for example, advertised the same Enterprise Data Engineer role separately for California, Missouri, and Virginia, each with its own record ID. We kept these, since a single opening advertised in three states is three opportunities from a job seeker's perspective. The effect is that geographic counts are slightly inflated relative to the number of distinct openings, and we note that where geography is discussed.
 
-| Duplicate Check | Result |
-|---|---:|
-| Records before duplicate removal | *Insert result* |
-| Duplicate records identified | *Insert result* |
-| Records after duplicate removal | *Insert result* |
+### Salary
 
-### Salary Fields
+Salary required the most cleaning. `SALARY_FROM` and `SALARY_TO` are stored as strings and are blank on most rows.
 
-<!-- Document SALARY_FROM, SALARY_TO, pay period, missing salaries and outliers. -->
+Three rules were applied:
 
-*Explain how salary fields were standardized and how missing or extreme values were handled.*
+- Rows carrying `0.00` were treated as missing rather than as a salary of zero. Four postings had this pattern, all of them cases where the source held a structured `MonetaryAmount` object the provider could not flatten.
+- One posting listed an annual salary of $401, which is implausible. We set a floor of $20,000 and excluded it.
+- Four postings quoted hourly rates. These were converted to annual equivalents at 2,080 hours so that all salary figures sit on one scale.
+
+```{python}
+#| label: tbl-salary
+#| echo: false
+
+sal = panel["salary_midpoint"].dropna()
+pd.DataFrame(
+    {
+        "Measure": [
+            "Postings with usable salary",
+            "Share of panel",
+            "Minimum",
+            "Median",
+            "Mean",
+            "Maximum",
+        ],
+        "Value": [
+            f"{len(sal)}",
+            f"{len(sal)/n*100:.0f}%",
+            f"${sal.min():,.0f}",
+            f"${sal.median():,.0f}",
+            f"${sal.mean():,.0f}",
+            f"${sal.max():,.0f}",
+        ],
+    }
+)
+```
+
+We report the midpoint of the advertised range. Where only a lower bound exists, the lower bound is used. Coverage is 39 percent of the panel, which is normal for job-posting data, and salary findings should be read as describing the postings that disclose pay rather than the market as a whole.
 
 ### Experience Requirements
 
-<!-- Document MIN_YEARS_EXPERIENCE and MAX_YEARS_EXPERIENCE. -->
+`MIN_YEARS_EXPERIENCE` and `MAX_YEARS_EXPERIENCE` are blank on all 165,386 rows of the extract, not only within our filtered panel. No experience analysis is possible from this field.
 
-*Explain how experience requirements were cleaned and categorized.*
+We substitute the education distribution where an experience requirement would otherwise be reported, and flag the gap in the limitations section.
 
 ### Education Requirements
 
-<!-- Document education-level fields and inconsistent or missing labels. -->
+Six education fields are populated on every posting. We examined both the minimum and maximum fields and use the maximum.
 
-*Explain how education requirements were standardized.*
+`MIN_EDULEVELS_NAME` records "Associate's degree" on 235 of 287 postings, which reads as a modeled floor rather than a stated employer requirement. Charting it would produce a single dominant category carrying no information.
+
+```{python}
+#| label: tbl-education
+#| echo: false
+
+edu = panel["MAX_EDULEVELS_NAME"].value_counts().reset_index()
+edu.columns = ["Highest education level listed", "Postings"]
+edu["Share"] = (edu["Postings"] / n * 100).round(1).astype(str) + "%"
+edu
+```
 
 ### Skill Fields
 
-<!-- Document SKILLS, SPECIALIZED_SKILLS and SOFTWARE_SKILLS. -->
+The extract carries four skill families. Coverage within the panel is uneven:
 
-*Explain how skill lists, duplicates, capitalization and missing values were handled.*
+- `SKILLS_NAME`: 278 of 287 postings
+- `SPECIALIZED_SKILLS_NAME`: 277 of 287
+- `COMMON_SKILLS_NAME`: 82 of 287
+- `SOFTWARE_SKILLS_NAME`: present on 278 rows but containing an empty array in every case
+
+A more serious problem affects all of them. Across the full extract of 165,386 postings there are 2,025 distinct values in `SKILLS_NAME`, and **not one begins with a letter between D and Z**. The same holds for `SPECIALIZED_SKILLS_NAME`, which carries 1,834 distinct values under the same constraint.
+
+The practical consequence is that no posting in the dataset lists Python, SQL, R, Tableau, Power BI, Spark, or any other tool whose name falls in that range. The skill lists appear to have been alphabetically truncated before delivery.
+
+We report skill findings from what is present and flag the truncation prominently wherever skills are discussed. This limitation affects the skill-gap analysis in Step 3 directly, and we have raised it with the instructor.
 
 ### Remote and Onsite Indicators
 
-<!-- Document REMOTE_TYPE or REMOTE_TYPE_NAME and final work-arrangement categories. -->
+`REMOTE_TYPE_NAME` classifies 142 of 287 postings. The remaining 145 are recorded as "Unknown".
 
-*Explain how remote, hybrid and onsite postings were classified.*
+We verified that Unknown means unclassified rather than misclassified: every posting whose `LOCATION` text mentions remote work is already flagged Remote or Hybrid, so no records needed recovery. Unknown is reported as its own category and is not treated as onsite.
+
+```{python}
+#| label: tbl-remote
+#| echo: false
+
+rem = panel["REMOTE_TYPE_NAME"].value_counts().reset_index()
+rem.columns = ["Work arrangement", "Postings"]
+rem["Share of panel"] = (rem["Postings"] / n * 100).round(1).astype(str) + "%"
+rem
+```
 
 ### Location Fields
 
-<!-- Document city, state, county and complete-location fields. -->
+The location fields in the extract are unreliable. `STATE_NAME` holds a valid state name on only about 65 of 287 postings; the rest contain "United States", "Remote", city fragments such as "Francisco" and "Austin", or blanks. The structured alternatives are sparser still, with `STATE` populated on 92 postings, `COUNTY_NAME` on 39, and `MSA_NAME` on 16.
 
-*Explain how missing, inconsistent or incomplete location information was handled.*
+`LOCATION` is the only location field populated on every row, but it is free text with no consistent structure.
+
+We built a derived `state` column using a four-stage rule, implemented in `scripts/clean_location.py`:
+
+1. Match a full state name inside `LOCATION`
+2. Otherwise match a two-letter state code between delimiters
+3. Otherwise fall back to the `STATE` column
+4. Otherwise map a small set of bare city names to their states
+
+Two-letter codes recovered at any stage are normalized to full state names so that "CA" and "California" do not appear as separate categories.
+
+```{python}
+#| label: location-recovery
+#| echo: false
+
+known = (panel["state"] != "Unspecified").sum()
+print(f"Postings with a recovered state: {known} of {n} ({known/n*100:.0f}%)")
+print(f"Distinct states represented:     {panel.loc[panel['state'] != 'Unspecified', 'state'].nunique()}")
+```
+
+The 82 remaining postings are genuinely locationless: their `LOCATION` reads "United States", "Remote", "US", or "USA". These are reported as Unspecified rather than dropped, since a nationwide or remote posting is a real category rather than missing data.
 
 ### Industry and Occupation Fields
 
-<!-- Document final NAICS and occupation fields retained in the cleaned dataset. -->
+`NAICS_2022_4_NAME` is blank throughout the extract, so the industry label is taken from `NAICS_2022_6_NAME`, which reads "Computer Systems Design and Related Services" on all 287 rows.
 
-*Explain how industry and occupation labels were standardized.*
+For occupation we use `ONET_NAME`, a controlled vocabulary, in preference to raw job titles. Titles are free text, so "Senior Data Analyst" and "Data Analyst - Senior" would otherwise count as separate roles.
+
+ONET misclassified eight postings, placing them under "Models", "Actors", or "Information Security Analysts". Inspection confirmed all eight are genuine analytics roles, including Advanced Data Analyst, Business Intelligence Developer, and People Data Analyst. We kept them and grouped them as "Other", since our title filter rather than ONET defines membership in the role family.
+
+```{python}
+#| label: tbl-occupation
+#| echo: false
+
+occ = panel["occupation_group"].value_counts().reset_index()
+occ.columns = ["Occupation group", "Postings"]
+occ["Share"] = (occ["Postings"] / n * 100).round(1).astype(str) + "%"
+occ
+```
+
+### Inconsistent Labels
+
+Employer names are not standardized. Three patterns appear:
+
+- The same company under different spellings, such as "Turnitin" and "Turnitinllc", and "Anduril Industries" and "Andurilindustries"
+- Applicant tracking system URLs recorded as the employer, such as "Jobs.baesystems.com" and "Careers.pnc.com"
+- Job titles differing only in spacing, such as "Technical Consultant- Enterprise Data Engineer" and "Technical Consultant - Enterprise Data Engineer"
+
+We left employer names as supplied rather than merging them, since any merge rule risks combining genuinely distinct entities. Employer counts should therefore be read as approximate, and the pattern is noted wherever employers are discussed.
 
 ## Missing-Value Summary
 
-<!-- Add rows for the final variables used in the analysis. -->
+```{python}
+#| label: tbl-missing
+#| echo: false
 
-| Variable | Missing Before Cleaning | Missing After Cleaning | Treatment |
-|---|---:|---:|---|
-| Salary | *Insert* | *Insert* | *Insert treatment* |
-| Experience | *Insert* | *Insert* | *Insert treatment* |
-| Education | *Insert* | *Insert* | *Insert treatment* |
-| Skills | *Insert* | *Insert* | *Insert treatment* |
-| Remote status | *Insert* | *Insert* | *Insert treatment* |
-| Location | *Insert* | *Insert* | *Insert treatment* |
+fields = {
+    "Job title": "TITLE_CLEAN",
+    "Employer": "COMPANY_NAME",
+    "Occupation group": "occupation_group",
+    "Posted date": "posted_date",
+    "State (derived)": "state",
+    "Work arrangement": "REMOTE_TYPE_NAME",
+    "Education (max)": "MAX_EDULEVELS_NAME",
+    "Salary midpoint": "salary_midpoint",
+    "Skills": "SKILLS_NAME",
+}
 
-## Outlier Treatment
+rows = []
+for label, column in fields.items():
+    series = panel[column]
+    if column == "state":
+        present = (series != "Unspecified").sum()
+    elif column == "REMOTE_TYPE_NAME":
+        present = (series != "Unknown").sum()
+    elif column == "SKILLS_NAME":
+        present = series.notna().sum() - (series == "[]").sum()
+    else:
+        present = series.notna().sum()
+    rows.append(
+        {
+            "Field": label,
+            "Populated": int(present),
+            "Missing": int(n - present),
+            "Coverage": f"{present / n * 100:.0f}%",
+        }
+    )
 
-<!-- Identify the rules used for salary, experience or other numeric outliers. -->
+pd.DataFrame(rows)
+```
 
-*Describe the outlier-detection method, and explain whether records were removed, capped or retained.*
+Coverage varies widely. Title, employer, occupation, date, and education are complete. Salary, location, and work arrangement are partial, and each is reported against its own denominator rather than against the full panel. Experience is absent entirely.
 
-## Final Analytical Dataset
+## Analytical Limitations
 
-The completed cleaning process produces the dataset used for the market-baseline analysis.
+Five limitations carry into the rest of the project.
 
-**Planned output:** `data/processed/career_market_panel.csv`
+**Skill lists are alphabetically truncated.** No skill beginning with a letter from D to Z appears anywhere in the source extract. Python, SQL, R, Tableau, and similar tools cannot be observed. This constrains the skill-gap analysis in Step 3 more than any other issue on this page.
 
-| Final Dataset Measure | Result |
-|---|---:|
-| Number of records | *Insert result* |
-| Number of variables | *Insert result* |
-| Unique employers | *Insert result* |
-| Unique job titles or segments | *Insert result* |
-| Date range | *Insert result* |
+**Experience requirements are absent.** Both experience fields are blank across all 165,386 postings, so the analysis substitutes education where experience would otherwise be reported.
 
-## Data Dictionary
+**Salary reflects disclosing employers only.** Pay appears on 39 percent of postings. Employers that disclose salary may differ systematically from those that do not, so salary figures describe the disclosing subset rather than the market.
 
-<!-- PARTNER INSTRUCTIONS:
-Add or link the required variable-description file.
-Suggested output: outputs/data_dictionary.csv
--->
+**The window is one quarter.** The extract spans 2026-03-25 to 2026-06-29. Seasonal hiring patterns cannot be observed, and any trend over time within the panel should be treated as noise rather than signal.
 
-The project data dictionary documents each retained variable, its meaning, source field and cleaning treatment.
+**The panel is a sample, not a census.** 287 postings in one industry over one quarter is enough to describe patterns, not enough to estimate market size. Findings are stated as what these postings show rather than as claims about analytics hiring nationally.
 
-[Download the data dictionary](outputs/data_dictionary.csv)
+## Output
 
-## Limitations
+The cleaned panel is written to `data/processed/career_market_panel.csv` and is committed to the repository so the remaining pages render without access to the raw extract.
 
-<!-- Document data-quality limitations that remain after cleaning. -->
+```{python}
+#| label: tbl-schema
+#| echo: false
 
-*Explain any important limitations involving missing values, inferred classifications, inconsistent labels, geographic coverage or salary reporting.*
+pd.DataFrame(
+    {
+        "Column": panel.columns,
+        "Type": [str(t) for t in panel.dtypes],
+        "Non-null": panel.notna().sum().values,
+    }
+)
+```
 
-## Reproducibility
+To rebuild the panel from source, place the 17 Parquet files in `data/MET_CareerCompass_2026/` and run:
 
-The analytical dataset can be reproduced using the documented filtering and cleaning process, the private raw files and the shared project scripts. Sensitive credentials and large raw files are excluded from GitHub.
+```bash
+python3 scripts/build_panel.py
+```

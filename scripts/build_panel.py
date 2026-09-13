@@ -99,9 +99,9 @@ print("STEP 4 - cleaned columns added")
 
 # Step 5: export
 final = panel.select(*KEEP_COLUMNS)
-final.coalesce(1).write.mode("overwrite").option("header", True).csv(
-    "data/processed/_panel_tmp"
-)
+final.coalesce(1).write.mode("overwrite").option("header", True).option(
+    "escape", '"'
+).csv("data/processed/_panel_tmp")
 rows = final.count()
 
 spark.stop()
