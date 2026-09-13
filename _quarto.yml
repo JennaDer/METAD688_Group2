@@ -52,3 +52,6 @@ format:
     smooth-scroll: true
 
 editor: visual
+
+execute:
+  freeze: auto
