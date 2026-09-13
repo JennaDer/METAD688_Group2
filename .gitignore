@@ -5,3 +5,4 @@ _site/
 .venv/
 data/raw/
 __pycache__/
+data
