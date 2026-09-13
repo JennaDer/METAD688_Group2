@@ -26,10 +26,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -74,6 +109,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -165,36 +203,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-source-and-connection" id="toc-data-source-and-connection" class="nav-link active" data-scroll-target="#data-source-and-connection">Data Source and Connection</a></li>
-  <li><a href="#industry-filter" id="toc-industry-filter" class="nav-link" data-scroll-target="#industry-filter">Industry Filter</a>
+  <li><a href="#project-scope" id="toc-project-scope" class="nav-link active" data-scroll-target="#project-scope">Project Scope</a>
   <ul class="collapse">
-  <li><a href="#filtering-method" id="toc-filtering-method" class="nav-link" data-scroll-target="#filtering-method">Filtering Method</a></li>
-  <li><a href="#filtering-results" id="toc-filtering-results" class="nav-link" data-scroll-target="#filtering-results">Filtering Results</a></li>
+  <li><a href="#note-on-the-industry-change" id="toc-note-on-the-industry-change" class="nav-link" data-scroll-target="#note-on-the-industry-change">Note on the industry change</a></li>
   </ul></li>
-  <li><a href="#career-pathway-filter" id="toc-career-pathway-filter" class="nav-link" data-scroll-target="#career-pathway-filter">Career-Pathway Filter</a>
-  <ul class="collapse">
-  <li><a href="#target-roles" id="toc-target-roles" class="nav-link" data-scroll-target="#target-roles">Target Roles</a></li>
-  <li><a href="#role-selection-logic" id="toc-role-selection-logic" class="nav-link" data-scroll-target="#role-selection-logic">Role-Selection Logic</a></li>
-  <li><a href="#career-filter-results" id="toc-career-filter-results" class="nav-link" data-scroll-target="#career-filter-results">Career-Filter Results</a></li>
-  </ul></li>
+  <li><a href="#data-source-and-connection" id="toc-data-source-and-connection" class="nav-link" data-scroll-target="#data-source-and-connection">Data Source and Connection</a></li>
+  <li><a href="#industry-filter" id="toc-industry-filter" class="nav-link" data-scroll-target="#industry-filter">Industry Filter</a></li>
+  <li><a href="#career-pathway-filter" id="toc-career-pathway-filter" class="nav-link" data-scroll-target="#career-pathway-filter">Career-Pathway Filter</a></li>
+  <li><a href="#record-counts" id="toc-record-counts" class="nav-link" data-scroll-target="#record-counts">Record Counts</a></li>
   <li><a href="#date-window" id="toc-date-window" class="nav-link" data-scroll-target="#date-window">Date Window</a></li>
   <li><a href="#cleaning-decisions" id="toc-cleaning-decisions" class="nav-link" data-scroll-target="#cleaning-decisions">Cleaning Decisions</a>
   <ul class="collapse">
   <li><a href="#duplicate-records" id="toc-duplicate-records" class="nav-link" data-scroll-target="#duplicate-records">Duplicate Records</a></li>
-  <li><a href="#salary-fields" id="toc-salary-fields" class="nav-link" data-scroll-target="#salary-fields">Salary Fields</a></li>
+  <li><a href="#salary" id="toc-salary" class="nav-link" data-scroll-target="#salary">Salary</a></li>
   <li><a href="#experience-requirements" id="toc-experience-requirements" class="nav-link" data-scroll-target="#experience-requirements">Experience Requirements</a></li>
   <li><a href="#education-requirements" id="toc-education-requirements" class="nav-link" data-scroll-target="#education-requirements">Education Requirements</a></li>
   <li><a href="#skill-fields" id="toc-skill-fields" class="nav-link" data-scroll-target="#skill-fields">Skill Fields</a></li>
   <li><a href="#remote-and-onsite-indicators" id="toc-remote-and-onsite-indicators" class="nav-link" data-scroll-target="#remote-and-onsite-indicators">Remote and Onsite Indicators</a></li>
   <li><a href="#location-fields" id="toc-location-fields" class="nav-link" data-scroll-target="#location-fields">Location Fields</a></li>
   <li><a href="#industry-and-occupation-fields" id="toc-industry-and-occupation-fields" class="nav-link" data-scroll-target="#industry-and-occupation-fields">Industry and Occupation Fields</a></li>
+  <li><a href="#inconsistent-labels" id="toc-inconsistent-labels" class="nav-link" data-scroll-target="#inconsistent-labels">Inconsistent Labels</a></li>
   </ul></li>
   <li><a href="#missing-value-summary" id="toc-missing-value-summary" class="nav-link" data-scroll-target="#missing-value-summary">Missing-Value Summary</a></li>
-  <li><a href="#outlier-treatment" id="toc-outlier-treatment" class="nav-link" data-scroll-target="#outlier-treatment">Outlier Treatment</a></li>
-  <li><a href="#final-analytical-dataset" id="toc-final-analytical-dataset" class="nav-link" data-scroll-target="#final-analytical-dataset">Final Analytical Dataset</a></li>
-  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary">Data Dictionary</a></li>
-  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
-  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
+  <li><a href="#analytical-limitations" id="toc-analytical-limitations" class="nav-link" data-scroll-target="#analytical-limitations">Analytical Limitations</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
   </ul>
 </nav>
     </div>
@@ -204,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Data Preparation</h1>
-<p class="subtitle lead">Industry and Career Dataset Development</p>
+<p class="subtitle lead">Module 2 — Filtering and Cleaning the Career Market Panel</p>
 </div>
 
 
@@ -221,304 +253,708 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- SECTION OWNER: Data preparation and cleaning partner -->
-<!-- Do not display ownership notes on the published website. -->
-<section id="purpose" class="level4">
-<h4 class="anchored" data-anchor-id="purpose">Purpose</h4>
-<p>This page documents how the raw MET Employability Career Match job-posting data was filtered and cleaned to create the analytical dataset used throughout this project.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Project Scope
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Industry:</strong> Pharmaceutical and Medicine Manufacturing<br>
-<strong>NAICS code:</strong> 3254<br>
-<strong>Career pathway:</strong> <em>Insert the team’s selected career pathway</em><br>
-<strong>Analysis period:</strong> <em>Insert the selected date range</em></p>
-</div>
-</div>
+<section id="project-scope" class="level2">
+<h2 class="anchored" data-anchor-id="project-scope">Project Scope</h2>
+<p>This page documents how the raw CareerCompass extract was reduced to the analytical panel used throughout the rest of the site. The panel covers one industry and one career pathway, as the project scope requires.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Industry</td>
+<td>Computer Systems Design and Related Services</td>
+</tr>
+<tr class="even">
+<td>NAICS 2022 code</td>
+<td>5415</td>
+</tr>
+<tr class="odd">
+<td>Career pathway</td>
+<td>Analytics roles: data analyst, data scientist, data engineer, business intelligence, business analyst</td>
+</tr>
+<tr class="even">
+<td>Date window</td>
+<td>2026-03-25 to 2026-06-29</td>
+</tr>
+<tr class="odd">
+<td>Final panel size</td>
+<td>287 postings</td>
+</tr>
+</tbody>
+</table>
+<section id="note-on-the-industry-change" class="level3">
+<h3 class="anchored" data-anchor-id="note-on-the-industry-change">Note on the industry change</h3>
+<p>This project was originally scoped to Pharmaceutical and Medicine Manufacturing (NAICS 3254). We abandoned that scope in Module 2 after a volume check returned only 39 postings across the entire extract, falling to between 2 and 5 once analytics roles were isolated. A sample that small cannot support salary, geographic, or skill analysis.</p>
+<p>We checked every manufacturing code before moving on. The sector as a whole held 313 analytics postings, and no single four-digit manufacturing code exceeded 57. We selected NAICS 5415 because it is a standard four-digit code, it appears in the assignment’s own list of relevant industries, and it carries enough volume to support the required analysis.</p>
+</section>
 </section>
 <section id="data-source-and-connection" class="level2">
 <h2 class="anchored" data-anchor-id="data-source-and-connection">Data Source and Connection</h2>
-<p>The project uses job-posting data from the MET Employability Career Match dataset. The raw data contains 165,386 job-posting records across 17 Parquet partition files.</p>
-<p>The files are stored privately and are not included in the public GitHub repository. A shared loading script connects each authorized team member’s environment to the data without exposing API credentials or private file locations.</p>
-<p><strong>Shared connection script:</strong> <code>scripts/load_data.py</code></p>
-<!-- PARTNER INSTRUCTIONS:
-Confirm the final record and column counts after loading.
-Describe any additional datasets used.
-Do not include API keys or private file paths.
--->
+<p>The source is the MET CareerCompass 2026 job-postings extract, supplied as 17 Parquet partitions holding 165,386 postings and 115 variables.</p>
+<p>The raw files are not committed to this repository. Each team member downloads them from the course-provided folder and points a local path at the download location, as described in the README. The processed panel produced by this page is committed, so the rest of the site renders without access to the raw extract.</p>
+<p>Filtering and cleaning run in PySpark through <code>scripts/build_panel.py</code>, which imports two helper modules, <code>scripts/clean_location.py</code> and <code>scripts/clean_salary.py</code>. The script writes one output file, <code>data/processed/career_market_panel.csv</code>.</p>
 </section>
 <section id="industry-filter" class="level2">
 <h2 class="anchored" data-anchor-id="industry-filter">Industry Filter</h2>
-<p>The project is limited to Pharmaceutical and Medicine Manufacturing under NAICS 3254.</p>
-<!-- PARTNER INSTRUCTIONS:
-Explain the exact field and logic used to apply the NAICS 3254 filter.
-Report the number of records before and after filtering.
--->
-<section id="filtering-method" class="level3">
-<h3 class="anchored" data-anchor-id="filtering-method">Filtering Method</h3>
-<p><em>Describe how the NAICS industry filter was applied.</em></p>
-</section>
-<section id="filtering-results" class="level3">
-<h3 class="anchored" data-anchor-id="filtering-results">Filtering Results</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Measure</th>
-<th style="text-align: right;">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Records before industry filtering</td>
-<td style="text-align: right;"><em>Insert result</em></td>
-</tr>
-<tr class="even">
-<td>Records after applying NAICS 3254</td>
-<td style="text-align: right;"><em>Insert result</em></td>
-</tr>
-<tr class="odd">
-<td>Percentage retained</td>
-<td style="text-align: right;"><em>Insert result</em></td>
-</tr>
-</tbody>
-</table>
-</section>
+<p>We filtered on <code>NAICS_2022_4</code>, the four-digit 2022 NAICS code attached to each posting. The extract also carries two-, three-, five-, and six-digit variants. We used the four-digit field because the assignment specifies four- or six-digit codes, and because <code>NAICS_2022_4_NAME</code> is blank throughout the extract while <code>NAICS_2022_6_NAME</code> is populated and supplies the industry label.</p>
 </section>
 <section id="career-pathway-filter" class="level2">
 <h2 class="anchored" data-anchor-id="career-pathway-filter">Career-Pathway Filter</h2>
-<!-- PARTNER INSTRUCTIONS:
-Document the selected role keywords, SOC/O*NET mappings, skill logic, or combination used.
-Explain why the filtering method fits the team's career pathway.
--->
-<section id="target-roles" class="level3">
-<h3 class="anchored" data-anchor-id="target-roles">Target Roles</h3>
-<p><em>List and explain the titles or occupation categories included in the analysis.</em></p>
+<p>Filtering on the word “analyst” alone was not workable. Within NAICS 5415 it returned 621 postings, but the results included security analysts, QA analysts, trade compliance analysts, and IT support analysts. “Analyst” functions as a generic corporate suffix, and including those roles would distort both the skill analysis and the salary distribution.</p>
+<p>We therefore defined the role family positively, matching titles that name an analytics role directly rather than excluding unwanted ones after the fact.</p>
+<p><strong>Included patterns:</strong> <code>data analyst</code>, <code>data scien</code>, <code>business intelligence</code>, <code>bi analyst</code>, <code>data engineer</code>, <code>analytics engineer</code>, <code>business analyst</code>, <code>reporting analyst</code></p>
+<p><strong>Excluded patterns:</strong> <code>security</code>, <code>qa</code>, <code>quality assurance</code>, <code>support</code>, <code>trade</code>, <code>exploitation</code>, <code>acceptance testing</code>, <code>network</code></p>
+<p>The exclusion rule removed only two further postings, which confirms the positive definition was doing the work. We kept it in place as a documented check.</p>
 </section>
-<section id="role-selection-logic" class="level3">
-<h3 class="anchored" data-anchor-id="role-selection-logic">Role-Selection Logic</h3>
-<p><em>Explain the keywords, occupation codes, or other rules used to identify relevant roles.</em></p>
-</section>
-<section id="career-filter-results" class="level3">
-<h3 class="anchored" data-anchor-id="career-filter-results">Career-Filter Results</h3>
-<table class="caption-top table">
+<section id="record-counts" class="level2">
+<h2 class="anchored" data-anchor-id="record-counts">Record Counts</h2>
+<div class="cell" data-execution_count="2">
+<div id="tbl-funnel" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
-<th>Measure</th>
-<th style="text-align: right;">Result</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Step</th>
+<th data-quarto-table-cell-role="th">Postings</th>
+<th data-quarto-table-cell-role="th">Retained</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Industry records before career filtering</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">0</th>
+<td>Raw extract</td>
+<td>165386</td>
+<td>100.0%</td>
 </tr>
 <tr class="even">
-<td>Records in the final career-market dataset</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">1</th>
+<td>After NAICS 5415 filter</td>
+<td>8855</td>
+<td>5.35%</td>
 </tr>
 <tr class="odd">
-<td>Percentage retained</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">2</th>
+<td>After role-family inclusion</td>
+<td>289</td>
+<td>0.17%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>After role-family exclusion</td>
+<td>287</td>
+<td>0.17%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>After valid posted date</td>
+<td>287</td>
+<td>0.17%</td>
 </tr>
 </tbody>
 </table>
-</section>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
 </section>
 <section id="date-window" class="level2">
 <h2 class="anchored" data-anchor-id="date-window">Date Window</h2>
-<!-- PARTNER INSTRUCTIONS:
-State the posting-date window and explain why it was selected.
--->
-<p><strong>Selected period:</strong> <em>Insert start and end dates.</em></p>
-<p><em>Explain how posting dates and expiration dates were handled.</em></p>
+<p>Every posting in the panel carries a valid <code>POSTED</code> date, so no records were lost at this stage.</p>
+<div id="date-window" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>Earliest posting: 2026-03-25
+Latest posting:   2026-06-29
+Span:             96 days</code></pre>
+</div>
+</div>
+<p>The extract covers a single quarter. Rather than impose a narrower window on an already narrow range, we kept the full span and recorded it. Any seasonal pattern in analytics hiring cannot be observed in three months of data, and we note this as a limitation rather than attempting to correct for it.</p>
 </section>
 <section id="cleaning-decisions" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning-decisions">Cleaning Decisions</h2>
 <section id="duplicate-records" class="level3">
 <h3 class="anchored" data-anchor-id="duplicate-records">Duplicate Records</h3>
-<!-- Document duplicate-identification fields and removal logic. -->
-<p><em>Explain how duplicate job postings were identified and handled.</em></p>
-<table class="caption-top table">
+<p>All 287 postings carry a unique <code>ID</code>, so the panel contains no exact duplicates. The <code>DUPLICATES</code> field supplied with the extract is blank on every row and provided no help.</p>
+<p>Grouping by title, employer, and posted date does surface repeats. Inspection showed these are multi-location postings rather than duplicates: Esri, for example, advertised the same Enterprise Data Engineer role separately for California, Missouri, and Virginia, each with its own record ID. We kept these, since a single opening advertised in three states is three opportunities from a job seeker’s perspective. The effect is that geographic counts are slightly inflated relative to the number of distinct openings, and we note that where geography is discussed.</p>
+</section>
+<section id="salary" class="level3">
+<h3 class="anchored" data-anchor-id="salary">Salary</h3>
+<p>Salary required the most cleaning. <code>SALARY_FROM</code> and <code>SALARY_TO</code> are stored as strings and are blank on most rows.</p>
+<p>Three rules were applied:</p>
+<ul>
+<li>Rows carrying <code>0.00</code> were treated as missing rather than as a salary of zero. Four postings had this pattern, all of them cases where the source held a structured <code>MonetaryAmount</code> object the provider could not flatten.</li>
+<li>One posting listed an annual salary of $401, which is implausible. We set a floor of $20,000 and excluded it.</li>
+<li>Four postings quoted hourly rates. These were converted to annual equivalents at 2,080 hours so that all salary figures sit on one scale.</li>
+</ul>
+<div class="cell" data-execution_count="4">
+<div id="tbl-salary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="4">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-salary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2
+</figcaption>
+<div aria-describedby="tbl-salary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
-<th>Duplicate Check</th>
-<th style="text-align: right;">Result</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Measure</th>
+<th data-quarto-table-cell-role="th">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Records before duplicate removal</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">0</th>
+<td>Postings with usable salary</td>
+<td>112</td>
 </tr>
 <tr class="even">
-<td>Duplicate records identified</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">1</th>
+<td>Share of panel</td>
+<td>39%</td>
 </tr>
 <tr class="odd">
-<td>Records after duplicate removal</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">2</th>
+<td>Minimum</td>
+<td>$66,560</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Median</td>
+<td>$150,708</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Mean</td>
+<td>$156,043</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Maximum</td>
+<td>$318,250</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="salary-fields" class="level3">
-<h3 class="anchored" data-anchor-id="salary-fields">Salary Fields</h3>
-<!-- Document SALARY_FROM, SALARY_TO, pay period, missing salaries and outliers. -->
-<p><em>Explain how salary fields were standardized and how missing or extreme values were handled.</em></p>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>We report the midpoint of the advertised range. Where only a lower bound exists, the lower bound is used. Coverage is 39 percent of the panel, which is normal for job-posting data, and salary findings should be read as describing the postings that disclose pay rather than the market as a whole.</p>
 </section>
 <section id="experience-requirements" class="level3">
 <h3 class="anchored" data-anchor-id="experience-requirements">Experience Requirements</h3>
-<!-- Document MIN_YEARS_EXPERIENCE and MAX_YEARS_EXPERIENCE. -->
-<p><em>Explain how experience requirements were cleaned and categorized.</em></p>
+<p><code>MIN_YEARS_EXPERIENCE</code> and <code>MAX_YEARS_EXPERIENCE</code> are blank on all 165,386 rows of the extract, not only within our filtered panel. No experience analysis is possible from this field.</p>
+<p>We substitute the education distribution where an experience requirement would otherwise be reported, and flag the gap in the limitations section.</p>
 </section>
 <section id="education-requirements" class="level3">
 <h3 class="anchored" data-anchor-id="education-requirements">Education Requirements</h3>
-<!-- Document education-level fields and inconsistent or missing labels. -->
-<p><em>Explain how education requirements were standardized.</em></p>
+<p>Six education fields are populated on every posting. We examined both the minimum and maximum fields and use the maximum.</p>
+<p><code>MIN_EDULEVELS_NAME</code> records “Associate’s degree” on 235 of 287 postings, which reads as a modeled floor rather than a stated employer requirement. Charting it would produce a single dominant category carrying no information.</p>
+<div class="cell" data-execution_count="5">
+<div id="tbl-education" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="5">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3
+</figcaption>
+<div aria-describedby="tbl-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Highest education level listed</th>
+<th data-quarto-table-cell-role="th">Postings</th>
+<th data-quarto-table-cell-role="th">Share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Master's degree</td>
+<td>101</td>
+<td>35.2%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Bachelor's degree</td>
+<td>94</td>
+<td>32.8%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Associate's degree</td>
+<td>48</td>
+<td>16.7%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Doctoral or professional degree</td>
+<td>44</td>
+<td>15.3%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
 </section>
 <section id="skill-fields" class="level3">
 <h3 class="anchored" data-anchor-id="skill-fields">Skill Fields</h3>
-<!-- Document SKILLS, SPECIALIZED_SKILLS and SOFTWARE_SKILLS. -->
-<p><em>Explain how skill lists, duplicates, capitalization and missing values were handled.</em></p>
+<p>The extract carries four skill families. Coverage within the panel is uneven:</p>
+<ul>
+<li><code>SKILLS_NAME</code>: 278 of 287 postings</li>
+<li><code>SPECIALIZED_SKILLS_NAME</code>: 277 of 287</li>
+<li><code>COMMON_SKILLS_NAME</code>: 82 of 287</li>
+<li><code>SOFTWARE_SKILLS_NAME</code>: present on 278 rows but containing an empty array in every case</li>
+</ul>
+<p>A more serious problem affects all of them. Across the full extract of 165,386 postings there are 2,025 distinct values in <code>SKILLS_NAME</code>, and <strong>not one begins with a letter between D and Z</strong>. The same holds for <code>SPECIALIZED_SKILLS_NAME</code>, which carries 1,834 distinct values under the same constraint.</p>
+<p>The practical consequence is that no posting in the dataset lists Python, SQL, R, Tableau, Power BI, Spark, or any other tool whose name falls in that range. The skill lists appear to have been alphabetically truncated before delivery.</p>
+<p>We report skill findings from what is present and flag the truncation prominently wherever skills are discussed. This limitation affects the skill-gap analysis in Step 3 directly, and we have raised it with the instructor.</p>
 </section>
 <section id="remote-and-onsite-indicators" class="level3">
 <h3 class="anchored" data-anchor-id="remote-and-onsite-indicators">Remote and Onsite Indicators</h3>
-<!-- Document REMOTE_TYPE or REMOTE_TYPE_NAME and final work-arrangement categories. -->
-<p><em>Explain how remote, hybrid and onsite postings were classified.</em></p>
+<p><code>REMOTE_TYPE_NAME</code> classifies 142 of 287 postings. The remaining 145 are recorded as “Unknown”.</p>
+<p>We verified that Unknown means unclassified rather than misclassified: every posting whose <code>LOCATION</code> text mentions remote work is already flagged Remote or Hybrid, so no records needed recovery. Unknown is reported as its own category and is not treated as onsite.</p>
+<div class="cell" data-execution_count="6">
+<div id="tbl-remote" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="6">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-remote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4
+</figcaption>
+<div aria-describedby="tbl-remote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Work arrangement</th>
+<th data-quarto-table-cell-role="th">Postings</th>
+<th data-quarto-table-cell-role="th">Share of panel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Unknown</td>
+<td>145</td>
+<td>50.5%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Remote</td>
+<td>65</td>
+<td>22.6%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Hybrid</td>
+<td>54</td>
+<td>18.8%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>On-site</td>
+<td>23</td>
+<td>8.0%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
 </section>
 <section id="location-fields" class="level3">
 <h3 class="anchored" data-anchor-id="location-fields">Location Fields</h3>
-<!-- Document city, state, county and complete-location fields. -->
-<p><em>Explain how missing, inconsistent or incomplete location information was handled.</em></p>
+<p>The location fields in the extract are unreliable. <code>STATE_NAME</code> holds a valid state name on only about 65 of 287 postings; the rest contain “United States”, “Remote”, city fragments such as “Francisco” and “Austin”, or blanks. The structured alternatives are sparser still, with <code>STATE</code> populated on 92 postings, <code>COUNTY_NAME</code> on 39, and <code>MSA_NAME</code> on 16.</p>
+<p><code>LOCATION</code> is the only location field populated on every row, but it is free text with no consistent structure.</p>
+<p>We built a derived <code>state</code> column using a four-stage rule, implemented in <code>scripts/clean_location.py</code>:</p>
+<ol type="1">
+<li>Match a full state name inside <code>LOCATION</code></li>
+<li>Otherwise match a two-letter state code between delimiters</li>
+<li>Otherwise fall back to the <code>STATE</code> column</li>
+<li>Otherwise map a small set of bare city names to their states</li>
+</ol>
+<p>Two-letter codes recovered at any stage are normalized to full state names so that “CA” and “California” do not appear as separate categories.</p>
+<div id="location-recovery" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-stdout">
+<pre><code>Postings with a recovered state: 205 of 287 (71%)
+Distinct states represented:     29</code></pre>
+</div>
+</div>
+<p>The 82 remaining postings are genuinely locationless: their <code>LOCATION</code> reads “United States”, “Remote”, “US”, or “USA”. These are reported as Unspecified rather than dropped, since a nationwide or remote posting is a real category rather than missing data.</p>
 </section>
 <section id="industry-and-occupation-fields" class="level3">
 <h3 class="anchored" data-anchor-id="industry-and-occupation-fields">Industry and Occupation Fields</h3>
-<!-- Document final NAICS and occupation fields retained in the cleaned dataset. -->
-<p><em>Explain how industry and occupation labels were standardized.</em></p>
+<p><code>NAICS_2022_4_NAME</code> is blank throughout the extract, so the industry label is taken from <code>NAICS_2022_6_NAME</code>, which reads “Computer Systems Design and Related Services” on all 287 rows.</p>
+<p>For occupation we use <code>ONET_NAME</code>, a controlled vocabulary, in preference to raw job titles. Titles are free text, so “Senior Data Analyst” and “Data Analyst - Senior” would otherwise count as separate roles.</p>
+<p>ONET misclassified eight postings, placing them under “Models”, “Actors”, or “Information Security Analysts”. Inspection confirmed all eight are genuine analytics roles, including Advanced Data Analyst, Business Intelligence Developer, and People Data Analyst. We kept them and grouped them as “Other”, since our title filter rather than ONET defines membership in the role family.</p>
+<div class="cell" data-execution_count="8">
+<div id="tbl-occupation" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="8">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-occupation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5
+</figcaption>
+<div aria-describedby="tbl-occupation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Occupation group</th>
+<th data-quarto-table-cell-role="th">Postings</th>
+<th data-quarto-table-cell-role="th">Share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Data Scientists</td>
+<td>135</td>
+<td>47.0%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Database Architects</td>
+<td>98</td>
+<td>34.1%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Management Analysts</td>
+<td>33</td>
+<td>11.5%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Other</td>
+<td>16</td>
+<td>5.6%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Business Intelligence Analysts</td>
+<td>5</td>
+<td>1.7%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="inconsistent-labels" class="level3">
+<h3 class="anchored" data-anchor-id="inconsistent-labels">Inconsistent Labels</h3>
+<p>Employer names are not standardized. Three patterns appear:</p>
+<ul>
+<li>The same company under different spellings, such as “Turnitin” and “Turnitinllc”, and “Anduril Industries” and “Andurilindustries”</li>
+<li>Applicant tracking system URLs recorded as the employer, such as “Jobs.baesystems.com” and “Careers.pnc.com”</li>
+<li>Job titles differing only in spacing, such as “Technical Consultant- Enterprise Data Engineer” and “Technical Consultant - Enterprise Data Engineer”</li>
+</ul>
+<p>We left employer names as supplied rather than merging them, since any merge rule risks combining genuinely distinct entities. Employer counts should therefore be read as approximate, and the pattern is noted wherever employers are discussed.</p>
 </section>
 </section>
 <section id="missing-value-summary" class="level2">
 <h2 class="anchored" data-anchor-id="missing-value-summary">Missing-Value Summary</h2>
-<!-- Add rows for the final variables used in the analysis. -->
-<table class="caption-top table">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 28%">
-<col style="width: 28%">
-<col style="width: 21%">
-</colgroup>
+<div class="cell" data-execution_count="9">
+<div id="tbl-missing" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="9">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6
+</figcaption>
+<div aria-describedby="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
-<th>Variable</th>
-<th style="text-align: right;">Missing Before Cleaning</th>
-<th style="text-align: right;">Missing After Cleaning</th>
-<th>Treatment</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Field</th>
+<th data-quarto-table-cell-role="th">Populated</th>
+<th data-quarto-table-cell-role="th">Missing</th>
+<th data-quarto-table-cell-role="th">Coverage</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Salary</td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td><em>Insert treatment</em></td>
+<th data-quarto-table-cell-role="th">0</th>
+<td>Job title</td>
+<td>287</td>
+<td>0</td>
+<td>100%</td>
 </tr>
 <tr class="even">
-<td>Experience</td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td><em>Insert treatment</em></td>
+<th data-quarto-table-cell-role="th">1</th>
+<td>Employer</td>
+<td>287</td>
+<td>0</td>
+<td>100%</td>
 </tr>
 <tr class="odd">
-<td>Education</td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td><em>Insert treatment</em></td>
+<th data-quarto-table-cell-role="th">2</th>
+<td>Occupation group</td>
+<td>287</td>
+<td>0</td>
+<td>100%</td>
 </tr>
 <tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Posted date</td>
+<td>287</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>State (derived)</td>
+<td>205</td>
+<td>82</td>
+<td>71%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Work arrangement</td>
+<td>142</td>
+<td>145</td>
+<td>49%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>Education (max)</td>
+<td>287</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>Salary midpoint</td>
+<td>112</td>
+<td>175</td>
+<td>39%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
 <td>Skills</td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td><em>Insert treatment</em></td>
-</tr>
-<tr class="odd">
-<td>Remote status</td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td><em>Insert treatment</em></td>
-</tr>
-<tr class="even">
-<td>Location</td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td style="text-align: right;"><em>Insert</em></td>
-<td><em>Insert treatment</em></td>
+<td>278</td>
+<td>9</td>
+<td>97%</td>
 </tr>
 </tbody>
 </table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Coverage varies widely. Title, employer, occupation, date, and education are complete. Salary, location, and work arrangement are partial, and each is reported against its own denominator rather than against the full panel. Experience is absent entirely.</p>
 </section>
-<section id="outlier-treatment" class="level2">
-<h2 class="anchored" data-anchor-id="outlier-treatment">Outlier Treatment</h2>
-<!-- Identify the rules used for salary, experience or other numeric outliers. -->
-<p><em>Describe the outlier-detection method, and explain whether records were removed, capped or retained.</em></p>
+<section id="analytical-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-limitations">Analytical Limitations</h2>
+<p>Five limitations carry into the rest of the project.</p>
+<p><strong>Skill lists are alphabetically truncated.</strong> No skill beginning with a letter from D to Z appears anywhere in the source extract. Python, SQL, R, Tableau, and similar tools cannot be observed. This constrains the skill-gap analysis in Step 3 more than any other issue on this page.</p>
+<p><strong>Experience requirements are absent.</strong> Both experience fields are blank across all 165,386 postings, so the analysis substitutes education where experience would otherwise be reported.</p>
+<p><strong>Salary reflects disclosing employers only.</strong> Pay appears on 39 percent of postings. Employers that disclose salary may differ systematically from those that do not, so salary figures describe the disclosing subset rather than the market.</p>
+<p><strong>The window is one quarter.</strong> The extract spans 2026-03-25 to 2026-06-29. Seasonal hiring patterns cannot be observed, and any trend over time within the panel should be treated as noise rather than signal.</p>
+<p><strong>The panel is a sample, not a census.</strong> 287 postings in one industry over one quarter is enough to describe patterns, not enough to estimate market size. Findings are stated as what these postings show rather than as claims about analytics hiring nationally.</p>
 </section>
-<section id="final-analytical-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="final-analytical-dataset">Final Analytical Dataset</h2>
-<p>The completed cleaning process produces the dataset used for the market-baseline analysis.</p>
-<p><strong>Planned output:</strong> <code>data/processed/career_market_panel.csv</code></p>
-<table class="caption-top table">
+<section id="output" class="level2">
+<h2 class="anchored" data-anchor-id="output">Output</h2>
+<p>The cleaned panel is written to <code>data/processed/career_market_panel.csv</code> and is committed to the repository so the remaining pages render without access to the raw extract.</p>
+<div class="cell" data-execution_count="10">
+<div id="tbl-schema" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="10">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-schema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7
+</figcaption>
+<div aria-describedby="tbl-schema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
-<th>Final Dataset Measure</th>
-<th style="text-align: right;">Result</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Column</th>
+<th data-quarto-table-cell-role="th">Type</th>
+<th data-quarto-table-cell-role="th">Non-null</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Number of records</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">0</th>
+<td>ID</td>
+<td>int64</td>
+<td>287</td>
 </tr>
 <tr class="even">
-<td>Number of variables</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">1</th>
+<td>TITLE_CLEAN</td>
+<td>object</td>
+<td>287</td>
 </tr>
 <tr class="odd">
-<td>Unique employers</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">2</th>
+<td>COMPANY_NAME</td>
+<td>object</td>
+<td>287</td>
 </tr>
 <tr class="even">
-<td>Unique job titles or segments</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">3</th>
+<td>COMPANY_IS_STAFFING</td>
+<td>bool</td>
+<td>287</td>
 </tr>
 <tr class="odd">
-<td>Date range</td>
-<td style="text-align: right;"><em>Insert result</em></td>
+<th data-quarto-table-cell-role="th">4</th>
+<td>occupation_group</td>
+<td>object</td>
+<td>287</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>posted_date</td>
+<td>object</td>
+<td>287</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>state</td>
+<td>object</td>
+<td>287</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>LOCATION</td>
+<td>object</td>
+<td>287</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>REMOTE_TYPE_NAME</td>
+<td>object</td>
+<td>287</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>MAX_EDULEVELS_NAME</td>
+<td>object</td>
+<td>287</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>MIN_EDULEVELS_NAME</td>
+<td>object</td>
+<td>287</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>salary_from_annual</td>
+<td>float64</td>
+<td>112</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>salary_to_annual</td>
+<td>float64</td>
+<td>112</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>salary_midpoint</td>
+<td>float64</td>
+<td>112</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>ORIGINAL_PAY_PERIOD</td>
+<td>object</td>
+<td>122</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>SKILLS_NAME</td>
+<td>object</td>
+<td>278</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>SPECIALIZED_SKILLS_NAME</td>
+<td>object</td>
+<td>278</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>NAICS_2022_4</td>
+<td>int64</td>
+<td>287</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>NAICS_2022_6_NAME</td>
+<td>object</td>
+<td>287</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="data-dictionary" class="level2">
-<h2 class="anchored" data-anchor-id="data-dictionary">Data Dictionary</h2>
-<!-- PARTNER INSTRUCTIONS:
-Add or link the required variable-description file.
-Suggested output: outputs/data_dictionary.csv
--->
-<p>The project data dictionary documents each retained variable, its meaning, source field and cleaning treatment.</p>
-<p><a href="outputs/data_dictionary.csv">Download the data dictionary</a></p>
-</section>
-<section id="limitations" class="level2">
-<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
-<!-- Document data-quality limitations that remain after cleaning. -->
-<p><em>Explain any important limitations involving missing values, inferred classifications, inconsistent labels, geographic coverage or salary reporting.</em></p>
-</section>
-<section id="reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
-<p>The analytical dataset can be reproduced using the documented filtering and cleaning process, the private raw files and the shared project scripts. Sensitive credentials and large raw files are excluded from GitHub.</p>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>To rebuild the panel from source, place the 17 Parquet files in <code>data/MET_CareerCompass_2026/</code> and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_panel.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
