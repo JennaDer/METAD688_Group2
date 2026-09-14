@@ -1,6 +1,6 @@
 ---
 title: "Market Baseline"
-subtitle: "Analytics Careers in Pharmaceutical Manufacturing"
+subtitle: "Analytics Careers in Computer Systems Design and Related Services"
 bibliography: references.bib
 toc: true
 ---
@@ -10,28 +10,31 @@ toc: true
 
 #### Purpose
 
-This page describes the current market for the team’s selected career pathway within Pharmaceutical and Medicine Manufacturing.
+This page describes the current market for the team’s Data Analytics career pathway within Computer Systems Design and Related Services.
 
 ::: {.callout-note}
 ## Analytical Scope
 
-**Industry:** Pharmaceutical and Medicine Manufacturing  
-**NAICS code:** 3254  
-**Career pathway:** *Insert the team's selected career pathway*  
-**Analysis period:** *Insert the selected date range*  
-**Final dataset size:** *Insert the number of cleaned job postings*
+**Industry:** Computer Systems Design and Related Services
+**NAICS code:** 5415
+**Career pathway:** Data Analytics
+**Analysis period:** March 25, 2026–June 29, 2026
+**Final dataset size:** 287 cleaned job postings
 :::
 
 ## Market Overview
 
-The market analysis identified five Data Analytics-related job postings within Pharmaceutical and Medicine Manufacturing (NAICS 3254). The postings span roles involving analytics, commercial analysis, global access insights, program management/financial analysis, and biostatistics. The observed opportunities are concentrated geographically, with four postings (80%) located in New Jersey and one (20%) in Missouri. Work-arrangement information is limited: one posting (20%) is explicitly classified as hybrid, while four (80%) have an unknown work-arrangement classification. Because the filtered sample contains only five postings, these findings represent a snapshot of the available dataset rather than the full national market for pharmaceutical analytics careers.
+The cleaned market panel contains 287 Data Analytics-related postings within Computer Systems Design and Related Services (NAICS 5415). The postings span a broad mix of analytics, data engineering, data science, business analysis, and business intelligence roles. Geographic information is available for most postings, although 82 records are listed as Unspecified. Work-arrangement information is more limited: 145 postings (50.5%) have an Unknown classification, while 65 (22.6%) are Remote, 54 (18.8%) are Hybrid, and 23 (8.0%) are On-site.
 
 ### Key Findings
 
-- **Demand:** Five Data Analytics-related postings were identified within the NAICS 3254 industry subset.
-- **Location:** Four postings (80%) are located in New Jersey, with one (20%) in Missouri.
-- **Work arrangement:** One posting (20%) is explicitly hybrid; four (80%) have an unknown work-arrangement classification.
-- **Sample limitation:** The five-posting sample should be interpreted as a snapshot rather than a complete representation of the national market.
+- **Demand:** The cleaned NAICS 5415 panel contains 287 relevant postings.
+
+- **Location:** California has the largest identified state count with 45 postings, followed by Texas with 21. Washington, New York, and Virginia each have 18.
+
+- **Work arrangement:** 65 postings (22.6%) are Remote, 54 (18.8%) are Hybrid, and 23 (8.0%) are On-site. Another 145 postings (50.5%) are Unknown.
+
+- **Data coverage:** Location and work-arrangement findings should be interpreted with caution because 82 postings have an Unspecified state and more than half of postings have an Unknown work-arrangement classification.
 
 ## Job Volume
 
@@ -45,7 +48,7 @@ Include a written interpretation beneath the figure.
 
 *Insert the job-volume visualization here.*
 
-**Interpretation:**  
+**Interpretation:**
 *Explain which roles appear most frequently and what this means for the target job seeker.*
 
 ### Job-Volume Summary
@@ -70,7 +73,7 @@ Suggested figure filename: figures/salary_distribution.png
 
 *Insert the salary-distribution visualization here.*
 
-**Interpretation:**  
+**Interpretation:**
 *Explain the typical salary range, variation and any differences between roles or segments.*
 
 ### Salary Summary
@@ -94,59 +97,59 @@ Suggested figure filename: figures/salary_distribution.png
 
 ### Leading Hiring Locations
 
-Among the five Data Analytics-related postings identified within Pharmaceutical and Medicine Manufacturing (NAICS 3254), four postings (80%) are located in New Jersey and one posting (20%) is located in Missouri.
+Among the 287 relevant postings, California has the largest identified state count with 45 postings (15.7% of the full panel), followed by Texas with 21 (7.3%). Washington, New York, and Virginia each account for 18 postings (6.3% each). Illinois contributes 11 postings (3.8%), Georgia 10 (3.5%), and Massachusetts and New Jersey each contribute 9 (3.1%).
 
-Within New Jersey, Rahway accounts for two postings, while Bridgewater and Morris Plains each account for one. The Missouri posting is located in Kansas City.
+A total of 82 postings (28.6%) are classified as Unspecified for state, so the geographic distribution should not be interpreted as a complete picture of where all opportunities are located.
 
-**Interpretation:**  
-The observed opportunities are strongly concentrated in New Jersey. However, because the filtered sample contains only five postings, this pattern should be interpreted as a snapshot of the available dataset rather than a complete representation of the national pharmaceutical analytics labor market.
+**Interpretation:**
+
+The identified postings show activity across several major technology and business markets rather than concentration in a single state. California leads the observed distribution, but the substantial Unspecified category limits the strength of state-level conclusions.
 
 ### Top Locations
 
-| Rank | Location | Number of Postings | Share of Market |
+| Rank | Location | Number of Postings | Share of Full Panel |
 |---:|---|---:|---:|
-| 1 | New Jersey | 4 | 80% |
-| 2 | Missouri | 1 | 20% |
+| 1 | California | 45 | 15.7% |
+| 2 | Texas | 21 | 7.3% |
+| 3 | Washington | 18 | 6.3% |
+| 3 | New York | 18 | 6.3% |
+| 3 | Virginia | 18 | 6.3% |
 
-## Experience Requirements
+## Education Requirements
 
-<!-- PARTNER INSTRUCTIONS:
-Use cleaned minimum and/or maximum years-of-experience fields.
-Suggested figure filename: figures/experience_distribution.png
--->
+The source extract does not contain usable minimum or maximum years-of-experience values. Both experience fields are blank across all 165,386 raw postings, so experience requirements cannot be analyzed from this dataset. Following the documented data-preparation approach, education is used as the available qualification measure instead.
 
-### Distribution of Required Experience
+The analysis uses `MAX_EDULEVELS_NAME` because the minimum education field behaves like a modeled floor rather than a stated employer requirement.
 
-*Insert the experience-requirement visualization here.*
+### Education Distribution
 
-**Interpretation:**  
-*Explain whether the market is concentrated in entry-level, mid-career or experienced roles.*
+| Highest Education Level Listed | Number of Postings | Share |
+|---|---:|---:|
+| Master's degree | 101 | 35.2% |
+| Bachelor's degree | 94 | 32.8% |
+| Associate's degree | 48 | 16.7% |
+| Doctoral or professional degree | 44 | 15.3% |
 
-### Experience Summary
+**Interpretation:**
 
-| Experience Category | Definition | Number of Postings | Share |
-|---|---|---:|---:|
-| Entry level | *Insert definition* | *Insert* | *Insert* |
-| Early career | *Insert definition* | *Insert* | *Insert* |
-| Mid-career | *Insert definition* | *Insert* | *Insert* |
-| Senior | *Insert definition* | *Insert* | *Insert* |
-| Not specified | No usable requirement | *Insert* | *Insert* |
+Master's and bachelor's degree categories together account for most of the maximum education levels recorded in the panel. These values describe the education fields available in the dataset and should not be interpreted as direct evidence that every employer explicitly requires the listed degree level.
 
 ## Remote, Hybrid and Onsite Work
 
 ### Work-Arrangement Distribution
 
-Only one of the five postings (20%) is explicitly classified as Hybrid. The remaining four postings (80%) are classified as Unknown.
+Of the 287 postings, 65 (22.6%) are explicitly classified as Remote, 54 (18.8%) as Hybrid, and 23 (8.0%) as On-site. The remaining 145 postings (50.5%) are classified as Unknown.
 
-**Interpretation:**  
-The Unknown category should not be interpreted as onsite work. Instead, it indicates that the dataset does not provide a clear work-arrangement classification for those postings. The available data therefore supports identifying one hybrid opportunity, but it does not support estimating the true share of onsite or fully remote positions.
+**Interpretation:**
+
+Remote and hybrid opportunities are clearly present in the market, together accounting for 119 postings (41.5% of the full panel). However, the Unknown category represents more than half of all postings and should not be interpreted as onsite work. Because of this missing classification, the dataset does not support estimating the true overall share of remote, hybrid, or onsite opportunities.
 
 | Work Arrangement | Number of Postings | Share |
 |---|---:|---:|
-| Remote | 0 | 0% |
-| Hybrid | 1 | 20% |
-| Onsite | 0 | 0% |
-| Unknown / not specified | 4 | 80% |
+| Remote | 65 | 22.6% |
+| Hybrid | 54 | 18.8% |
+| On-site | 23 | 8.0% |
+| Unknown / not specified | 145 | 50.5% |
 
 ## Top Employers
 
@@ -160,7 +163,7 @@ Suggested figure filename: figures/top_employers.png
 
 *Insert the top-employer visualization here.*
 
-**Interpretation:**  
+**Interpretation:**
 *Explain which employers appear most active and whether staffing firms influence the results.*
 
 | Rank | Employer | Number of Postings | Staffing Firm? |
@@ -195,31 +198,32 @@ Do not present generic labor-market observations.
 
 ## Analytical Limitations
 
-<!-- PARTNER INSTRUCTIONS:
-Document limitations specific to the market-baseline analysis.
--->
+- The 287-posting panel is a filtered sample of relevant NAICS 5415 postings and should not be treated as the entire national labor market.
 
-- *Insert limitation involving dataset coverage.*
-- *Insert limitation involving missing salary or experience data.*
-- *Insert limitation involving role or industry classification.*
-- *Insert any limitation involving location or remote-work labels.*
+- Salary data are available for 112 postings (39.0%), while years-of-experience fields are blank across the full 165,386-row source extract. Education is therefore used in place of experience requirements.
+
+- The panel includes multiple related analytics role types, including data analytics, data science, data engineering, business analysis, and business intelligence, so findings represent a broad Data Analytics career pathway rather than a single job title.
+
+- Geographic and work-arrangement fields are incomplete: 82 postings have an Unspecified state and 145 postings (50.5%) have an Unknown work-arrangement classification.
+
+- Skills data appear truncated in the source extract, so skill-demand conclusions should be interpreted cautiously until the dataset issue is clarified.
 
 ## Job Market Snapshot
 
-::: {.metric-grid}
+:::: {.metric-grid}
 
 ::: {.metric-card}
 ### Total Job Postings
 
-<span class="metric-value">[Insert value]</span>
+<span class="metric-value">287</span>
 
-<span class="metric-note">NAICS 3254 postings in the selected period</span>
+<span class="metric-note">NAICS 5415 postings in the selected period</span>
 :::
 
 ::: {.metric-card}
 ### Median Salary
 
-<span class="metric-value">$[Insert value]</span>
+<span class="metric-value">$150,708</span>
 
 <span class="metric-note">Based on postings with usable salary data</span>
 :::
@@ -227,37 +231,9 @@ Document limitations specific to the market-baseline analysis.
 ::: {.metric-card}
 ### Remote Availability
 
-<span class="metric-value">[Insert %]</span>
+<span class="metric-value">41.5%</span>
 
-<span class="metric-note">Share of remote or hybrid opportunities</span>
+<span class="metric-note">Share explicitly classified as remote or hybrid</span>
 :::
 
-:::
-
-## Job Volume
-
-::: {.analysis-panel}
-
-<span class="evidence-label">Data</span>
-
-**Measure:** Number of relevant job postings by [month/quarter].
-
-::: {.chart-placeholder}
-**Chart to insert:** Job-posting volume over time
-
-Recommended format: line chart or column chart.
-:::
-
-<span class="evidence-label finding">Finding</span>
-
-[Explain the most important pattern shown in the chart.]
-
-<span class="evidence-label decision">Implication</span>
-
-[Explain what this means for someone pursuing this career pathway.]
-
-<span class="evidence-label limitation">Limitation</span>
-
-[Explain any missing dates, duplicate postings, or sampling limitations.]
-
-:::
+::::

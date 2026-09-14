@@ -8,17 +8,17 @@ bibliography: references.bib
 
 | Project Element | Team Selection |
 |---|---|
-| Industry | Pharmaceutical and Medicine Manufacturing |
-| NAICS Code | 3254 |
-| Career Pathway | **Team to complete** |
-| Primary Focus Area | **Team to complete** |
-| Target User | **Team to complete** |
-| Product Question | **Team to complete** |
+| Industry | Computer Systems Design and Related Services |
+| NAICS Code | 5415 |
+| Career Pathway | Data Analytics |
+| Primary Focus Area | Analytics career opportunities, qualifications, and market patterns |
+| Target User | Students, recent graduates, and early-career professionals pursuing analytics roles |
+| Product Question | How can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize? |
 
 ::: {.callout-tip}
 ## Purpose of This Page
 
-This page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why pharmaceutical manufacturing is a relevant industry for analytics careers.
+This page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why Computer Systems Design and Related Services is a relevant industry for analytics careers.
 :::
 
 ## 1. Career Pathway
@@ -26,27 +26,26 @@ This page defines the foundation of our career-evaluation product. It explains w
 <!-- SECTION OWNER: Entire team -->
 <!-- INSTRUCTIONS: Select one career pathway related to analytics, business intelligence, data science, machine learning, or data engineering. -->
 
-**Selected career pathway:**  
-*Enter the team's selected pathway here.*
+**Selected career pathway:** Data Analytics
 
-**Why we selected it:**  
-*Explain in approximately 2–3 sentences why the team selected this career pathway.*
+**Why we selected it:**
+Data Analytics was selected because it represents a broad and practical career pathway that appears across many technology-driven organizations. It also allows the team to evaluate multiple related role types while focusing on the skills, qualifications, compensation, and market conditions most relevant to aspiring analytics professionals.
 
 ## 2. Industry Selection
 
 <!-- SECTION OWNER: Jenna -->
-<!-- INSTRUCTIONS: Explain why NAICS 3254 is relevant to the selected analytics career pathway. -->
+<!-- INSTRUCTIONS: Explain why NAICS 5415 is relevant to the selected analytics career pathway. -->
 
-**Selected industry:** Pharmaceutical and Medicine Manufacturing  
-**NAICS code:** 3254
+**Selected industry:** Computer Systems Design and Related Services
+**NAICS code:** 5415
 
 ### Industry Justification
 
-*Write 2–3 sentences explaining why pharmaceutical and medicine manufacturing is relevant to analytics, business intelligence, data science, or machine-learning careers.*
+Computer Systems Design and Related Services is highly relevant to the Data Analytics career pathway because organizations in this industry rely heavily on data, software, information systems, and technology-enabled decision-making. The course dataset also provides a substantially larger analytical sample for this industry, supporting more meaningful analysis of labor-market patterns.
 
 ### Role of Analytics in This Industry
 
-*Describe examples of how pharmaceutical manufacturers use data. Possible areas include manufacturing performance, quality, supply chain, clinical research, forecasting, regulatory compliance, or commercial analytics.*
+Analytics professionals in this industry support areas such as business intelligence, data analysis, systems performance, technology consulting, reporting, forecasting, and data-driven decision-making. These roles may require candidates to interpret large datasets, identify trends, build reports and dashboards, and translate analytical findings into recommendations for clients or internal business teams.
 
 ## 3. Target User
 
@@ -55,11 +54,11 @@ This page defines the foundation of our career-evaluation product. It explains w
 
 ### User Profile
 
-The target user is a student, recent graduate, or early-career professional interested in pursuing an analytics-related career within the pharmaceutical and medicine manufacturing industry. The user may have foundational experience with data analysis, statistics, business analytics, or related disciplines and some exposure to tools such as Excel, SQL, Python, R, or data visualization platforms. However, they may have limited experience within the pharmaceutical industry and may not yet understand how their existing skills align with available analytics roles.
+The target user is a student, recent graduate, or early-career professional interested in pursuing an analytics-related career within the Computer Systems Design and Related Services industry. The user may have foundational experience with data analysis, statistics, business analytics, or related disciplines and some exposure to tools such as Excel, SQL, Python, R, or data visualization platforms. However, they may have limited professional experience in technology-focused organizations and may not yet understand how their existing skills align with available analytics roles.
 
 ### User Needs
 
-Before applying for analytics positions in pharmaceutical and medicine manufacturing, the target user needs a clearer understanding of the types of analytics roles available, the technical and professional skills employers commonly request, typical experience and education requirements, salary expectations, geographic and remote work patterns, and potential skill gaps. This information can help the user evaluate their current qualifications and identify which skills or experiences they should prioritize to become a more competitive candidate.
+Before applying for analytics positions in Computer Systems Design and Related Services, the target user needs a clearer understanding of the types of analytics roles available, the technical and professional skills employers commonly request, typical education requirements, salary expectations, geographic and remote work patterns, and potential skill gaps. This information can help the user evaluate their current qualifications and identify which skills or experiences they should prioritize to become a more competitive candidate.
 
 ## 4. Product Question
 
@@ -68,11 +67,11 @@ Before applying for analytics positions in pharmaceutical and medicine manufactu
 
 ### Primary Question
 
-> How can an aspiring analytics professional evaluate career opportunities in pharmaceutical and medicine manufacturing and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?
+> How can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?
 
 ### Supporting Questions
 
-1. What analytics roles appear most frequently in pharmaceutical and medicine manufacturing?
+1. What analytics roles appear most frequently in Computer Systems Design and Related Services?
 2. Which technical and professional skills are most commonly requested?
 3. How do salary, experience, location, and remote-work patterns vary?
 4. Where does the target user have skill gaps?
@@ -87,7 +86,7 @@ Before applying for analytics positions in pharmaceutical and medicine manufactu
 
 ### Problem Statement
 
-Students and early-career professionals may not have a clear understanding of the skills and job-market needs required for analytics roles within pharmaceutical and medicine manufacturing, which can result in difficulty identifying appropriate roles and determining how well their qualifications align with employer expectations.
+Students and early-career professionals may not have a clear understanding of the skills and job-market needs required for analytics roles within Computer Systems Design and Related Services, which can result in difficulty identifying appropriate roles and determining how well their qualifications align with employer expectations.
 
 ### Why the Question Matters
 
@@ -139,28 +138,28 @@ The table below lists the fields we expect to use and what each one supports. Ex
 
 | Field or Variable | How the Team Expects to Use It |
 |---|---|
-| Industry or NAICS code | Filter postings to NAICS 3254, Pharmaceutical and Medicine Manufacturing |
+| Industry or NAICS code | Filter postings to NAICS 5415, Computer Systems Design and Related Services |
 | Job title | Identify which analytics roles appear and group them into a role family |
-| Company or employer | Check how concentrated hiring is across pharmaceutical manufacturers |
+| Company or employer | Check how concentrated hiring is across employers in Computer Systems Design and Related Services |
 | Skills | Primary input to the skill-gap analysis; rank the tools and competencies employers request |
 | Software or specialized skills | Separate tool requirements such as SQL, Python, R, Tableau, and Power BI from general competencies |
 | Certifications | Capture regulated-industry requirements such as GMP or validation experience where they appear |
 | Experience (minimum and maximum years) | Judge which roles are realistic for an early-career candidate |
 | Education level | Record degree expectations, which we expect to run higher in this industry than in analytics generally |
 | Salary (minimum and maximum) | Describe compensation ranges and compare them against the BLS baseline |
-| City, state, and metropolitan area | Map where roles concentrate, which we expect to cluster around established pharmaceutical hubs |
+| City, state, and metropolitan area | Map where analytics opportunities are geographically concentrated |
 | Remote-work status | Compare remote, hybrid, and onsite postings |
 | Posting date and duration | Confirm the postings are recent and check whether the sample is spread evenly over time |
 
 ### Note on Data Volume
 
-Before we commit to salary and geography comparisons, we will run a posting count on the filtered NAICS 3254 slice in Module 2. If the count is too small to support distribution-level claims, we will treat skills and role mix as our primary findings and report salary and location as descriptive context rather than as conclusions.
+The original NAICS 3254 industry scope produced too few relevant analytics postings to support meaningful distribution-level analysis. In Module 2, the team therefore revised the industry scope to NAICS 5415, Computer Systems Design and Related Services. The cleaned analytical panel contains 287 relevant postings, providing a stronger basis for evaluating salary, geography, education, work arrangements, employers, and other labor-market patterns.
 
 ## 8. What We Expect to Explore
 
 <!-- SECTION OWNER: Drafted by Sebastian, pending team review -->
 
-We expect to find that analytics roles in pharmaceutical manufacturing ask for a familiar technical core, with SQL, Python, and a visualization tool appearing in most postings, but that the industry adds requirements a general analytics job would not. We anticipate seeing regulated-environment language around GMP, validation, and data integrity, and we expect education requirements to sit higher than in analytics roles overall, with more postings asking for a master's degree or a life-sciences background. We also expect hiring to concentrate geographically around a small number of established pharmaceutical regions rather than spreading evenly across the country. These are expectations we intend to test against the data, not conclusions, and we are prepared to revise them if the postings show something different.
+Within Computer Systems Design and Related Services, we expect analytics opportunities to span several related role types and employer contexts. Our analysis will examine how demand varies across job titles, employers, salary levels, education requirements, geographic markets, and work arrangements. We will also evaluate the skills information available in the dataset while documenting limitations in the source data rather than assuming that missing skills or experience fields represent employer preferences. These expectations will be tested against the data and revised where the evidence supports a different conclusion.
 
 ## 9. Project Scope and Boundaries
 
@@ -170,7 +169,7 @@ We expect to find that analytics roles in pharmaceutical manufacturing ask for a
 ### Included
 
 - Job postings connected to the selected career pathway
-- Pharmaceutical and medicine manufacturing under NAICS 3254
+- Computer Systems Design and Related Services under NAICS 5415
 - Relevant skills, experience, salary, geography, and work arrangements
 - Career-readiness recommendations for the target user
 
@@ -185,8 +184,8 @@ We expect to find that analytics roles in pharmaceutical manufacturing ask for a
 
 <!-- EDITING NOTE: Change each empty box from [ ] to [x] when the item is completed. -->
 
-- [ ] Career pathway selected
-- [x] NAICS 3254 selected
+- [x] Career pathway selected
+- [x] NAICS 5415 selected
 - [x] Industry identified
 - [x] Target user defined
 - [ ] Product question approved by the team

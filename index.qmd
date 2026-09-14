@@ -3,15 +3,15 @@ title: "METAD 688 Group 2"
 page-layout: full
 ---
 
-::: {.project-hero}
+:::: {.project-hero}
 
 ::: {.hero-copy}
 
-<span class="eyebrow">MET AD 688 · GROUP 2 · NAICS 3254</span>
+<span class="eyebrow">MET AD 688 · GROUP 2 · NAICS 5415</span>
 
-# Mapping opportunity in pharmaceutical manufacturing
+# Mapping opportunity in computer systems design
 
-We are examining how employment demand, technical skills, and career pathways are changing across the U.S. pharmaceutical and medicine manufacturing industry.
+We are examining how employment demand, technical skills, and career pathways are changing across the U.S. computer systems design and related services industry.
 
 [Explore the research](introduction.qmd){.hero-button}
 [View our methodology](data_preparation.qmd){.hero-link}
@@ -20,11 +20,11 @@ We are examining how employment demand, technical skills, and career pathways ar
 
 ::: {.hero-index}
 
-<span class="index-number">3254</span>
+<span class="index-number">5415</span>
 
 **Industry focus**
 
-Pharmaceutical and Medicine Manufacturing
+Computer Systems Design and Related Services
 
 <div class="signal-line"></div>
 
@@ -34,7 +34,7 @@ Pharmaceutical and Medicine Manufacturing
 
 :::
 
-:::
+::::
 
 ::: {.research-strip}
 
@@ -45,27 +45,27 @@ Pharmaceutical and Medicine Manufacturing
 
 :::
 
-::: {.homepage-content}
+:::::: {.homepage-content}
 
 ::: {.section-intro}
 
 <span class="section-code">01 / RESEARCH QUESTION</span>
 
-## Where is the pharmaceutical workforce heading?
+## Where is the computer systems design workforce heading?
 
-Our analysis connects employer demand with the skills and career opportunities shaping pharmaceutical manufacturing. Rather than examining job counts alone, we evaluate what companies need, where opportunities are concentrated, and how candidates can prepare.
+Our analysis connects employer demand with the skills and career opportunities shaping computer systems design and related services. Rather than examining job counts alone, we evaluate what companies need, where opportunities are concentrated, and how candidates can prepare.
 
 :::
 
-::: {.feature-grid}
+:::: {.feature-grid}
 
-::: {.feature feature-primary}
+::: {.feature .feature-primary}
 
 <span class="feature-number">01</span>
 
 ### Establish the market baseline
 
-Measure employment activity, employer concentration, occupational demand, and geographic patterns across the pharmaceutical manufacturing sector.
+Measure employment activity, employer concentration, occupational demand, and geographic patterns across the computer systems design and related services sector.
 
 [Open market analysis →](market_baseline.qmd)
 
@@ -77,7 +77,7 @@ Measure employment activity, employer concentration, occupational demand, and ge
 
 ### Identify emerging skill gaps
 
-Compare the technical, analytical, regulatory, and operational capabilities requested across pharmaceutical job postings.
+Compare the technical, analytical, regulatory, and operational capabilities requested across computer systems design and related services job postings.
 
 [Explore skill demand →](skill_gap_analysis.qmd)
 
@@ -95,9 +95,9 @@ Translate market evidence into practical career options and evaluate how roles d
 
 :::
 
-:::
+::::
 
-::: {.data-stage}
+::::: {.data-stage}
 
 ::: {.data-stage-heading}
 
@@ -107,7 +107,7 @@ Translate market evidence into practical career options and evaluate how roles d
 
 :::
 
-::: {.data-flow}
+:::: {.data-flow}
 
 ::: {.flow-step}
 <span class="flow-marker">A</span>
@@ -141,11 +141,11 @@ Compare employers, locations, occupations, and skills
 Convert findings into evidence-based career guidance
 :::
 
-:::
+::::
 
-:::
+:::::
 
-::: {.findings-preview}
+:::: {.findings-preview}
 
 ::: {.findings-heading}
 
@@ -178,7 +178,7 @@ Which employers, roles, and locations account for the strongest demand?
 <div>
 <strong>Skill signals</strong>
 
-Which capabilities consistently appear across pharmaceutical job postings?
+Which capabilities consistently appear across computer systems design and related services job postings?
 </div>
 
 <span class="finding-status">IN DEVELOPMENT</span>
@@ -199,7 +199,7 @@ Which pathways offer the strongest combination of demand and accessibility?
 
 :::
 
-:::
+::::
 
 ::: {.final-cta}
 
@@ -207,10 +207,10 @@ Which pathways offer the strongest combination of demand and accessibility?
 
 ## Evidence translated into action
 
-Our final recommendations will connect labor-market patterns with practical steps for candidates considering careers in pharmaceutical manufacturing.
+Our final recommendations will connect labor-market patterns with practical steps for candidates considering careers in computer systems design and related services.
 
 [View final recommendations](final_recommendations.qmd){.cta-button}
 
 :::
 
-:::
+::::::

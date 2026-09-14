@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Pharmaceutical Analytics Career Pathways"
+  title: "Computer Systems Design Analytics Career Pathways"
 
   navbar:
     background: "#123B4A"
@@ -42,7 +42,7 @@ website:
 
   page-footer:
     left: "MET AD 688 | Group 2"
-    right: "NAICS 3254 — Pharmaceutical and Medicine Manufacturing"
+    right: "NAICS 5415 — Computer Systems Design and Related Services"
 
 format:
   html:
