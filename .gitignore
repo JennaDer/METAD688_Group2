@@ -4,5 +4,6 @@ _site/
 .env
 .venv/
 data/raw/
+data/interim/
+data/MET_CareerCompass_2026/
 __pycache__/
-data

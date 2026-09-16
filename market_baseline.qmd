@@ -5,109 +5,89 @@ bibliography: references.bib
 toc: true
 ---
 
-<!-- SECTION OWNER: Market analysis and visualization partner -->
-<!-- Do not display ownership notes on the published website. -->
+## Purpose
 
-#### Purpose
-
-This page describes the current market for the team’s Data Analytics career pathway within Computer Systems Design and Related Services.
+This page gives an overview of the current job market for Data Analytics careers within Computer Systems Design and Related Services.
 
 ::: {.callout-note}
-## Analytical Scope
+## Project Scope
 
-**Industry:** Computer Systems Design and Related Services
-**NAICS code:** 5415
-**Career pathway:** Data Analytics
-**Analysis period:** March 25, 2026–June 29, 2026
-**Final dataset size:** 287 cleaned job postings
+**Industry:** Computer Systems Design and Related Services  
+**NAICS code:** 5415  
+**Career pathway:** Data Analytics  
+**Dates covered:** March 25, 2026–June 29, 2026  
+**Final dataset:** 287 job postings
 :::
 
 ## Market Overview
 
-The cleaned market panel contains 287 Data Analytics-related postings within Computer Systems Design and Related Services (NAICS 5415). The postings span a broad mix of analytics, data engineering, data science, business analysis, and business intelligence roles. Geographic information is available for most postings, although 82 records are listed as Unspecified. Work-arrangement information is more limited: 145 postings (50.5%) have an Unknown classification, while 65 (22.6%) are Remote, 54 (18.8%) are Hybrid, and 23 (8.0%) are On-site.
+Our cleaned dataset contains 287 job postings related to Data Analytics within NAICS 5415. It includes positions in data analysis, data science, data engineering, business analysis, and business intelligence.
 
-### Key Findings
+These results describe the postings available in the course dataset. They should not be treated as a complete picture of every analytics job in the United States.
 
-- **Demand:** The cleaned NAICS 5415 panel contains 287 relevant postings.
+### Main Findings
 
-- **Location:** California has the largest identified state count with 45 postings, followed by Texas with 21. Washington, New York, and Virginia each have 18.
-
-- **Work arrangement:** 65 postings (22.6%) are Remote, 54 (18.8%) are Hybrid, and 23 (8.0%) are On-site. Another 145 postings (50.5%) are Unknown.
-
-- **Data coverage:** Location and work-arrangement findings should be interpreted with caution because 82 postings have an Unspecified state and more than half of postings have an Unknown work-arrangement classification.
+- The final dataset contains 287 relevant postings.
+- Data Scientists and Database Architects are the two largest occupation groups.
+- Salary information is available for 112 postings.
+- The median advertised salary midpoint is $150,708.
+- California has the most postings with an identified state.
+- Remote and hybrid jobs together account for 41.5% of the dataset.
+- Some fields have a large amount of missing or unknown information.
 
 ## Job Volume
 
-<!-- PARTNER INSTRUCTIONS:
-Show job volume by cleaned title, role segment or another defensible category.
-Suggested figure filename: figures/job_volume_by_title.png
-Include a written interpretation beneath the figure.
--->
-
-### Job Postings by Title or Segment
-
-*Insert the job-volume visualization here.*
-
-**Interpretation:**
-*Explain which roles appear most frequently and what this means for the target job seeker.*
+![Job postings by occupation group.](figures/job_volume_by_segment.png){#fig-job-volume fig-alt="Horizontal bar chart showing job postings by occupation group."}
 
 ### Job-Volume Summary
 
-| Rank | Job Title or Segment | Number of Postings | Share of Market |
+| Rank | Occupation Group | Postings | Share |
 |---:|---|---:|---:|
-| 1 | *Insert* | *Insert* | *Insert* |
-| 2 | *Insert* | *Insert* | *Insert* |
-| 3 | *Insert* | *Insert* | *Insert* |
-| 4 | *Insert* | *Insert* | *Insert* |
-| 5 | *Insert* | *Insert* | *Insert* |
+| 1 | Data Scientists | 135 | 47.0% |
+| 2 | Database Architects | 98 | 34.1% |
+| 3 | Management Analysts | 33 | 11.5% |
+| 4 | Other matched analytics roles | 16 | 5.6% |
+| 5 | Business Intelligence Analysts | 5 | 1.7% |
+
+Data Scientists make up the largest group, followed by Database Architects. Together, these two groups account for 81.1% of the dataset.
+
+The occupation names come from the O\*NET classifications in the source data. As a result, some positions with titles such as Data Analyst or Data Engineer may be included under a broader occupation group. Job seekers may want to search across several related titles instead of searching only for “Data Analyst.”
 
 ## Salary Distribution
 
-<!-- PARTNER INSTRUCTIONS:
-Analyze valid standardized salary records.
-State how many postings contain usable salary information.
-Suggested figure filename: figures/salary_distribution.png
--->
-
-### Salary Range
-
-*Insert the salary-distribution visualization here.*
-
-**Interpretation:**
-*Explain the typical salary range, variation and any differences between roles or segments.*
+![Distribution of advertised annual salary midpoints.](figures/salary_distribution.png){#fig-salary fig-alt="Histogram of annual salary midpoints with the median marked."}
 
 ### Salary Summary
 
 | Salary Measure | Result |
 |---|---:|
-| Postings with usable salary data | *Insert* |
-| Median minimum salary | *Insert* |
-| Median maximum salary | *Insert* |
-| 25th percentile | *Insert* |
-| 75th percentile | *Insert* |
-| Highest retained salary | *Insert* |
+| Postings with usable salary data | 112 of 287 (39.0%) |
+| Median minimum salary | $125,000 |
+| Median maximum salary | $173,000 |
+| Median salary midpoint | $150,708 |
+| 25th-percentile midpoint | $120,000 |
+| 75th-percentile midpoint | $180,000 |
+| Highest retained midpoint | $318,250 |
+
+Among postings that include salary information, the middle half of salary midpoints falls between $120,000 and $180,000. The median midpoint is $150,708.
+
+Salary information is missing from most of the postings, so these numbers only describe employers that included usable pay information.
 
 ::: {.callout-warning}
-## Salary-data limitation
+## Salary Data Limitation
 
-*Explain how missing salaries, different pay periods or outlier treatment affect interpretation.*
+Hourly pay was converted to an annual amount using 2,080 work hours per year. Zero values were treated as missing, and salaries below $20,000 were removed as unrealistic. Salary results are based on 112 postings rather than the full dataset.
 :::
 
 ## Geographic Patterns
 
-### Leading Hiring Locations
+![States with the most identified job postings.](figures/leading_states.png){#fig-states fig-alt="Horizontal bar chart showing the states with the most job postings."}
 
-Among the 287 relevant postings, California has the largest identified state count with 45 postings (15.7% of the full panel), followed by Texas with 21 (7.3%). Washington, New York, and Virginia each account for 18 postings (6.3% each). Illinois contributes 11 postings (3.8%), Georgia 10 (3.5%), and Massachusetts and New Jersey each contribute 9 (3.1%).
+California has the highest number of postings with an identified state, with 45. Texas follows with 21. Washington, New York, and Virginia each have 18.
 
-A total of 82 postings (28.6%) are classified as Unspecified for state, so the geographic distribution should not be interpreted as a complete picture of where all opportunities are located.
+### Top Identified States
 
-**Interpretation:**
-
-The identified postings show activity across several major technology and business markets rather than concentration in a single state. California leads the observed distribution, but the substantial Unspecified category limits the strength of state-level conclusions.
-
-### Top Locations
-
-| Rank | Location | Number of Postings | Share of Full Panel |
+| Rank | State | Postings | Share of Full Dataset |
 |---:|---|---:|---:|
 | 1 | California | 45 | 15.7% |
 | 2 | Texas | 21 | 7.3% |
@@ -115,109 +95,96 @@ The identified postings show activity across several major technology and busine
 | 3 | New York | 18 | 6.3% |
 | 3 | Virginia | 18 | 6.3% |
 
-## Education Requirements
+The postings are spread across several major technology and business markets. However, 82 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset.
 
-The source extract does not contain usable minimum or maximum years-of-experience values. Both experience fields are blank across all 165,386 raw postings, so experience requirements cannot be analyzed from this dataset. Following the documented data-preparation approach, education is used as the available qualification measure instead.
+## Experience and Education
 
-The analysis uses `MAX_EDULEVELS_NAME` because the minimum education field behaves like a modeled floor rather than a stated employer requirement.
+The course dataset includes minimum and maximum experience fields, but both are blank across all 165,386 original records. This means we cannot create a reliable experience distribution.
+
+Instead, we report education as the available qualification measure.
 
 ### Education Distribution
 
-| Highest Education Level Listed | Number of Postings | Share |
+| Highest Education Level Listed | Postings | Share |
 |---|---:|---:|
 | Master's degree | 101 | 35.2% |
 | Bachelor's degree | 94 | 32.8% |
 | Associate's degree | 48 | 16.7% |
 | Doctoral or professional degree | 44 | 15.3% |
 
-**Interpretation:**
+Bachelor's and master's degree categories together account for 68.0% of the education values in the final dataset.
 
-Master's and bachelor's degree categories together account for most of the maximum education levels recorded in the panel. These values describe the education fields available in the dataset and should not be interpreted as direct evidence that every employer explicitly requires the listed degree level.
+The education fields appear to be standardized or modeled values. They may not represent an education requirement written directly by each employer.
 
-## Remote, Hybrid and Onsite Work
+::: {.callout-warning}
+## Missing Experience Information
 
-### Work-Arrangement Distribution
+We did not treat missing experience as zero years of experience. The source data does not provide enough information to determine how much experience employers require.
+:::
 
-Of the 287 postings, 65 (22.6%) are explicitly classified as Remote, 54 (18.8%) as Hybrid, and 23 (8.0%) as On-site. The remaining 145 postings (50.5%) are classified as Unknown.
+## Remote, Hybrid, and On-site Work
 
-**Interpretation:**
+![Job postings by work arrangement.](figures/work_arrangement.png){#fig-work-arrangement fig-alt="Bar chart comparing remote, hybrid, on-site, and unknown work arrangements."}
 
-Remote and hybrid opportunities are clearly present in the market, together accounting for 119 postings (41.5% of the full panel). However, the Unknown category represents more than half of all postings and should not be interpreted as onsite work. Because of this missing classification, the dataset does not support estimating the true overall share of remote, hybrid, or onsite opportunities.
-
-| Work Arrangement | Number of Postings | Share |
+| Work Arrangement | Postings | Share |
 |---|---:|---:|
 | Remote | 65 | 22.6% |
 | Hybrid | 54 | 18.8% |
 | On-site | 23 | 8.0% |
-| Unknown / not specified | 145 | 50.5% |
+| Unknown or not specified | 145 | 50.5% |
+
+Remote and hybrid jobs together account for 119 postings, or 41.5% of the dataset. However, the work arrangement is unknown for 145 postings.
+
+The Unknown category should not be counted as on-site work. It only means that the source did not provide a usable classification.
 
 ## Top Employers
 
-<!-- PARTNER INSTRUCTIONS:
-Show the employers with the greatest number of relevant job postings.
-Review staffing-company indicators before interpreting results.
-Suggested figure filename: figures/top_employers.png
--->
+![Employer labels with the most job postings.](figures/top_employers.png){#fig-employers fig-alt="Horizontal bar chart showing the employers with the most postings."}
 
 ### Employers with the Most Postings
 
-*Insert the top-employer visualization here.*
+| Rank | Employer Label | Postings |
+|---:|---|---:|
+| 1 | Amazon | 16 |
+| 2 | Esri | 8 |
+| 3 | Turnitin | 4 |
+| 3 | Turnitinllc | 4 |
+| 3 | Abbvie | 4 |
+| 3 | Jobgether | 4 |
 
-**Interpretation:**
-*Explain which employers appear most active and whether staffing firms influence the results.*
+Amazon has the highest number of postings in the dataset, followed by Esri.
 
-| Rank | Employer | Number of Postings | Staffing Firm? |
-|---:|---|---:|---|
-| 1 | *Insert* | *Insert* | *Insert* |
-| 2 | *Insert* | *Insert* | *Insert* |
-| 3 | *Insert* | *Insert* | *Insert* |
-| 4 | *Insert* | *Insert* | *Insert* |
-| 5 | *Insert* | *Insert* | *Insert* |
+Employer names are not fully consistent. For example, Turnitin and Turnitinllc appear as separate labels even though they may represent the same company. The employer counts provide a general picture of hiring activity, but they may undercount companies that appear under more than one name.
 
-## Implications for Job Seekers
+## What This Means for Job Seekers
 
-<!-- SECTION OWNER: Entire team -->
-<!-- PARTNER INSTRUCTIONS:
-Connect the market findings to decisions a job seeker can make.
-Do not present generic labor-market observations.
--->
+Job seekers should search across several related titles, including Data Analyst, Data Scientist, Data Engineer, Business Analyst, and Business Intelligence Analyst. Searching only for one title could leave out relevant opportunities.
 
-### Where to Apply
+California has the most postings with a known state, but the data also shows opportunities in Texas, Washington, New York, Virginia, and remote positions.
 
-*Explain which job titles, employers or locations appear most promising.*
+Candidates may also benefit from showing a mix of technical and business skills. Employers may expect candidates to analyze data, prepare or manage data, explain findings, and connect their work to business needs.
 
-### How to Position a Candidate Profile
+## Limitations
 
-*Explain what the market baseline suggests about experience, flexibility or role positioning.*
-
-### Questions for the Next Project Step
-
-- *Which skills distinguish attractive or attainable roles?*
-- *Where does the target user’s current profile differ from market demand?*
-- *Which opportunities should receive the highest career-evaluation scores?*
-
-## Analytical Limitations
-
-- The 287-posting panel is a filtered sample of relevant NAICS 5415 postings and should not be treated as the entire national labor market.
-
-- Salary data are available for 112 postings (39.0%), while years-of-experience fields are blank across the full 165,386-row source extract. Education is therefore used in place of experience requirements.
-
-- The panel includes multiple related analytics role types, including data analytics, data science, data engineering, business analysis, and business intelligence, so findings represent a broad Data Analytics career pathway rather than a single job title.
-
-- Geographic and work-arrangement fields are incomplete: 82 postings have an Unspecified state and 145 postings (50.5%) have an Unknown work-arrangement classification.
-
-- Skills data appear truncated in the source extract, so skill-demand conclusions should be interpreted cautiously until the dataset issue is clarified.
+- The dataset contains 287 selected postings and does not represent the entire U.S. job market.
+- Salary information is available for only 112 postings.
+- Experience fields are empty across the source data.
+- State information is unavailable for 82 postings.
+- Work arrangement is unknown for 145 postings.
+- Employer names are not fully standardized.
+- The skills fields appear to be alphabetically cut off. Skills beginning with letters from D through Z, including Python and SQL, are not available.
+- The data covers approximately one quarter, so it cannot show annual or seasonal hiring patterns.
 
 ## Job Market Snapshot
 
 :::: {.metric-grid}
 
 ::: {.metric-card}
-### Total Job Postings
+### Job Postings
 
 <span class="metric-value">287</span>
 
-<span class="metric-note">NAICS 5415 postings in the selected period</span>
+<span class="metric-note">Relevant postings within NAICS 5415</span>
 :::
 
 ::: {.metric-card}
@@ -225,15 +192,21 @@ Do not present generic labor-market observations.
 
 <span class="metric-value">$150,708</span>
 
-<span class="metric-note">Based on postings with usable salary data</span>
+<span class="metric-note">Based on 112 postings with usable salary data</span>
 :::
 
 ::: {.metric-card}
-### Remote Availability
+### Remote or Hybrid
 
 <span class="metric-value">41.5%</span>
 
-<span class="metric-note">Share explicitly classified as remote or hybrid</span>
+<span class="metric-note">119 postings classified as remote or hybrid</span>
 :::
 
 ::::
+
+## Reproducing the Results
+
+The figures and data dictionary were created from `data/processed/career_market_panel.csv`.
+
+To rebuild them, run `python scripts/build_market_baseline.py` from the repository root.

@@ -1,0 +1,20 @@
+variable,data_type,description,cleaning_or_use
+ID,Integer,Unique posting identifier,Source field; used to assess duplicate records
+TITLE_CLEAN,Text,Cleaned job title,Used for the analytics-career keyword filter
+COMPANY_NAME,Text,Employer name,Retained as supplied; labels are not fully standardized
+COMPANY_IS_STAFFING,Boolean,Staffing-company indicator,Retained from the source extract
+occupation_group,Text,Grouped O*NET occupation,Valid analytics categories retained; other matched roles grouped as Other
+posted_date,Date,Job-posting date,Converted to a valid calendar date
+state,Text,Derived U.S. state,Recovered from available location fields; unresolved values marked Unspecified
+LOCATION,Text,Original location text,Retained for traceability
+REMOTE_TYPE_NAME,Text,Remote-work classification,"Reported as Remote, Hybrid, On-site, or Unknown"
+MAX_EDULEVELS_NAME,Text,Highest education level recorded,Used as the available qualification measure
+MIN_EDULEVELS_NAME,Text,Minimum education value,Retained but not used as the primary education measure
+salary_from_annual,Decimal,Annualized lower salary,Hourly values annualized; zero and implausible values removed
+salary_to_annual,Decimal,Annualized upper salary,Hourly values annualized; zero and implausible values removed
+salary_midpoint,Decimal,Midpoint of advertised salary range,Calculated from valid annualized salary bounds
+ORIGINAL_PAY_PERIOD,Text,Original salary pay period,Retained to document salary conversion
+SKILLS_NAME,Text array,Skills associated with the posting,Retained with documented source truncation
+SPECIALIZED_SKILLS_NAME,Text array,Specialized skills associated with the posting,Retained with documented source truncation
+NAICS_2022_4,Text,Four-digit NAICS code,Filtered to 5415
+NAICS_2022_6_NAME,Text,Industry label,Used because the four-digit industry-name field is blank
