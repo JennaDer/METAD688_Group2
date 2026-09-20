@@ -3,7 +3,7 @@ title: "METAD 688 Group 2"
 page-layout: full
 ---
 
-::: {.project-hero}
+:::: {.project-hero}
 
 ::: {.hero-copy}
 
@@ -34,7 +34,7 @@ Computer Systems Design and Related Services
 
 :::
 
-:::
+::::
 
 ::: {.research-strip}
 
@@ -45,7 +45,7 @@ Computer Systems Design and Related Services
 
 :::
 
-::: {.homepage-content}
+:::::: {.homepage-content}
 
 ::: {.section-intro}
 
@@ -57,9 +57,9 @@ Our analysis connects employer demand with the skills and career opportunities s
 
 :::
 
-::: {.feature-grid}
+:::: {.feature-grid}
 
-::: {.feature feature-primary}
+::: {.feature .feature-primary}
 
 <span class="feature-number">01</span>
 
@@ -95,9 +95,9 @@ Translate market evidence into practical career options and evaluate how roles d
 
 :::
 
-:::
+::::
 
-::: {.data-stage}
+::::: {.data-stage}
 
 ::: {.data-stage-heading}
 
@@ -107,7 +107,7 @@ Translate market evidence into practical career options and evaluate how roles d
 
 :::
 
-::: {.data-flow}
+:::: {.data-flow}
 
 ::: {.flow-step}
 <span class="flow-marker">A</span>
@@ -141,11 +141,11 @@ Compare employers, locations, occupations, and skills
 Convert findings into evidence-based career guidance
 :::
 
-:::
+::::
 
-:::
+:::::
 
-::: {.findings-preview}
+:::: {.findings-preview}
 
 ::: {.findings-heading}
 
@@ -199,7 +199,7 @@ Which pathways offer the strongest combination of demand and accessibility?
 
 :::
 
-:::
+::::
 
 ::: {.final-cta}
 
@@ -213,4 +213,4 @@ Our final recommendations will connect labor-market patterns with practical step
 
 :::
 
-:::
+::::::
