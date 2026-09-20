@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "METAD 688 Group 2",
     "section": "",
-    "text": "MET AD 688 · GROUP 2 · NAICS 5415\n\n\nWe are examining how employment demand, technical skills, and career pathways are changing across the U.S. computer systems design and related services industry.\nExplore the research View our methodology\n\n\n\n5415\nIndustry focus\nComputer Systems Design and Related Services\n\n\n\n165,386 job postings\n115 source variables\n17 Parquet files\n:::"
+    "text": "MET AD 688 · GROUP 2 · NAICS 5415\n\n\nWe are examining how employment demand, technical skills, and career pathways are changing across the U.S. computer systems design and related services industry.\nExplore the research View our methodology\n\n\n\n5415\nIndustry focus\nComputer Systems Design and Related Services\n\n\n\n165,386 job postings\n115 source variables\n17 Parquet files"
   },
   {
     "objectID": "index.html#where-is-the-computer-systems-design-workforce-heading",
@@ -33,6 +33,13 @@
     "title": "METAD 688 Group 2",
     "section": "Evidence translated into action",
     "text": "Evidence translated into action\nOur final recommendations will connect labor-market patterns with practical steps for candidates considering careers in computer systems design and related services.\nView final recommendations"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   },
   {
     "objectID": "introduction.html",
@@ -158,14 +165,14 @@
     "href": "market_baseline.html#salary-distribution",
     "title": "Market Baseline",
     "section": "Salary Distribution",
-    "text": "Salary Distribution\n\n\n\n\n\n\nFigure 2: Distribution of advertised annual salary midpoints.\n\n\n\n\nSalary Summary\n\n\n\nSalary Measure\nResult\n\n\n\n\nPostings with usable salary data\n112 of 287 (39.0%)\n\n\nMedian minimum salary\n$125,000\n\n\nMedian maximum salary\n$173,000\n\n\nMedian salary midpoint\n$150,708\n\n\n25th-percentile midpoint\n$120,000\n\n\n75th-percentile midpoint\n$180,000\n\n\nHighest retained midpoint\n$318,250\n\n\n\nAmong postings that include salary information, the middle half of salary midpoints falls between $120,000 and $180,000. The median midpoint is $150,708.\nSalary information is missing from most of the postings, so these numbers only describe employers that included usable pay information.\n\n\n\n\n\n\nWarningSalary Data Limitation\n\n\n\nHourly pay was converted to an annual amount using 2,080 work hours per year. Zero values were treated as missing, and salaries below $20,000 were removed as unrealistic. Salary results are based on 112 postings rather than the full dataset."
+    "text": "Salary Distribution\n\n\n\n\n\n\nFigure 2: Distribution of advertised annual salary midpoints.\n\n\n\n\nSalary Summary\n\n\n\nSalary Measure\nResult\n\n\n\n\nPostings with usable salary data\n112 of 287 (39.0%)\n\n\nMedian minimum salary\n$125,000\n\n\nMedian maximum salary\n$173,000\n\n\nMedian salary midpoint\n$150,708\n\n\n25th-percentile midpoint\n$120,000\n\n\n75th-percentile midpoint\n$180,000\n\n\nHighest retained midpoint\n$318,250\n\n\n\nAmong postings that include salary information, the middle half of salary midpoints falls between $120,000 and $180,000. The median midpoint is $150,708.\nSalary information is missing from most of the postings, so these numbers only describe employers that included usable pay information.\n\n\nSalary by Occupation Segment\n\n\n\n\n\n\nFigure 3: Median advertised salary midpoint by occupation segment.\n\n\n\nAmong occupation groups with at least 10 postings containing usable salary data, Data Scientists / Data Analysts have the highest median advertised salary midpoint at $163,025, followed by Database Architects / Data Engineers at $155,450. Management Analysts have a lower median midpoint of $92,500.\nThis comparison includes only occupation groups with at least 10 usable salary observations to avoid drawing conclusions from very small samples. The results are descriptive of postings in this dataset that reported usable salary information and should not be interpreted as salary estimates for all positions in these occupations.\n\n\n\n\n\n\nWarningSalary Data Limitation\n\n\n\nHourly pay was converted to an annual amount using 2,080 work hours per year. Zero values were treated as missing, and salaries below $20,000 were removed as unrealistic. Salary results are based on 112 postings rather than the full dataset."
   },
   {
     "objectID": "market_baseline.html#geographic-patterns",
     "href": "market_baseline.html#geographic-patterns",
     "title": "Market Baseline",
     "section": "Geographic Patterns",
-    "text": "Geographic Patterns\n\n\n\n\n\n\nFigure 3: States with the most identified job postings.\n\n\n\nCalifornia has the highest number of postings with an identified state, with 45. Texas follows with 21. Washington, New York, and Virginia each have 18.\n\nTop Identified States\n\n\n\nRank\nState\nPostings\nShare of Full Dataset\n\n\n\n\n1\nCalifornia\n45\n15.7%\n\n\n2\nTexas\n21\n7.3%\n\n\n3\nWashington\n18\n6.3%\n\n\n3\nNew York\n18\n6.3%\n\n\n3\nVirginia\n18\n6.3%\n\n\n\nThe postings are spread across several major technology and business markets. However, 82 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset."
+    "text": "Geographic Patterns\n\n\n\n\n\n\nFigure 4: States with the most identified job postings.\n\n\n\nCalifornia has the highest number of postings with an identified state, with 45. Texas follows with 21. Washington, New York, and Virginia each have 18.\n\nTop Identified States\n\n\n\nRank\nState\nPostings\nShare of Full Dataset\n\n\n\n\n1\nCalifornia\n45\n15.7%\n\n\n2\nTexas\n21\n7.3%\n\n\n3\nWashington\n18\n6.3%\n\n\n3\nNew York\n18\n6.3%\n\n\n3\nVirginia\n18\n6.3%\n\n\n\nThe postings are spread across several major technology and business markets. However, 82 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset."
   },
   {
     "objectID": "market_baseline.html#experience-and-education",
@@ -179,14 +186,14 @@
     "href": "market_baseline.html#remote-hybrid-and-on-site-work",
     "title": "Market Baseline",
     "section": "Remote, Hybrid, and On-site Work",
-    "text": "Remote, Hybrid, and On-site Work\n\n\n\n\n\n\nFigure 4: Job postings by work arrangement.\n\n\n\n\n\n\nWork Arrangement\nPostings\nShare\n\n\n\n\nRemote\n65\n22.6%\n\n\nHybrid\n54\n18.8%\n\n\nOn-site\n23\n8.0%\n\n\nUnknown or not specified\n145\n50.5%\n\n\n\nRemote and hybrid jobs together account for 119 postings, or 41.5% of the dataset. However, the work arrangement is unknown for 145 postings.\nThe Unknown category should not be counted as on-site work. It only means that the source did not provide a usable classification."
+    "text": "Remote, Hybrid, and On-site Work\n\n\n\n\n\n\nFigure 5: Job postings by work arrangement.\n\n\n\n\n\n\nWork Arrangement\nPostings\nShare\n\n\n\n\nRemote\n65\n22.6%\n\n\nHybrid\n54\n18.8%\n\n\nOn-site\n23\n8.0%\n\n\nUnknown or not specified\n145\n50.5%\n\n\n\nRemote and hybrid jobs together account for 119 postings, or 41.5% of the dataset. However, the work arrangement is unknown for 145 postings.\nThe Unknown category should not be counted as on-site work. It only means that the source did not provide a usable classification."
   },
   {
     "objectID": "market_baseline.html#top-employers",
     "href": "market_baseline.html#top-employers",
     "title": "Market Baseline",
     "section": "Top Employers",
-    "text": "Top Employers\n\n\n\n\n\n\nFigure 5: Employer labels with the most job postings.\n\n\n\n\nEmployers with the Most Postings\n\n\n\nRank\nEmployer Label\nPostings\n\n\n\n\n1\nAmazon\n16\n\n\n2\nEsri\n8\n\n\n3\nTurnitin\n4\n\n\n3\nTurnitinllc\n4\n\n\n3\nAbbvie\n4\n\n\n3\nJobgether\n4\n\n\n\nAmazon has the highest number of postings in the dataset, followed by Esri.\nEmployer names are not fully consistent. For example, Turnitin and Turnitinllc appear as separate labels even though they may represent the same company. The employer counts provide a general picture of hiring activity, but they may undercount companies that appear under more than one name."
+    "text": "Top Employers\n\n\n\n\n\n\nFigure 6: Employer labels with the most job postings.\n\n\n\n\nEmployers with the Most Postings\n\n\n\nRank\nEmployer Label\nPostings\n\n\n\n\n1\nAmazon\n16\n\n\n2\nEsri\n8\n\n\n3\nTurnitin\n4\n\n\n3\nTurnitinllc\n4\n\n\n3\nAbbvie\n4\n\n\n3\nJobgether\n4\n\n\n\nAmazon has the highest number of postings in the dataset, followed by Esri.\nEmployer names are not fully consistent. For example, Turnitin and Turnitinllc appear as separate labels even though they may represent the same company. The employer counts provide a general picture of hiring activity, but they may undercount companies that appear under more than one name."
   },
   {
     "objectID": "market_baseline.html#what-this-means-for-job-seekers",
@@ -215,13 +222,6 @@
     "title": "Market Baseline",
     "section": "Reproducing the Results",
     "text": "Reproducing the Results\nThe figures and data dictionary were created from data/processed/career_market_panel.csv.\nTo rebuild them, run python scripts/build_market_baseline.py from the repository root."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   },
   {
     "objectID": "data_preparation.html",
