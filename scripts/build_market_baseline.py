@@ -219,6 +219,57 @@ plt.grid(axis="x", alpha=0.2)
 save_figure("top_employers.png")
 
 # ------------------------------------------------------------
+# 6. Median salary by occupation segment
+# ------------------------------------------------------------
+
+salary_by_role = (
+    panel.groupby("occupation_group")["salary_midpoint"]
+    .agg(["count", "median"])
+    .query("count >= 10")
+    .sort_values("median")
+)
+
+salary_role_labels = {
+    "Management Analysts": "Management analysts",
+    "Database Architects": "Database architects / data engineers",
+    "Data Scientists": "Data scientists / data analysts",
+}
+salary_by_role.index = [
+    salary_role_labels.get(value, value)
+    for value in salary_by_role.index
+]
+
+plt.figure(figsize=(9, 5.5))
+bars = plt.barh(
+    salary_by_role.index,
+    salary_by_role["median"],
+    color=TEAL,
+)
+
+for bar, value, count in zip(
+    bars,
+    salary_by_role["median"],
+    salary_by_role["count"],
+):
+    plt.text(
+        value + 2500,
+        bar.get_y() + bar.get_height() / 2,
+        f"${value:,.0f} (n={int(count)})",
+        va="center",
+        color=NAVY,
+    )
+
+plt.title("Median Advertised Salary by Occupation Segment", loc="left")
+plt.xlabel("Median annual salary midpoint (USD)")
+plt.ylabel("")
+plt.xlim(0, salary_by_role["median"].max() * 1.30)
+plt.gca().xaxis.set_major_formatter(
+    plt.FuncFormatter(lambda value, _: f"${value / 1000:.0f}K")
+)
+plt.grid(axis="x", alpha=0.2)
+save_figure("median_salary_by_occupation.png")
+
+# ------------------------------------------------------------
 # Data dictionary
 # ------------------------------------------------------------
 
@@ -251,7 +302,7 @@ dictionary = pd.DataFrame(
 dictionary.to_csv(DICTIONARY_PATH, index=False)
 
 print(f"Loaded {total_postings} postings.")
-print(f"Created five figures in: {FIGURE_DIR}")
+print(f"Created six figures in: {FIGURE_DIR}")
 print(f"Created data dictionary: {DICTIONARY_PATH}")
 print(f"Postings with usable salary: {len(salary)}")
 print(f"Median salary midpoint: ${salary_median:,.2f}")
