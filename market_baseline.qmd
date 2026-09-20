@@ -73,6 +73,14 @@ Among postings that include salary information, the middle half of salary midpoi
 
 Salary information is missing from most of the postings, so these numbers only describe employers that included usable pay information.
 
+### Salary by Occupation Segment
+
+![Median advertised salary midpoint by occupation segment.](figures/median_salary_by_occupation.png){#fig-salary-role fig-alt="Horizontal bar chart comparing median advertised salary midpoints for occupation groups with at least 10 usable salary observations."}
+
+Among occupation groups with at least 10 postings containing usable salary data, Data Scientists / Data Analysts have the highest median advertised salary midpoint at $163,025, followed by Database Architects / Data Engineers at $155,450. Management Analysts have a lower median midpoint of $92,500.
+
+This comparison includes only occupation groups with at least 10 usable salary observations to avoid drawing conclusions from very small samples. The results are descriptive of postings in this dataset that reported usable salary information and should not be interpreted as salary estimates for all positions in these occupations.
+
 ::: {.callout-warning}
 ## Salary Data Limitation
 
