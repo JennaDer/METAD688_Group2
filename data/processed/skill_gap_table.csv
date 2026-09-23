@@ -1,0 +1,18 @@
+Skill,Skill type,Demand (%),Target level,Team average,Jenna gap,Mariam gap,Juan gap,Average gap,Priority score
+Python,Core tool,,4,1.67,3,3,1,2.33,1.16
+SQL,Core tool,,4,2.0,3,2,1,2.0,1.0
+Tableau / Power BI,Core tool,,4,2.0,1,3,2,2.0,1.0
+Automation,Market skill,28.1,4,1.33,3,3,2,2.67,0.75
+Excel,Core tool,,4,3.0,0,2,1,1.0,0.5
+Airflow,Market skill,16.9,3,1.0,2,2,2,2.0,0.34
+BigQuery,Market skill,10.4,3,1.33,2,2,1,1.67,0.17
+Business Intelligence,Market skill,20.9,4,3.33,0,1,1,0.67,0.14
+Artificial Intelligence,Market skill,15.1,3,2.33,1,1,0,0.67,0.1
+Algorithms,Market skill,10.1,3,2.0,1,2,0,1.0,0.1
+Business Requirements,Market skill,19.1,3,3.0,0,0,1,0.33,0.06
+Causal Inference,Market skill,5.0,2,1.0,1,1,1,1.0,0.05
+Alteryx,Market skill,4.3,2,1.0,1,1,1,1.0,0.04
+Apache Spark,Market skill,4.0,2,1.33,1,1,0,0.67,0.03
+Analytics,Market skill,68.7,4,4.0,0,0,0,0.0,0.0
+Big Data,Market skill,11.2,3,3.0,0,0,0,0.0,0.0
+A/B Testing,Market skill,4.3,2,2.0,0,0,0,0.0,0.0
