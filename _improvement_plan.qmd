@@ -1,0 +1,156 @@
+<!-- Section 4 content, owned by Juan. Included into skill_gap_analysis.qmd. -->
+
+```{python}
+#| label: plan-setup
+#| echo: false
+
+import json
+import pandas as pd
+
+_MEMBERS = ["Jenna", "Mariam", "Juan"]
+
+_panel = pd.read_csv("data/processed/career_market_panel.csv")
+_n = len(_panel)
+_posting_skills = _panel["SKILLS_NAME"].fillna("[]").map(
+    lambda s: set(json.loads(s)) if s.startswith("[") else set()
+)
+
+plan = pd.read_csv("data/processed/team_skills_v2.csv").set_index("skill")
+plan["Demand (%)"] = plan["panel_skill_name"].map(
+    lambda name: round(_posting_skills.map(lambda x: name in x).sum() / _n * 100, 1)
+)
+
+
+def _target_level(share):
+    if share >= 20:
+        return 4
+    if share >= 10:
+        return 3
+    return 2
+
+
+plan["Target"] = plan["Demand (%)"].map(_target_level)
+
+_rows = []
+for _member in _MEMBERS:
+    for _skill, _row in plan.iterrows():
+        _rating = _row[_member]
+        if pd.isna(_rating):
+            continue
+        _gap = max(_row["Target"] - _rating, 0)
+        if _gap > 0:
+            _rows.append(
+                {
+                    "Member": _member,
+                    "Skill": _skill,
+                    "Current": int(_rating),
+                    "Target": int(_row["Target"]),
+                    "Gap": int(_gap),
+                    "Demand (%)": _row["Demand (%)"],
+                    "Priority": round(_gap * _row["Demand (%)"] / 100, 2),
+                }
+            )
+plan_gaps = pd.DataFrame(_rows)
+
+_pending = {m: [s for s in plan.index if pd.isna(plan.loc[s, m])] for m in _MEMBERS}
+_pending = {m: s for m, s in _pending.items() if s}
+if _pending:
+    pending_note = (
+        "Some ratings are still pending: "
+        + "; ".join(f"{m} for {', '.join(s)}" for m, s in _pending.items())
+        + ". Those skills are left out of the member's priorities until they are rated."
+    )
+else:
+    pending_note = "All three members have rated every skill on the list."
+```
+
+This section turns the skill gaps into a plan. For each team member we identify the skills to work on first, suggest courses, certifications, and projects that close those gaps, and describe how the team can use its complementary strengths.
+
+### 4.1 Setting Priorities
+
+We use the same rule as Section 3 to set a target level for each skill, based on how often it is requested in the postings. A skill in 20 percent or more of postings gets a target of 4 (Advanced), one in 10 to 19.9 percent a target of 3 (Intermediate), and anything less a target of 2 (Basic knowledge). With the v2 data every skill on the list is measured directly in the postings, so no targets are assumed.
+
+A member's gap is the target minus their current rating, or zero if they already meet it. Their priority for a skill is that gap weighted by the skill's share of postings, which favors skills that are both in demand and far from the member's current level.
+
+```{python}
+#| label: tbl-plan-targets
+#| tbl-cap: "Target level for each skill, set by its share of postings."
+#| echo: false
+
+plan[["Demand (%)", "Target"] + _MEMBERS].sort_values("Demand (%)", ascending=False)
+```
+
+### 4.2 Priorities by Member
+
+```{python}
+#| label: tbl-plan-priorities
+#| tbl-cap: "Each member's three highest-priority skills."
+#| echo: false
+
+_top = plan_gaps.sort_values(["Member", "Priority"], ascending=[True, False]).groupby("Member").head(3)
+_top["Member"] = pd.Categorical(_top["Member"], _MEMBERS, ordered=True)
+_top.sort_values(["Member", "Priority"], ascending=[True, False]).reset_index(drop=True)
+```
+
+`{python} pending_note`
+
+The pattern is clear: all three members share the same top priorities. Python, SQL, and data pipelines are both the most requested skills in the postings and the team's largest gaps, so the plan below is built around studying them together rather than as three separate plans.
+
+### 4.3 Courses, Certifications, and Projects
+
+Each project uses this site's own data, so practice time also improves the project.
+
+| Skill | Free learning | Certification | Practice project |
+|---|---|---|---|
+| Python | Kaggle Learn: Python and Pandas | Not needed at this stage | Recreate the Market Baseline charts from the panel in pandas |
+| SQL | Kaggle Learn: Intro to SQL and Advanced SQL | Not needed at this stage | Rewrite the panel's filtering steps as Spark SQL queries |
+| Data Pipelines | Data Engineering Zoomcamp by DataTalks.Club, self-paced | Databricks Certified Data Engineer Associate, later stage | Turn `build_panel.py` into a scheduled pipeline that refreshes the panel |
+| Databricks | Databricks Academy self-paced courses | Databricks Certified Data Engineer Associate (about \$200) | Run the panel build in a Databricks notebook |
+| Machine Learning | Kaggle Learn: Intro to Machine Learning; Machine Learning Zoomcamp by DataTalks.Club | Not needed at this stage | Predict a posting's salary from its role family, location, and skills |
+| Power BI | Microsoft Learn self-paced training for PL-300 | Microsoft Certified: Power BI Data Analyst Associate, exam PL-300 (about \$165) | Rebuild the Market Baseline as a Power BI dashboard |
+| Tableau | Practice in Tableau Public | Salesforce Certified Tableau Data Analyst (about \$200) | Rebuild the same dashboard in Tableau Public |
+| Data Visualization | *Storytelling with Data* by Cole Nussbaumer Knaflic | Not needed | Redesign one chart on this site around a single clear takeaway |
+
+Certification fees are as listed by the providers in 2026 and may change.
+
+### 4.4 How the Team Can Help Each Other
+
+```{python}
+#| label: tbl-plan-collaboration
+#| tbl-cap: "Skills with at least one gap, the members who have it, and the team's strongest member on that skill."
+#| echo: false
+
+_strongest = plan[_MEMBERS].idxmax(axis=1)
+_collab = plan_gaps.groupby("Skill").agg(
+    **{
+        "Members with a gap": ("Member", lambda s: ", ".join(s)),
+        "Total gap": ("Gap", "sum"),
+    }
+)
+_collab["Strongest on the team"] = [
+    f"{_strongest[s]} ({int(plan.loc[s, _strongest[s]])})" for s in _collab.index
+]
+_collab.sort_values("Total gap", ascending=False)
+```
+
+Where one member is clearly ahead, they lead that topic. Where the strongest member still has a gap themselves, as with Python and SQL, the team studies together rather than relying on one person to teach. In practice:
+
+- **A weekly study session** of about an hour, working through the same Kaggle Learn or Zoomcamp module and comparing solutions.
+- **Rotating who writes the code.** For each remaining module of this project, the member with the largest gap writes the first version of the code, and the strongest member reviews it through a pull request. The work gets done and the practice counts double.
+- **Pairing on the BI tools.** The members strongest in Power BI and Tableau walk the others through rebuilding one Market Baseline chart in each tool.
+- **Business framing from the business-side members.** Members targeting business analyst roles lead on turning findings into requirements and recommendations for the Career Plan page.
+
+### 4.5 Timeline
+
+| Weeks | Focus | Who |
+|---|---|---|
+| 1 to 4 | Python and SQL foundations through Kaggle Learn, with the weekly study session | Everyone |
+| 5 to 8 | Data pipelines through the Data Engineering Zoomcamp; Power BI and Tableau practice for members with gaps there | Everyone, plus individual BI practice |
+| 9 to 12 | Machine learning basics and the salary-prediction project, which feeds the ML Methods page | Everyone |
+| After week 12 | One certification each, matched to target role: PL-300 or Tableau Data Analyst for business intelligence and business analyst roles, Databricks Data Engineer Associate for data roles | Individual |
+
+A member's target role can matter as much as the posting counts. Juan is targeting data scientist roles, so machine learning is more important for him than its share of postings alone suggests, and he should move to it earlier.
+
+### 4.6 Tracking Progress
+
+At the end of each four-week phase, every member re-rates themselves in `data/processed/team_skills_v2.csv`. The tables in this section are calculated from that file, so the plan updates itself and shows which gaps have closed.

@@ -450,8 +450,8 @@ print("Total levels to close per member:",
 
 ## 4. Improvement Plan
 
-<!-- SECTION OWNER: [third team member] -->
+<!-- SECTION OWNER: Juan -->
 <!-- INPUT: data/processed/skill_gap_table.csv holds each member's gaps and the priority order from Section 3. -->
 <!-- ASSIGNMENT 3.1.3: Which skills should each member prioritize? What courses or resources can help? How can the team collaborate to bridge the gaps? -->
 
-*To be completed.*
+{{< include _improvement_plan.qmd >}}
