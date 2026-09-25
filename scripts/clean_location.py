@@ -1,11 +1,22 @@
-"""Location cleaning helpers for the Step 2 panel.
+"""Location cleaning helpers for the analytical panel.
 
-The source LOCATION field is free text with inconsistent structure. State
-information appears as a full name, a two-letter code, or not at all. This
-module recovers a single state label and flags rows where no state exists.
+The source LOCATION field is free text with inconsistent structure, and the
+structured state fields are incomplete. This module recovers one state label
+per posting and marks postings with no identifiable state as Unspecified.
+
+Stages, in order:
+    1. Washington DC patterns, checked first so "Washington, District of
+       Columbia" and "Pennsylvania Avenue NW, Washington, DC" are not read
+       as Washington state or Pennsylvania
+    2. A full state name inside LOCATION
+    3. A two-letter state code between delimiters in LOCATION
+    4. The STATE column
+    5. STATE_NAME, when it holds a valid state name or code
+    6. A small map of bare city names
+Two-letter codes are then normalized to full state names.
 """
 
-from pyspark.sql.functions import col, trim, when, regexp_extract, upper
+from pyspark.sql.functions import col, lit, regexp_extract, trim, upper, when
 
 STATE_NAMES = (
     "Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|"
@@ -37,6 +48,9 @@ CODE_TO_NAME = {
     "WI": "Wisconsin", "WY": "Wyoming",
 }
 
+# Washington DC in its common written forms.
+DC_PATTERN = r"(?i)district of columbia|washington,?\s*d\.?\s?c\b"
+
 # Bare city names that appear without a state in LOCATION.
 CITY_TO_STATE = {
     "San,? Francisco": "California",
@@ -57,13 +71,18 @@ def add_state(dataframe):
         .withColumn("_by_code", regexp_extract(col("LOCATION"), r",\s*([A-Z]{2})[,;]", 1))
     )
 
-    # Prefer a full state name, then a two-letter code, then the STATE column.
-    raw = (
-        when(trim(col("_by_name")) != "", col("_by_name"))
-        .when(trim(col("_by_code")) != "", col("_by_code"))
-        .when(trim(col("STATE")) != "", col("STATE"))
+    state_name_valid = (
+        col("STATE_NAME").isin(STATE_NAMES.split("|"))
+        | upper(trim(col("STATE_NAME"))).isin(list(CODE_TO_NAME))
     )
 
+    raw = (
+        when(col("LOCATION").rlike(DC_PATTERN), lit("District of Columbia"))
+        .when(trim(col("_by_name")) != "", col("_by_name"))
+        .when(trim(col("_by_code")) != "", col("_by_code"))
+        .when(trim(col("STATE")) != "", col("STATE"))
+        .when(state_name_valid, trim(col("STATE_NAME")))
+    )
     for pattern, state in CITY_TO_STATE.items():
         raw = raw.when(col("LOCATION").rlike(f"(?i){pattern}"), state)
 
