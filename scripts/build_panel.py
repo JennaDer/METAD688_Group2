@@ -12,12 +12,12 @@ import glob
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, to_date, when, trim
+from pyspark.sql.functions import col, to_date, when, trim, lower
 
 from clean_location import add_state
 from clean_salary import add_salary
 
-RAW_GLOB = "data/MET_CareerCompass_2026/*.parquet"
+RAW_GLOB = "data/MET_CareerCompass_2026_v2/*.parquet"
 OUT_PATH = "data/processed/career_market_panel.csv"
 
 INDUSTRY_CODE = "5415"
@@ -50,6 +50,7 @@ KEEP_COLUMNS = [
     "COMPANY_NAME",
     "COMPANY_IS_STAFFING",
     "occupation_group",
+    "role_family",
     "posted_date",
     "state",
     "LOCATION",
@@ -85,8 +86,9 @@ print("STEP 2b - after role exclude:", roles.count())
 
 # Step 3: date window (the extract spans one quarter; we keep its range)
 panel = roles.withColumn("posted_date", to_date(col("POSTED"), "yyyy-MM-dd"))
-panel = panel.filter(col("posted_date").isNotNull())
-print("STEP 3 - after valid posted date:", panel.count())
+# v2 leaves POSTED blank on some postings. The window matches the extract's
+# own range, so undated postings are kept and flagged rather than dropped.
+print("STEP 3 - postings missing a posted date (kept):", panel.filter(col("posted_date").isNull()).count())
 
 # Step 4: cleaning
 panel = add_state(panel)
@@ -94,6 +96,26 @@ panel = add_salary(panel)
 panel = panel.withColumn(
     "occupation_group",
     when(col("ONET_NAME").isin(ONET_KEEP), col("ONET_NAME")).otherwise("Other"),
+)
+# Work arrangement: v2 spells on-site two ways and leaves many rows blank.
+panel = panel.withColumn(
+    "REMOTE_TYPE_NAME",
+    when(col("REMOTE_TYPE_NAME").isNull() | (trim(col("REMOTE_TYPE_NAME")) == ""), "Unknown")
+    .when(lower(col("REMOTE_TYPE_NAME")).isin("onsite", "on-site"), "On-site")
+    .otherwise(col("REMOTE_TYPE_NAME")),
+)
+
+# Role family from the job title, which is what the role filter selects on.
+# ONET files about 9% of these titles under unrelated occupations.
+title = lower(col("TITLE_CLEAN"))
+panel = panel.withColumn(
+    "role_family",
+    when(title.rlike("data scien"), "Data Scientist")
+    .when(title.rlike("data engineer|analytics engineer"), "Data Engineer")
+    .when(title.rlike("business intelligence|bi analyst"), "Business Intelligence")
+    .when(title.rlike("data analyst|reporting analyst"), "Data Analyst")
+    .when(title.rlike("business analyst"), "Business Analyst")
+    .otherwise("Other"),
 )
 print("STEP 4 - cleaned columns added")
 
