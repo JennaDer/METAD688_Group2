@@ -14,7 +14,7 @@ page-layout: full
 We are examining how employment demand, technical skills, and career pathways are changing across the U.S. computer systems design and related services industry.
 
 [Explore the research](introduction.qmd){.hero-button}
-[View our methodology](data_preparation.qmd){.hero-link}
+[View our methodology](data_cleaning.qmd){.hero-link}
 
 :::
 
@@ -67,7 +67,7 @@ Our analysis connects employer demand with the skills and career opportunities s
 
 Measure employment activity, employer concentration, occupational demand, and geographic patterns across the computer systems design and related services sector.
 
-[Open market analysis →](market_baseline.qmd)
+[Open market analysis →](eda.qmd)
 
 :::
 
@@ -91,7 +91,7 @@ Compare the technical, analytical, regulatory, and operational capabilities requ
 
 Translate market evidence into practical career options and evaluate how roles differ in demand, accessibility, and future potential.
 
-[Review career pathways →](career_evaluation.qmd)
+[Review career pathways →](ml_methods.qmd)
 
 :::
 
@@ -209,7 +209,7 @@ Which pathways offer the strongest combination of demand and accessibility?
 
 Our final recommendations will connect labor-market patterns with practical steps for candidates considering careers in computer systems design and related services.
 
-[View final recommendations](final_recommendations.qmd){.cta-button}
+[View final recommendations](career_plan.qmd){.cta-button}
 
 :::
 

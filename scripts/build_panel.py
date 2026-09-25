@@ -2,7 +2,7 @@
 
 Reads the MET CareerCompass 2026 v2 extract, filters it to one industry code
 and one career pathway, keeps the 12 months ending at the latest posting,
-applies the cleaning rules documented in data_preparation.qmd, and writes:
+applies the cleaning rules documented in data_cleaning.qmd, and writes:
 
     data/processed/career_market_panel.csv   the analytical panel
     data/processed/panel_build_stats.json    counts recorded during the build

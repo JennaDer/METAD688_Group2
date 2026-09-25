@@ -2,7 +2,6 @@
 
 ```{python}
 #| label: plan-setup
-#| echo: false
 
 import json
 import pandas as pd
@@ -75,7 +74,6 @@ A member's gap is the target minus their current rating, or zero if they already
 ```{python}
 #| label: tbl-plan-targets
 #| tbl-cap: "Target level for each skill, set by its share of postings."
-#| echo: false
 
 plan[["Demand (%)", "Target"] + _MEMBERS].sort_values("Demand (%)", ascending=False)
 ```
@@ -85,7 +83,6 @@ plan[["Demand (%)", "Target"] + _MEMBERS].sort_values("Demand (%)", ascending=Fa
 ```{python}
 #| label: tbl-plan-priorities
 #| tbl-cap: "Each member's three highest-priority skills."
-#| echo: false
 
 _top = plan_gaps.sort_values(["Member", "Priority"], ascending=[True, False]).groupby("Member").head(3)
 _top["Member"] = pd.Categorical(_top["Member"], _MEMBERS, ordered=True)
@@ -118,7 +115,6 @@ Certification fees are as listed by the providers in 2026 and may change.
 ```{python}
 #| label: tbl-plan-collaboration
 #| tbl-cap: "Skills with at least one gap, the members who have it, and the team's strongest member on that skill."
-#| echo: false
 
 _strongest = plan[_MEMBERS].idxmax(axis=1)
 _collab = plan_gaps.groupby("Skill").agg(
