@@ -24,7 +24,7 @@ We use our own team as three realistic examples of the target user: early-career
 ::: {.callout-warning}
 ## Data Limitation: Truncated Skill Lists
 
-As documented on the [Data Preparation](data_preparation.qmd) page, the skill fields in the source extract were alphabetically truncated before delivery. **No skill name in the dataset begins with a letter after C.** Python, SQL, Excel, Tableau, Power BI, and R therefore never appear in the posting data, even though they are core analytics tools.
+As documented on the [Data Preparation](data_cleaning.qmd) page, the skill fields in the source extract were alphabetically truncated before delivery. **No skill name in the dataset begins with a letter after C.** Python, SQL, Excel, Tableau, Power BI, and R therefore never appear in the posting data, even though they are core analytics tools.
 
 To keep the analysis honest, we separate the skills into two groups:
 
@@ -439,7 +439,7 @@ print("Total levels to close per member:",
 2. **The core tools are the biggest gap.** SQL, Python, and visualization tools are baseline expectations for analyst roles, and Jenna and Mariam are both at Beginner or Basic level in SQL and Python. Because the dataset cannot measure them, this finding relies on outside evidence, but it is the gap most likely to block a job application.
 3. **Automation and pipeline tools are the largest measured gap.** Automation (about 28% of postings) and Airflow (about 17%) are requested often, and the whole team rates at or near Beginner. These reflect the data-engineering side of NAICS 5415, where Database Architects make up a third of postings.
 4. **The team is complementary.** Jenna's Excel and BI skills, Mariam's business-requirements skills, and Juan's coding skills cover different parts of the market. Peer teaching inside the team is a realistic first step before outside courses.
-5. **Juan is closest to the largest segment.** Data Scientists are 47% of postings and the highest-paid group (see [Market Baseline](market_baseline.qmd)). Juan's remaining gaps are smaller and more technical, while Jenna and Mariam need a longer foundation in SQL and Python before those roles are within reach.
+5. **Juan is closest to the largest segment.** Data Scientists are 47% of postings and the highest-paid group (see [Market Baseline](eda.qmd)). Juan's remaining gaps are smaller and more technical, while Jenna and Mariam need a longer foundation in SQL and Python before those roles are within reach.
 
 ### Limitations
 

@@ -11,29 +11,18 @@ website:
     left:
       - href: index.qmd
         text: Home
-
       - href: introduction.qmd
-        text: Project Foundation
-
-      - text: Market Analysis
-        menu:
-          - href: data_preparation.qmd
-            text: Data Preparation
-          - href: market_baseline.qmd
-            text: Market Baseline
-
-      - text: Career Evaluation
-        menu:
-          - href: skill_gap_analysis.qmd
-            text: Skill-Gap Analysis
-          - href: career_evaluation.qmd
-            text: Career Scorecard
-
-      - href: final_recommendations.qmd
-        text: Recommendations
-
-      - href: about.qmd
-        text: Team
+        text: Project Overview
+      - href: data_cleaning.qmd
+        text: Data Preparation
+      - href: eda.qmd
+        text: Exploratory Analysis
+      - href: skill_gap_analysis.qmd
+        text: Skill Gap Analysis
+      - href: ml_methods.qmd
+        text: Predictive Modeling
+      - href: career_plan.qmd
+        text: Career Strategy
 
     right:
       - icon: github
@@ -50,6 +39,7 @@ format:
     css: styles.css
     toc: true
     smooth-scroll: true
+    code-fold: true
 
 editor: visual
 

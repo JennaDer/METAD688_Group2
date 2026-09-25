@@ -6,7 +6,6 @@ bibliography: references.bib
 
 ```{python}
 #| label: setup
-#| echo: false
 
 import json
 import pandas as pd
@@ -73,7 +72,6 @@ The inclusion rule kept `{python} fmt(stats["after_role_include"])` postings, an
 
 ```{python}
 #| label: tbl-funnel
-#| echo: false
 
 funnel = pd.DataFrame(
     {
@@ -108,7 +106,6 @@ We therefore keep the 12 months ending at the latest posting, from `{python} sta
 
 ```{python}
 #| label: cleaning-numbers
-#| echo: false
 
 cov = stats["field_coverage"]
 
@@ -174,7 +171,6 @@ Grouping by title, employer, and posted date does surface repeats: `{python} fmt
 
 ```{python}
 #| label: tbl-salary
-#| echo: false
 
 sal = panel["salary_midpoint"].dropna()
 pd.DataFrame(
@@ -212,7 +208,6 @@ One caution: `{python} fmt(hs_min)` postings list a high school diploma as the m
 
 ```{python}
 #| label: tbl-education
-#| echo: false
 
 levels = [
     "High school diploma or equivalent",
@@ -238,7 +233,6 @@ The extract carries four skill fields. Coverage within the panel:
 
 ```{python}
 #| label: tbl-skill-fields
-#| echo: false
 
 sf = stats["skill_field_coverage"]
 pd.DataFrame(
@@ -254,7 +248,6 @@ The original extract had cut off every skill name beginning with a letter from D
 
 ```{python}
 #| label: tbl-top-skills
-#| echo: false
 
 top = pd.Series([s for row in skills for s in set(row)]).value_counts().head(10)
 top = top.rename("Postings").to_frame()
@@ -271,7 +264,6 @@ That gives `{python} fmt(remote_unknown)` postings with no stated arrangement, o
 
 ```{python}
 #| label: tbl-remote
-#| echo: false
 
 stated = panel.loc[panel["REMOTE_TYPE_NAME"] != "Unknown", "REMOTE_TYPE_NAME"].value_counts()
 rem = stated.rename("Postings").to_frame()
@@ -299,7 +291,6 @@ The first step fixes an error in our Module 2 cleaner. It took the first state n
 
 ```{python}
 #| label: location-numbers
-#| echo: false
 
 unspec = panel.loc[panel["state"] == "Unspecified", "LOCATION"].fillna("")
 national = int(unspec.str.contains(r"(?i)remote|united states|\bUSA?\b").sum())
@@ -317,7 +308,6 @@ We therefore added `role_family`, taken from the job title, which is the same fi
 
 ```{python}
 #| label: tbl-role-family
-#| echo: false
 
 rf = panel["role_family"].value_counts().rename("Postings").to_frame()
 rf["Share of panel"] = (rf["Postings"] / n * 100).round(1).astype(str) + "%"
@@ -335,7 +325,6 @@ Employer names are not standardized. `{python} fmt(multi_spelling)` employers ap
 
 ```{python}
 #| label: tbl-missing
-#| echo: false
 
 has_skills = skills.map(len) > 0
 checks = {
@@ -385,7 +374,6 @@ The cleaned panel is written to `data/processed/career_market_panel.csv`, and th
 
 ```{python}
 #| label: tbl-schema
-#| echo: false
 
 pd.DataFrame(
     {
