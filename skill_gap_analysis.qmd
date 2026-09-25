@@ -96,9 +96,9 @@ The skill list combines the most frequently requested skills in our postings wit
 |---|---|---|
 | Jenna | Business Intelligence / Business Analyst | Strong Excel and BI experience; some Power BI; beginner in coding |
 | Mariam | Business Analyst | Strong business and analytics understanding; beginner in coding |
-| Juan | Data Analyst, moving toward Data Scientist | Most data and coding experience on the team; not yet an expert |
+| Juan | Data Analyst, moving toward Data Scientist | Expert in Excel, Power BI, Tableau, and data analysis; intermediate in SQL and Python |
 
-<!-- TODO: Juan to confirm his ratings before final submission. -->
+<!-- Juan's ratings for the v2 skill list are confirmed in data/processed/team_skills_v2.csv. -->
 
 ```{python}
 #| label: tbl-team-skills
