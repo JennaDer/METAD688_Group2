@@ -57,6 +57,8 @@ KEEP_COLUMNS = [
     "REMOTE_TYPE_NAME",
     "MAX_EDULEVELS_NAME",
     "MIN_EDULEVELS_NAME",
+    "min_years_experience",
+    "max_years_experience",
     "salary_from_annual",
     "salary_to_annual",
     "salary_midpoint",
@@ -117,6 +119,14 @@ panel = panel.withColumn(
     .when(title.rlike("business analyst"), "Business Analyst")
     .otherwise("Other"),
 )
+# Experience: v2 fills MIN_YEARS_EXPERIENCE on about half the panel, but 0
+# appears on many senior titles, so 0 is read as "not stated" rather than
+# "no experience required". Values above 20 years are treated as implausible.
+for raw, clean in [("MIN_YEARS_EXPERIENCE", "min_years_experience"),
+                   ("MAX_YEARS_EXPERIENCE", "max_years_experience")]:
+    yrs = when(trim(col(raw)) != "", col(raw).cast("double"))
+    panel = panel.withColumn(clean, when((yrs >= 1) & (yrs <= 20), yrs))
+
 print("STEP 4 - cleaned columns added")
 
 # Step 5: export
