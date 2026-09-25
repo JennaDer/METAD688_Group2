@@ -8,11 +8,12 @@ and writes a single analytical CSV.
 import sys
 from pathlib import Path
 import glob
+from datetime import timedelta
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, to_date, when, trim, lower
+from pyspark.sql.functions import col, to_date, when, trim, lower, lit
 
 from clean_location import add_state
 from clean_salary import add_salary
@@ -88,9 +89,12 @@ print("STEP 2b - after role exclude:", roles.count())
 
 # Step 3: date window (the extract spans one quarter; we keep its range)
 panel = roles.withColumn("posted_date", to_date(col("POSTED"), "yyyy-MM-dd"))
-# v2 leaves POSTED blank on some postings. The window matches the extract's
-# own range, so undated postings are kept and flagged rather than dropped.
-print("STEP 3 - postings missing a posted date (kept):", panel.filter(col("posted_date").isNull()).count())
+# v2 spans 2014 to 2026, so we keep the 12 months ending at the latest
+# posting. Postings without a date cannot be placed in the window.
+latest = panel.agg({"posted_date": "max"}).collect()[0][0]
+window_start = latest - timedelta(days=365)
+panel = panel.filter(col("posted_date") >= lit(window_start))
+print("STEP 3 - window", window_start, "to", latest, "->", panel.count())
 
 # Step 4: cleaning
 panel = add_state(panel)
