@@ -1,0 +1,34 @@
+{
+  "source": "MET_CareerCompass_2026_v2",
+  "industry_code": "5415",
+  "industry_label": "Computer Systems Design and Related Services",
+  "source_files": 21,
+  "source_columns": 124,
+  "raw_postings": 504208,
+  "industry_postings": 19886,
+  "broad_analyst_matches": 5382,
+  "after_role_include": 2308,
+  "after_role_exclude": 2268,
+  "undated": 299,
+  "window_start": "2025-09-10",
+  "window_end": "2026-09-10",
+  "after_window": 1790,
+  "before_window": 179,
+  "field_coverage": {
+    "STATE_NAME": 1558,
+    "STATE": 1028,
+    "COUNTY_NAME": 39,
+    "MSA_NAME": 92,
+    "SALARY_FROM": 601,
+    "MIN_YEARS_EXPERIENCE": 910
+  },
+  "skill_field_coverage": {
+    "SKILLS_NAME": 1785,
+    "SPECIALIZED_SKILLS_NAME": 1785,
+    "COMMON_SKILLS_NAME": 844,
+    "SOFTWARE_SKILLS_NAME": 1593
+  },
+  "experience_zero": 387,
+  "experience_over_20": 3,
+  "final_postings": 1790
+}
