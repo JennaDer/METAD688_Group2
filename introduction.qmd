@@ -139,7 +139,7 @@ The table below lists the main fields used in the project and what each field su
 
 ### Note on Data Volume
 
-The original NAICS 3254 industry scope produced too few relevant analytics postings to support meaningful distribution-level analysis. In Module 2, the team therefore revised the industry scope to NAICS 5415, Computer Systems Design and Related Services. The cleaned analytical panel contains 287 relevant postings, providing a stronger basis for evaluating salary, geography, education, work arrangements, employers, and other labor-market patterns.
+The original NAICS 3254 industry scope produced too few relevant analytics postings to support meaningful distribution-level analysis. In Module 2, the team therefore revised the industry scope to NAICS 5415, Computer Systems Design and Related Services. In Module 3 the panel was rebuilt on the corrected v2 extract and limited to the most recent 12 months of postings, as documented on the [Data Preparation](data_preparation.qmd) page. This provides a stronger basis for evaluating salary, geography, education, work arrangements, employers, and other labor-market patterns.
 
 ## 8. What We Expect to Explore
 
