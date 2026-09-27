@@ -9,30 +9,30 @@ toc: true
 
 This page gives an overview of the current job market for Data Analytics careers within Computer Systems Design and Related Services.
 
-::: {.callout-note}
+::: callout-note
 ## Project Scope
 
-**Industry:** Computer Systems Design and Related Services  
-**NAICS code:** 5415  
-**Career pathway:** Data Analytics  
-**Dates covered:** March 25, 2026–June 29, 2026  
-**Final dataset:** 287 job postings
+**Industry:** Computer Systems Design and Related Services\
+**NAICS code:** 5415\
+**Career pathway:** Data Analytics\
+**Dates covered:** September 11, 2025-September 10, 2026\
+**Final dataset:** 1,790 job postings
 :::
 
 ## Market Overview
 
-Our cleaned dataset contains 287 job postings related to Data Analytics within NAICS 5415. It includes positions in data analysis, data science, data engineering, business analysis, and business intelligence.
+Our cleaned dataset contains 1,790 job postings related to Data Analytics within NAICS 5415. It includes positions in data analysis, data science, data engineering, business analysis, and business intelligence.
 
 These results describe the postings available in the course dataset. They should not be treated as a complete picture of every analytics job in the United States.
 
 ### Main Findings
 
-- The final dataset contains 287 relevant postings.
+- The final dataset contains 1,790 relevant postings.
 - Data Scientists and Database Architects are the two largest occupation groups.
-- Salary information is available for 112 postings.
-- The median advertised salary midpoint is $150,708.
+- Salary information is available for 591 postings.
+- The median advertised salary midpoint is \$151,475.
 - California has the most postings with an identified state.
-- Remote and hybrid jobs together account for 41.5% of the dataset.
+- Remote and hybrid jobs together account for 41.3% of the dataset.
 - Some fields have a large amount of missing or unknown information.
 
 ## Job Volume
@@ -41,15 +41,15 @@ These results describe the postings available in the course dataset. They should
 
 ### Job-Volume Summary
 
-| Rank | Occupation Group | Postings | Share |
-|---:|---|---:|---:|
-| 1 | Data Scientists | 135 | 47.0% |
-| 2 | Database Architects | 98 | 34.1% |
-| 3 | Management Analysts | 33 | 11.5% |
-| 4 | Other matched analytics roles | 16 | 5.6% |
-| 5 | Business Intelligence Analysts | 5 | 1.7% |
+| Rank | Occupation Group               | Postings | Share |
+|-----:|--------------------------------|---------:|------:|
+|    1 | Data Scientists                |      769 | 43.0% |
+|    2 | Database Architects            |      531 | 29.7% |
+|    3 | Management Analysts            |      297 | 16.6% |
+|    4 | Other matched analytics roles  |      161 |  9.0% |
+|    5 | Business Intelligence Analysts |       32 |  1.8% |
 
-Data Scientists make up the largest group, followed by Database Architects. Together, these two groups account for 81.1% of the dataset.
+Data Scientists make up the largest group, followed by Database Architects. Together, these two groups account for 72.6% of the dataset.
 
 The occupation names come from the O\*NET classifications in the source data. As a result, some positions with titles such as Data Analyst or Data Engineer may be included under a broader occupation group. Job seekers may want to search across several related titles instead of searching only for “Data Analyst.”
 
@@ -59,17 +59,17 @@ The occupation names come from the O\*NET classifications in the source data. As
 
 ### Salary Summary
 
-| Salary Measure | Result |
-|---|---:|
-| Postings with usable salary data | 112 of 287 (39.0%) |
-| Median minimum salary | $125,000 |
-| Median maximum salary | $173,000 |
-| Median salary midpoint | $150,708 |
-| 25th-percentile midpoint | $120,000 |
-| 75th-percentile midpoint | $180,000 |
-| Highest retained midpoint | $318,250 |
+| Salary Measure                   |               Result |
+|----------------------------------|---------------------:|
+| Postings with usable salary data | 591 of 1,790 (33.0%) |
+| Median minimum salary            |            \$130,000 |
+| Median maximum salary            |            \$170,300 |
+| Median salary midpoint           |            \$151,475 |
+| 25th-percentile midpoint         |            \$120,000 |
+| 75th-percentile midpoint         |            \$187,500 |
+| Highest retained midpoint        |            \$340,555 |
 
-Among postings that include salary information, the middle half of salary midpoints falls between $120,000 and $180,000. The median midpoint is $150,708.
+Among postings that include salary information, the middle half of salary midpoints falls between \$120,000 and \$187,500. The median midpoint is \$151,475.
 
 Salary information is missing from most of the postings, so these numbers only describe employers that included usable pay information.
 
@@ -77,71 +77,71 @@ Salary information is missing from most of the postings, so these numbers only d
 
 ![Median advertised salary midpoint by occupation segment.](figures/median_salary_by_occupation.png){#fig-salary-role fig-alt="Horizontal bar chart comparing median advertised salary midpoints for occupation groups with at least 10 usable salary observations."}
 
-Among occupation groups with at least 10 postings containing usable salary data, Data Scientists / Data Analysts have the highest median advertised salary midpoint at $163,025, followed by Database Architects / Data Engineers at $155,450. Management Analysts have a lower median midpoint of $92,500.
+Among occupation groups with at least 10 postings containing usable salary data, Data Scientists have the highest median advertised salary midpoint at \$174,800, followed by Database Architects at \$155,225. Other matched analytics roles have a median midpoint of \$131,500, Business Intelligence Analysts have a median midpoint of \$122,500, and Management Analysts have a median midpoint of \$99,000.
 
 This comparison includes only occupation groups with at least 10 usable salary observations to avoid drawing conclusions from very small samples. The results are descriptive of postings in this dataset that reported usable salary information and should not be interpreted as salary estimates for all positions in these occupations.
 
-::: {.callout-warning}
+::: callout-warning
 ## Salary Data Limitation
 
-Hourly pay was converted to an annual amount using 2,080 work hours per year. Zero values were treated as missing, and salaries below $20,000 were removed as unrealistic. Salary results are based on 112 postings rather than the full dataset.
+Hourly pay was converted to an annual amount using 2,080 work hours per year. Zero values were treated as missing, and salaries below \$20,000 were removed as unrealistic. Salary results are based on 591 postings rather than the full dataset.
 :::
 
 ## Geographic Patterns
 
 ![States with the most identified job postings.](figures/leading_states.png){#fig-states fig-alt="Horizontal bar chart showing the states with the most job postings."}
 
-California has the highest number of postings with an identified state, with 45. Texas follows with 21. Washington, New York, and Virginia each have 18.
+California has the highest number of postings with an identified state, with 258. Virginia follows with 171, New York with 156, Texas with 132, and Washington with 70.
 
 ### Top Identified States
 
-| Rank | State | Postings | Share of Full Dataset |
-|---:|---|---:|---:|
-| 1 | California | 45 | 15.7% |
-| 2 | Texas | 21 | 7.3% |
-| 3 | Washington | 18 | 6.3% |
-| 3 | New York | 18 | 6.3% |
-| 3 | Virginia | 18 | 6.3% |
+| Rank | State      | Postings | Share of Full Dataset |
+|-----:|------------|---------:|----------------------:|
+|    1 | California |      258 |                 14.4% |
+|    2 | Virginia   |      171 |                  9.6% |
+|    3 | New York   |      156 |                  8.7% |
+|    4 | Texas      |      132 |                  7.4% |
+|    5 | Washington |       70 |                  3.9% |
 
-The postings are spread across several major technology and business markets. However, 82 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset.
+The postings are spread across several major technology and business markets. However, 377 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset.
 
 ## Experience and Education
 
-The course dataset includes minimum and maximum experience fields, but both are blank across all 165,386 original records. This means we cannot create a reliable experience distribution.
-
-Instead, we report education as the available qualification measure.
+Minimum experience information is available for 520 of the 1,790 postings (29.1%). Among postings with usable minimum-experience information, the median minimum requirement is 5 years.
 
 ### Education Distribution
 
-| Highest Education Level Listed | Postings | Share |
-|---|---:|---:|
-| Master's degree | 101 | 35.2% |
-| Bachelor's degree | 94 | 32.8% |
-| Associate's degree | 48 | 16.7% |
-| Doctoral or professional degree | 44 | 15.3% |
+| Highest Education Level Listed      | Postings | Share |
+|-------------------------------------|---------:|------:|
+| Bachelor's degree                   |      615 | 34.4% |
+| Master's degree                     |      385 | 21.5% |
+| High school diploma or equivalent   |      308 | 17.2% |
+| Doctoral or professional degree     |      176 |  9.8% |
+| Associate's degree                  |       53 |  3.0% |
+| Missing or not specified            |      253 | 14.1% |
 
-Bachelor's and master's degree categories together account for 68.0% of the education values in the final dataset.
+Bachelor's and master's degree categories together account for 55.9% of the full dataset. Education information is missing or not specified for 253 postings.
 
 The education fields appear to be standardized or modeled values. They may not represent an education requirement written directly by each employer.
 
-::: {.callout-warning}
-## Missing Experience Information
+::: callout-warning
+## Limited Experience Information
 
-We did not treat missing experience as zero years of experience. The source data does not provide enough information to determine how much experience employers require.
+We did not treat missing experience as zero years of experience. Minimum-experience information is available for 520 postings, so the experience findings describe only the subset of postings with usable experience data.
 :::
 
 ## Remote, Hybrid, and On-site Work
 
 ![Job postings by work arrangement.](figures/work_arrangement.png){#fig-work-arrangement fig-alt="Bar chart comparing remote, hybrid, on-site, and unknown work arrangements."}
 
-| Work Arrangement | Postings | Share |
-|---|---:|---:|
-| Remote | 65 | 22.6% |
-| Hybrid | 54 | 18.8% |
-| On-site | 23 | 8.0% |
-| Unknown or not specified | 145 | 50.5% |
+| Work Arrangement         | Postings | Share |
+|--------------------------|---------:|------:|
+| Remote                   |      362 | 20.2% |
+| Hybrid                   |      378 | 21.1% |
+| On-site                  |      120 |  6.7% |
+| Unknown or not specified |      930 | 52.0% |
 
-Remote and hybrid jobs together account for 119 postings, or 41.5% of the dataset. However, the work arrangement is unknown for 145 postings.
+Remote and hybrid jobs together account for 740 postings, or 41.3% of the dataset. However, the work arrangement is unknown for 930 postings.
 
 The Unknown category should not be counted as on-site work. It only means that the source did not provide a usable classification.
 
@@ -151,16 +151,16 @@ The Unknown category should not be counted as on-site work. It only means that t
 
 ### Employers with the Most Postings
 
-| Rank | Employer Label | Postings |
-|---:|---|---:|
-| 1 | Amazon | 16 |
-| 2 | Esri | 8 |
-| 3 | Turnitin | 4 |
-| 3 | Turnitinllc | 4 |
-| 3 | Abbvie | 4 |
-| 3 | Jobgether | 4 |
+| Rank | Employer            | Postings |
+|-----:|---------------------|---------:|
+| 1    | Amazon              |       95 |
+| 2    | Jobs via Dice       |       94 |
+| 3    | Capital One         |       57 |
+| 4    | Jobgether           |       21 |
+| 5    | Booz Allen Hamilton |       20 |
+| 6    | Esri                |       19 |
 
-Amazon has the highest number of postings in the dataset, followed by Esri.
+Amazon has the highest number of postings in the dataset, closely followed by Jobs via Dice, with Capital One as the third-largest employer label.
 
 Employer names are not fully consistent. For example, Turnitin and Turnitinllc appear as separate labels even though they may represent the same company. The employer counts provide a general picture of hiring activity, but they may undercount companies that appear under more than one name.
 
@@ -168,20 +168,19 @@ Employer names are not fully consistent. For example, Turnitin and Turnitinllc a
 
 Job seekers should search across several related titles, including Data Analyst, Data Scientist, Data Engineer, Business Analyst, and Business Intelligence Analyst. Searching only for one title could leave out relevant opportunities.
 
-California has the most postings with a known state, but the data also shows opportunities in Texas, Washington, New York, Virginia, and remote positions.
+California has the most postings with a known state, but the data also shows opportunities in Virginia, New York, Texas, Washington, and remote positions.
 
 Candidates may also benefit from showing a mix of technical and business skills. Employers may expect candidates to analyze data, prepare or manage data, explain findings, and connect their work to business needs.
 
 ## Limitations
 
-- The dataset contains 287 selected postings and does not represent the entire U.S. job market.
-- Salary information is available for only 112 postings.
-- Experience fields are empty across the source data.
-- State information is unavailable for 82 postings.
-- Work arrangement is unknown for 145 postings.
+- The dataset contains 1,790 selected postings and does not represent the entire U.S. job market.
+- Salary information is available for only 591 postings.
+- Minimum-experience information is available for only 520 postings, so experience findings are based on a subset of the dataset.
+- State information is unavailable for 377 postings.
+- Work arrangement is unknown for 930 postings.
 - Employer names are not fully standardized.
-- The skills fields appear to be alphabetically cut off. Skills beginning with letters from D through Z, including Python and SQL, are not available.
-- The data covers approximately one quarter, so it cannot show annual or seasonal hiring patterns.
+- The analysis covers postings dated September 11, 2025 through September 10, 2026 and does not represent periods outside that window.
 
 ## Job Market Snapshot
 
@@ -190,7 +189,7 @@ Candidates may also benefit from showing a mix of technical and business skills.
 ::: {.metric-card}
 ### Job Postings
 
-<span class="metric-value">287</span>
+<span class="metric-value">1,790</span>
 
 <span class="metric-note">Relevant postings within NAICS 5415</span>
 :::
@@ -198,17 +197,17 @@ Candidates may also benefit from showing a mix of technical and business skills.
 ::: {.metric-card}
 ### Median Salary
 
-<span class="metric-value">$150,708</span>
+<span class="metric-value">$151,475</span>
 
-<span class="metric-note">Based on 112 postings with usable salary data</span>
+<span class="metric-note">Based on 591 postings with usable salary data</span>
 :::
 
 ::: {.metric-card}
 ### Remote or Hybrid
 
-<span class="metric-value">41.5%</span>
+<span class="metric-value">41.3%</span>
 
-<span class="metric-note">119 postings classified as remote or hybrid</span>
+<span class="metric-note">740 postings classified as remote or hybrid</span>
 :::
 
 ::::
