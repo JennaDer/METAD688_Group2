@@ -14,22 +14,17 @@ format:
 
 ## Purpose
 
-This page compares the skills requested in our analytics job postings with the current skills of our three team members. It answers two supporting questions from the Project Foundation page:
+This page compares the skills requested in our analytics job postings with the current skills of our three team members. It answers two supporting questions from the Project Overview:
 
 - Where does the target user have skill gaps?
 - Which skills should the target user prioritize?
 
 We use our own team as three realistic examples of the target user: early-career candidates moving into analytics roles within Computer Systems Design and Related Services (NAICS 5415).
 
-::: {.callout-warning}
-## Data Limitation: Truncated Skill Lists
+::: {.callout-note}
+## Data Source
 
-As documented on the [Data Preparation](data_cleaning.qmd) page, the skill fields in the source extract were alphabetically truncated before delivery. **No skill name in the dataset begins with a letter after C.** Python, SQL, Excel, Tableau, Power BI, and R therefore never appear in the posting data, even though they are core analytics tools.
-
-To keep the analysis honest, we separate the skills into two groups:
-
-- **Market skills:** measured directly from our 287 job postings.
-- **Core tools:** added from outside evidence [@verma2019skills] because the dataset cannot measure them. Their demand is *assumed*, not measured.
+This analysis uses the corrected v2 extract described on the [Data Preparation](data_cleaning.qmd) page: 1,790 analytics postings posted between September 2025 and September 2026. Unlike the original extract, v2 contains the full skill taxonomy, so core tools such as Python, SQL, Tableau, and Power BI are measured directly in the postings.
 :::
 
 ```{python}
@@ -44,13 +39,18 @@ import numpy as np
 import pandas as pd
 from matplotlib.colors import LinearSegmentedColormap
 
-# Team palette, shared with scripts/build_market_baseline.py
+# Team palette, shared with scripts/plot_theme.py
 NAVY = "#123B4A"
 TEAL = "#2A7F83"
 AQUA = "#63B7AF"
 LIGHT_BLUE = "#9CCFD0"
 GOLD = "#D7A84B"
 GRAY = "#65757D"
+TEXT = "#25353C"
+GRID = "#E6ECEE"
+
+SEQUENTIAL = LinearSegmentedColormap.from_list("team_teal", ["#F3F8F9", LIGHT_BLUE, TEAL, NAVY])
+GAP_SCALE = LinearSegmentedColormap.from_list("gap_gold", ["#FFFFFF", "#F2DDB0", GOLD, "#9A6B16"])
 
 plt.rcParams.update(
     {
@@ -58,11 +58,11 @@ plt.rcParams.update(
         "axes.facecolor": "white",
         "axes.edgecolor": "#D9E2E5",
         "axes.titlecolor": NAVY,
-        "axes.labelcolor": "#25353C",
+        "axes.labelcolor": TEXT,
         "axes.titleweight": "bold",
         "axes.titlesize": 13,
-        "xtick.color": "#25353C",
-        "ytick.color": "#25353C",
+        "xtick.color": TEXT,
+        "ytick.color": TEXT,
         "font.size": 10,
     }
 )
@@ -76,6 +76,29 @@ def save_figure(filename):
     plt.tight_layout()
     plt.savefig(FIGURES / filename, dpi=200, bbox_inches="tight", facecolor="white")
     plt.show()
+
+
+def annotated_heatmap(ax, table, cmap, vmin, vmax, fmt, dark_from, blank_zero=False):
+    """Draw a labelled heatmap with thin gaps between cells."""
+    values = table.to_numpy(dtype=float)
+    ax.imshow(np.nan_to_num(values, nan=vmin), cmap=cmap, vmin=vmin, vmax=vmax, aspect="auto")
+    for i in range(values.shape[0]):
+        for j in range(values.shape[1]):
+            v = values[i, j]
+            if np.isnan(v) or (blank_zero and v == 0):
+                continue
+            ax.text(j, i, fmt(v), ha="center", va="center", fontsize=9.5,
+                    color="white" if v >= dark_from else TEXT)
+    ax.set_xticks(range(values.shape[1]), table.columns)
+    ax.set_yticks(range(values.shape[0]), table.index)
+    ax.xaxis.tick_top()
+    ax.tick_params(length=0)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.set_xticks(np.arange(-0.5, values.shape[1]), minor=True)
+    ax.set_yticks(np.arange(-0.5, values.shape[0]), minor=True)
+    ax.grid(which="minor", color="white", linewidth=2)
+    ax.tick_params(which="minor", length=0)
 ```
 
 ## 1. Team Skill Ratings
@@ -90,47 +113,27 @@ Each team member rated their current proficiency on the course's five-point scal
 | 4 | Advanced |
 | 5 | Expert |
 
-The skill list combines the most frequently requested skills in our postings with four core analytics tools. Each member also named the role they are targeting.
+The skill list comes from the postings themselves: it covers the most requested tools and competencies that a person can realistically rate and learn. Very broad fields such as "Data Science" or "Computer Science" were left out because they describe a discipline rather than a skill.
 
 | Team member | Target role | Background |
 |---|---|---|
-| Jenna | Business Intelligence / Business Analyst | Strong Excel and BI experience; some Power BI; beginner in coding |
-| Mariam | Business Analyst | Strong business and analytics understanding; beginner in coding |
+| Jenna | Business Intelligence / Business Analyst | Strong Excel, BI, and communication skills; some Power BI; beginner in coding |
+| Mariam | Business Analyst | Strong business requirements and analysis skills; beginner in coding |
 | Juan | Data Analyst, moving toward Data Scientist | Expert in Excel, Power BI, Tableau, and data analysis; intermediate in SQL and Python |
 
-<!-- Juan's ratings for the v2 skill list are confirmed in data/processed/team_skills_v2.csv. -->
+The ratings are stored in `data/processed/team_skills_v2.csv`. This page and the Improvement Plan below both read from that one file, so updating a rating there updates the whole analysis.
 
 ```{python}
 #| label: tbl-team-skills
 #| tbl-cap: "Self-assessed skill levels (1 = Beginner, 5 = Expert)."
 
-skills_data = {
-    "Name": ["Jenna", "Mariam", "Juan"],
-    # Market skills (measured in the job postings)
-    "Analytics":               [4, 4, 4],
-    "Business Intelligence":   [4, 3, 3],
-    "Business Requirements":   [3, 4, 2],
-    "Big Data":                [3, 3, 3],
-    "Artificial Intelligence": [2, 2, 3],
-    "Algorithms":              [2, 1, 3],
-    "A/B Testing":             [2, 2, 2],
-    "Automation":              [1, 1, 2],
-    "Apache Spark":            [1, 1, 2],
-    "BigQuery":                [1, 1, 2],
-    "Airflow":                 [1, 1, 1],
-    "Alteryx":                 [1, 1, 1],
-    "Causal Inference":        [1, 1, 1],
-    # Core tools (not measurable in this dataset)
-    "Excel":                   [4, 2, 3],
-    "Tableau / Power BI":      [3, 1, 2],
-    "SQL":                     [1, 2, 3],
-    "Python":                  [1, 1, 3],
-}
+MEMBERS = ["Jenna", "Mariam", "Juan"]
 
-df_skills = pd.DataFrame(skills_data).set_index("Name")
+ratings = pd.read_csv("data/processed/team_skills_v2.csv").set_index("skill")
 
-CORE_TOOLS = ["Excel", "Tableau / Power BI", "SQL", "Python"]
-MARKET_SKILLS = [c for c in df_skills.columns if c not in CORE_TOOLS]
+# Team skill dataframe: one row per member, one column per skill
+df_skills = ratings[MEMBERS].T
+df_skills.index.name = "Name"
 
 df_skills.T
 ```
@@ -139,173 +142,141 @@ df_skills.T
 
 ```{python}
 #| label: fig-team-heatmap
-#| fig-cap: "Team skill levels. Darker cells show stronger skills; the lower block holds core tools that the dataset cannot measure."
+#| fig-cap: "Team skill levels, sorted by team average. Darker cells show stronger skills."
 
-skill_cmap = LinearSegmentedColormap.from_list(
-    "team_teal", ["#F3F8F9", LIGHT_BLUE, TEAL, NAVY]
-)
+heat = df_skills.T.loc[df_skills.mean().sort_values(ascending=False).index]
 
-heat = df_skills.T  # skills as rows, members as columns
-fig, ax = plt.subplots(figsize=(6.5, 8))
-ax.imshow(heat.values, cmap=skill_cmap, vmin=1, vmax=5, aspect="auto")
-
-for i in range(heat.shape[0]):
-    for j in range(heat.shape[1]):
-        value = heat.values[i, j]
-        ax.text(
-            j, i, value, ha="center", va="center", fontsize=10,
-            color="white" if value >= 3 else "#25353C",
-        )
-
-ax.set_xticks(range(heat.shape[1]), heat.columns)
-ax.set_yticks(range(heat.shape[0]), heat.index)
-ax.xaxis.tick_top()
-ax.tick_params(length=0)
-for spine in ax.spines.values():
-    spine.set_visible(False)
-
-# Thin white gaps between cells, plus a divider above the core tools
-ax.set_xticks(np.arange(-0.5, heat.shape[1]), minor=True)
-ax.set_yticks(np.arange(-0.5, heat.shape[0]), minor=True)
-ax.grid(which="minor", color="white", linewidth=2)
-ax.tick_params(which="minor", length=0)
-ax.axhline(len(MARKET_SKILLS) - 0.5, color=NAVY, linewidth=1.5)
-ax.text(
-    heat.shape[1] - 0.35, len(MARKET_SKILLS) + len(CORE_TOOLS) / 2 - 0.5,
-    "Core tools\n(not in dataset)", rotation=270, ha="left", va="center",
-    fontsize=8.5, color=GRAY, style="italic",
-)
-
+fig, ax = plt.subplots(figsize=(6.5, 7.5))
+annotated_heatmap(ax, heat, SEQUENTIAL, vmin=1, vmax=5, fmt=lambda v: f"{v:.0f}", dark_from=3)
 ax.set_title("Team Skill Levels (1 = Beginner, 5 = Expert)", pad=28)
 save_figure("team_skill_heatmap.png")
 ```
 
-The heatmap shows three complementary profiles:
+The heatmap shows a clear split between business and technical skills:
 
-- **Jenna** is the team's strongest member in Excel and business intelligence.
-- **Mariam** is strongest in business requirements and analytics understanding.
-- **Juan** has the strongest technical base, with intermediate Python, SQL, and algorithms.
+- **All three members are strong on the business side:** data analysis, business analysis, business requirements, and communication.
+- **Juan is the team's strongest member overall**, at Expert level in the BI tools (Tableau, Power BI, Excel) and intermediate in SQL and Python.
+- **Jenna** brings Advanced Excel, business analysis, and communication skills, with intermediate BI tools and data modeling.
+- **Mariam** is strongest in business requirements, with most technical tools still at Beginner level.
 
-The lower rows of the market block are the shared weak spot. **No team member is above Basic knowledge in data-pipeline and cloud tools** (Airflow, BigQuery, Apache Spark, Alteryx) or in causal inference.
+The bottom of the heatmap is the shared weak spot. **No one on the team is above Intermediate in Python, SQL, data pipelines, Databricks, machine learning, or statistical modeling.**
 
 ## 2. Skills Requested in Job Postings
 
-We extracted skills from the `SKILLS_NAME` field of the cleaned panel. Each posting stores its skills as a list, so we count **how many postings mention each skill** rather than total mentions. This stops a single long posting from inflating a skill's importance.
+We extracted skills from the `SKILLS_NAME` field. Each posting stores its skills as a list, so we count **how many postings mention each skill** rather than total mentions. This stops a single long posting from inflating a skill's importance.
 
 ```{python}
 #| label: extract-skills
 
 panel = pd.read_csv("data/processed/career_market_panel.csv")
-
-panel["skills"] = (
-    panel["SKILLS_NAME"].fillna("[]").map(json.loads).map(set)
+panel["skills"] = panel["SKILLS_NAME"].fillna("[]").map(
+    lambda s: set(json.loads(s)) if s.startswith("[") else set()
 )
-postings_with_skills = (panel["skills"].map(len) > 0).sum()
+n_postings = len(panel)
 
-skill_postings = (
-    panel[["ID", "skills"]]
-    .explode("skills")
-    .dropna()
-    .groupby("skills")["ID"]
-    .count()
-    .sort_values(ascending=False)
-)
+skill_postings = panel["skills"].explode().dropna().value_counts()
 
-print(f"Postings with at least one skill listed: {postings_with_skills} of {len(panel)}")
-print(f"Distinct skill names: {skill_postings.size}")
-```
-
-The first letters of every extracted skill name confirm the truncation described above:
-
-```{python}
-#| label: truncation-check
-
-first_letters = pd.Series(skill_postings.index.str[0]).value_counts().sort_index()
-first_letters.rename("Distinct skills").to_frame().T
+print(f"Postings analyzed: {n_postings:,}")
+print(f"Postings with at least one skill: {(panel['skills'].map(len) > 0).sum():,}")
+print(f"Distinct skills: {skill_postings.size:,}")
 ```
 
 ### Most Requested Skills
 
 ```{python}
 #| label: fig-top-skills
-#| fig-cap: "The 15 skills mentioned in the most postings (share of the 278 postings with skill data)."
+#| fig-cap: "The 20 skills mentioned in the most postings. Teal bars are skills the team rated; light bars are broad fields or tools outside the team's list."
 
-top_raw = (skill_postings.head(15) / postings_with_skills * 100).sort_values()
+top = (skill_postings.head(20) / n_postings * 100).sort_values()
+rated = set(ratings["panel_skill_name"])
+colors = [TEAL if skill in rated else LIGHT_BLUE for skill in top.index]
 
-fig, ax = plt.subplots(figsize=(8, 6))
-bars = ax.barh(top_raw.index, top_raw.values, color=TEAL, height=0.7)
-for bar, value in zip(bars, top_raw.values):
+fig, ax = plt.subplots(figsize=(8.5, 7))
+bars = ax.barh(top.index, top.values, color=colors, height=0.7)
+for bar, value in zip(bars, top.values):
     ax.text(value + 0.8, bar.get_y() + bar.get_height() / 2, f"{value:.0f}%",
             va="center", fontsize=9, color=NAVY)
 
 ax.set_xlabel("Share of postings (%)")
-ax.set_xlim(0, top_raw.max() * 1.12)
+ax.set_xlim(0, top.max() * 1.12)
 ax.spines[["top", "right"]].set_visible(False)
+ax.legend(
+    handles=[plt.Rectangle((0, 0), 1, 1, color=TEAL), plt.Rectangle((0, 0), 1, 1, color=LIGHT_BLUE)],
+    labels=["Rated by the team", "Not on the team's list"],
+    loc="lower right", frameon=False,
+)
 ax.set_title("Most Requested Skills in Analytics Postings (NAICS 5415)")
 save_figure("top_posting_skills.png")
 ```
 
-"Analytics" appears in roughly two of every three postings, far ahead of every other skill. The next tier mixes **business skills** (Business Intelligence, Business Requirements) with **technical data tools** (Automation, Airflow, BigQuery, Big Data). Employers in this industry want analysts who can understand the business problem *and* work with modern data infrastructure.
+**Python and SQL dominate**, each appearing in more than 60% of postings, roughly three times as often as the next skill. After them comes a mix of data-engineering skills (data pipelines, data engineering, Databricks), data science (machine learning), and BI tools (Tableau, Power BI). Business-side skills such as business requirements and Excel appear in about 10% of postings.
 
-### Grouping Related Skill Names
-
-Many skill names in the source data describe the same capability ("Analytics", "Advanced Analytics", "Business Analytics"). We grouped related names into the skills our team rated, so that team ratings and market demand refer to the same thing.
+### Demand for the Team's Skills
 
 ```{python}
 #| label: tbl-skill-demand
-#| tbl-cap: "Market demand for each rated skill, after grouping related skill names."
+#| tbl-cap: "Share of all 1,790 postings that request each skill on the team's list."
 
-SKILL_GROUPS = {
-    "Analytics": ["Analytics", "Advanced Analytics", "Business Analytics",
-                  "Analytical Skills", "Analytical Thinking"],
-    "Automation": ["Automation", "Business Process Automation"],
-    "Business Intelligence": ["Business Intelligence", "Business Intelligence Tools",
-                              "Business Reporting"],
-    "Business Requirements": ["Business Requirements", "Business Analysis",
-                              "Business Process Analysis"],
-    "Airflow": ["Airflow", "Apache Airflow"],
-    "Big Data": ["Big Data", "Big Data Analytics", "Apache Hadoop"],
-    "BigQuery": ["BigQuery"],
-    "Algorithms": ["Algorithms"],
-    "Artificial Intelligence": ["Artificial Intelligence", "AI Agents", "Agentic AI"],
-    "Causal Inference": ["Causal Inference"],
-    "A/B Testing": ["A/B Testing"],
-    "Alteryx": ["Alteryx"],
-    "Apache Spark": ["Apache Spark"],
-}
-
-demand = pd.Series(
-    {
-        skill: panel["skills"].map(lambda s, names=names: bool(s & set(names))).sum()
-        for skill, names in SKILL_GROUPS.items()
-    },
-    name="Postings",
-)
+demand = ratings["panel_skill_name"].map(lambda name: skill_postings.get(name, 0)).rename("Postings")
 demand = demand.to_frame()
-demand["Share of postings (%)"] = (demand["Postings"] / postings_with_skills * 100).round(1)
+demand["Share of postings (%)"] = (demand["Postings"] / n_postings * 100).round(1)
 demand = demand.sort_values("Postings", ascending=False)
 demand
 ```
 
+### Demand Depends on the Role
+
+The market average hides large differences between roles. The v2 data classifies each posting into a role family, so we can see what each of our target roles asks for.
+
+```{python}
+#| label: fig-role-demand
+#| fig-cap: "Share of postings in each role family that request each skill. Skills are ordered by overall demand."
+
+ROLES = ["Business Analyst", "Business Intelligence", "Data Analyst", "Data Scientist", "Data Engineer"]
+
+role_demand = pd.DataFrame(
+    {
+        role: ratings["panel_skill_name"].map(
+            lambda name, role=role: panel.loc[panel["role_family"] == role, "skills"]
+            .map(lambda s: name in s).mean() * 100
+        )
+        for role in ROLES
+    }
+).loc[demand.index]
+
+role_counts = panel["role_family"].value_counts()
+plot_table = role_demand.copy()
+plot_table.columns = [f"{r}\n(n={role_counts[r]:,})" for r in ROLES]
+
+fig, ax = plt.subplots(figsize=(9, 7.5))
+annotated_heatmap(ax, plot_table, SEQUENTIAL, vmin=0, vmax=85,
+                  fmt=lambda v: f"{v:.0f}%", dark_from=40)
+ax.tick_params(axis="x", labelsize=9)
+ax.set_title("Skill Demand by Role Family (% of postings)", pad=34)
+save_figure("skill_demand_by_role.png")
+```
+
+- **SQL is the one skill every role needs.** It appears in 36% of Business Analyst postings and 80% of Business Intelligence postings.
+- **Business Intelligence roles are tool-heavy:** Tableau (63%), Power BI (52%), and Python (48%) follow SQL.
+- **Business Analyst roles are the most business-focused:** business requirements (39%), business analysis (34%), and Excel (29%) sit alongside SQL, while Python appears in only 14%.
+- **Data Scientist roles** are led by Python (82%) and machine learning (45%), and **Data Engineer roles** by Python, SQL, and data pipelines.
+
 ## 3. Comparing Team Skills With Market Requirements
 
-Job postings list skills but not the proficiency level employers expect. To compare the two, we set a **target level** for each skill using a transparent rule based on how often the skill is requested:
+Job postings list skills but not the proficiency level employers expect. To compare the two, we set a **target level** for each skill using a transparent rule based on how often the skill is requested across all postings:
 
 | Demand in postings | Target level |
 |---|:---:|
 | 20% or more of postings | 4 (Advanced) |
 | 10% to 19.9% | 3 (Intermediate) |
 | Under 10% | 2 (Basic knowledge) |
-| Core tools (assumed, not measured) | 4 (Advanced) |
-
-Core tools receive a target of 4 because the analytics-skills literature consistently identifies SQL, Excel, visualization tools, and a programming language as baseline expectations for analyst roles [@verma2019skills].
 
 For each member and skill:
 
 - **Gap** = target level − current rating (0 if the member already meets the target)
-- **Priority score** = average team gap × demand weight, where the demand weight is the posting share for market skills and a fixed 0.5 for core tools
+- **Priority score** = average team gap × share of postings
 
-The priority score favors skills that are both widely requested *and* weak across the team.
+The priority score favors skills that are both widely requested *and* weak across the team. The Improvement Plan in Section 4 uses the same rule.
 
 ```{python}
 #| label: build-gaps
@@ -318,29 +289,24 @@ def target_level(share):
     return 2
 
 
-targets = demand["Share of postings (%)"].map(target_level)
-for tool in CORE_TOOLS:
-    targets[tool] = 4
-
-demand_weight = (demand["Share of postings (%)"] / 100).reindex(targets.index)
-demand_weight[CORE_TOOLS] = 0.5  # assumed; see callout at top of page
+share = demand["Share of postings (%)"]
+targets = share.map(target_level)
 
 member_gaps = (targets - df_skills[targets.index]).clip(lower=0)  # members x skills
 
 gap_table = pd.DataFrame(
     {
-        "Skill type": ["Core tool" if s in CORE_TOOLS else "Market skill" for s in targets.index],
-        "Demand (%)": demand["Share of postings (%)"].reindex(targets.index),
+        "Demand (%)": share,
         "Target level": targets,
         "Team average": df_skills[targets.index].mean().round(2),
     }
 )
 gap_table = gap_table.join(member_gaps.T.add_suffix(" gap"))
 gap_table["Average gap"] = member_gaps.mean().round(2)
-gap_table["Priority score"] = (gap_table["Average gap"] * demand_weight).round(2)
-gap_table = gap_table.sort_values("Priority score", ascending=False)
+gap_table["Priority score"] = (gap_table["Average gap"] * share / 100).round(2)
+gap_table = gap_table.sort_values(["Priority score", "Demand (%)"], ascending=False)
 
-# Saved for the improvement plan (Section 4)
+# Saved as a handoff for the Improvement Plan and Career Strategy pages
 gap_table.to_csv("data/processed/skill_gap_table.csv", index_label="Skill")
 ```
 
@@ -348,32 +314,29 @@ gap_table.to_csv("data/processed/skill_gap_table.csv", index_label="Skill")
 
 ```{python}
 #| label: fig-gap-comparison
-#| fig-cap: "Team average (filled dot) against the target level (open ring). Each line is the distance to close; skills are ordered by priority score."
+#| fig-cap: "Team average (filled dot) against the target level (open ring). Blue lines show the distance to close; gray lines show where the team already exceeds the target. Skills are ordered by priority score."
 
-plot_df = gap_table.sort_values("Priority score")
+plot_df = gap_table.iloc[::-1]
 y = np.arange(len(plot_df))
 
 fig, ax = plt.subplots(figsize=(8, 7.5))
-ax.hlines(y, plot_df["Team average"], plot_df["Target level"], color=LIGHT_BLUE, linewidth=3)
+short = plot_df["Team average"] < plot_df["Target level"]
+line_colors = [LIGHT_BLUE if s else "#DDE3E5" for s in short]
+ax.hlines(y, plot_df["Team average"], plot_df["Target level"], color=line_colors, linewidth=3)
 ax.scatter(plot_df["Target level"], y, s=90, facecolor="white", edgecolor=NAVY,
            linewidth=2, zorder=3, label="Target level")
 ax.scatter(plot_df["Team average"], y, s=80, color=TEAL, edgecolor="white",
            linewidth=1.5, zorder=4, label="Team average")
 
-labels = [
-    f"{skill} *" if skill in CORE_TOOLS else skill for skill in plot_df.index
-]
-ax.set_yticks(y, labels)
+ax.set_yticks(y, plot_df.index)
 ax.set_xticks(range(1, 6), ["1\nBeginner", "2\nBasic", "3\nIntermediate", "4\nAdvanced", "5\nExpert"])
 ax.set_xlim(0.7, 5.3)
-ax.grid(axis="x", color="#E6ECEE", linewidth=0.8)
+ax.grid(axis="x", color=GRID, linewidth=0.8)
 ax.set_axisbelow(True)
 ax.spines[["top", "right", "left"]].set_visible(False)
 ax.tick_params(axis="y", length=0)
 ax.legend(loc="lower right", frameon=False)
 ax.set_title("Team Average vs. Target Level (highest priority at top)")
-fig.text(0.01, 0.005, "* Core tool: target assumed from outside evidence, not measured in postings.",
-         fontsize=8, color=GRAY)
 save_figure("skill_gap_comparison.png")
 ```
 
@@ -383,38 +346,67 @@ save_figure("skill_gap_comparison.png")
 #| label: fig-member-gaps
 #| fig-cap: "Levels each member needs to gain to reach the target. Blank cells mean the target is already met."
 
-gap_cmap = LinearSegmentedColormap.from_list("gap_gold", ["#FFFFFF", "#F2DDB0", GOLD, "#9A6B16"])
+g = member_gaps.T.loc[gap_table.index]
 
-g = member_gaps.T.loc[gap_table.index]  # skills (priority order) x members
-fig, ax = plt.subplots(figsize=(6.5, 8))
-ax.imshow(g.values, cmap=gap_cmap, vmin=0, vmax=3, aspect="auto")
-
-for i in range(g.shape[0]):
-    for j in range(g.shape[1]):
-        value = g.values[i, j]
-        if value > 0:
-            ax.text(j, i, f"+{value}", ha="center", va="center", fontsize=10,
-                    color="white" if value >= 3 else "#25353C")
-
-ax.set_xticks(range(g.shape[1]), g.columns)
-ax.set_yticks(range(g.shape[0]), [f"{s} *" if s in CORE_TOOLS else s for s in g.index])
-ax.xaxis.tick_top()
-ax.tick_params(length=0)
-for spine in ax.spines.values():
-    spine.set_visible(False)
-ax.set_xticks(np.arange(-0.5, g.shape[1]), minor=True)
-ax.set_yticks(np.arange(-0.5, g.shape[0]), minor=True)
-ax.grid(which="minor", color="#E6ECEE", linewidth=1)
-ax.tick_params(which="minor", length=0)
+fig, ax = plt.subplots(figsize=(6.5, 7.5))
+annotated_heatmap(ax, g, GAP_SCALE, vmin=0, vmax=3, fmt=lambda v: f"+{v:.0f}",
+                  dark_from=3, blank_zero=True)
+ax.grid(which="minor", color=GRID, linewidth=1)
 ax.set_title("Levels Needed to Reach Target (priority order)", pad=28)
 save_figure("member_skill_gaps.png")
 ```
+
+### Gaps Measured Against Each Member's Target Role
+
+The targets above use demand across all postings. Because demand differs so much by role, we repeat the comparison using the postings for each member's own target role, applying the same target rule to that role's demand.
+
+```{python}
+#| label: tbl-role-gaps
+#| tbl-cap: "Each member's skills that fall short of the target for their own role, ordered by demand in that role."
+
+TARGET_ROLES = {
+    "Jenna": ["Business Intelligence", "Business Analyst"],
+    "Mariam": ["Business Analyst"],
+    "Juan": ["Data Scientist"],
+}
+
+rows = []
+for member, roles in TARGET_ROLES.items():
+    role_skills = panel.loc[panel["role_family"].isin(roles), "skills"]
+    for skill, name in ratings["panel_skill_name"].items():
+        role_share = role_skills.map(lambda s, name=name: name in s).mean() * 100
+        target = target_level(role_share)
+        current = int(ratings.loc[skill, member])
+        if target > current:
+            rows.append(
+                {
+                    "Member": member,
+                    "Target role": " / ".join(roles),
+                    "Skill": skill,
+                    "Demand in role (%)": round(role_share, 1),
+                    "Current": current,
+                    "Target": target,
+                    "Gap": target - current,
+                }
+            )
+
+role_gaps = pd.DataFrame(rows)
+role_gaps["Member"] = pd.Categorical(role_gaps["Member"], MEMBERS, ordered=True)
+role_gaps = role_gaps.sort_values(["Member", "Demand in role (%)"], ascending=[True, False])
+role_gaps.reset_index(drop=True)
+```
+
+This view sharpens each member's priorities:
+
+- **Jenna (Business Intelligence / Business Analyst):** SQL is the most important gap by far, appearing in 45% of her target postings. Business requirements (Intermediate to Advanced) and Python follow. Her BI tool skills already meet the target for these roles.
+- **Mariam (Business Analyst):** SQL is the clear first priority, followed by business analysis and Excel, which each appear in about a third of Business Analyst postings. Python appears in only 14% of these postings, so it matters less for her target role than the market-wide view suggests.
+- **Juan (Data Scientist):** Python and machine learning are both requested in most Data Scientist postings, so machine learning is more urgent for him than the market-wide view suggests.
 
 ### Gap Summary Table
 
 ```{python}
 #| label: tbl-gap-summary
-#| tbl-cap: "Skill gaps by member, ordered by priority score. Demand is blank for core tools because the dataset cannot measure them."
+#| tbl-cap: "Skill gaps by member across all postings, ordered by priority score."
 
 gap_table
 ```
@@ -425,33 +417,32 @@ gap_table
 #| label: findings
 #| echo: false
 
-top5 = gap_table.head(5).index.tolist()
+top3 = gap_table.head(3).index.tolist()
 met = gap_table[gap_table["Average gap"] == 0].index.tolist()
-biggest_member_gap = member_gaps.sum(axis=1)
+total_gap = member_gaps.sum(axis=1)
 
-print("Top five priority skills:", ", ".join(top5))
+print("Top three priority skills:", ", ".join(top3))
 print("Targets already met by the whole team:", ", ".join(met) if met else "none")
 print("Total levels to close per member:",
-      ", ".join(f"{name} {int(v)}" for name, v in biggest_member_gap.items()))
+      ", ".join(f"{name} {int(v)}" for name, v in total_gap.items()))
 ```
 
-1. **The team matches the market's most common request.** Analytics, the skill in about two-thirds of postings, is already at the Advanced target for all three members. Our business-facing strengths are real and relevant.
-2. **The core tools are the biggest gap.** SQL, Python, and visualization tools are baseline expectations for analyst roles, and Jenna and Mariam are both at Beginner or Basic level in SQL and Python. Because the dataset cannot measure them, this finding relies on outside evidence, but it is the gap most likely to block a job application.
-3. **Automation and pipeline tools are the largest measured gap.** Automation (about 28% of postings) and Airflow (about 17%) are requested often, and the whole team rates at or near Beginner. These reflect the data-engineering side of NAICS 5415, where Database Architects make up a third of postings.
-4. **The team is complementary.** Jenna's Excel and BI skills, Mariam's business-requirements skills, and Juan's coding skills cover different parts of the market. Peer teaching inside the team is a realistic first step before outside courses.
-5. **Juan is closest to the largest segment.** Data Scientists are 47% of postings and the highest-paid group (see [Market Baseline](eda.qmd)). Juan's remaining gaps are smaller and more technical, while Jenna and Mariam need a longer foundation in SQL and Python before those roles are within reach.
+1. **Python and SQL are the team's most important gap.** They are the two most requested skills in the market, each in more than 60% of postings, and no one on the team is above Intermediate in either. Closing them matters for every target role on the team.
+2. **Data pipelines are the largest gap relative to demand.** They appear in about a fifth of all postings (and nearly half of Data Engineer postings), and the whole team is at Beginner or Basic level.
+3. **The team's business skills already meet the market.** Across all postings, business requirements, business analysis, data analysis, Excel, and communication meet their targets for all three members. These are genuine strengths for the business analyst and BI roles that Jenna and Mariam are targeting.
+4. **The team is complementary.** Juan's BI tool expertise, Jenna's Excel, analysis, and communication skills, and Mariam's business requirements skills cover different parts of the market, so peer teaching inside the team is a realistic first step before outside courses.
+5. **Mariam has the most ground to cover, Juan the least.** Mariam's gaps span SQL, Python, and the BI tools, while Juan's remaining gaps are concentrated in Python, SQL, pipelines, and machine learning.
 
 ### Limitations
 
-- **Truncated skills:** Only skills beginning with A–C are observable. Rankings would likely change if Python, SQL, and other D–Z skills were visible.
-- **Assumed targets:** Postings do not state a proficiency level. The target-level rule and the core-tool weight are team assumptions, stated above so readers can adjust them.
-- **Self-ratings:** Team ratings are self-assessed and not independently tested.
-- **Small groups:** Business Intelligence Analysts have only five postings, so role-specific demand for BI roles cannot be estimated reliably.
+- **Assumed targets:** Postings do not state a proficiency level. The target-level rule is a team assumption, stated above so readers can adjust it.
+- **Self-ratings:** Team ratings are self-assessed and not independently tested. Some ratings were carried over from an earlier skill list and mapped to the closest v2 skill, as recorded in `team_skills_v2.csv`.
+- **Required versus preferred:** Postings do not separate required skills from preferred ones, so demand shares may overstate how essential a skill is.
+- **Small role groups:** Business Intelligence has only 81 postings, so its role-specific shares are less precise than those for the larger role families.
 
 ## 4. Improvement Plan
 
 <!-- SECTION OWNER: Juan -->
-<!-- INPUT: data/processed/skill_gap_table.csv holds each member's gaps and the priority order from Section 3. -->
-<!-- ASSIGNMENT 3.1.3: Which skills should each member prioritize? What courses or resources can help? How can the team collaborate to bridge the gaps? -->
+<!-- INPUT: data/processed/team_skills_v2.csv holds each member's ratings; data/processed/skill_gap_table.csv holds the priority order from Section 3. -->
 
 {{< include _improvement_plan.qmd >}}
