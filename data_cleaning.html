@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Data Preparation – Computer Systems Design Analytics Career Pathways</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-b04a93be6098906e613ea8999f442834.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Computer Systems Design Analytics Career Pathways</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Project Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./data_cleaning.html" aria-current="page"> 
+<span class="menu-text">Data Preparation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./eda.html"> 
+<span class="menu-text">Exploratory Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./skill_gap_analysis.html"> 
+<span class="menu-text">Skill Gap Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ml_methods.html"> 
+<span class="menu-text">Predictive Modeling</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./career_plan.html"> 
+<span class="menu-text">Career Strategy</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/JennaDer/METAD688_Group2"> <i class="bi bi-github" role="img" aria-label="GitHub Repository">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#project-scope" id="toc-project-scope" class="nav-link active" data-scroll-target="#project-scope">Project Scope</a>
+  <ul class="collapse">
+  <li><a href="#two-changes-to-the-data" id="toc-two-changes-to-the-data" class="nav-link" data-scroll-target="#two-changes-to-the-data">Two Changes to the Data</a></li>
+  </ul></li>
+  <li><a href="#data-source-and-connection" id="toc-data-source-and-connection" class="nav-link" data-scroll-target="#data-source-and-connection">Data Source and Connection</a></li>
+  <li><a href="#industry-filter" id="toc-industry-filter" class="nav-link" data-scroll-target="#industry-filter">Industry Filter</a></li>
+  <li><a href="#career-pathway-filter" id="toc-career-pathway-filter" class="nav-link" data-scroll-target="#career-pathway-filter">Career-Pathway Filter</a></li>
+  <li><a href="#record-counts" id="toc-record-counts" class="nav-link" data-scroll-target="#record-counts">Record Counts</a></li>
+  <li><a href="#date-window" id="toc-date-window" class="nav-link" data-scroll-target="#date-window">Date Window</a></li>
+  <li><a href="#cleaning-decisions" id="toc-cleaning-decisions" class="nav-link" data-scroll-target="#cleaning-decisions">Cleaning Decisions</a>
+  <ul class="collapse">
+  <li><a href="#duplicate-records" id="toc-duplicate-records" class="nav-link" data-scroll-target="#duplicate-records">Duplicate Records</a></li>
+  <li><a href="#salary" id="toc-salary" class="nav-link" data-scroll-target="#salary">Salary</a></li>
+  <li><a href="#experience-requirements" id="toc-experience-requirements" class="nav-link" data-scroll-target="#experience-requirements">Experience Requirements</a></li>
+  <li><a href="#education-requirements" id="toc-education-requirements" class="nav-link" data-scroll-target="#education-requirements">Education Requirements</a></li>
+  <li><a href="#skill-fields" id="toc-skill-fields" class="nav-link" data-scroll-target="#skill-fields">Skill Fields</a></li>
+  <li><a href="#work-arrangement" id="toc-work-arrangement" class="nav-link" data-scroll-target="#work-arrangement">Work Arrangement</a></li>
+  <li><a href="#location" id="toc-location" class="nav-link" data-scroll-target="#location">Location</a></li>
+  <li><a href="#industry-and-occupation" id="toc-industry-and-occupation" class="nav-link" data-scroll-target="#industry-and-occupation">Industry and Occupation</a></li>
+  <li><a href="#inconsistent-labels" id="toc-inconsistent-labels" class="nav-link" data-scroll-target="#inconsistent-labels">Inconsistent Labels</a></li>
+  </ul></li>
+  <li><a href="#missing-value-summary" id="toc-missing-value-summary" class="nav-link" data-scroll-target="#missing-value-summary">Missing-Value Summary</a></li>
+  <li><a href="#analytical-limitations" id="toc-analytical-limitations" class="nav-link" data-scroll-target="#analytical-limitations">Analytical Limitations</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Preparation</h1>
+<p class="subtitle lead">Filtering and Cleaning the Career Market Panel</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="setup" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>panel <span class="op">=</span> pd.read_csv(<span class="st">"data/processed/career_market_panel.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data/processed/panel_build_stats.json"</span>) <span class="im">as</span> f:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    stats <span class="op">=</span> json.load(f)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">len</span>(panel)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fmt(x):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:,}</span><span class="ss">"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pct(part, whole<span class="op">=</span>n):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>part <span class="op">/</span> whole <span class="op">*</span> <span class="dv">100</span><span class="sc">:.0f}</span><span class="ss">%"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<section id="project-scope" class="level2">
+<h2 class="anchored" data-anchor-id="project-scope">Project Scope</h2>
+<p>This page documents how the raw CareerCompass extract was reduced to the analytical panel used throughout the site. The panel covers one industry and one career pathway, as the project scope requires.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Industry</td>
+<td>Computer Systems Design and Related Services</td>
+</tr>
+<tr class="even">
+<td>NAICS 2022 code</td>
+<td>5415</td>
+</tr>
+<tr class="odd">
+<td>Career pathway</td>
+<td>Analytics roles: data analyst, data scientist, data engineer, business intelligence, business analyst</td>
+</tr>
+<tr class="even">
+<td>Date window</td>
+<td>2025-09-10 to 2026-09-10</td>
+</tr>
+<tr class="odd">
+<td>Final panel size</td>
+<td>1,790 postings</td>
+</tr>
+</tbody>
+</table>
+<section id="two-changes-to-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="two-changes-to-the-data">Two Changes to the Data</h3>
+<p>The project has changed its data twice, and both changes shaped this page.</p>
+<p><strong>Industry: from pharmaceutical manufacturing to computer systems design.</strong> The project was originally scoped to Pharmaceutical and Medicine Manufacturing (NAICS 3254). A volume check in Module 2 found only 39 postings in that industry across the whole original extract, falling to between 2 and 5 once analytics roles were isolated. No four-digit manufacturing code held more than 57 analytics postings, so we moved to NAICS 5415, a standard four-digit code that appears in the assignment’s list of relevant industries.</p>
+<p><strong>Source: from the original extract to v2.</strong> Module 2 was built on the original extract of 165,386 postings. That extract had two serious defects. Every skill name beginning with a letter from D to Z had been cut off, so tools such as Python and SQL never appeared, and the experience fields were blank on every posting. In Module 3 we rebuilt the panel on the corrected v2 extract, which fixes both. The same filters that produced 287 postings from the original data produce 2,268 from v2 before the date window is applied.</p>
+</section>
+</section>
+<section id="data-source-and-connection" class="level2">
+<h2 class="anchored" data-anchor-id="data-source-and-connection">Data Source and Connection</h2>
+<p>The source is the MET CareerCompass 2026 v2 extract, supplied as 21 Parquet files holding 504,208 postings and 124 variables.</p>
+<p>The raw files are not committed to this repository. Each team member downloads them from the course-provided folder into <code>data/MET_CareerCompass_2026_v2/</code>, as described in the README. The processed panel is committed, so the rest of the site renders without the raw extract.</p>
+<p>Filtering and cleaning run in PySpark through <code>scripts/build_panel.py</code>, which imports two helper modules, <code>scripts/clean_location.py</code> and <code>scripts/clean_salary.py</code>. The script writes two files: the panel itself, <code>data/processed/career_market_panel.csv</code>, and <code>data/processed/panel_build_stats.json</code>, which records the counts at each step. The numbers on this page are read from those two files, so they update automatically whenever the panel is rebuilt.</p>
+</section>
+<section id="industry-filter" class="level2">
+<h2 class="anchored" data-anchor-id="industry-filter">Industry Filter</h2>
+<p>We filtered on <code>NAICS_2022_4</code>, the four-digit 2022 NAICS code attached to each posting, keeping the 19,886 postings coded 5415. The extract also carries two-, three-, five-, and six-digit variants. We used the four-digit field because the assignment specifies four- or six-digit codes, and we take the industry label from <code>NAICS_2022_6_NAME</code>.</p>
+</section>
+<section id="career-pathway-filter" class="level2">
+<h2 class="anchored" data-anchor-id="career-pathway-filter">Career-Pathway Filter</h2>
+<p>Filtering on the word “analyst” alone was not workable. Within NAICS 5415 it matched 5,382 postings, including security analysts, QA analysts, and IT support analysts. “Analyst” works as a generic corporate suffix, and including those roles would distort both the skill analysis and the salary distribution.</p>
+<p>We therefore defined the role family positively, matching titles that name an analytics role directly rather than excluding unwanted ones after the fact.</p>
+<p><strong>Included patterns:</strong> <code>data analyst</code>, <code>data scien</code>, <code>business intelligence</code>, <code>bi analyst</code>, <code>data engineer</code>, <code>analytics engineer</code>, <code>business analyst</code>, <code>reporting analyst</code></p>
+<p><strong>Excluded patterns:</strong> <code>security</code>, <code>qa</code>, <code>quality assurance</code>, <code>support</code>, <code>trade</code>, <code>exploitation</code>, <code>acceptance testing</code>, <code>network</code></p>
+<p>The inclusion rule kept 2,308 postings, and the exclusion rule removed a further 40.</p>
+</section>
+<section id="record-counts" class="level2">
+<h2 class="anchored" data-anchor-id="record-counts">Record Counts</h2>
+<div class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>funnel <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Step"</span>: [</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Raw extract"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"After NAICS </span><span class="sc">{</span>stats[<span class="st">'industry_code'</span>]<span class="sc">}</span><span class="ss"> filter"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"After role-family inclusion"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"After role-family exclusion"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Within the 12-month date window"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Postings"</span>: [</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            stats[<span class="st">"raw_postings"</span>],</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            stats[<span class="st">"industry_postings"</span>],</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            stats[<span class="st">"after_role_include"</span>],</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            stats[<span class="st">"after_role_exclude"</span>],</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            stats[<span class="st">"after_window"</span>],</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>funnel[<span class="st">"Share of raw extract"</span>] <span class="op">=</span> (funnel[<span class="st">"Postings"</span>] <span class="op">/</span> stats[<span class="st">"raw_postings"</span>] <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">2</span>).astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">"%"</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>funnel[<span class="st">"Postings"</span>] <span class="op">=</span> funnel[<span class="st">"Postings"</span>].<span class="bu">map</span>(fmt)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>funnel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-funnel" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Step</th>
+<th data-quarto-table-cell-role="th">Postings</th>
+<th data-quarto-table-cell-role="th">Share of raw extract</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Raw extract</td>
+<td>504,208</td>
+<td>100.0%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>After NAICS 5415 filter</td>
+<td>19,886</td>
+<td>3.94%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>After role-family inclusion</td>
+<td>2,308</td>
+<td>0.46%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>After role-family exclusion</td>
+<td>2,268</td>
+<td>0.45%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Within the 12-month date window</td>
+<td>1,790</td>
+<td>0.36%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="date-window" class="level2">
+<h2 class="anchored" data-anchor-id="date-window">Date Window</h2>
+<p>The original extract covered a single quarter, so in Module 2 we kept its full range. The v2 extract is different: its postings reach back as far as 2014, although most are recent. A posting from several years ago says little about the market a job seeker faces today.</p>
+<p>We therefore keep the 12 months ending at the latest posting, from 2025-09-10 to 2026-09-10. This removed 179 older postings. It also removed 299 postings whose posted date is blank, since a posting without a date cannot be placed inside the window.</p>
+</section>
+<section id="cleaning-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-decisions">Cleaning Decisions</h2>
+<div id="cleaning-numbers" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cov <span class="op">=</span> stats[<span class="st">"field_coverage"</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Duplicates</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> [<span class="st">"TITLE_CLEAN"</span>, <span class="st">"COMPANY_NAME"</span>, <span class="st">"posted_date"</span>]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>repeat <span class="op">=</span> panel[panel.duplicated(key, keep<span class="op">=</span><span class="va">False</span>)]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>repeat_groups <span class="op">=</span> repeat.groupby(key).ngroups</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>multi_location <span class="op">=</span> <span class="bu">int</span>(repeat.groupby(key)[<span class="st">"LOCATION"</span>].nunique().gt(<span class="dv">1</span>).<span class="bu">sum</span>())</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Salary</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>usable <span class="op">=</span> panel[<span class="st">"salary_midpoint"</span>].notna()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>salary_removed <span class="op">=</span> cov[<span class="st">"SALARY_FROM"</span>] <span class="op">-</span> <span class="bu">int</span>(usable.<span class="bu">sum</span>())</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>hourly <span class="op">=</span> <span class="bu">int</span>((usable <span class="op">&amp;</span> (panel[<span class="st">"ORIGINAL_PAY_PERIOD"</span>] <span class="op">==</span> <span class="st">"hourly"</span>)).<span class="bu">sum</span>())</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>daily <span class="op">=</span> <span class="bu">int</span>((usable <span class="op">&amp;</span> (panel[<span class="st">"ORIGINAL_PAY_PERIOD"</span>] <span class="op">==</span> <span class="st">"daily"</span>)).<span class="bu">sum</span>())</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Experience</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>exp_usable <span class="op">=</span> <span class="bu">int</span>(panel[<span class="st">"min_years_experience"</span>].notna().<span class="bu">sum</span>())</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>exp_median <span class="op">=</span> panel[<span class="st">"min_years_experience"</span>].median()</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>exp_mode <span class="op">=</span> panel[<span class="st">"min_years_experience"</span>].mode()[<span class="dv">0</span>]</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Education</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>min_edu <span class="op">=</span> <span class="bu">int</span>(panel[<span class="st">"MIN_EDULEVELS_NAME"</span>].notna().<span class="bu">sum</span>())</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>max_edu <span class="op">=</span> <span class="bu">int</span>(panel[<span class="st">"MAX_EDULEVELS_NAME"</span>].notna().<span class="bu">sum</span>())</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>assoc_min <span class="op">=</span> <span class="bu">int</span>((panel[<span class="st">"MIN_EDULEVELS_NAME"</span>] <span class="op">==</span> <span class="st">"Associate's degree"</span>).<span class="bu">sum</span>())</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>hs_min <span class="op">=</span> <span class="bu">int</span>((panel[<span class="st">"MIN_EDULEVELS_NAME"</span>] <span class="op">==</span> <span class="st">"High school diploma or equivalent"</span>).<span class="bu">sum</span>())</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Skills</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>skills <span class="op">=</span> panel[<span class="st">"SKILLS_NAME"</span>].fillna(<span class="st">"[]"</span>).<span class="bu">map</span>(<span class="kw">lambda</span> s: json.loads(s) <span class="cf">if</span> s.startswith(<span class="st">"["</span>) <span class="cf">else</span> [])</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>distinct_skills <span class="op">=</span> {s <span class="cf">for</span> row <span class="kw">in</span> skills <span class="cf">for</span> s <span class="kw">in</span> row}</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>d_to_z <span class="op">=</span> <span class="bu">sum</span>(<span class="dv">1</span> <span class="cf">for</span> s <span class="kw">in</span> distinct_skills <span class="cf">if</span> <span class="st">"D"</span> <span class="op">&lt;=</span> s[:<span class="dv">1</span>].upper() <span class="op">&lt;=</span> <span class="st">"Z"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Work arrangement</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>remote_unknown <span class="op">=</span> <span class="bu">int</span>((panel[<span class="st">"REMOTE_TYPE_NAME"</span>] <span class="op">==</span> <span class="st">"Unknown"</span>).<span class="bu">sum</span>())</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>remote_stated <span class="op">=</span> n <span class="op">-</span> remote_unknown</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Location</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>located <span class="op">=</span> <span class="bu">int</span>((panel[<span class="st">"state"</span>] <span class="op">!=</span> <span class="st">"Unspecified"</span>).<span class="bu">sum</span>())</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>dc <span class="op">=</span> <span class="bu">int</span>((panel[<span class="st">"state"</span>] <span class="op">==</span> <span class="st">"District of Columbia"</span>).<span class="bu">sum</span>())</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Occupation</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>onet_other <span class="op">=</span> <span class="bu">int</span>((panel[<span class="st">"occupation_group"</span>] <span class="op">==</span> <span class="st">"Other"</span>).<span class="bu">sum</span>())</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Employer labels</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> panel[<span class="st">"COMPANY_NAME"</span>].fillna(<span class="st">""</span>)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> names.<span class="bu">str</span>.lower().<span class="bu">str</span>.replace(<span class="vs">r"</span><span class="pp">[^a-z0-9]</span><span class="vs">"</span>, <span class="st">""</span>, regex<span class="op">=</span><span class="va">True</span>).<span class="bu">str</span>.replace(<span class="vs">r"</span><span class="kw">(</span><span class="vs">llc</span><span class="cf">|</span><span class="vs">inc</span><span class="cf">|</span><span class="vs">corp</span><span class="cf">|</span><span class="vs">corporation</span><span class="cf">|</span><span class="vs">ltd</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>, <span class="st">""</span>, regex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>multi_spelling <span class="op">=</span> <span class="bu">int</span>((panel.groupby(norm)[<span class="st">"COMPANY_NAME"</span>].nunique() <span class="op">&gt;</span> <span class="dv">1</span>).<span class="bu">sum</span>())</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>url_like <span class="op">=</span> <span class="bu">int</span>(names.<span class="bu">str</span>.contains(<span class="vs">r"</span><span class="ch">\.</span>(?:<span class="vs">com</span><span class="cf">|</span><span class="vs">net</span><span class="cf">|</span><span class="vs">org</span>)<span class="cf">|</span><span class="vs">oraclecloud</span><span class="cf">|</span><span class="vs">myworkday"</span>, case<span class="op">=</span><span class="va">False</span>).<span class="bu">sum</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<section id="duplicate-records" class="level3">
+<h3 class="anchored" data-anchor-id="duplicate-records">Duplicate Records</h3>
+<p>All 1,790 postings carry a unique <code>ID</code>, so the panel contains no exact duplicates.</p>
+<p>Grouping by title, employer, and posted date does surface repeats: 1,071 postings share all three with at least one other posting, forming 408 groups. In 49 of those groups the locations differ, meaning one opening was advertised in several places. The rest repeat the same location and may be reposts. We kept every posting, since each has its own <code>ID</code> and a job seeker would see each listing separately. Geographic counts are therefore slightly higher than the number of distinct openings.</p>
+</section>
+<section id="salary" class="level3">
+<h3 class="anchored" data-anchor-id="salary">Salary</h3>
+<p>601 postings list a salary. Three rules were applied:</p>
+<ul>
+<li>Values of zero were treated as missing rather than as a salary of zero. These are cases where the source held a structured pay object the provider could not flatten. We also set a floor of $20,000 a year, below which a figure is implausible. Together these removed 10 postings.</li>
+<li>Postings quoting an hourly rate (69) were converted at 2,080 hours a year, and postings quoting a daily rate (3) at 260 working days, so every figure sits on one annual scale.</li>
+<li>We report the midpoint of the advertised range, or the lower bound where only one figure is given.</li>
+</ul>
+<div class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sal <span class="op">=</span> panel[<span class="st">"salary_midpoint"</span>].dropna()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Measure"</span>: [<span class="st">"Postings with usable salary"</span>, <span class="st">"Share of panel"</span>, <span class="st">"Minimum"</span>, <span class="st">"Median"</span>, <span class="st">"Mean"</span>, <span class="st">"Maximum"</span>],</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Value"</span>: [</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            fmt(<span class="bu">len</span>(sal)),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            pct(<span class="bu">len</span>(sal)),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"$</span><span class="sc">{</span>sal<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:,.0f}</span><span class="ss">"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"$</span><span class="sc">{</span>sal<span class="sc">.</span>median()<span class="sc">:,.0f}</span><span class="ss">"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"$</span><span class="sc">{</span>sal<span class="sc">.</span>mean()<span class="sc">:,.0f}</span><span class="ss">"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"$</span><span class="sc">{</span>sal<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:,.0f}</span><span class="ss">"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-salary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="4">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-salary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2
+</figcaption>
+<div aria-describedby="tbl-salary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Measure</th>
+<th data-quarto-table-cell-role="th">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Postings with usable salary</td>
+<td>591</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Share of panel</td>
+<td>33%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Minimum</td>
+<td>$46,800</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Median</td>
+<td>$151,475</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Mean</td>
+<td>$157,662</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Maximum</td>
+<td>$340,555</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Salary appears on 33% of the panel, which is normal for job-posting data. Salary findings describe the postings that disclose pay rather than the whole market.</p>
+</section>
+<section id="experience-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="experience-requirements">Experience Requirements</h3>
+<p>In the original extract both experience fields were blank on every posting. In v2 the minimum-experience field is filled on 910 postings, but 387 of them list 0 years.</p>
+<p>Zero does not reliably mean “no experience required”. In a check on the panel before the date window, 30 percent of postings listing 0 years had senior titles such as Senior, Lead, or Principal, against 52 percent of postings asking for a year or more. Zero appears to stand in for “not stated” about as often as for “entry level”, so we treat it as not stated, the same way we treat a salary of zero. We also set aside 3 postings asking for more than 20 years.</p>
+<p>That leaves 520 postings with a usable minimum, or 29% of the panel. Among them the median requirement is 5 years, and the most common is 5 years.</p>
+</section>
+<section id="education-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="education-requirements">Education Requirements</h3>
+<p>The extract offers a minimum and a maximum education field. The minimum is filled on 1,073 postings (60%) and the maximum on 1,537 (86%).</p>
+<p>In Module 2 we used only the maximum, because the original extract listed “Associate’s degree” as the minimum on 82 percent of postings, which looked like a default rather than a real requirement. In v2 that pattern is gone: 247 postings list it. We now report both fields, since they answer different questions. The minimum shows what a candidate needs to apply, and the maximum shows the highest level an employer mentions.</p>
+<p>One caution: 348 postings list a high school diploma as the minimum, which is unusual for data roles and likely reflects standard wording in the posting rather than a genuine requirement.</p>
+<div class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>levels <span class="op">=</span> [</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"High school diploma or equivalent"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Postsecondary nondegree award"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Associate's degree"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Bachelor's degree"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Master's degree"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Doctoral or professional degree"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>edu <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Minimum required"</span>: panel[<span class="st">"MIN_EDULEVELS_NAME"</span>].value_counts(),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Highest mentioned"</span>: panel[<span class="st">"MAX_EDULEVELS_NAME"</span>].value_counts(),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>).reindex(levels).fillna(<span class="dv">0</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>edu.index.name <span class="op">=</span> <span class="st">"Education level"</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-education" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="5">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3
+</figcaption>
+<div aria-describedby="tbl-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Minimum required</th>
+<th data-quarto-table-cell-role="th">Highest mentioned</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Education level</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">High school diploma or equivalent</th>
+<td>348</td>
+<td>308</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Postsecondary nondegree award</th>
+<td>27</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Associate's degree</th>
+<td>247</td>
+<td>53</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Bachelor's degree</th>
+<td>352</td>
+<td>615</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Master's degree</th>
+<td>62</td>
+<td>385</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Doctoral or professional degree</th>
+<td>37</td>
+<td>176</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="skill-fields" class="level3">
+<h3 class="anchored" data-anchor-id="skill-fields">Skill Fields</h3>
+<p>The extract carries four skill fields. Coverage within the panel:</p>
+<div class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sf <span class="op">=</span> stats[<span class="st">"skill_field_coverage"</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Field"</span>: <span class="bu">list</span>(sf.keys()),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Postings with content"</span>: [fmt(v) <span class="cf">for</span> v <span class="kw">in</span> sf.values()],</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Share of panel"</span>: [pct(v) <span class="cf">for</span> v <span class="kw">in</span> sf.values()],</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-skill-fields" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="6">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-skill-fields-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4
+</figcaption>
+<div aria-describedby="tbl-skill-fields-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Field</th>
+<th data-quarto-table-cell-role="th">Postings with content</th>
+<th data-quarto-table-cell-role="th">Share of panel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>SKILLS_NAME</td>
+<td>1,785</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>SPECIALIZED_SKILLS_NAME</td>
+<td>1,785</td>
+<td>100%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>COMMON_SKILLS_NAME</td>
+<td>844</td>
+<td>47%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>SOFTWARE_SKILLS_NAME</td>
+<td>1,593</td>
+<td>89%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The original extract had cut off every skill name beginning with a letter from D to Z, so Python, SQL, Tableau, and similar tools never appeared, and <code>SOFTWARE_SKILLS_NAME</code> was empty. v2 fixes both. Of the 1,394 distinct skills in the panel, 1,069 begin with a letter from D to Z. This is the main reason the project moved to v2, because the skill gap analysis depends on seeing the tools employers ask for most.</p>
+<div class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>top <span class="op">=</span> pd.Series([s <span class="cf">for</span> row <span class="kw">in</span> skills <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(row)]).value_counts().head(<span class="dv">10</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>top <span class="op">=</span> top.rename(<span class="st">"Postings"</span>).to_frame()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>top[<span class="st">"Share of panel"</span>] <span class="op">=</span> (top[<span class="st">"Postings"</span>] <span class="op">/</span> n <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>).astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">"%"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>top.index.name <span class="op">=</span> <span class="st">"Skill"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>top</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-top-skills" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="7">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5
+</figcaption>
+<div aria-describedby="tbl-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Postings</th>
+<th data-quarto-table-cell-role="th">Share of panel</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Skill</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Python (Programming Language)</th>
+<td>1119</td>
+<td>62.5%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">SQL (Programming Language)</th>
+<td>1106</td>
+<td>61.8%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Science</th>
+<td>422</td>
+<td>23.6%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Pipelines</th>
+<td>388</td>
+<td>21.7%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Computer Science</th>
+<td>365</td>
+<td>20.4%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Machine Learning</th>
+<td>345</td>
+<td>19.3%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Engineering</th>
+<td>330</td>
+<td>18.4%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Tableau (Business Intelligence Software)</th>
+<td>280</td>
+<td>15.6%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Quality</th>
+<td>254</td>
+<td>14.2%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Software Engineering</th>
+<td>218</td>
+<td>12.2%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="work-arrangement" class="level3">
+<h3 class="anchored" data-anchor-id="work-arrangement">Work Arrangement</h3>
+<p><code>REMOTE_TYPE_NAME</code> needed two fixes. v2 spells on-site two ways, “Onsite” and “On-site”, which we merged. Many postings also leave the field blank, which we grouped with those the source already labels “Unknown”.</p>
+<p>That gives 930 postings with no stated arrangement, or 52% of the panel. Shares below are calculated only among the 860 postings that state one, since counting the unknowns would make every arrangement look rarer than it is.</p>
+<div class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>stated <span class="op">=</span> panel.loc[panel[<span class="st">"REMOTE_TYPE_NAME"</span>] <span class="op">!=</span> <span class="st">"Unknown"</span>, <span class="st">"REMOTE_TYPE_NAME"</span>].value_counts()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>rem <span class="op">=</span> stated.rename(<span class="st">"Postings"</span>).to_frame()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>rem[<span class="st">"Share of stated"</span>] <span class="op">=</span> (rem[<span class="st">"Postings"</span>] <span class="op">/</span> remote_stated <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>).astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">"%"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>rem.index.name <span class="op">=</span> <span class="st">"Work arrangement"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>rem</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-remote" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="8">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-remote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6
+</figcaption>
+<div aria-describedby="tbl-remote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Postings</th>
+<th data-quarto-table-cell-role="th">Share of stated</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Work arrangement</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Hybrid</th>
+<td>378</td>
+<td>44.0%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Remote</th>
+<td>362</td>
+<td>42.1%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">On-site</th>
+<td>120</td>
+<td>14.0%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="location" class="level3">
+<h3 class="anchored" data-anchor-id="location">Location</h3>
+<p>The structured location fields are incomplete. Within the panel, <code>STATE</code> is filled on 1,028 postings, <code>MSA_NAME</code> on 92, and <code>COUNTY_NAME</code> on 39. <code>STATE_NAME</code> is filled on 1,558, but many of those values are “United States”, “Remote”, a two-letter code, or a city fragment such as “Francisco”. <code>LOCATION</code> is filled on every posting, but it is free text with no consistent structure.</p>
+<p>We derive one <code>state</code> value per posting in <code>scripts/clean_location.py</code>, checking in order:</p>
+<ol type="1">
+<li>Washington DC patterns, such as “District of Columbia” or “Washington, DC”</li>
+<li>A full state name inside <code>LOCATION</code></li>
+<li>A two-letter state code inside <code>LOCATION</code></li>
+<li>The <code>STATE</code> column</li>
+<li><code>STATE_NAME</code>, when it holds a valid state name or code</li>
+<li>A short list of bare city names, such as Austin or Sunnyvale</li>
+</ol>
+<p>Two-letter codes are then converted to full names, so “CA” and “California” count as one state.</p>
+<p>The first step fixes an error in our Module 2 cleaner. It took the first state name it found in the text, so “Washington, District of Columbia” was filed as Washington state, and “1331 Pennsylvania Avenue NW, Washington, DC” as Pennsylvania. Every DC posting was affected, which inflated Washington state in the Module 2 geography results. The panel now places 70 postings in DC.</p>
+<div id="location-numbers" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>unspec <span class="op">=</span> panel.loc[panel[<span class="st">"state"</span>] <span class="op">==</span> <span class="st">"Unspecified"</span>, <span class="st">"LOCATION"</span>].fillna(<span class="st">""</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>national <span class="op">=</span> <span class="bu">int</span>(unspec.<span class="bu">str</span>.contains(<span class="vs">r"</span><span class="fu">(?i)</span><span class="vs">remote</span><span class="cf">|</span><span class="vs">united states</span><span class="cf">|</span><span class="dv">\b</span><span class="vs">USA</span><span class="op">?</span><span class="dv">\b</span><span class="vs">"</span>).<span class="bu">sum</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>The cleaner places 1,413 postings in a state (79%). Of the 377 it cannot place, 323 read as nationwide or remote listings, such as “United States” or “Remote”. These are reported as Unspecified rather than dropped, since a nationwide or remote posting is a real category rather than missing data.</p>
+</section>
+<section id="industry-and-occupation" class="level3">
+<h3 class="anchored" data-anchor-id="industry-and-occupation">Industry and Occupation</h3>
+<p>Every posting in the panel is coded NAICS 5415, labeled “Computer Systems Design and Related Services”.</p>
+<p>For occupation, the extract offers <code>ONET_NAME</code>, a standard classification. It proved unreliable here: 161 postings (9%) fell outside the four analytics groups it assigns most often, even though their titles are clearly analytics roles, such as “Data Analyst” and “Senior Data Engineer”. Its labels are also hard to read for a student, filing data engineers under “Database Architects” and business analysts under “Management Analysts”.</p>
+<p>We therefore added <code>role_family</code>, taken from the job title, which is the same field the career-pathway filter selects on. It places every posting in one of five families:</p>
+<div class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rf <span class="op">=</span> panel[<span class="st">"role_family"</span>].value_counts().rename(<span class="st">"Postings"</span>).to_frame()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>rf[<span class="st">"Share of panel"</span>] <span class="op">=</span> (rf[<span class="st">"Postings"</span>] <span class="op">/</span> n <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>).astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">"%"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>rf.index.name <span class="op">=</span> <span class="st">"Role family"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>rf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-role-family" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="10">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-role-family-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7
+</figcaption>
+<div aria-describedby="tbl-role-family-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Postings</th>
+<th data-quarto-table-cell-role="th">Share of panel</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Role family</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Engineer</th>
+<td>615</td>
+<td>34.4%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Scientist</th>
+<td>552</td>
+<td>30.8%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Business Analyst</th>
+<td>292</td>
+<td>16.3%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Analyst</th>
+<td>250</td>
+<td>14.0%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Business Intelligence</th>
+<td>81</td>
+<td>4.5%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><code>occupation_group</code>, based on ONET, remains in the panel for reference.</p>
+</section>
+<section id="inconsistent-labels" class="level3">
+<h3 class="anchored" data-anchor-id="inconsistent-labels">Inconsistent Labels</h3>
+<p>Employer names are not standardized. 40 employers appear under more than one spelling, such as with and without “LLC” or a space, and 41 postings list a web address, often an applicant tracking system, in place of an employer name. We left employer names as supplied, since any merge rule risks combining companies that are genuinely different. Employer counts should therefore be read as approximate.</p>
+</section>
+</section>
+<section id="missing-value-summary" class="level2">
+<h2 class="anchored" data-anchor-id="missing-value-summary">Missing-Value Summary</h2>
+<div class="cell" data-execution_count="11">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>has_skills <span class="op">=</span> skills.<span class="bu">map</span>(<span class="bu">len</span>) <span class="op">&gt;</span> <span class="dv">0</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>checks <span class="op">=</span> {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Job title"</span>: panel[<span class="st">"TITLE_CLEAN"</span>].notna(),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Employer"</span>: panel[<span class="st">"COMPANY_NAME"</span>].notna(),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Role family"</span>: panel[<span class="st">"role_family"</span>].notna(),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Posted date"</span>: panel[<span class="st">"posted_date"</span>].notna(),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Skills"</span>: has_skills,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Highest education mentioned"</span>: panel[<span class="st">"MAX_EDULEVELS_NAME"</span>].notna(),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"State (derived)"</span>: panel[<span class="st">"state"</span>] <span class="op">!=</span> <span class="st">"Unspecified"</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Minimum education"</span>: panel[<span class="st">"MIN_EDULEVELS_NAME"</span>].notna(),</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Work arrangement"</span>: panel[<span class="st">"REMOTE_TYPE_NAME"</span>] <span class="op">!=</span> <span class="st">"Unknown"</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Salary midpoint"</span>: panel[<span class="st">"salary_midpoint"</span>].notna(),</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Minimum experience"</span>: panel[<span class="st">"min_years_experience"</span>].notna(),</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Field"</span>: <span class="bu">list</span>(checks.keys()),</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Populated"</span>: [fmt(<span class="bu">int</span>(s.<span class="bu">sum</span>())) <span class="cf">for</span> s <span class="kw">in</span> checks.values()],</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Missing"</span>: [fmt(<span class="bu">int</span>(n <span class="op">-</span> s.<span class="bu">sum</span>())) <span class="cf">for</span> s <span class="kw">in</span> checks.values()],</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Coverage"</span>: [pct(<span class="bu">int</span>(s.<span class="bu">sum</span>())) <span class="cf">for</span> s <span class="kw">in</span> checks.values()],</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-missing" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="11">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8
+</figcaption>
+<div aria-describedby="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Field</th>
+<th data-quarto-table-cell-role="th">Populated</th>
+<th data-quarto-table-cell-role="th">Missing</th>
+<th data-quarto-table-cell-role="th">Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Job title</td>
+<td>1,790</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Employer</td>
+<td>1,790</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Role family</td>
+<td>1,790</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Posted date</td>
+<td>1,790</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Skills</td>
+<td>1,785</td>
+<td>5</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Highest education mentioned</td>
+<td>1,537</td>
+<td>253</td>
+<td>86%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>State (derived)</td>
+<td>1,413</td>
+<td>377</td>
+<td>79%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>Minimum education</td>
+<td>1,073</td>
+<td>717</td>
+<td>60%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>Work arrangement</td>
+<td>860</td>
+<td>930</td>
+<td>48%</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>Salary midpoint</td>
+<td>591</td>
+<td>1,199</td>
+<td>33%</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>Minimum experience</td>
+<td>520</td>
+<td>1,270</td>
+<td>29%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Coverage varies widely. Title, employer, role family, date, and skills are essentially complete. Salary, experience, and work arrangement are partial, and each is reported against its own denominator rather than the full panel.</p>
+</section>
+<section id="analytical-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-limitations">Analytical Limitations</h2>
+<p><strong>Salary reflects disclosing employers only.</strong> Pay appears on 33% of postings. Employers that publish salary may differ from those that do not, so salary figures describe the disclosing subset rather than the whole market.</p>
+<p><strong>Experience is partial and ambiguous.</strong> A usable minimum appears on 29% of postings. Because zero was treated as not stated, the panel likely undercounts genuinely entry-level roles.</p>
+<p><strong>Most postings do not state a work arrangement.</strong> 52% of postings are Unknown, so remote, hybrid, and on-site shares rest on the 860 postings that state one.</p>
+<p><strong>Skills follow the provider’s taxonomy.</strong> Skill names are standardized by the data provider, for example “SQL (Programming Language)”, and broad terms such as “Computer Science” sit alongside specific tools. Postings also do not separate required skills from preferred ones.</p>
+<p><strong>Role families rely on title keywords.</strong> A title that names two roles, such as “Data Analyst / Data Engineer”, is placed in the first matching family.</p>
+<p><strong>The window is one year.</strong> Keeping only the most recent 12 months makes the panel current, but it means longer-term trends in analytics hiring cannot be observed.</p>
+<p><strong>The panel is a sample, not a census.</strong> 1,790 postings in one industry over one year are enough to describe patterns, not to estimate the size of the market. Findings are stated as what these postings show rather than as claims about analytics hiring nationally.</p>
+</section>
+<section id="output" class="level2">
+<h2 class="anchored" data-anchor-id="output">Output</h2>
+<p>The cleaned panel is written to <code>data/processed/career_market_panel.csv</code>, and the counts recorded during the build to <code>data/processed/panel_build_stats.json</code>. Both are committed, so the rest of the site renders without the raw extract.</p>
+<div class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Column"</span>: panel.columns,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Type"</span>: [<span class="bu">str</span>(t) <span class="cf">for</span> t <span class="kw">in</span> panel.dtypes],</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Non-null"</span>: [fmt(<span class="bu">int</span>(v)) <span class="cf">for</span> v <span class="kw">in</span> panel.notna().<span class="bu">sum</span>().values],</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-schema" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="12">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-schema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9
+</figcaption>
+<div aria-describedby="tbl-schema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Column</th>
+<th data-quarto-table-cell-role="th">Type</th>
+<th data-quarto-table-cell-role="th">Non-null</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>ID</td>
+<td>int64</td>
+<td>1,790</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>TITLE_CLEAN</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>COMPANY_NAME</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>COMPANY_IS_STAFFING</td>
+<td>float64</td>
+<td>294</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>occupation_group</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>role_family</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>posted_date</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>state</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>LOCATION</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>REMOTE_TYPE_NAME</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>MAX_EDULEVELS_NAME</td>
+<td>object</td>
+<td>1,537</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>MIN_EDULEVELS_NAME</td>
+<td>object</td>
+<td>1,073</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>min_years_experience</td>
+<td>float64</td>
+<td>520</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>max_years_experience</td>
+<td>float64</td>
+<td>441</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>salary_from_annual</td>
+<td>float64</td>
+<td>591</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>salary_to_annual</td>
+<td>float64</td>
+<td>586</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>salary_midpoint</td>
+<td>float64</td>
+<td>591</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>ORIGINAL_PAY_PERIOD</td>
+<td>object</td>
+<td>620</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>SKILLS_NAME</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19</th>
+<td>SPECIALIZED_SKILLS_NAME</td>
+<td>object</td>
+<td>1,790</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">20</th>
+<td>NAICS_2022_4</td>
+<td>int64</td>
+<td>1,790</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">21</th>
+<td>NAICS_2022_6_NAME</td>
+<td>object</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>To rebuild the panel from source, place the 21 Parquet files of the v2 extract in <code>data/MET_CareerCompass_2026_v2/</code> and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_panel.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/JennaDer\.github\.io\/METAD688_Group2\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>MET AD 688 | Group 2</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>NAICS 5415 — Computer Systems Design and Related Services</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

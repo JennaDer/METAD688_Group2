@@ -61,26 +61,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -159,45 +140,27 @@ div.csl-indent {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./introduction.html"> 
-<span class="menu-text">Project Foundation</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-market-analysis" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Market Analysis</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-market-analysis">    
-        <li>
-    <a class="dropdown-item" href="./data_preparation.html">
- <span class="dropdown-text">Data Preparation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./market_baseline.html">
- <span class="dropdown-text">Market Baseline</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-career-evaluation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Career Evaluation</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-career-evaluation">    
-        <li>
-    <a class="dropdown-item" href="./skill_gap_analysis.html">
- <span class="dropdown-text">Skill-Gap Analysis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./career_evaluation.html">
- <span class="dropdown-text">Career Scorecard</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./final_recommendations.html"> 
-<span class="menu-text">Recommendations</span></a>
+<span class="menu-text">Project Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">Team</span></a>
+    <a class="nav-link" href="./data_cleaning.html"> 
+<span class="menu-text">Data Preparation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./eda.html"> 
+<span class="menu-text">Exploratory Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./skill_gap_analysis.html" aria-current="page"> 
+<span class="menu-text">Skill Gap Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ml_methods.html"> 
+<span class="menu-text">Predictive Modeling</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./career_plan.html"> 
+<span class="menu-text">Career Strategy</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -230,17 +193,27 @@ div.csl-indent {
   <li><a href="#skills-requested-in-job-postings" id="toc-skills-requested-in-job-postings" class="nav-link" data-scroll-target="#skills-requested-in-job-postings">2. Skills Requested in Job Postings</a>
   <ul class="collapse">
   <li><a href="#most-requested-skills" id="toc-most-requested-skills" class="nav-link" data-scroll-target="#most-requested-skills">Most Requested Skills</a></li>
-  <li><a href="#grouping-related-skill-names" id="toc-grouping-related-skill-names" class="nav-link" data-scroll-target="#grouping-related-skill-names">Grouping Related Skill Names</a></li>
+  <li><a href="#demand-for-the-teams-skills" id="toc-demand-for-the-teams-skills" class="nav-link" data-scroll-target="#demand-for-the-teams-skills">Demand for the Team’s Skills</a></li>
+  <li><a href="#demand-depends-on-the-role" id="toc-demand-depends-on-the-role" class="nav-link" data-scroll-target="#demand-depends-on-the-role">Demand Depends on the Role</a></li>
   </ul></li>
   <li><a href="#comparing-team-skills-with-market-requirements" id="toc-comparing-team-skills-with-market-requirements" class="nav-link" data-scroll-target="#comparing-team-skills-with-market-requirements">3. Comparing Team Skills With Market Requirements</a>
   <ul class="collapse">
   <li><a href="#where-the-team-falls-short" id="toc-where-the-team-falls-short" class="nav-link" data-scroll-target="#where-the-team-falls-short">Where the Team Falls Short</a></li>
   <li><a href="#individual-gaps" id="toc-individual-gaps" class="nav-link" data-scroll-target="#individual-gaps">Individual Gaps</a></li>
+  <li><a href="#gaps-measured-against-each-members-target-role" id="toc-gaps-measured-against-each-members-target-role" class="nav-link" data-scroll-target="#gaps-measured-against-each-members-target-role">Gaps Measured Against Each Member’s Target Role</a></li>
   <li><a href="#gap-summary-table" id="toc-gap-summary-table" class="nav-link" data-scroll-target="#gap-summary-table">Gap Summary Table</a></li>
   <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings</a></li>
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   </ul></li>
-  <li><a href="#improvement-plan" id="toc-improvement-plan" class="nav-link" data-scroll-target="#improvement-plan">4. Improvement Plan</a></li>
+  <li><a href="#improvement-plan" id="toc-improvement-plan" class="nav-link" data-scroll-target="#improvement-plan">4. Improvement Plan</a>
+  <ul class="collapse">
+  <li><a href="#setting-priorities" id="toc-setting-priorities" class="nav-link" data-scroll-target="#setting-priorities">4.1 Setting Priorities</a></li>
+  <li><a href="#priorities-by-member" id="toc-priorities-by-member" class="nav-link" data-scroll-target="#priorities-by-member">4.2 Priorities by Member</a></li>
+  <li><a href="#courses-certifications-and-projects" id="toc-courses-certifications-and-projects" class="nav-link" data-scroll-target="#courses-certifications-and-projects">4.3 Courses, Certifications, and Projects</a></li>
+  <li><a href="#how-the-team-can-help-each-other" id="toc-how-the-team-can-help-each-other" class="nav-link" data-scroll-target="#how-the-team-can-help-each-other">4.4 How the Team Can Help Each Other</a></li>
+  <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline">4.5 Timeline</a></li>
+  <li><a href="#tracking-progress" id="toc-tracking-progress" class="nav-link" data-scroll-target="#tracking-progress">4.6 Tracking Progress</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -269,28 +242,23 @@ div.csl-indent {
 
 <section id="purpose" class="level2">
 <h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
-<p>This page compares the skills requested in our analytics job postings with the current skills of our three team members. It answers two supporting questions from the Project Foundation page:</p>
+<p>This page compares the skills requested in our analytics job postings with the current skills of our three team members. It answers two supporting questions from the Project Overview:</p>
 <ul>
 <li>Where does the target user have skill gaps?</li>
 <li>Which skills should the target user prioritize?</li>
 </ul>
 <p>We use our own team as three realistic examples of the target user: early-career candidates moving into analytics roles within Computer Systems Design and Related Services (NAICS 5415).</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Data Limitation: Truncated Skill Lists
+<span class="screen-reader-only">Note</span>Data Source
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As documented on the <a href="./data_preparation.html">Data Preparation</a> page, the skill fields in the source extract were alphabetically truncated before delivery. <strong>No skill name in the dataset begins with a letter after C.</strong> Python, SQL, Excel, Tableau, Power BI, and R therefore never appear in the posting data, even though they are core analytics tools.</p>
-<p>To keep the analysis honest, we separate the skills into two groups:</p>
-<ul>
-<li><strong>Market skills:</strong> measured directly from our 287 job postings.</li>
-<li><strong>Core tools:</strong> added from outside evidence <span class="citation" data-cites="verma2019skills">(<a href="#ref-verma2019skills" role="doc-biblioref">Verma et al. 2019</a>)</span> because the dataset cannot measure them. Their demand is <em>assumed</em>, not measured.</li>
-</ul>
+<p>This analysis uses the corrected v2 extract described on the <a href="./data_cleaning.html">Data Preparation</a> page: 1,790 analytics postings posted between September 2025 and September 2026. Unlike the original extract, v2 contains the full skill taxonomy, so core tools such as Python, SQL, Tableau, and Power BI are measured directly in the postings.</p>
 </div>
 </div>
 </section>
@@ -327,7 +295,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>The skill list combines the most frequently requested skills in our postings with four core analytics tools. Each member also named the role they are targeting.</p>
+<p>The skill list comes from the postings themselves: it covers the most requested tools and competencies that a person can realistically rate and learn. Very broad fields such as “Data Science” or “Computer Science” were left out because they describe a discipline rather than a skill.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -345,53 +313,33 @@ div.csl-indent {
 <tr class="odd">
 <td>Jenna</td>
 <td>Business Intelligence / Business Analyst</td>
-<td>Strong Excel and BI experience; some Power BI; beginner in coding</td>
+<td>Strong Excel, BI, and communication skills; some Power BI; beginner in coding</td>
 </tr>
 <tr class="even">
 <td>Mariam</td>
 <td>Business Analyst</td>
-<td>Strong business and analytics understanding; beginner in coding</td>
+<td>Strong business requirements and analysis skills; beginner in coding</td>
 </tr>
 <tr class="odd">
 <td>Juan</td>
 <td>Data Analyst, moving toward Data Scientist</td>
-<td>Most data and coding experience on the team; not yet an expert</td>
+<td>Expert in Excel, Power BI, Tableau, and data analysis; intermediate in SQL and Python</td>
 </tr>
 </tbody>
 </table>
-<!-- TODO: Juan to confirm his ratings before final submission. -->
+<p>The ratings are stored in <code>data/processed/team_skills_v2.csv</code>. This page and the Improvement Plan below both read from that one file, so updating a rating there updates the whole analysis.</p>
 <div class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>skills_data <span class="op">=</span> {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Name"</span>: [<span class="st">"Jenna"</span>, <span class="st">"Mariam"</span>, <span class="st">"Juan"</span>],</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Market skills (measured in the job postings)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Analytics"</span>:               [<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>],</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Business Intelligence"</span>:   [<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>],</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Business Requirements"</span>:   [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>],</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Big Data"</span>:                [<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>],</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Artificial Intelligence"</span>: [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Algorithms"</span>:              [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>],</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"A/B Testing"</span>:             [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>],</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Automation"</span>:              [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>],</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Apache Spark"</span>:            [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>],</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"BigQuery"</span>:                [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>],</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Airflow"</span>:                 [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>],</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Alteryx"</span>:                 [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>],</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Causal Inference"</span>:        [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>],</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Core tools (not measurable in this dataset)</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Excel"</span>:                   [<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tableau / Power BI"</span>:      [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>],</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SQL"</span>:                     [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Python"</span>:                  [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>],</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>df_skills <span class="op">=</span> pd.DataFrame(skills_data).set_index(<span class="st">"Name"</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>CORE_TOOLS <span class="op">=</span> [<span class="st">"Excel"</span>, <span class="st">"Tableau / Power BI"</span>, <span class="st">"SQL"</span>, <span class="st">"Python"</span>]</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>MARKET_SKILLS <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> df_skills.columns <span class="cf">if</span> c <span class="kw">not</span> <span class="kw">in</span> CORE_TOOLS]</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>df_skills.T</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>MEMBERS <span class="op">=</span> [<span class="st">"Jenna"</span>, <span class="st">"Mariam"</span>, <span class="st">"Juan"</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ratings <span class="op">=</span> pd.read_csv(<span class="st">"data/processed/team_skills_v2.csv"</span>).set_index(<span class="st">"skill"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Team skill dataframe: one row per member, one column per skill</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df_skills <span class="op">=</span> ratings[MEMBERS].T</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df_skills.index.name <span class="op">=</span> <span class="st">"Name"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df_skills.T</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-team-skills" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -399,7 +347,7 @@ div.csl-indent {
 Table&nbsp;1: Self-assessed skill levels (1 = Beginner, 5 = Expert).
 </figcaption>
 <div aria-describedby="tbl-team-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -411,109 +359,109 @@ Table&nbsp;1: Self-assessed skill levels (1 = Beginner, 5 = Expert).
 <th data-quarto-table-cell-role="th">Mariam</th>
 <th data-quarto-table-cell-role="th">Juan</th>
 </tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">skill</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Analytics</th>
-<td>4</td>
-<td>4</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Business Intelligence</th>
-<td>4</td>
-<td>3</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Business Requirements</th>
-<td>3</td>
-<td>4</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Big Data</th>
-<td>3</td>
-<td>3</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Artificial Intelligence</th>
-<td>2</td>
-<td>2</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Algorithms</th>
-<td>2</td>
-<td>1</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">A/B Testing</th>
-<td>2</td>
-<td>2</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Automation</th>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Apache Spark</th>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">BigQuery</th>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Airflow</th>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Alteryx</th>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Causal Inference</th>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Excel</th>
-<td>4</td>
-<td>2</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Tableau / Power BI</th>
-<td>3</td>
-<td>1</td>
-<td>2</td>
-</tr>
-<tr class="even">
 <th data-quarto-table-cell-role="th">SQL</th>
 <td>1</td>
 <td>2</td>
 <td>3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <th data-quarto-table-cell-role="th">Python</th>
 <td>1</td>
 <td>1</td>
 <td>3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Pipelines</th>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Machine Learning</th>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Tableau</th>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Quality</th>
+<td>3</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Business Requirements</th>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Power BI</th>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Databricks</th>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Microsoft Excel</th>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Analysis</th>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Modeling</th>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Verbal Communication</th>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Business Analysis</th>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Statistical Modeling</th>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Visualization</th>
+<td>3</td>
+<td>1</td>
+<td>5</td>
 </tr>
 </tbody>
 </table>
@@ -529,209 +477,119 @@ Table&nbsp;1: Self-assessed skill levels (1 = Beginner, 5 = Expert).
 <div id="cell-fig-team-heatmap" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>skill_cmap <span class="op">=</span> LinearSegmentedColormap.from_list(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"team_teal"</span>, [<span class="st">"#F3F8F9"</span>, LIGHT_BLUE, TEAL, NAVY]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>heat <span class="op">=</span> df_skills.T  <span class="co"># skills as rows, members as columns</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="dv">8</span>))</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>ax.imshow(heat.values, cmap<span class="op">=</span>skill_cmap, vmin<span class="op">=</span><span class="dv">1</span>, vmax<span class="op">=</span><span class="dv">5</span>, aspect<span class="op">=</span><span class="st">"auto"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(heat.shape[<span class="dv">0</span>]):</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(heat.shape[<span class="dv">1</span>]):</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> heat.values[i, j]</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        ax.text(</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            j, i, value, ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">10</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">"white"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> <span class="dv">3</span> <span class="cf">else</span> <span class="st">"#25353C"</span>,</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(heat.shape[<span class="dv">1</span>]), heat.columns)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(heat.shape[<span class="dv">0</span>]), heat.index)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ax.xaxis.tick_top()</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax.tick_params(length<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> spine <span class="kw">in</span> ax.spines.values():</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    spine.set_visible(<span class="va">False</span>)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Thin white gaps between cells, plus a divider above the core tools</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(np.arange(<span class="op">-</span><span class="fl">0.5</span>, heat.shape[<span class="dv">1</span>]), minor<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(np.arange(<span class="op">-</span><span class="fl">0.5</span>, heat.shape[<span class="dv">0</span>]), minor<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>ax.grid(which<span class="op">=</span><span class="st">"minor"</span>, color<span class="op">=</span><span class="st">"white"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">"minor"</span>, length<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="bu">len</span>(MARKET_SKILLS) <span class="op">-</span> <span class="fl">0.5</span>, color<span class="op">=</span>NAVY, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>ax.text(</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    heat.shape[<span class="dv">1</span>] <span class="op">-</span> <span class="fl">0.35</span>, <span class="bu">len</span>(MARKET_SKILLS) <span class="op">+</span> <span class="bu">len</span>(CORE_TOOLS) <span class="op">/</span> <span class="dv">2</span> <span class="op">-</span> <span class="fl">0.5</span>,</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Core tools</span><span class="ch">\n</span><span class="st">(not in dataset)"</span>, rotation<span class="op">=</span><span class="dv">270</span>, ha<span class="op">=</span><span class="st">"left"</span>, va<span class="op">=</span><span class="st">"center"</span>,</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    fontsize<span class="op">=</span><span class="fl">8.5</span>, color<span class="op">=</span>GRAY, style<span class="op">=</span><span class="st">"italic"</span>,</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Team Skill Levels (1 = Beginner, 5 = Expert)"</span>, pad<span class="op">=</span><span class="dv">28</span>)</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>save_figure(<span class="st">"team_skill_heatmap.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>heat <span class="op">=</span> df_skills.T.loc[df_skills.mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>).index]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="fl">7.5</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>annotated_heatmap(ax, heat, SEQUENTIAL, vmin<span class="op">=</span><span class="dv">1</span>, vmax<span class="op">=</span><span class="dv">5</span>, fmt<span class="op">=</span><span class="kw">lambda</span> v: <span class="ss">f"</span><span class="sc">{</span>v<span class="sc">:.0f}</span><span class="ss">"</span>, dark_from<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Team Skill Levels (1 = Beginner, 5 = Expert)"</span>, pad<span class="op">=</span><span class="dv">28</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>save_figure(<span class="st">"team_skill_heatmap.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-team-heatmap" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-team-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="skill_gap_analysis_files/figure-html/fig-team-heatmap-output-1.png" width="616" height="759" class="figure-img">
+<img src="skill_gap_analysis_files/figure-html/fig-team-heatmap-output-1.png" width="621" height="711" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-team-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Team skill levels. Darker cells show stronger skills; the lower block holds core tools that the dataset cannot measure.
+Figure&nbsp;1: Team skill levels, sorted by team average. Darker cells show stronger skills.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The heatmap shows three complementary profiles:</p>
+<p>The heatmap shows a clear split between business and technical skills:</p>
 <ul>
-<li><strong>Jenna</strong> is the team’s strongest member in Excel and business intelligence.</li>
-<li><strong>Mariam</strong> is strongest in business requirements and analytics understanding.</li>
-<li><strong>Juan</strong> has the strongest technical base, with intermediate Python, SQL, and algorithms.</li>
+<li><strong>All three members are strong on the business side:</strong> data analysis, business analysis, business requirements, and communication.</li>
+<li><strong>Juan is the team’s strongest member overall</strong>, at Expert level in the BI tools (Tableau, Power BI, Excel) and intermediate in SQL and Python.</li>
+<li><strong>Jenna</strong> brings Advanced Excel, business analysis, and communication skills, with intermediate BI tools and data modeling.</li>
+<li><strong>Mariam</strong> is strongest in business requirements, with most technical tools still at Beginner level.</li>
 </ul>
-<p>The lower rows of the market block are the shared weak spot. <strong>No team member is above Basic knowledge in data-pipeline and cloud tools</strong> (Airflow, BigQuery, Apache Spark, Alteryx) or in causal inference.</p>
+<p>The bottom of the heatmap is the shared weak spot. <strong>No one on the team is above Intermediate in Python, SQL, data pipelines, Databricks, machine learning, or statistical modeling.</strong></p>
 </section>
 </section>
 <section id="skills-requested-in-job-postings" class="level2">
 <h2 class="anchored" data-anchor-id="skills-requested-in-job-postings">2. Skills Requested in Job Postings</h2>
-<p>We extracted skills from the <code>SKILLS_NAME</code> field of the cleaned panel. Each posting stores its skills as a list, so we count <strong>how many postings mention each skill</strong> rather than total mentions. This stops a single long posting from inflating a skill’s importance.</p>
+<p>We extracted skills from the <code>SKILLS_NAME</code> field. Each posting stores its skills as a list, so we count <strong>how many postings mention each skill</strong> rather than total mentions. This stops a single long posting from inflating a skill’s importance.</p>
 <div id="extract-skills" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>panel <span class="op">=</span> pd.read_csv(<span class="st">"data/processed/career_market_panel.csv"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>panel[<span class="st">"skills"</span>] <span class="op">=</span> (</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    panel[<span class="st">"SKILLS_NAME"</span>].fillna(<span class="st">"[]"</span>).<span class="bu">map</span>(json.loads).<span class="bu">map</span>(<span class="bu">set</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>postings_with_skills <span class="op">=</span> (panel[<span class="st">"skills"</span>].<span class="bu">map</span>(<span class="bu">len</span>) <span class="op">&gt;</span> <span class="dv">0</span>).<span class="bu">sum</span>()</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>skill_postings <span class="op">=</span> (</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    panel[[<span class="st">"ID"</span>, <span class="st">"skills"</span>]]</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    .explode(<span class="st">"skills"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    .dropna()</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">"skills"</span>)[<span class="st">"ID"</span>]</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    .count()</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    .sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Postings with at least one skill listed: </span><span class="sc">{</span>postings_with_skills<span class="sc">}</span><span class="ss"> of </span><span class="sc">{</span><span class="bu">len</span>(panel)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Distinct skill names: </span><span class="sc">{</span>skill_postings<span class="sc">.</span>size<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>panel[<span class="st">"skills"</span>] <span class="op">=</span> panel[<span class="st">"SKILLS_NAME"</span>].fillna(<span class="st">"[]"</span>).<span class="bu">map</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> s: <span class="bu">set</span>(json.loads(s)) <span class="cf">if</span> s.startswith(<span class="st">"["</span>) <span class="cf">else</span> <span class="bu">set</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>n_postings <span class="op">=</span> <span class="bu">len</span>(panel)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>skill_postings <span class="op">=</span> panel[<span class="st">"skills"</span>].explode().dropna().value_counts()</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Postings analyzed: </span><span class="sc">{</span>n_postings<span class="sc">:,}</span><span class="ss">"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Postings with at least one skill: </span><span class="sc">{</span>(panel[<span class="st">'skills'</span>].<span class="bu">map</span>(<span class="bu">len</span>) <span class="op">&gt;</span> <span class="dv">0</span>)<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,}</span><span class="ss">"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Distinct skills: </span><span class="sc">{</span>skill_postings<span class="sc">.</span>size<span class="sc">:,}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Postings with at least one skill listed: 278 of 287
-Distinct skill names: 169</code></pre>
-</div>
-</div>
-<p>The first letters of every extracted skill name confirm the truncation described above:</p>
-<div id="cell-truncation-check" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>first_letters <span class="op">=</span> pd.Series(skill_postings.index.<span class="bu">str</span>[<span class="dv">0</span>]).value_counts().sort_index()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>first_letters.rename(<span class="st">"Distinct skills"</span>).to_frame().T</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div id="truncation-check" class="cell-output cell-output-display" data-execution_count="17">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">skills</th>
-<th data-quarto-table-cell-role="th">3</th>
-<th data-quarto-table-cell-role="th">A</th>
-<th data-quarto-table-cell-role="th">B</th>
-<th data-quarto-table-cell-role="th">C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Distinct skills</th>
-<td>1</td>
-<td>94</td>
-<td>65</td>
-<td>9</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+<pre><code>Postings analyzed: 1,790
+Postings with at least one skill: 1,785
+Distinct skills: 1,394</code></pre>
 </div>
 </div>
 <section id="most-requested-skills" class="level3">
 <h3 class="anchored" data-anchor-id="most-requested-skills">Most Requested Skills</h3>
-<div id="cell-fig-top-skills" class="cell" data-execution_count="6">
+<div id="cell-fig-top-skills" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>top_raw <span class="op">=</span> (skill_postings.head(<span class="dv">15</span>) <span class="op">/</span> postings_with_skills <span class="op">*</span> <span class="dv">100</span>).sort_values()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> ax.barh(top_raw.index, top_raw.values, color<span class="op">=</span>TEAL, height<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar, value <span class="kw">in</span> <span class="bu">zip</span>(bars, top_raw.values):</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    ax.text(value <span class="op">+</span> <span class="fl">0.8</span>, bar.get_y() <span class="op">+</span> bar.get_height() <span class="op">/</span> <span class="dv">2</span>, <span class="ss">f"</span><span class="sc">{</span>value<span class="sc">:.0f}</span><span class="ss">%"</span>,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>            va<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">9</span>, color<span class="op">=</span>NAVY)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Share of postings (%)"</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, top_raw.<span class="bu">max</span>() <span class="op">*</span> <span class="fl">1.12</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Most Requested Skills in Analytics Postings (NAICS 5415)"</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>save_figure(<span class="st">"top_posting_skills.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>top <span class="op">=</span> (skill_postings.head(<span class="dv">20</span>) <span class="op">/</span> n_postings <span class="op">*</span> <span class="dv">100</span>).sort_values()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rated <span class="op">=</span> <span class="bu">set</span>(ratings[<span class="st">"panel_skill_name"</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [TEAL <span class="cf">if</span> skill <span class="kw">in</span> rated <span class="cf">else</span> LIGHT_BLUE <span class="cf">for</span> skill <span class="kw">in</span> top.index]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">8.5</span>, <span class="dv">7</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> ax.barh(top.index, top.values, color<span class="op">=</span>colors, height<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar, value <span class="kw">in</span> <span class="bu">zip</span>(bars, top.values):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    ax.text(value <span class="op">+</span> <span class="fl">0.8</span>, bar.get_y() <span class="op">+</span> bar.get_height() <span class="op">/</span> <span class="dv">2</span>, <span class="ss">f"</span><span class="sc">{</span>value<span class="sc">:.0f}</span><span class="ss">%"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            va<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">9</span>, color<span class="op">=</span>NAVY)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Share of postings (%)"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, top.<span class="bu">max</span>() <span class="op">*</span> <span class="fl">1.12</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>ax.legend(</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    handles<span class="op">=</span>[plt.Rectangle((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">1</span>, <span class="dv">1</span>, color<span class="op">=</span>TEAL), plt.Rectangle((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">1</span>, <span class="dv">1</span>, color<span class="op">=</span>LIGHT_BLUE)],</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>[<span class="st">"Rated by the team"</span>, <span class="st">"Not on the team's list"</span>],</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    loc<span class="op">=</span><span class="st">"lower right"</span>, frameon<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Most Requested Skills in Analytics Postings (NAICS 5415)"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>save_figure(<span class="st">"top_posting_skills.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-top-skills" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="skill_gap_analysis_files/figure-html/fig-top-skills-output-1.png" width="765" height="566" class="figure-img">
+<img src="skill_gap_analysis_files/figure-html/fig-top-skills-output-1.png" width="844" height="662" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The 15 skills mentioned in the most postings (share of the 278 postings with skill data).
+Figure&nbsp;2: The 20 skills mentioned in the most postings. Teal bars are skills the team rated; light bars are broad fields or tools outside the team’s list.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>“Analytics” appears in roughly two of every three postings, far ahead of every other skill. The next tier mixes <strong>business skills</strong> (Business Intelligence, Business Requirements) with <strong>technical data tools</strong> (Automation, Airflow, BigQuery, Big Data). Employers in this industry want analysts who can understand the business problem <em>and</em> work with modern data infrastructure.</p>
+<p><strong>Python and SQL dominate</strong>, each appearing in more than 60% of postings, roughly three times as often as the next skill. After them comes a mix of data-engineering skills (data pipelines, data engineering, Databricks), data science (machine learning), and BI tools (Tableau, Power BI). Business-side skills such as business requirements and Excel appear in about 10% of postings.</p>
 </section>
-<section id="grouping-related-skill-names" class="level3">
-<h3 class="anchored" data-anchor-id="grouping-related-skill-names">Grouping Related Skill Names</h3>
-<p>Many skill names in the source data describe the same capability (“Analytics”, “Advanced Analytics”, “Business Analytics”). We grouped related names into the skills our team rated, so that team ratings and market demand refer to the same thing.</p>
-<div class="cell" data-execution_count="7">
+<section id="demand-for-the-teams-skills" class="level3">
+<h3 class="anchored" data-anchor-id="demand-for-the-teams-skills">Demand for the Team’s Skills</h3>
+<div class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>SKILL_GROUPS <span class="op">=</span> {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Analytics"</span>: [<span class="st">"Analytics"</span>, <span class="st">"Advanced Analytics"</span>, <span class="st">"Business Analytics"</span>,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Analytical Skills"</span>, <span class="st">"Analytical Thinking"</span>],</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Automation"</span>: [<span class="st">"Automation"</span>, <span class="st">"Business Process Automation"</span>],</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Business Intelligence"</span>: [<span class="st">"Business Intelligence"</span>, <span class="st">"Business Intelligence Tools"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"Business Reporting"</span>],</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Business Requirements"</span>: [<span class="st">"Business Requirements"</span>, <span class="st">"Business Analysis"</span>,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"Business Process Analysis"</span>],</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Airflow"</span>: [<span class="st">"Airflow"</span>, <span class="st">"Apache Airflow"</span>],</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Big Data"</span>: [<span class="st">"Big Data"</span>, <span class="st">"Big Data Analytics"</span>, <span class="st">"Apache Hadoop"</span>],</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"BigQuery"</span>: [<span class="st">"BigQuery"</span>],</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Algorithms"</span>: [<span class="st">"Algorithms"</span>],</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Artificial Intelligence"</span>: [<span class="st">"Artificial Intelligence"</span>, <span class="st">"AI Agents"</span>, <span class="st">"Agentic AI"</span>],</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Causal Inference"</span>: [<span class="st">"Causal Inference"</span>],</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"A/B Testing"</span>: [<span class="st">"A/B Testing"</span>],</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Alteryx"</span>: [<span class="st">"Alteryx"</span>],</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Apache Spark"</span>: [<span class="st">"Apache Spark"</span>],</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> pd.Series(</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        skill: panel[<span class="st">"skills"</span>].<span class="bu">map</span>(<span class="kw">lambda</span> s, names<span class="op">=</span>names: <span class="bu">bool</span>(s <span class="op">&amp;</span> <span class="bu">set</span>(names))).<span class="bu">sum</span>()</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> skill, names <span class="kw">in</span> SKILL_GROUPS.items()</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"Postings"</span>,</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> demand.to_frame()</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>demand[<span class="st">"Share of postings (%)"</span>] <span class="op">=</span> (demand[<span class="st">"Postings"</span>] <span class="op">/</span> postings_with_skills <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> demand.sort_values(<span class="st">"Postings"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>demand</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> ratings[<span class="st">"panel_skill_name"</span>].<span class="bu">map</span>(<span class="kw">lambda</span> name: skill_postings.get(name, <span class="dv">0</span>)).rename(<span class="st">"Postings"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> demand.to_frame()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>demand[<span class="st">"Share of postings (%)"</span>] <span class="op">=</span> (demand[<span class="st">"Postings"</span>] <span class="op">/</span> n_postings <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> demand.sort_values(<span class="st">"Postings"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>demand</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div id="tbl-skill-demand" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="7">
+<div id="tbl-skill-demand" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="6">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-skill-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Market demand for each rated skill, after grouping related skill names.
+Table&nbsp;2: Share of all 1,790 postings that request each skill on the team’s list.
 </figcaption>
 <div aria-describedby="tbl-skill-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -742,72 +600,92 @@ Table&nbsp;2: Market demand for each rated skill, after grouping related skill n
 <th data-quarto-table-cell-role="th">Postings</th>
 <th data-quarto-table-cell-role="th">Share of postings (%)</th>
 </tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">skill</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Analytics</th>
-<td>191</td>
-<td>68.7</td>
+<th data-quarto-table-cell-role="th">Python</th>
+<td>1119</td>
+<td>62.5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Automation</th>
-<td>78</td>
-<td>28.1</td>
+<th data-quarto-table-cell-role="th">SQL</th>
+<td>1106</td>
+<td>61.8</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Business Intelligence</th>
-<td>58</td>
-<td>20.9</td>
+<th data-quarto-table-cell-role="th">Data Pipelines</th>
+<td>388</td>
+<td>21.7</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Business Requirements</th>
-<td>53</td>
-<td>19.1</td>
+<th data-quarto-table-cell-role="th">Machine Learning</th>
+<td>345</td>
+<td>19.3</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Airflow</th>
-<td>47</td>
-<td>16.9</td>
+<th data-quarto-table-cell-role="th">Tableau</th>
+<td>280</td>
+<td>15.6</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Artificial Intelligence</th>
-<td>42</td>
-<td>15.1</td>
+<th data-quarto-table-cell-role="th">Data Quality</th>
+<td>254</td>
+<td>14.2</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Big Data</th>
-<td>31</td>
+<th data-quarto-table-cell-role="th">Power BI</th>
+<td>200</td>
 <td>11.2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">BigQuery</th>
-<td>29</td>
-<td>10.4</td>
+<th data-quarto-table-cell-role="th">Databricks</th>
+<td>199</td>
+<td>11.1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Algorithms</th>
-<td>28</td>
-<td>10.1</td>
+<th data-quarto-table-cell-role="th">Business Requirements</th>
+<td>182</td>
+<td>10.2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Causal Inference</th>
-<td>14</td>
-<td>5.0</td>
+<th data-quarto-table-cell-role="th">Microsoft Excel</th>
+<td>169</td>
+<td>9.4</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">A/B Testing</th>
-<td>12</td>
-<td>4.3</td>
+<th data-quarto-table-cell-role="th">Data Analysis</th>
+<td>160</td>
+<td>8.9</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Alteryx</th>
-<td>12</td>
-<td>4.3</td>
+<th data-quarto-table-cell-role="th">Data Modeling</th>
+<td>150</td>
+<td>8.4</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Apache Spark</th>
-<td>11</td>
-<td>4.0</td>
+<th data-quarto-table-cell-role="th">Verbal Communication</th>
+<td>135</td>
+<td>7.5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Statistical Modeling</th>
+<td>115</td>
+<td>6.4</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Business Analysis</th>
+<td>104</td>
+<td>5.8</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Visualization</th>
+<td>102</td>
+<td>5.7</td>
 </tr>
 </tbody>
 </table>
@@ -819,10 +697,59 @@ Table&nbsp;2: Market demand for each rated skill, after grouping related skill n
 </div>
 </div>
 </section>
+<section id="demand-depends-on-the-role" class="level3">
+<h3 class="anchored" data-anchor-id="demand-depends-on-the-role">Demand Depends on the Role</h3>
+<p>The market average hides large differences between roles. The v2 data classifies each posting into a role family, so we can see what each of our target roles asks for.</p>
+<div id="cell-fig-role-demand" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ROLES <span class="op">=</span> [<span class="st">"Business Analyst"</span>, <span class="st">"Business Intelligence"</span>, <span class="st">"Data Analyst"</span>, <span class="st">"Data Scientist"</span>, <span class="st">"Data Engineer"</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>role_demand <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        role: ratings[<span class="st">"panel_skill_name"</span>].<span class="bu">map</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">lambda</span> name, role<span class="op">=</span>role: panel.loc[panel[<span class="st">"role_family"</span>] <span class="op">==</span> role, <span class="st">"skills"</span>]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>            .<span class="bu">map</span>(<span class="kw">lambda</span> s: name <span class="kw">in</span> s).mean() <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> role <span class="kw">in</span> ROLES</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>).loc[demand.index]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>role_counts <span class="op">=</span> panel[<span class="st">"role_family"</span>].value_counts()</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>plot_table <span class="op">=</span> role_demand.copy()</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>plot_table.columns <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>r<span class="sc">}</span><span class="ch">\n</span><span class="ss">(n=</span><span class="sc">{</span>role_counts[r]<span class="sc">:,}</span><span class="ss">)"</span> <span class="cf">for</span> r <span class="kw">in</span> ROLES]</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="fl">7.5</span>))</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>annotated_heatmap(ax, plot_table, SEQUENTIAL, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">85</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                  fmt<span class="op">=</span><span class="kw">lambda</span> v: <span class="ss">f"</span><span class="sc">{</span>v<span class="sc">:.0f}</span><span class="ss">%"</span>, dark_from<span class="op">=</span><span class="dv">40</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">"x"</span>, labelsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Skill Demand by Role Family (</span><span class="sc">% o</span><span class="st">f postings)"</span>, pad<span class="op">=</span><span class="dv">34</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>save_figure(<span class="st">"skill_demand_by_role.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-role-demand" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-role-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="skill_gap_analysis_files/figure-html/fig-role-demand-output-1.png" width="861" height="711" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-role-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Share of postings in each role family that request each skill. Skills are ordered by overall demand.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>SQL is the one skill every role needs.</strong> It appears in 36% of Business Analyst postings and 80% of Business Intelligence postings.</li>
+<li><strong>Business Intelligence roles are tool-heavy:</strong> Tableau (63%), Power BI (52%), and Python (48%) follow SQL.</li>
+<li><strong>Business Analyst roles are the most business-focused:</strong> business requirements (39%), business analysis (34%), and Excel (29%) sit alongside SQL, while Python appears in only 14%.</li>
+<li><strong>Data Scientist roles</strong> are led by Python (82%) and machine learning (45%), and <strong>Data Engineer roles</strong> by Python, SQL, and data pipelines.</li>
+</ul>
+</section>
 </section>
 <section id="comparing-team-skills-with-market-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="comparing-team-skills-with-market-requirements">3. Comparing Team Skills With Market Requirements</h2>
-<p>Job postings list skills but not the proficiency level employers expect. To compare the two, we set a <strong>target level</strong> for each skill using a transparent rule based on how often the skill is requested:</p>
+<p>Job postings list skills but not the proficiency level employers expect. To compare the two, we set a <strong>target level</strong> for each skill using a transparent rule based on how often the skill is requested across all postings:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -843,19 +770,14 @@ Table&nbsp;2: Market demand for each rated skill, after grouping related skill n
 <td>Under 10%</td>
 <td style="text-align: center;">2 (Basic knowledge)</td>
 </tr>
-<tr class="even">
-<td>Core tools (assumed, not measured)</td>
-<td style="text-align: center;">4 (Advanced)</td>
-</tr>
 </tbody>
 </table>
-<p>Core tools receive a target of 4 because the analytics-skills literature consistently identifies SQL, Excel, visualization tools, and a programming language as baseline expectations for analyst roles <span class="citation" data-cites="verma2019skills">(<a href="#ref-verma2019skills" role="doc-biblioref">Verma et al. 2019</a>)</span>.</p>
 <p>For each member and skill:</p>
 <ul>
 <li><strong>Gap</strong> = target level − current rating (0 if the member already meets the target)</li>
-<li><strong>Priority score</strong> = average team gap × demand weight, where the demand weight is the posting share for market skills and a fixed 0.5 for core tools</li>
+<li><strong>Priority score</strong> = average team gap × share of postings</li>
 </ul>
-<p>The priority score favors skills that are both widely requested <em>and</em> weak across the team.</p>
+<p>The priority score favors skills that are both widely requested <em>and</em> weak across the team. The Improvement Plan in Section 4 uses the same rule.</p>
 <div id="build-gaps" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -867,30 +789,25 @@ Table&nbsp;2: Market demand for each rated skill, after grouping related skill n
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>targets <span class="op">=</span> demand[<span class="st">"Share of postings (%)"</span>].<span class="bu">map</span>(target_level)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tool <span class="kw">in</span> CORE_TOOLS:</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    targets[tool] <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>demand_weight <span class="op">=</span> (demand[<span class="st">"Share of postings (%)"</span>] <span class="op">/</span> <span class="dv">100</span>).reindex(targets.index)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>demand_weight[CORE_TOOLS] <span class="op">=</span> <span class="fl">0.5</span>  <span class="co"># assumed; see callout at top of page</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>member_gaps <span class="op">=</span> (targets <span class="op">-</span> df_skills[targets.index]).clip(lower<span class="op">=</span><span class="dv">0</span>)  <span class="co"># members x skills</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>gap_table <span class="op">=</span> pd.DataFrame(</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Skill type"</span>: [<span class="st">"Core tool"</span> <span class="cf">if</span> s <span class="kw">in</span> CORE_TOOLS <span class="cf">else</span> <span class="st">"Market skill"</span> <span class="cf">for</span> s <span class="kw">in</span> targets.index],</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Demand (%)"</span>: demand[<span class="st">"Share of postings (%)"</span>].reindex(targets.index),</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Target level"</span>: targets,</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Team average"</span>: df_skills[targets.index].mean().<span class="bu">round</span>(<span class="dv">2</span>),</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>gap_table <span class="op">=</span> gap_table.join(member_gaps.T.add_suffix(<span class="st">" gap"</span>))</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>gap_table[<span class="st">"Average gap"</span>] <span class="op">=</span> member_gaps.mean().<span class="bu">round</span>(<span class="dv">2</span>)</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>gap_table[<span class="st">"Priority score"</span>] <span class="op">=</span> (gap_table[<span class="st">"Average gap"</span>] <span class="op">*</span> demand_weight).<span class="bu">round</span>(<span class="dv">2</span>)</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>gap_table <span class="op">=</span> gap_table.sort_values(<span class="st">"Priority score"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Saved for the improvement plan (Section 4)</span></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>gap_table.to_csv(<span class="st">"data/processed/skill_gap_table.csv"</span>, index_label<span class="op">=</span><span class="st">"Skill"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>share <span class="op">=</span> demand[<span class="st">"Share of postings (%)"</span>]</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>targets <span class="op">=</span> share.<span class="bu">map</span>(target_level)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>member_gaps <span class="op">=</span> (targets <span class="op">-</span> df_skills[targets.index]).clip(lower<span class="op">=</span><span class="dv">0</span>)  <span class="co"># members x skills</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>gap_table <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Demand (%)"</span>: share,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Target level"</span>: targets,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Team average"</span>: df_skills[targets.index].mean().<span class="bu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>gap_table <span class="op">=</span> gap_table.join(member_gaps.T.add_suffix(<span class="st">" gap"</span>))</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>gap_table[<span class="st">"Average gap"</span>] <span class="op">=</span> member_gaps.mean().<span class="bu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>gap_table[<span class="st">"Priority score"</span>] <span class="op">=</span> (gap_table[<span class="st">"Average gap"</span>] <span class="op">*</span> share <span class="op">/</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>gap_table <span class="op">=</span> gap_table.sort_values([<span class="st">"Priority score"</span>, <span class="st">"Demand (%)"</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Saved as a handoff for the Improvement Plan and Career Strategy pages</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>gap_table.to_csv(<span class="st">"data/processed/skill_gap_table.csv"</span>, index_label<span class="op">=</span><span class="st">"Skill"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <section id="where-the-team-falls-short" class="level3">
@@ -898,40 +815,37 @@ Table&nbsp;2: Market demand for each rated skill, after grouping related skill n
 <div id="cell-fig-gap-comparison" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="op">=</span> gap_table.sort_values(<span class="st">"Priority score"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="op">=</span> gap_table.iloc[::<span class="op">-</span><span class="dv">1</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.arange(<span class="bu">len</span>(plot_df))</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">7.5</span>))</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>ax.hlines(y, plot_df[<span class="st">"Team average"</span>], plot_df[<span class="st">"Target level"</span>], color<span class="op">=</span>LIGHT_BLUE, linewidth<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>ax.scatter(plot_df[<span class="st">"Target level"</span>], y, s<span class="op">=</span><span class="dv">90</span>, facecolor<span class="op">=</span><span class="st">"white"</span>, edgecolor<span class="op">=</span>NAVY,</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>           linewidth<span class="op">=</span><span class="dv">2</span>, zorder<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="st">"Target level"</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>ax.scatter(plot_df[<span class="st">"Team average"</span>], y, s<span class="op">=</span><span class="dv">80</span>, color<span class="op">=</span>TEAL, edgecolor<span class="op">=</span><span class="st">"white"</span>,</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>           linewidth<span class="op">=</span><span class="fl">1.5</span>, zorder<span class="op">=</span><span class="dv">4</span>, label<span class="op">=</span><span class="st">"Team average"</span>)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>skill<span class="sc">}</span><span class="ss"> *"</span> <span class="cf">if</span> skill <span class="kw">in</span> CORE_TOOLS <span class="cf">else</span> skill <span class="cf">for</span> skill <span class="kw">in</span> plot_df.index</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(y, labels)</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>), [<span class="st">"1</span><span class="ch">\n</span><span class="st">Beginner"</span>, <span class="st">"2</span><span class="ch">\n</span><span class="st">Basic"</span>, <span class="st">"3</span><span class="ch">\n</span><span class="st">Intermediate"</span>, <span class="st">"4</span><span class="ch">\n</span><span class="st">Advanced"</span>, <span class="st">"5</span><span class="ch">\n</span><span class="st">Expert"</span>])</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="fl">0.7</span>, <span class="fl">5.3</span>)</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>ax.grid(axis<span class="op">=</span><span class="st">"x"</span>, color<span class="op">=</span><span class="st">"#E6ECEE"</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>ax.set_axisbelow(<span class="va">True</span>)</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>, <span class="st">"left"</span>]].set_visible(<span class="va">False</span>)</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">"y"</span>, length<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">"lower right"</span>, frameon<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Team Average vs. Target Level (highest priority at top)"</span>)</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>fig.text(<span class="fl">0.01</span>, <span class="fl">0.005</span>, <span class="st">"* Core tool: target assumed from outside evidence, not measured in postings."</span>,</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>         fontsize<span class="op">=</span><span class="dv">8</span>, color<span class="op">=</span>GRAY)</span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>save_figure(<span class="st">"skill_gap_comparison.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>short <span class="op">=</span> plot_df[<span class="st">"Team average"</span>] <span class="op">&lt;</span> plot_df[<span class="st">"Target level"</span>]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>line_colors <span class="op">=</span> [LIGHT_BLUE <span class="cf">if</span> s <span class="cf">else</span> <span class="st">"#DDE3E5"</span> <span class="cf">for</span> s <span class="kw">in</span> short]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>ax.hlines(y, plot_df[<span class="st">"Team average"</span>], plot_df[<span class="st">"Target level"</span>], color<span class="op">=</span>line_colors, linewidth<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>ax.scatter(plot_df[<span class="st">"Target level"</span>], y, s<span class="op">=</span><span class="dv">90</span>, facecolor<span class="op">=</span><span class="st">"white"</span>, edgecolor<span class="op">=</span>NAVY,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>           linewidth<span class="op">=</span><span class="dv">2</span>, zorder<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="st">"Target level"</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>ax.scatter(plot_df[<span class="st">"Team average"</span>], y, s<span class="op">=</span><span class="dv">80</span>, color<span class="op">=</span>TEAL, edgecolor<span class="op">=</span><span class="st">"white"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>           linewidth<span class="op">=</span><span class="fl">1.5</span>, zorder<span class="op">=</span><span class="dv">4</span>, label<span class="op">=</span><span class="st">"Team average"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(y, plot_df.index)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>), [<span class="st">"1</span><span class="ch">\n</span><span class="st">Beginner"</span>, <span class="st">"2</span><span class="ch">\n</span><span class="st">Basic"</span>, <span class="st">"3</span><span class="ch">\n</span><span class="st">Intermediate"</span>, <span class="st">"4</span><span class="ch">\n</span><span class="st">Advanced"</span>, <span class="st">"5</span><span class="ch">\n</span><span class="st">Expert"</span>])</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="fl">0.7</span>, <span class="fl">5.3</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>ax.grid(axis<span class="op">=</span><span class="st">"x"</span>, color<span class="op">=</span>GRID, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>ax.set_axisbelow(<span class="va">True</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>, <span class="st">"left"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">"y"</span>, length<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">"lower right"</span>, frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Team Average vs. Target Level (highest priority at top)"</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>save_figure(<span class="st">"skill_gap_comparison.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-gap-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gap-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="skill_gap_analysis_files/figure-html/fig-gap-comparison-output-1.png" width="765" height="724" class="figure-img">
+<img src="skill_gap_analysis_files/figure-html/fig-gap-comparison-output-1.png" width="765" height="710" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gap-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Team average (filled dot) against the target level (open ring). Each line is the distance to close; skills are ordered by priority score.
+Figure&nbsp;4: Team average (filled dot) against the target level (open ring). Blue lines show the distance to close; gray lines show where the team already exceeds the target. Skills are ordered by priority score.
 </figcaption>
 </figure>
 </div>
@@ -943,60 +857,73 @@ Figure&nbsp;3: Team average (filled dot) against the target level (open ring). E
 <div id="cell-fig-member-gaps" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gap_cmap <span class="op">=</span> LinearSegmentedColormap.from_list(<span class="st">"gap_gold"</span>, [<span class="st">"#FFFFFF"</span>, <span class="st">"#F2DDB0"</span>, GOLD, <span class="st">"#9A6B16"</span>])</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> member_gaps.T.loc[gap_table.index]</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> member_gaps.T.loc[gap_table.index]  <span class="co"># skills (priority order) x members</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="dv">8</span>))</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>ax.imshow(g.values, cmap<span class="op">=</span>gap_cmap, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">3</span>, aspect<span class="op">=</span><span class="st">"auto"</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(g.shape[<span class="dv">0</span>]):</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(g.shape[<span class="dv">1</span>]):</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> g.values[i, j]</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> value <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>            ax.text(j, i, <span class="ss">f"+</span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>, ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">10</span>,</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span><span class="st">"white"</span> <span class="cf">if</span> value <span class="op">&gt;=</span> <span class="dv">3</span> <span class="cf">else</span> <span class="st">"#25353C"</span>)</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">range</span>(g.shape[<span class="dv">1</span>]), g.columns)</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(<span class="bu">range</span>(g.shape[<span class="dv">0</span>]), [<span class="ss">f"</span><span class="sc">{</span>s<span class="sc">}</span><span class="ss"> *"</span> <span class="cf">if</span> s <span class="kw">in</span> CORE_TOOLS <span class="cf">else</span> s <span class="cf">for</span> s <span class="kw">in</span> g.index])</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>ax.xaxis.tick_top()</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>ax.tick_params(length<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> spine <span class="kw">in</span> ax.spines.values():</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    spine.set_visible(<span class="va">False</span>)</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(np.arange(<span class="op">-</span><span class="fl">0.5</span>, g.shape[<span class="dv">1</span>]), minor<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(np.arange(<span class="op">-</span><span class="fl">0.5</span>, g.shape[<span class="dv">0</span>]), minor<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>ax.grid(which<span class="op">=</span><span class="st">"minor"</span>, color<span class="op">=</span><span class="st">"#E6ECEE"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>ax.tick_params(which<span class="op">=</span><span class="st">"minor"</span>, length<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Levels Needed to Reach Target (priority order)"</span>, pad<span class="op">=</span><span class="dv">28</span>)</span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>save_figure(<span class="st">"member_skill_gaps.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="fl">7.5</span>))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>annotated_heatmap(ax, g, GAP_SCALE, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">3</span>, fmt<span class="op">=</span><span class="kw">lambda</span> v: <span class="ss">f"+</span><span class="sc">{</span>v<span class="sc">:.0f}</span><span class="ss">"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                  dark_from<span class="op">=</span><span class="dv">3</span>, blank_zero<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>ax.grid(which<span class="op">=</span><span class="st">"minor"</span>, color<span class="op">=</span>GRID, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Levels Needed to Reach Target (priority order)"</span>, pad<span class="op">=</span><span class="dv">28</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>save_figure(<span class="st">"member_skill_gaps.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-member-gaps" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-member-gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="skill_gap_analysis_files/figure-html/fig-member-gaps-output-1.png" width="633" height="759" class="figure-img">
+<img src="skill_gap_analysis_files/figure-html/fig-member-gaps-output-1.png" width="633" height="711" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-member-gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Levels each member needs to gain to reach the target. Blank cells mean the target is already met.
+Figure&nbsp;5: Levels each member needs to gain to reach the target. Blank cells mean the target is already met.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="gap-summary-table" class="level3">
-<h3 class="anchored" data-anchor-id="gap-summary-table">Gap Summary Table</h3>
+<section id="gaps-measured-against-each-members-target-role" class="level3">
+<h3 class="anchored" data-anchor-id="gaps-measured-against-each-members-target-role">Gaps Measured Against Each Member’s Target Role</h3>
+<p>The targets above use demand across all postings. Because demand differs so much by role, we repeat the comparison using the postings for each member’s own target role, applying the same target rule to that role’s demand.</p>
 <div class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>gap_table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>TARGET_ROLES <span class="op">=</span> {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Jenna"</span>: [<span class="st">"Business Intelligence"</span>, <span class="st">"Business Analyst"</span>],</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mariam"</span>: [<span class="st">"Business Analyst"</span>],</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Juan"</span>: [<span class="st">"Data Scientist"</span>],</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> member, roles <span class="kw">in</span> TARGET_ROLES.items():</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    role_skills <span class="op">=</span> panel.loc[panel[<span class="st">"role_family"</span>].isin(roles), <span class="st">"skills"</span>]</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> skill, name <span class="kw">in</span> ratings[<span class="st">"panel_skill_name"</span>].items():</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        role_share <span class="op">=</span> role_skills.<span class="bu">map</span>(<span class="kw">lambda</span> s, name<span class="op">=</span>name: name <span class="kw">in</span> s).mean() <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        target <span class="op">=</span> target_level(role_share)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        current <span class="op">=</span> <span class="bu">int</span>(ratings.loc[skill, member])</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> target <span class="op">&gt;</span> current:</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>            rows.append(</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>                {</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Member"</span>: member,</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Target role"</span>: <span class="st">" / "</span>.join(roles),</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Skill"</span>: skill,</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Demand in role (%)"</span>: <span class="bu">round</span>(role_share, <span class="dv">1</span>),</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Current"</span>: current,</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Target"</span>: target,</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Gap"</span>: target <span class="op">-</span> current,</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>                }</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>role_gaps <span class="op">=</span> pd.DataFrame(rows)</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>role_gaps[<span class="st">"Member"</span>] <span class="op">=</span> pd.Categorical(role_gaps[<span class="st">"Member"</span>], MEMBERS, ordered<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>role_gaps <span class="op">=</span> role_gaps.sort_values([<span class="st">"Member"</span>, <span class="st">"Demand in role (%)"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>role_gaps.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div id="tbl-gap-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="11">
+<div id="tbl-role-gaps" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="11">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gap-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Skill gaps by member, ordered by priority score. Demand is blank for core tools because the dataset cannot measure them.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-role-gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Each member’s skills that fall short of the target for their own role, ordered by demand in that role.
 </figcaption>
-<div aria-describedby="tbl-gap-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div aria-describedby="tbl-role-gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
@@ -1004,7 +931,263 @@ Table&nbsp;3: Skill gaps by member, ordered by priority score. Demand is blank f
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Skill type</th>
+<th data-quarto-table-cell-role="th">Member</th>
+<th data-quarto-table-cell-role="th">Target role</th>
+<th data-quarto-table-cell-role="th">Skill</th>
+<th data-quarto-table-cell-role="th">Demand in role (%)</th>
+<th data-quarto-table-cell-role="th">Current</th>
+<th data-quarto-table-cell-role="th">Target</th>
+<th data-quarto-table-cell-role="th">Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Jenna</td>
+<td>Business Intelligence / Business Analyst</td>
+<td>SQL</td>
+<td>45.3</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Jenna</td>
+<td>Business Intelligence / Business Analyst</td>
+<td>Business Requirements</td>
+<td>32.2</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Jenna</td>
+<td>Business Intelligence / Business Analyst</td>
+<td>Python</td>
+<td>21.7</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Jenna</td>
+<td>Business Intelligence / Business Analyst</td>
+<td>Data Pipelines</td>
+<td>2.4</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Jenna</td>
+<td>Business Intelligence / Business Analyst</td>
+<td>Databricks</td>
+<td>1.6</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>SQL</td>
+<td>35.6</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Business Analysis</td>
+<td>34.2</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Microsoft Excel</td>
+<td>29.1</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Python</td>
+<td>14.4</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Power BI</td>
+<td>7.5</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Tableau</td>
+<td>5.8</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Data Modeling</td>
+<td>5.1</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Data Pipelines</td>
+<td>2.4</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Data Visualization</td>
+<td>1.7</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Databricks</td>
+<td>0.0</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>Statistical Modeling</td>
+<td>0.0</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>Juan</td>
+<td>Data Scientist</td>
+<td>Python</td>
+<td>82.4</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>Juan</td>
+<td>Data Scientist</td>
+<td>SQL</td>
+<td>61.8</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>Juan</td>
+<td>Data Scientist</td>
+<td>Machine Learning</td>
+<td>44.7</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19</th>
+<td>Juan</td>
+<td>Data Scientist</td>
+<td>Data Pipelines</td>
+<td>14.3</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">20</th>
+<td>Juan</td>
+<td>Data Scientist</td>
+<td>Statistical Modeling</td>
+<td>12.1</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>This view sharpens each member’s priorities:</p>
+<ul>
+<li><strong>Jenna (Business Intelligence / Business Analyst):</strong> SQL is the most important gap by far, appearing in 45% of her target postings. Business requirements (Intermediate to Advanced) and Python follow. Her BI tool skills already meet the target for these roles.</li>
+<li><strong>Mariam (Business Analyst):</strong> SQL is the clear first priority, followed by business analysis and Excel, which each appear in about a third of Business Analyst postings. Python appears in only 14% of these postings, so it matters less for her target role than the market-wide view suggests.</li>
+<li><strong>Juan (Data Scientist):</strong> Python and machine learning are both requested in most Data Scientist postings, so machine learning is more urgent for him than the market-wide view suggests.</li>
+</ul>
+</section>
+<section id="gap-summary-table" class="level3">
+<h3 class="anchored" data-anchor-id="gap-summary-table">Gap Summary Table</h3>
+<div class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gap_table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-gap-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="12">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gap-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Skill gaps by member across all postings, ordered by priority score.
+</figcaption>
+<div aria-describedby="tbl-gap-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th">Demand (%)</th>
 <th data-quarto-table-cell-role="th">Target level</th>
 <th data-quarto-table-cell-role="th">Team average</th>
@@ -1014,181 +1197,144 @@ Table&nbsp;3: Skill gaps by member, ordered by priority score. Demand is blank f
 <th data-quarto-table-cell-role="th">Average gap</th>
 <th data-quarto-table-cell-role="th">Priority score</th>
 </tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">skill</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
 </thead>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">Python</th>
-<td>Core tool</td>
-<td>NaN</td>
+<td>62.5</td>
 <td>4</td>
 <td>1.67</td>
 <td>3</td>
 <td>3</td>
 <td>1</td>
 <td>2.33</td>
-<td>1.16</td>
+<td>1.46</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">SQL</th>
-<td>Core tool</td>
-<td>NaN</td>
+<td>61.8</td>
 <td>4</td>
 <td>2.00</td>
 <td>3</td>
 <td>2</td>
 <td>1</td>
 <td>2.00</td>
-<td>1.00</td>
+<td>1.24</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Tableau / Power BI</th>
-<td>Core tool</td>
-<td>NaN</td>
-<td>4</td>
-<td>2.00</td>
-<td>1</td>
-<td>3</td>
-<td>2</td>
-<td>2.00</td>
-<td>1.00</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Automation</th>
-<td>Market skill</td>
-<td>28.1</td>
+<th data-quarto-table-cell-role="th">Data Pipelines</th>
+<td>21.7</td>
 <td>4</td>
 <td>1.33</td>
 <td>3</td>
 <td>3</td>
 <td>2</td>
 <td>2.67</td>
-<td>0.75</td>
+<td>0.58</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Machine Learning</th>
+<td>19.3</td>
+<td>3</td>
+<td>2.00</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1.00</td>
+<td>0.19</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Excel</th>
-<td>Core tool</td>
-<td>NaN</td>
-<td>4</td>
+<th data-quarto-table-cell-role="th">Databricks</th>
+<td>11.1</td>
+<td>3</td>
+<td>1.67</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1.33</td>
+<td>0.15</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Tableau</th>
+<td>15.6</td>
+<td>3</td>
 <td>3.00</td>
 <td>0</td>
 <td>2</td>
-<td>1</td>
-<td>1.00</td>
-<td>0.50</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Airflow</th>
-<td>Market skill</td>
-<td>16.9</td>
-<td>3</td>
-<td>1.00</td>
-<td>2</td>
-<td>2</td>
-<td>2</td>
-<td>2.00</td>
-<td>0.34</td>
+<td>0</td>
+<td>0.67</td>
+<td>0.10</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">BigQuery</th>
-<td>Market skill</td>
-<td>10.4</td>
+<th data-quarto-table-cell-role="th">Power BI</th>
+<td>11.2</td>
 <td>3</td>
-<td>1.33</td>
+<td>3.00</td>
+<td>0</td>
 <td>2</td>
-<td>2</td>
-<td>1</td>
-<td>1.67</td>
-<td>0.17</td>
+<td>0</td>
+<td>0.67</td>
+<td>0.08</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Business Intelligence</th>
-<td>Market skill</td>
-<td>20.9</td>
-<td>4</td>
+<th data-quarto-table-cell-role="th">Data Quality</th>
+<td>14.2</td>
+<td>3</td>
 <td>3.33</td>
 <td>0</td>
 <td>1</td>
-<td>1</td>
-<td>0.67</td>
-<td>0.14</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Artificial Intelligence</th>
-<td>Market skill</td>
-<td>15.1</td>
-<td>3</td>
-<td>2.33</td>
-<td>1</td>
-<td>1</td>
 <td>0</td>
-<td>0.67</td>
-<td>0.10</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Algorithms</th>
-<td>Market skill</td>
-<td>10.1</td>
-<td>3</td>
-<td>2.00</td>
-<td>1</td>
-<td>2</td>
-<td>0</td>
-<td>1.00</td>
-<td>0.10</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Business Requirements</th>
-<td>Market skill</td>
-<td>19.1</td>
-<td>3</td>
-<td>3.00</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
 <td>0.33</td>
-<td>0.06</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Causal Inference</th>
-<td>Market skill</td>
-<td>5.0</td>
-<td>2</td>
-<td>1.00</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1.00</td>
 <td>0.05</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Alteryx</th>
-<td>Market skill</td>
-<td>4.3</td>
+<th data-quarto-table-cell-role="th">Data Modeling</th>
+<td>8.4</td>
 <td>2</td>
-<td>1.00</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1.00</td>
-<td>0.04</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Apache Spark</th>
-<td>Market skill</td>
-<td>4.0</td>
-<td>2</td>
-<td>1.33</td>
-<td>1</td>
+<td>2.67</td>
+<td>0</td>
 <td>1</td>
 <td>0</td>
-<td>0.67</td>
+<td>0.33</td>
 <td>0.03</td>
 </tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Statistical Modeling</th>
+<td>6.4</td>
+<td>2</td>
+<td>1.67</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0.33</td>
+<td>0.02</td>
+</tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Analytics</th>
-<td>Market skill</td>
-<td>68.7</td>
-<td>4</td>
+<th data-quarto-table-cell-role="th">Data Visualization</th>
+<td>5.7</td>
+<td>2</td>
+<td>3.00</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0.33</td>
+<td>0.02</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Business Requirements</th>
+<td>10.2</td>
+<td>3</td>
 <td>4.00</td>
 <td>0</td>
 <td>0</td>
@@ -1196,12 +1342,22 @@ Table&nbsp;3: Skill gaps by member, ordered by priority score. Demand is blank f
 <td>0.00</td>
 <td>0.00</td>
 </tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Microsoft Excel</th>
+<td>9.4</td>
+<td>2</td>
+<td>3.67</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Big Data</th>
-<td>Market skill</td>
-<td>11.2</td>
-<td>3</td>
-<td>3.00</td>
+<th data-quarto-table-cell-role="th">Data Analysis</th>
+<td>8.9</td>
+<td>2</td>
+<td>4.33</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1209,11 +1365,21 @@ Table&nbsp;3: Skill gaps by member, ordered by priority score. Demand is blank f
 <td>0.00</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">A/B Testing</th>
-<td>Market skill</td>
-<td>4.3</td>
+<th data-quarto-table-cell-role="th">Verbal Communication</th>
+<td>7.5</td>
 <td>2</td>
-<td>2.00</td>
+<td>4.33</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Business Analysis</th>
+<td>5.8</td>
+<td>2</td>
+<td>3.67</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -1232,47 +1398,658 @@ Table&nbsp;3: Skill gaps by member, ordered by priority score. Demand is blank f
 </section>
 <section id="key-findings" class="level3">
 <h3 class="anchored" data-anchor-id="key-findings">Key Findings</h3>
-<div id="findings" class="cell" data-execution_count="12">
+<div id="findings" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-stdout">
-<pre><code>Top five priority skills: Python, SQL, Tableau / Power BI, Automation, Excel
-Targets already met by the whole team: Analytics, Big Data, A/B Testing
-Total levels to close per member: Jenna 19, Mariam 24, Juan 14</code></pre>
+<pre><code>Top three priority skills: Python, SQL, Data Pipelines
+Targets already met by the whole team: Business Requirements, Microsoft Excel, Data Analysis, Verbal Communication, Business Analysis
+Total levels to close per member: Jenna 12, Mariam 19, Juan 5</code></pre>
 </div>
 </div>
 <ol type="1">
-<li><strong>The team matches the market’s most common request.</strong> Analytics, the skill in about two-thirds of postings, is already at the Advanced target for all three members. Our business-facing strengths are real and relevant.</li>
-<li><strong>The core tools are the biggest gap.</strong> SQL, Python, and visualization tools are baseline expectations for analyst roles, and Jenna and Mariam are both at Beginner or Basic level in SQL and Python. Because the dataset cannot measure them, this finding relies on outside evidence, but it is the gap most likely to block a job application.</li>
-<li><strong>Automation and pipeline tools are the largest measured gap.</strong> Automation (about 28% of postings) and Airflow (about 17%) are requested often, and the whole team rates at or near Beginner. These reflect the data-engineering side of NAICS 5415, where Database Architects make up a third of postings.</li>
-<li><strong>The team is complementary.</strong> Jenna’s Excel and BI skills, Mariam’s business-requirements skills, and Juan’s coding skills cover different parts of the market. Peer teaching inside the team is a realistic first step before outside courses.</li>
-<li><strong>Juan is closest to the largest segment.</strong> Data Scientists are 47% of postings and the highest-paid group (see <a href="./market_baseline.html">Market Baseline</a>). Juan’s remaining gaps are smaller and more technical, while Jenna and Mariam need a longer foundation in SQL and Python before those roles are within reach.</li>
+<li><strong>Python and SQL are the team’s most important gap.</strong> They are the two most requested skills in the market, each in more than 60% of postings, and no one on the team is above Intermediate in either. Closing them matters for every target role on the team.</li>
+<li><strong>Data pipelines are the largest gap relative to demand.</strong> They appear in about a fifth of all postings (and nearly half of Data Engineer postings), and the whole team is at Beginner or Basic level.</li>
+<li><strong>The team’s business skills already meet the market.</strong> Across all postings, business requirements, business analysis, data analysis, Excel, and communication meet their targets for all three members. These are genuine strengths for the business analyst and BI roles that Jenna and Mariam are targeting.</li>
+<li><strong>The team is complementary.</strong> Juan’s BI tool expertise, Jenna’s Excel, analysis, and communication skills, and Mariam’s business requirements skills cover different parts of the market, so peer teaching inside the team is a realistic first step before outside courses.</li>
+<li><strong>Mariam has the most ground to cover, Juan the least.</strong> Mariam’s gaps span SQL, Python, and the BI tools, while Juan’s remaining gaps are concentrated in Python, SQL, pipelines, and machine learning.</li>
 </ol>
 </section>
 <section id="limitations" class="level3">
 <h3 class="anchored" data-anchor-id="limitations">Limitations</h3>
 <ul>
-<li><strong>Truncated skills:</strong> Only skills beginning with A–C are observable. Rankings would likely change if Python, SQL, and other D–Z skills were visible.</li>
-<li><strong>Assumed targets:</strong> Postings do not state a proficiency level. The target-level rule and the core-tool weight are team assumptions, stated above so readers can adjust them.</li>
-<li><strong>Self-ratings:</strong> Team ratings are self-assessed and not independently tested.</li>
-<li><strong>Small groups:</strong> Business Intelligence Analysts have only five postings, so role-specific demand for BI roles cannot be estimated reliably.</li>
+<li><strong>Assumed targets:</strong> Postings do not state a proficiency level. The target-level rule is a team assumption, stated above so readers can adjust it.</li>
+<li><strong>Self-ratings:</strong> Team ratings are self-assessed and not independently tested. Some ratings were carried over from an earlier skill list and mapped to the closest v2 skill, as recorded in <code>team_skills_v2.csv</code>.</li>
+<li><strong>Required versus preferred:</strong> Postings do not separate required skills from preferred ones, so demand shares may overstate how essential a skill is.</li>
+<li><strong>Small role groups:</strong> Business Intelligence has only 81 postings, so its role-specific shares are less precise than those for the larger role families.</li>
 </ul>
 </section>
 </section>
 <section id="improvement-plan" class="level2">
 <h2 class="anchored" data-anchor-id="improvement-plan">4. Improvement Plan</h2>
-<!-- SECTION OWNER: [third team member] -->
-<!-- INPUT: data/processed/skill_gap_table.csv holds each member's gaps and the priority order from Section 3. -->
-<!-- ASSIGNMENT 3.1.3: Which skills should each member prioritize? What courses or resources can help? How can the team collaborate to bridge the gaps? -->
-<p><em>To be completed.</em></p>
+<!-- SECTION OWNER: Juan -->
+<!-- INPUT: data/processed/team_skills_v2.csv holds each member's ratings; data/processed/skill_gap_table.csv holds the priority order from Section 3. -->
+<!-- Section 4 content, owned by Juan. Included into skill_gap_analysis.qmd. -->
+<div id="plan-setup" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>_MEMBERS <span class="op">=</span> [<span class="st">"Jenna"</span>, <span class="st">"Mariam"</span>, <span class="st">"Juan"</span>]</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>_panel <span class="op">=</span> pd.read_csv(<span class="st">"data/processed/career_market_panel.csv"</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>_n <span class="op">=</span> <span class="bu">len</span>(_panel)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>_posting_skills <span class="op">=</span> _panel[<span class="st">"SKILLS_NAME"</span>].fillna(<span class="st">"[]"</span>).<span class="bu">map</span>(</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> s: <span class="bu">set</span>(json.loads(s)) <span class="cf">if</span> s.startswith(<span class="st">"["</span>) <span class="cf">else</span> <span class="bu">set</span>()</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>plan <span class="op">=</span> pd.read_csv(<span class="st">"data/processed/team_skills_v2.csv"</span>).set_index(<span class="st">"skill"</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>plan[<span class="st">"Demand (%)"</span>] <span class="op">=</span> plan[<span class="st">"panel_skill_name"</span>].<span class="bu">map</span>(</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> name: <span class="bu">round</span>(_posting_skills.<span class="bu">map</span>(<span class="kw">lambda</span> x: name <span class="kw">in</span> x).<span class="bu">sum</span>() <span class="op">/</span> _n <span class="op">*</span> <span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> _target_level(share):</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> share <span class="op">&gt;=</span> <span class="dv">20</span>:</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">4</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> share <span class="op">&gt;=</span> <span class="dv">10</span>:</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">3</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>plan[<span class="st">"Target"</span>] <span class="op">=</span> plan[<span class="st">"Demand (%)"</span>].<span class="bu">map</span>(_target_level)</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>_rows <span class="op">=</span> []</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _member <span class="kw">in</span> _MEMBERS:</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _skill, _row <span class="kw">in</span> plan.iterrows():</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>        _rating <span class="op">=</span> _row[_member]</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> pd.isna(_rating):</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>        _gap <span class="op">=</span> <span class="bu">max</span>(_row[<span class="st">"Target"</span>] <span class="op">-</span> _rating, <span class="dv">0</span>)</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> _gap <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>            _rows.append(</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>                {</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Member"</span>: _member,</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Skill"</span>: _skill,</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Current"</span>: <span class="bu">int</span>(_rating),</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Target"</span>: <span class="bu">int</span>(_row[<span class="st">"Target"</span>]),</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Gap"</span>: <span class="bu">int</span>(_gap),</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Demand (%)"</span>: _row[<span class="st">"Demand (%)"</span>],</span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Priority"</span>: <span class="bu">round</span>(_gap <span class="op">*</span> _row[<span class="st">"Demand (%)"</span>] <span class="op">/</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>                }</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>plan_gaps <span class="op">=</span> pd.DataFrame(_rows)</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>_pending <span class="op">=</span> {m: [s <span class="cf">for</span> s <span class="kw">in</span> plan.index <span class="cf">if</span> pd.isna(plan.loc[s, m])] <span class="cf">for</span> m <span class="kw">in</span> _MEMBERS}</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>_pending <span class="op">=</span> {m: s <span class="cf">for</span> m, s <span class="kw">in</span> _pending.items() <span class="cf">if</span> s}</span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> _pending:</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>    pending_note <span class="op">=</span> (</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Some ratings are still pending: "</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">"; "</span>.join(<span class="ss">f"</span><span class="sc">{</span>m<span class="sc">}</span><span class="ss"> for </span><span class="sc">{</span><span class="st">', '</span><span class="sc">.</span>join(s)<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> m, s <span class="kw">in</span> _pending.items())</span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">". Those skills are left out of the member's priorities until they are rated."</span></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>    pending_note <span class="op">=</span> <span class="st">"All three members have rated every skill on the list."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>This section turns the skill gaps into a plan. For each team member we identify the skills to work on first, suggest courses, certifications, and projects that close those gaps, and describe how the team can use its complementary strengths.</p>
+<section id="setting-priorities" class="level3">
+<h3 class="anchored" data-anchor-id="setting-priorities">4.1 Setting Priorities</h3>
+<p>We use the same rule as Section 3 to set a target level for each skill, based on how often it is requested in the postings. A skill in 20 percent or more of postings gets a target of 4 (Advanced), one in 10 to 19.9 percent a target of 3 (Intermediate), and anything less a target of 2 (Basic knowledge). With the v2 data every skill on the list is measured directly in the postings, so no targets are assumed.</p>
+<p>A member’s gap is the target minus their current rating, or zero if they already meet it. Their priority for a skill is that gap weighted by the skill’s share of postings, which favors skills that are both in demand and far from the member’s current level.</p>
+<div class="cell" data-execution_count="15">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plan[[<span class="st">"Demand (%)"</span>, <span class="st">"Target"</span>] <span class="op">+</span> _MEMBERS].sort_values(<span class="st">"Demand (%)"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-plan-targets" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="15">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-plan-targets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Target level for each skill, set by its share of postings.
+</figcaption>
+<div aria-describedby="tbl-plan-targets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
 
+
+<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Demand (%)</th>
+<th data-quarto-table-cell-role="th">Target</th>
+<th data-quarto-table-cell-role="th">Jenna</th>
+<th data-quarto-table-cell-role="th">Mariam</th>
+<th data-quarto-table-cell-role="th">Juan</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">skill</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Python</th>
+<td>62.5</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">SQL</th>
+<td>61.8</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Pipelines</th>
+<td>21.7</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Machine Learning</th>
+<td>19.3</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Tableau</th>
+<td>15.6</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Quality</th>
+<td>14.2</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Power BI</th>
+<td>11.2</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Databricks</th>
+<td>11.1</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Business Requirements</th>
+<td>10.2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Microsoft Excel</th>
+<td>9.4</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Analysis</th>
+<td>8.9</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Modeling</th>
+<td>8.4</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Verbal Communication</th>
+<td>7.5</td>
+<td>2</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Statistical Modeling</th>
+<td>6.4</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Business Analysis</th>
+<td>5.8</td>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Visualization</th>
+<td>5.7</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="priorities-by-member" class="level3">
+<h3 class="anchored" data-anchor-id="priorities-by-member">4.2 Priorities by Member</h3>
+<div class="cell" data-execution_count="16">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>_top <span class="op">=</span> plan_gaps.sort_values([<span class="st">"Member"</span>, <span class="st">"Priority"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>]).groupby(<span class="st">"Member"</span>).head(<span class="dv">3</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>_top[<span class="st">"Member"</span>] <span class="op">=</span> pd.Categorical(_top[<span class="st">"Member"</span>], _MEMBERS, ordered<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>_top.sort_values([<span class="st">"Member"</span>, <span class="st">"Priority"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-plan-priorities" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="16">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-plan-priorities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Each member’s three highest-priority skills.
+</figcaption>
+<div aria-describedby="tbl-plan-priorities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="16">
+<div>
+
+
+<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Member</th>
+<th data-quarto-table-cell-role="th">Skill</th>
+<th data-quarto-table-cell-role="th">Current</th>
+<th data-quarto-table-cell-role="th">Target</th>
+<th data-quarto-table-cell-role="th">Gap</th>
+<th data-quarto-table-cell-role="th">Demand (%)</th>
+<th data-quarto-table-cell-role="th">Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Jenna</td>
+<td>Python</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>62.5</td>
+<td>1.88</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Jenna</td>
+<td>SQL</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>61.8</td>
+<td>1.85</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Jenna</td>
+<td>Data Pipelines</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>21.7</td>
+<td>0.65</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Mariam</td>
+<td>Python</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>62.5</td>
+<td>1.88</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Mariam</td>
+<td>SQL</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+<td>61.8</td>
+<td>1.24</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Mariam</td>
+<td>Data Pipelines</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>21.7</td>
+<td>0.65</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>Juan</td>
+<td>SQL</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>61.8</td>
+<td>0.62</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>Juan</td>
+<td>Python</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>62.5</td>
+<td>0.62</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>Juan</td>
+<td>Data Pipelines</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+<td>21.7</td>
+<td>0.43</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>All three members have rated every skill on the list.</p>
+<p>The pattern is clear: all three members share the same top priorities. Python, SQL, and data pipelines are both the most requested skills in the postings and the team’s largest gaps, so the plan below is built around studying them together rather than as three separate plans.</p>
+</section>
+<section id="courses-certifications-and-projects" class="level3">
+<h3 class="anchored" data-anchor-id="courses-certifications-and-projects">4.3 Courses, Certifications, and Projects</h3>
+<p>Each project uses this site’s own data, so practice time also improves the project.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Skill</th>
+<th>Free learning</th>
+<th>Certification</th>
+<th>Practice project</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Python</td>
+<td>Kaggle Learn: Python and Pandas</td>
+<td>Not needed at this stage</td>
+<td>Recreate the Market Baseline charts from the panel in pandas</td>
+</tr>
+<tr class="even">
+<td>SQL</td>
+<td>Kaggle Learn: Intro to SQL and Advanced SQL</td>
+<td>Not needed at this stage</td>
+<td>Rewrite the panel’s filtering steps as Spark SQL queries</td>
+</tr>
+<tr class="odd">
+<td>Data Pipelines</td>
+<td>Data Engineering Zoomcamp by DataTalks.Club, self-paced</td>
+<td>Databricks Certified Data Engineer Associate, later stage</td>
+<td>Turn <code>build_panel.py</code> into a scheduled pipeline that refreshes the panel</td>
+</tr>
+<tr class="even">
+<td>Databricks</td>
+<td>Databricks Academy self-paced courses</td>
+<td>Databricks Certified Data Engineer Associate (about $200)</td>
+<td>Run the panel build in a Databricks notebook</td>
+</tr>
+<tr class="odd">
+<td>Machine Learning</td>
+<td>Kaggle Learn: Intro to Machine Learning; Machine Learning Zoomcamp by DataTalks.Club</td>
+<td>Not needed at this stage</td>
+<td>Predict a posting’s salary from its role family, location, and skills</td>
+</tr>
+<tr class="even">
+<td>Power BI</td>
+<td>Microsoft Learn self-paced training for PL-300</td>
+<td>Microsoft Certified: Power BI Data Analyst Associate, exam PL-300 (about $165)</td>
+<td>Rebuild the Market Baseline as a Power BI dashboard</td>
+</tr>
+<tr class="odd">
+<td>Tableau</td>
+<td>Practice in Tableau Public</td>
+<td>Salesforce Certified Tableau Data Analyst (about $200)</td>
+<td>Rebuild the same dashboard in Tableau Public</td>
+</tr>
+<tr class="even">
+<td>Data Visualization</td>
+<td><em>Storytelling with Data</em> by Cole Nussbaumer Knaflic</td>
+<td>Not needed</td>
+<td>Redesign one chart on this site around a single clear takeaway</td>
+</tr>
+</tbody>
+</table>
+<p>Certification fees are as listed by the providers in 2026 and may change.</p>
+</section>
+<section id="how-the-team-can-help-each-other" class="level3">
+<h3 class="anchored" data-anchor-id="how-the-team-can-help-each-other">4.4 How the Team Can Help Each Other</h3>
+<div class="cell" data-execution_count="17">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>_strongest <span class="op">=</span> plan[_MEMBERS].idxmax(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>_collab <span class="op">=</span> plan_gaps.groupby(<span class="st">"Skill"</span>).agg(</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>{</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Members with a gap"</span>: (<span class="st">"Member"</span>, <span class="kw">lambda</span> s: <span class="st">", "</span>.join(s)),</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Total gap"</span>: (<span class="st">"Gap"</span>, <span class="st">"sum"</span>),</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>_collab[<span class="st">"Strongest on the team"</span>] <span class="op">=</span> [</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>_strongest[s]<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span><span class="bu">int</span>(plan.loc[s, _strongest[s]])<span class="sc">}</span><span class="ss">)"</span> <span class="cf">for</span> s <span class="kw">in</span> _collab.index</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>_collab.sort_values(<span class="st">"Total gap"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-plan-collaboration" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="17">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-plan-collaboration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Skills with at least one gap, the members who have it, and the team’s strongest member on that skill.
+</figcaption>
+<div aria-describedby="tbl-plan-collaboration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+
+
+<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Members with a gap</th>
+<th data-quarto-table-cell-role="th">Total gap</th>
+<th data-quarto-table-cell-role="th">Strongest on the team</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Skill</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Pipelines</th>
+<td>Jenna, Mariam, Juan</td>
+<td>8</td>
+<td>Juan (2)</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Python</th>
+<td>Jenna, Mariam, Juan</td>
+<td>7</td>
+<td>Juan (3)</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">SQL</th>
+<td>Jenna, Mariam, Juan</td>
+<td>6</td>
+<td>Juan (3)</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Databricks</th>
+<td>Jenna, Mariam</td>
+<td>4</td>
+<td>Juan (3)</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Machine Learning</th>
+<td>Jenna, Mariam, Juan</td>
+<td>3</td>
+<td>Jenna (2)</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Tableau</th>
+<td>Mariam</td>
+<td>2</td>
+<td>Juan (5)</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Power BI</th>
+<td>Mariam</td>
+<td>2</td>
+<td>Juan (5)</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Quality</th>
+<td>Mariam</td>
+<td>1</td>
+<td>Juan (5)</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Modeling</th>
+<td>Mariam</td>
+<td>1</td>
+<td>Juan (4)</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Visualization</th>
+<td>Mariam</td>
+<td>1</td>
+<td>Juan (5)</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Statistical Modeling</th>
+<td>Mariam</td>
+<td>1</td>
+<td>Jenna (2)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Where one member is clearly ahead, they lead that topic. Where the strongest member still has a gap themselves, as with Python and SQL, the team studies together rather than relying on one person to teach. In practice:</p>
+<ul>
+<li><strong>A weekly study session</strong> of about an hour, working through the same Kaggle Learn or Zoomcamp module and comparing solutions.</li>
+<li><strong>Rotating who writes the code.</strong> For each remaining module of this project, the member with the largest gap writes the first version of the code, and the strongest member reviews it through a pull request. The work gets done and the practice counts double.</li>
+<li><strong>Pairing on the BI tools.</strong> The members strongest in Power BI and Tableau walk the others through rebuilding one Market Baseline chart in each tool.</li>
+<li><strong>Business framing from the business-side members.</strong> Members targeting business analyst roles lead on turning findings into requirements and recommendations for the Career Plan page.</li>
+</ul>
+</section>
+<section id="timeline" class="level3">
+<h3 class="anchored" data-anchor-id="timeline">4.5 Timeline</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Weeks</th>
+<th>Focus</th>
+<th>Who</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 to 4</td>
+<td>Python and SQL foundations through Kaggle Learn, with the weekly study session</td>
+<td>Everyone</td>
+</tr>
+<tr class="even">
+<td>5 to 8</td>
+<td>Data pipelines through the Data Engineering Zoomcamp; Power BI and Tableau practice for members with gaps there</td>
+<td>Everyone, plus individual BI practice</td>
+</tr>
+<tr class="odd">
+<td>9 to 12</td>
+<td>Machine learning basics and the salary-prediction project, which feeds the ML Methods page</td>
+<td>Everyone</td>
+</tr>
+<tr class="even">
+<td>After week 12</td>
+<td>One certification each, matched to target role: PL-300 or Tableau Data Analyst for business intelligence and business analyst roles, Databricks Data Engineer Associate for data roles</td>
+<td>Individual</td>
+</tr>
+</tbody>
+</table>
+<p>A member’s target role can matter as much as the posting counts. Juan is targeting data scientist roles, so machine learning is more important for him than its share of postings alone suggests, and he should move to it earlier.</p>
+</section>
+<section id="tracking-progress" class="level3">
+<h3 class="anchored" data-anchor-id="tracking-progress">4.6 Tracking Progress</h3>
+<p>At the end of each four-week phase, every member re-rates themselves in <code>data/processed/team_skills_v2.csv</code>. The tables in this section are calculated from that file, so the plan updates itself and shows which gaps have closed.</p>
 
 
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-verma2019skills" class="csl-entry" role="listitem">
-Verma, Amit, Kirill M. Yurov, Peggy L. Lane, and Yuliya V. Yurova. 2019. <span>“An Investigation of Skill Requirements for Business and Data Analytics Positions: A Content Analysis of Job Advertisements.”</span> <em>Journal of Education for Business</em> 94 (4): 243–50. <a href="https://doi.org/10.1080/08832323.2018.1520685">https://doi.org/10.1080/08832323.2018.1520685</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
