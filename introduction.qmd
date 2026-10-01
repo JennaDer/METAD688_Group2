@@ -174,14 +174,14 @@ Within Computer Systems Design and Related Services, we expect analytics opportu
 - [x] NAICS 5415 selected
 - [x] Industry identified
 - [x] Target user defined
-- [ ] Product question approved by the team
+- [x] Product question approved by the team
 - [x] Project rationale completed
 - [x] Three to five sources reviewed
 - [x] Expected dataset fields documented
 - [x] GitHub repository created
 - [x] Quarto website created
 - [x] Initial website published
-- [ ] All sections reviewed by the team
+- [x] All sections reviewed by the team
 
 ## References
 
