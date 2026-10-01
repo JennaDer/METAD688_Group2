@@ -64,7 +64,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b04a93be6098906e613ea8999f442834.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b6702f791c3d41e5b398c65af8f053e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -485,14 +485,14 @@ div.csl-indent {
 <li><label><input type="checkbox" checked="">NAICS 5415 selected</label></li>
 <li><label><input type="checkbox" checked="">Industry identified</label></li>
 <li><label><input type="checkbox" checked="">Target user defined</label></li>
-<li><label><input type="checkbox">Product question approved by the team</label></li>
+<li><label><input type="checkbox" checked="">Product question approved by the team</label></li>
 <li><label><input type="checkbox" checked="">Project rationale completed</label></li>
 <li><label><input type="checkbox" checked="">Three to five sources reviewed</label></li>
 <li><label><input type="checkbox" checked="">Expected dataset fields documented</label></li>
 <li><label><input type="checkbox" checked="">GitHub repository created</label></li>
 <li><label><input type="checkbox" checked="">Quarto website created</label></li>
 <li><label><input type="checkbox" checked="">Initial website published</label></li>
-<li><label><input type="checkbox">All sections reviewed by the team</label></li>
+<li><label><input type="checkbox" checked="">All sections reviewed by the team</label></li>
 </ul>
 </section>
 <section id="references" class="level2">
@@ -586,7 +586,7 @@ Verma, Amit, Kirill M. Yurov, Peggy L. Lane, and Yuliya V. Yurova. 2019. <span>â
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/JennaDer\.github\.io\/METAD688_Group2\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
