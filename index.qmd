@@ -28,9 +28,9 @@ Computer Systems Design and Related Services
 
 <div class="signal-line"></div>
 
-165,386 job postings  
-115 source variables  
-17 Parquet files
+504,208 job postings  
+124 source variables  
+21 Parquet files
 
 :::
 
@@ -114,7 +114,7 @@ Translate market evidence into practical career options and evaluate how roles d
 
 **Source**
 
-17 Parquet files containing U.S. job-posting data
+21 Parquet files containing U.S. job-posting data
 :::
 
 ::: {.flow-step}

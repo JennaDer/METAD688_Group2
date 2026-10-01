@@ -33,9 +33,9 @@ def get_raw_data_path():
 
     parquet_files = sorted(data_path.glob("*.parquet"))
 
-    if len(parquet_files) != 17:
+    if len(parquet_files) != 21:
         raise FileNotFoundError(
-            f"Expected 17 Parquet files, but found "
+            f"Expected 21 Parquet files, but found "
             f"{len(parquet_files)} in {data_path}"
         )
 
