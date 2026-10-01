@@ -214,6 +214,6 @@ Candidates may also benefit from showing a mix of technical and business skills.
 
 ## Reproducing the Results
 
-The figures and data dictionary were created from `data/processed/career_market_panel.csv`.
+The figures and data dictionary were created from `data/processed/career_market_panel.csv` by `scripts/build_market_baseline.py`. All charts use the team's shared Plotly theme (`scripts/plot_theme.py`) and are saved as static images in `figures/` so the site renders reliably on GitHub Pages.
 
 To rebuild them, run `python scripts/build_market_baseline.py` from the repository root.

@@ -1,9 +1,19 @@
-"""Generate Module 2 market-baseline figures and data dictionary."""
+"""Generate the EDA figures and the data dictionary.
 
+Charts are built with Plotly and the shared "group2" theme in
+scripts/plot_theme.py, then saved as static PNGs in figures/ so the
+site renders reliably on GitHub Pages.
+"""
+
+import sys
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import pandas as pd
+import plotly.graph_objects as go
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import plot_theme  # noqa: E402  registers and activates the group2 template
+from plot_theme import NAVY, TEAL, AQUA, LIGHT_BLUE, GOLD, GRAY  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,37 +25,26 @@ DICTIONARY_PATH = (
 
 FIGURE_DIR.mkdir(parents=True, exist_ok=True)
 
-NAVY = "#123B4A"
-TEAL = "#2A7F83"
-AQUA = "#63B7AF"
-LIGHT_BLUE = "#9CCFD0"
-GOLD = "#D7A84B"
-GRAY = "#65757D"
 
-plt.rcParams.update(
-    {
-        "figure.facecolor": "white",
-        "axes.facecolor": "white",
-        "axes.edgecolor": "#D9E2E5",
-        "axes.titlecolor": NAVY,
-        "axes.labelcolor": "#25353C",
-        "font.size": 10,
-        "axes.titlesize": 15,
-        "axes.titleweight": "bold",
-    }
-)
-
-
-def save_figure(filename):
-    """Apply consistent formatting and save the active figure."""
-    plt.tight_layout()
-    plt.savefig(
-        FIGURE_DIR / filename,
-        dpi=180,
-        bbox_inches="tight",
-        facecolor="white",
+def hbar(labels, values, text, color, title, x_title, x_max, height=540):
+    """Horizontal bar chart in the group2 theme."""
+    fig = go.Figure(
+        go.Bar(
+            x=values,
+            y=labels,
+            orientation="h",
+            marker_color=color,
+            text=text,
+            textposition="outside",
+            textfont=dict(color=NAVY),
+            cliponaxis=False,
+            hovertemplate="%{y}: %{x:,}<extra></extra>",
+        )
     )
-    plt.close()
+    fig.update_layout(title=title, height=height, showlegend=False)
+    fig.update_xaxes(title=x_title, range=[0, x_max])
+    fig.update_yaxes(showgrid=False, ticks="")
+    return fig
 
 
 panel = pd.read_csv(DATA_PATH)
@@ -71,24 +70,16 @@ role_labels = {
 }
 role_counts.index = [role_labels.get(value, value) for value in role_counts.index]
 
-plt.figure(figsize=(9, 5.5))
-bars = plt.barh(role_counts.index, role_counts.values, color=TEAL)
-
-for bar, value in zip(bars, role_counts.values):
-    plt.text(
-        value + 2,
-        bar.get_y() + bar.get_height() / 2,
-        f"{value} ({value / total_postings:.1%})",
-        va="center",
-        color=NAVY,
-    )
-
-plt.title("Analytics Postings by Occupation Segment", loc="left")
-plt.xlabel("Number of postings")
-plt.ylabel("")
-plt.xlim(0, role_counts.max() * 1.22)
-plt.grid(axis="x", alpha=0.2)
-save_figure("job_volume_by_segment.png")
+fig = hbar(
+    role_counts.index,
+    role_counts.values,
+    [f"{v} ({v / total_postings:.1%})" for v in role_counts.values],
+    TEAL,
+    "Analytics Postings by Occupation Segment",
+    "Number of postings",
+    role_counts.max() * 1.25,
+)
+plot_theme.save(fig, "job_volume_by_segment")
 
 # ------------------------------------------------------------
 # 2. Salary distribution
@@ -97,30 +88,29 @@ save_figure("job_volume_by_segment.png")
 salary = panel["salary_midpoint"].dropna()
 salary_median = salary.median()
 
-plt.figure(figsize=(9, 5.5))
-plt.hist(
-    salary,
-    bins=14,
-    color=TEAL,
-    edgecolor="white",
+fig = go.Figure(
+    go.Histogram(
+        x=salary,
+        nbinsx=14,
+        marker=dict(color=TEAL, line=dict(color="white", width=1)),
+        hovertemplate="%{x}<br>%{y} postings<extra></extra>",
+        showlegend=False,
+    )
 )
-plt.axvline(
-    salary_median,
-    color=GOLD,
-    linewidth=2.5,
-    linestyle="--",
-    label=f"Median: ${salary_median:,.0f}",
+fig.add_vline(
+    x=salary_median,
+    line=dict(color=GOLD, width=3, dash="dash"),
+    annotation_text=f"Median: ${salary_median:,.0f}",
+    annotation_position="top right",
+    annotation_font=dict(color=NAVY),
 )
-
-plt.title("Distribution of Advertised Annual Salary Midpoints", loc="left")
-plt.xlabel("Annual salary midpoint (USD)")
-plt.ylabel("Number of postings")
-plt.gca().xaxis.set_major_formatter(
-    plt.FuncFormatter(lambda value, _: f"${value / 1000:.0f}K")
+fig.update_layout(
+    title="Distribution of Advertised Annual Salary Midpoints",
+    bargap=0.03,
 )
-plt.grid(axis="y", alpha=0.2)
-plt.legend(frameon=False)
-save_figure("salary_distribution.png")
+fig.update_xaxes(title="Annual salary midpoint (USD)", tickprefix="$", tickformat="~s")
+fig.update_yaxes(title="Number of postings")
+plot_theme.save(fig, "salary_distribution")
 
 # ------------------------------------------------------------
 # 3. Leading states
@@ -133,24 +123,17 @@ state_counts = (
     .sort_values()
 )
 
-plt.figure(figsize=(9, 6))
-bars = plt.barh(state_counts.index, state_counts.values, color=AQUA)
-
-for bar, value in zip(bars, state_counts.values):
-    plt.text(
-        value + 0.5,
-        bar.get_y() + bar.get_height() / 2,
-        str(value),
-        va="center",
-        color=NAVY,
-    )
-
-plt.title("Leading Identified States for Analytics Postings", loc="left")
-plt.xlabel("Number of postings")
-plt.ylabel("")
-plt.xlim(0, state_counts.max() * 1.15)
-plt.grid(axis="x", alpha=0.2)
-save_figure("leading_states.png")
+fig = hbar(
+    state_counts.index,
+    state_counts.values,
+    [str(v) for v in state_counts.values],
+    AQUA,
+    "Leading Identified States for Analytics Postings",
+    "Number of postings",
+    state_counts.max() * 1.15,
+    height=600,
+)
+plot_theme.save(fig, "leading_states", height=600)
 
 # ------------------------------------------------------------
 # 4. Work arrangement
@@ -164,28 +147,22 @@ work_counts = (
     .reindex(work_order, fill_value=0)
 )
 
-plt.figure(figsize=(8.5, 5.5))
-bars = plt.bar(
-    work_counts.index,
-    work_counts.values,
-    color=[TEAL, AQUA, LIGHT_BLUE, GRAY],
-)
-
-for bar, value in zip(bars, work_counts.values):
-    plt.text(
-        bar.get_x() + bar.get_width() / 2,
-        value + 3,
-        f"{value}\n({value / total_postings:.1%})",
-        ha="center",
-        color=NAVY,
+fig = go.Figure(
+    go.Bar(
+        x=work_counts.index,
+        y=work_counts.values,
+        marker_color=[TEAL, AQUA, LIGHT_BLUE, GRAY],
+        text=[f"{v}<br>({v / total_postings:.1%})" for v in work_counts.values],
+        textposition="outside",
+        textfont=dict(color=NAVY),
+        cliponaxis=False,
+        hovertemplate="%{x}: %{y:,}<extra></extra>",
     )
-
-plt.title("Remote, Hybrid, and On-site Classification", loc="left")
-plt.xlabel("")
-plt.ylabel("Number of postings")
-plt.ylim(0, work_counts.max() * 1.18)
-plt.grid(axis="y", alpha=0.2)
-save_figure("work_arrangement.png")
+)
+fig.update_layout(title="Remote, Hybrid, and On-site Classification", showlegend=False)
+fig.update_xaxes(showgrid=False)
+fig.update_yaxes(title="Number of postings", range=[0, work_counts.max() * 1.2])
+plot_theme.save(fig, "work_arrangement")
 
 # ------------------------------------------------------------
 # 5. Top employers
@@ -199,24 +176,17 @@ employer_counts = (
     .sort_values()
 )
 
-plt.figure(figsize=(9, 6))
-bars = plt.barh(employer_counts.index, employer_counts.values, color=TEAL)
-
-for bar, value in zip(bars, employer_counts.values):
-    plt.text(
-        value + 0.2,
-        bar.get_y() + bar.get_height() / 2,
-        str(value),
-        va="center",
-        color=NAVY,
-    )
-
-plt.title("Employers with the Most Postings in the Panel", loc="left")
-plt.xlabel("Number of postings")
-plt.ylabel("")
-plt.xlim(0, employer_counts.max() * 1.15)
-plt.grid(axis="x", alpha=0.2)
-save_figure("top_employers.png")
+fig = hbar(
+    employer_counts.index,
+    employer_counts.values,
+    [str(v) for v in employer_counts.values],
+    TEAL,
+    "Employers with the Most Postings in the Panel",
+    "Number of postings",
+    employer_counts.max() * 1.15,
+    height=600,
+)
+plot_theme.save(fig, "top_employers", height=600)
 
 # ------------------------------------------------------------
 # 6. Median salary by occupation segment
@@ -229,45 +199,22 @@ salary_by_role = (
     .sort_values("median")
 )
 
-salary_role_labels = {
-    "Management Analysts": "Management analysts",
-    "Database Architects": "Database architects / data engineers",
-    "Data Scientists": "Data scientists / data analysts",
-}
 salary_by_role.index = [
-    salary_role_labels.get(value, value)
-    for value in salary_by_role.index
+    role_labels.get(value, value) for value in salary_by_role.index
 ]
 
-plt.figure(figsize=(9, 5.5))
-bars = plt.barh(
+fig = hbar(
     salary_by_role.index,
     salary_by_role["median"],
-    color=TEAL,
+    [f"${m:,.0f} (n={int(c)})" for m, c in zip(salary_by_role["median"], salary_by_role["count"])],
+    TEAL,
+    "Median Advertised Salary by Occupation Segment",
+    "Median annual salary midpoint (USD)",
+    salary_by_role["median"].max() * 1.35,
 )
-
-for bar, value, count in zip(
-    bars,
-    salary_by_role["median"],
-    salary_by_role["count"],
-):
-    plt.text(
-        value + 2500,
-        bar.get_y() + bar.get_height() / 2,
-        f"${value:,.0f} (n={int(count)})",
-        va="center",
-        color=NAVY,
-    )
-
-plt.title("Median Advertised Salary by Occupation Segment", loc="left")
-plt.xlabel("Median annual salary midpoint (USD)")
-plt.ylabel("")
-plt.xlim(0, salary_by_role["median"].max() * 1.30)
-plt.gca().xaxis.set_major_formatter(
-    plt.FuncFormatter(lambda value, _: f"${value / 1000:.0f}K")
-)
-plt.grid(axis="x", alpha=0.2)
-save_figure("median_salary_by_occupation.png")
+fig.update_xaxes(tickprefix="$", tickformat="~s")
+fig.update_traces(hovertemplate="%{y}: $%{x:,.0f}<extra></extra>")
+plot_theme.save(fig, "median_salary_by_occupation")
 
 # ------------------------------------------------------------
 # Data dictionary
