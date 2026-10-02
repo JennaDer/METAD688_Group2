@@ -130,14 +130,14 @@
     "href": "introduction.html",
     "title": "Project Foundation",
     "section": "",
-    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nComputer Systems Design and Related Services\n\n\nNAICS Code\n5415\n\n\nCareer Pathway\nData Analytics\n\n\nPrimary Focus Area\nAnalytics career opportunities, qualifications, and market patterns\n\n\nTarget User\nStudents, recent graduates, and early-career professionals pursuing analytics roles\n\n\nProduct Question\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize?\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why Computer Systems Design and Related Services is a relevant industry for analytics careers."
+    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nComputer Systems Design and Related Services\n\n\nNAICS Code\n5415\n\n\nCareer Pathway\nData Analytics\n\n\nPrimary Focus Area\nAnalytics career opportunities, qualifications, and market patterns\n\n\nTarget User\nStudents, recent graduates, and early-career professionals pursuing analytics roles\n\n\nProduct Question\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why Computer Systems Design and Related Services is a relevant industry for analytics careers."
   },
   {
     "objectID": "introduction.html#project-at-a-glance",
     "href": "introduction.html#project-at-a-glance",
     "title": "Project Foundation",
     "section": "",
-    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nComputer Systems Design and Related Services\n\n\nNAICS Code\n5415\n\n\nCareer Pathway\nData Analytics\n\n\nPrimary Focus Area\nAnalytics career opportunities, qualifications, and market patterns\n\n\nTarget User\nStudents, recent graduates, and early-career professionals pursuing analytics roles\n\n\nProduct Question\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize?\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why Computer Systems Design and Related Services is a relevant industry for analytics careers."
+    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nComputer Systems Design and Related Services\n\n\nNAICS Code\n5415\n\n\nCareer Pathway\nData Analytics\n\n\nPrimary Focus Area\nAnalytics career opportunities, qualifications, and market patterns\n\n\nTarget User\nStudents, recent graduates, and early-career professionals pursuing analytics roles\n\n\nProduct Question\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why Computer Systems Design and Related Services is a relevant industry for analytics careers."
   },
   {
     "objectID": "introduction.html#career-pathway",
@@ -151,7 +151,7 @@
     "href": "introduction.html#industry-selection",
     "title": "Project Foundation",
     "section": "2. Industry Selection",
-    "text": "2. Industry Selection\n\n\nSelected industry: Computer Systems Design and Related Services NAICS code: 5415\n\nIndustry Justification\nComputer Systems Design and Related Services is highly relevant to the Data Analytics career pathway because organizations in this industry rely heavily on data, software, information systems, and technology-enabled decision-making. The course dataset also provides a substantially larger analytical sample for this industry, supporting more meaningful analysis of labor-market patterns.\n\n\nRole of Analytics in This Industry\nAnalytics professionals in this industry support areas such as business intelligence, data analysis, systems performance, technology consulting, reporting, forecasting, and data-driven decision-making. These roles may require candidates to interpret large datasets, identify trends, build reports and dashboards, and translate analytical findings into recommendations for clients or internal business teams."
+    "text": "2. Industry Selection\n\n\nSelected industry: Computer Systems Design and Related Services NAICS code: 5415\n\nIndustry Justification\nComputer Systems Design and Related Services is highly relevant to the Data Analytics career pathway because organizations in this industry rely heavily on data, software, information systems, and technology-enabled decision-making. The industry also gives the project enough data to work with: the v2 course extract holds 19,886 postings in NAICS 5415, and 1,790 of them are analytics roles posted in the last 12 months. That is enough to compare salary, location, experience, work arrangements, and skills across several analytics roles.\n\n\nRole of Analytics in This Industry\nAnalytics professionals in this industry support areas such as business intelligence, data analysis, systems performance, technology consulting, reporting, forecasting, and data-driven decision-making. These roles may require candidates to interpret large datasets, identify trends, build reports and dashboards, and translate analytical findings into recommendations for clients or internal business teams."
   },
   {
     "objectID": "introduction.html#target-user",
@@ -193,7 +193,7 @@
     "href": "introduction.html#what-we-expect-to-explore",
     "title": "Project Foundation",
     "section": "8. What We Expect to Explore",
-    "text": "8. What We Expect to Explore\n\nWithin Computer Systems Design and Related Services, we expect analytics opportunities to span several related role types and employer contexts. Our analysis will examine how demand varies across job titles, employers, salary levels, education requirements, geographic markets, and work arrangements. We will also evaluate the skills information available in the dataset while documenting limitations in the source data rather than assuming that missing skills or experience fields represent employer preferences. These expectations will be tested against the data and revised where the evidence supports a different conclusion."
+    "text": "8. What We Expect to Explore\n\nWithin Computer Systems Design and Related Services, we expect analytics opportunities to span several related role types and employer contexts. Our analysis will examine how demand varies across job titles, employers, salary levels, education requirements, geographic markets, and work arrangements. We will also evaluate the skills information available in the dataset while documenting limitations in the source data rather than assuming that missing skills or experience fields represent employer preferences. These expectations will be tested against the data and revised where the evidence supports a different conclusion.\nWhere each expectation is tested: The Exploratory Analysis page covers roles, employers, salary, location, education, experience, and work arrangements. The Skill Gap Analysis page compares the skills employers request with the team’s own ratings. The Career Strategy page will bring both together into recommendations for the target user."
   },
   {
     "objectID": "introduction.html#project-scope-and-boundaries",
@@ -207,7 +207,7 @@
     "href": "introduction.html#module-1-completion-checklist",
     "title": "Project Foundation",
     "section": "Module 1 Completion Checklist",
-    "text": "Module 1 Completion Checklist\n\n\nCareer pathway selected\nNAICS 5415 selected\nIndustry identified\nTarget user defined\nProduct question approved by the team\nProject rationale completed\nThree to five sources reviewed\nExpected dataset fields documented\nGitHub repository created\nQuarto website created\nInitial website published\nAll sections reviewed by the team"
+    "text": "Module 1 Completion Checklist\n\nCareer pathway selected\nNAICS 5415 selected\nIndustry identified\nTarget user defined\nProduct question approved by the team\nProject rationale completed\nThree to five sources reviewed\nExpected dataset fields documented\nGitHub repository created\nQuarto website created\nInitial website published\nAll sections reviewed by the team"
   },
   {
     "objectID": "introduction.html#references",
@@ -347,7 +347,7 @@
     "href": "index.html#what-the-evidence-will-show",
     "title": "METAD 688 Group 2",
     "section": "What the evidence will show",
-    "text": "What the evidence will show\nThis area will become the front door to our final visual analysis as each team member completes their section."
+    "text": "What the evidence will show\nTwo of the three findings are complete. The third, which compares career pathways, will be finished in Module 5."
   },
   {
     "objectID": "index.html#evidence-translated-into-action",
