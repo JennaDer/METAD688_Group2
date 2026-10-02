@@ -77,7 +77,7 @@ Measure employment activity, employer concentration, occupational demand, and ge
 
 ### Identify emerging skill gaps
 
-Compare the technical, analytical, regulatory, and operational capabilities requested across computer systems design and related services job postings.
+Compare the technical, analytical, and business skills requested across computer systems design and related services job postings.
 
 [Explore skill demand →](skill_gap_analysis.qmd)
 
@@ -153,7 +153,7 @@ Convert findings into evidence-based career guidance
 
 ## What the evidence will show
 
-This area will become the front door to our final visual analysis as each team member completes their section.
+Two of the three findings are complete. The third, which compares career pathways, will be finished in Module 5.
 
 :::
 
@@ -164,10 +164,10 @@ This area will become the front door to our final visual analysis as each team m
 <div>
 <strong>Market structure</strong>
 
-Which employers, roles, and locations account for the strongest demand?
+Data science and data engineering roles lead the 1,790 postings. California has the most postings with a known state, the median advertised salary is $151,475, and 41% of postings are remote or hybrid.
 </div>
 
-<span class="finding-status">IN DEVELOPMENT</span>
+<span class="finding-status">COMPLETE</span>
 
 :::
 
@@ -178,10 +178,10 @@ Which employers, roles, and locations account for the strongest demand?
 <div>
 <strong>Skill signals</strong>
 
-Which capabilities consistently appear across computer systems design and related services job postings?
+Python and SQL each appear in more than 60% of postings and are the team's largest gaps. Business and communication skills already meet what employers ask for.
 </div>
 
-<span class="finding-status">IN DEVELOPMENT</span>
+<span class="finding-status">COMPLETE</span>
 
 :::
 

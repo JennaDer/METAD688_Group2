@@ -1,6 +1,6 @@
 ---
 title: "Project Foundation"
-subtitle: "Module 1 — Product Framing and Industry Scope"
+subtitle: "Product Framing and Industry Scope"
 bibliography: references.bib
 ---
 
@@ -13,7 +13,7 @@ bibliography: references.bib
 | Career Pathway | Data Analytics |
 | Primary Focus Area | Analytics career opportunities, qualifications, and market patterns |
 | Target User | Students, recent graduates, and early-career professionals pursuing analytics roles |
-| Product Question | How can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize? |
+| Product Question | How can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate? |
 
 ::: {.callout-tip}
 ## Purpose of This Page
@@ -41,7 +41,7 @@ Data Analytics was selected because it represents a broad and practical career p
 
 ### Industry Justification
 
-Computer Systems Design and Related Services is highly relevant to the Data Analytics career pathway because organizations in this industry rely heavily on data, software, information systems, and technology-enabled decision-making. The course dataset also provides a substantially larger analytical sample for this industry, supporting more meaningful analysis of labor-market patterns.
+Computer Systems Design and Related Services is highly relevant to the Data Analytics career pathway because organizations in this industry rely heavily on data, software, information systems, and technology-enabled decision-making. The industry also gives the project enough data to work with: the v2 course extract holds 19,886 postings in NAICS 5415, and 1,790 of them are analytics roles posted in the last 12 months. That is enough to compare salary, location, experience, work arrangements, and skills across several analytics roles.
 
 ### Role of Analytics in This Industry
 
@@ -76,8 +76,6 @@ Before applying for analytics positions in Computer Systems Design and Related S
 3. How do salary, experience, location, and remote-work patterns vary?
 4. Where does the target user have skill gaps?
 5. Which skills should the target user prioritize?
-
-<!-- EDITING NOTE: Revise or replace these supporting questions after the team selects its primary focus area. -->
 
 ## 5. Project Rationale
 
@@ -143,9 +141,11 @@ The original NAICS 3254 industry scope produced too few relevant analytics posti
 
 ## 8. What We Expect to Explore
 
-<!-- SECTION OWNER: Drafted by Sebastian, pending team review -->
+<!-- SECTION OWNER: Sebastian -->
 
 Within Computer Systems Design and Related Services, we expect analytics opportunities to span several related role types and employer contexts. Our analysis will examine how demand varies across job titles, employers, salary levels, education requirements, geographic markets, and work arrangements. We will also evaluate the skills information available in the dataset while documenting limitations in the source data rather than assuming that missing skills or experience fields represent employer preferences. These expectations will be tested against the data and revised where the evidence supports a different conclusion.
+
+**Where each expectation is tested:** The [Exploratory Analysis](eda.qmd) page covers roles, employers, salary, location, education, experience, and work arrangements. The [Skill Gap Analysis](skill_gap_analysis.qmd) page compares the skills employers request with the team's own ratings. The [Career Strategy](career_plan.qmd) page will bring both together into recommendations for the target user.
 
 ## 9. Project Scope and Boundaries
 
@@ -167,8 +167,6 @@ Within Computer Systems Design and Related Services, we expect analytics opportu
 - Claims that cannot be supported by the available data
 
 ## Module 1 Completion Checklist
-
-<!-- EDITING NOTE: Change each empty box from [ ] to [x] when the item is completed. -->
 
 - [x] Career pathway selected
 - [x] NAICS 5415 selected
