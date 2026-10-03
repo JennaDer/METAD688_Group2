@@ -151,9 +151,9 @@ Convert findings into evidence-based career guidance
 
 <span class="section-code">03 / FINDINGS</span>
 
-## What the evidence will show
+## What the evidence shows
 
-Two of the three findings are complete. The third, which compares career pathways, will be finished in Module 5.
+All three findings are complete. Each links to the page carrying the full analysis.
 
 :::
 
@@ -178,7 +178,7 @@ Data science and data engineering roles lead the 1,790 postings. California has 
 <div>
 <strong>Skill signals</strong>
 
-Python and SQL each appear in more than 60% of postings and are the team's largest gaps. Business and communication skills already meet what employers ask for.
+Python and SQL each appear in more than 60% of postings and sit among the team's largest gaps, alongside data pipelines. Business and communication skills already meet what employers ask for.
 </div>
 
 <span class="finding-status">COMPLETE</span>
@@ -192,10 +192,10 @@ Python and SQL each appear in more than 60% of postings and are the team's large
 <div>
 <strong>Career opportunity</strong>
 
-Which pathways offer the strongest combination of demand and accessibility?
+Job title alone separates higher-paying postings only 59% of the time. Adding skills, location, and education raises that to 78%. The skills most associated with higher pay are not the ones employers request most often.
 </div>
 
-<span class="finding-status">IN DEVELOPMENT</span>
+<span class="finding-status">COMPLETE</span>
 
 :::
 
