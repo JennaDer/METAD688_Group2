@@ -164,7 +164,7 @@ The bottom of the heatmap is the shared weak spot. **No one on the team is above
 
 ## 2. Skills Requested in Job Postings
 
-We extracted skills from the `SKILLS_NAME` field. Each posting stores its skills as a list, so we count **how many postings mention each skill** rather than total mentions. This stops a single long posting from inflating a skill's importance.
+We extracted skills from the `SKILLS_NAME` field. Each posting stores its skills as a list, so we count **how many postings mention each skill** rather than total mentions. This stops a single long posting from inflating a skill's importance. Content analysis of analytics job advertisements has used the same posting-level approach to compare skill requirements across business analyst, data analyst, and data scientist roles [@verma2019skills].
 
 ```{python}
 #| label: extract-skills
@@ -262,7 +262,7 @@ save_figure("skill_demand_by_role.png")
 - **Business Analyst roles are the most business-focused:** business requirements (39%), business analysis (34%), and Excel (29%) sit alongside SQL, while Python appears in only 14%.
 - **Data Scientist roles** are led by Python (82%) and machine learning (45%), and **Data Engineer roles** by Python, SQL, and data pipelines.
 
-## 3. Comparing Team Skills With Market Requirements
+## 3. Career Evaluation Logic: Team Skills Against Market Requirements
 
 Job postings list skills but not the proficiency level employers expect. To compare the two, we set a **target level** for each skill using a transparent rule based on how often the skill is requested across all postings:
 
@@ -447,3 +447,8 @@ print("Total levels to close per member:",
 <!-- INPUT: data/processed/team_skills_v2.csv holds each member's ratings; data/processed/skill_gap_table.csv holds the priority order from Section 3. -->
 
 {{< include _improvement_plan.qmd >}}
+
+## References
+
+::: {#refs}
+:::
