@@ -6,3 +6,4 @@ jupyter
 matplotlib
 plotly
 kaleido>=1
+scikit-learn
