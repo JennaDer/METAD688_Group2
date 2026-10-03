@@ -1,0 +1,5 @@
+model,features,cv_accuracy_mean,cv_accuracy_sd,test_accuracy,test_precision,test_recall,test_f1
+Majority-class baseline,55,0.5011,0.0042,0.5,0.0,0.0,0.0
+"Logistic, role family only",5,0.6883,0.0339,0.5946,0.5603,0.8784,0.6842
+"Logistic, all features",55,0.7336,0.034,0.723,0.7143,0.7432,0.7285
+"Random forest, all features",55,0.8171,0.0372,0.7838,0.7763,0.7973,0.7867
