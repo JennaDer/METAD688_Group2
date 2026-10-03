@@ -75,11 +75,13 @@ factors driving it, than from a point estimate carrying a $40,000 margin.
 ## Why This Matters for a Job Seeker
 
 The [Skill Gap Analysis](skill_gap_analysis.qmd) page shows which skills appear
-most often in postings. Frequency alone does not tell a job seeker where to
-spend study time, because a skill can be requested constantly and still be
-present in roles across the whole pay range. What this page adds is the
-direction and size of each factor's association with pay, which turns a list of
-in-demand skills into a ranked set of choices.
+most often in postings, following the posting-level counting approach used in
+content analyses of analytics job advertisements [@verma2019skills]. Frequency
+alone does not tell a job seeker where to spend study time, because a skill can
+be requested constantly and still be present in roles across the whole pay
+range. What this page adds is the direction and size of each factor's
+association with pay, which turns a list of in-demand skills into a ranked set
+of choices.
 
 ## Variables Used
 

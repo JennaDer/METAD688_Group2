@@ -55,7 +55,7 @@ Filtering and cleaning run in PySpark through `scripts/build_panel.py`, which im
 
 ## Industry Filter
 
-We filtered on `NAICS_2022_4`, the four-digit 2022 NAICS code attached to each posting, keeping the `{python} fmt(stats["industry_postings"])` postings coded `{python} stats["industry_code"]`. The extract also carries two-, three-, five-, and six-digit variants. We used the four-digit field because the assignment specifies four- or six-digit codes, and we take the industry label from `NAICS_2022_6_NAME`.
+We filtered on `NAICS_2022_4`, the four-digit 2022 NAICS code attached to each posting [@census2022naics5415], keeping the `{python} fmt(stats["industry_postings"])` postings coded `{python} stats["industry_code"]`. The extract also carries two-, three-, five-, and six-digit variants. We used the four-digit field because the assignment specifies four- or six-digit codes, and we take the industry label from `NAICS_2022_6_NAME`.
 
 ## Career-Pathway Filter
 
@@ -390,3 +390,8 @@ To rebuild the panel from source, place the `{python} stats["source_files"]` Par
 ```bash
 python3 scripts/build_panel.py
 ```
+
+## References
+
+::: {#refs}
+:::
