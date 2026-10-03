@@ -1,5 +1,265 @@
 ---
 title: "Predictive Modeling"
+subtitle: "Which Postings Pay Above the Median, and What Separates Them"
+bibliography: references.bib
+csl: csl/econometrica.csl
+toc: true
 ---
 
-*This page will be completed in a later module.*
+```{python}
+#| label: setup
+#| echo: false
+
+import json
+from pathlib import Path
+
+import pandas as pd
+
+PROCESSED = Path("data/processed")
+
+panel = pd.read_csv(PROCESSED / "career_market_panel.csv")
+sample = panel[panel["salary_midpoint"].notna()]
+median_salary = sample["salary_midpoint"].median()
+
+metrics = pd.read_csv(PROCESSED / "model_metrics.csv")
+coefficients = pd.read_csv(PROCESSED / "model_coefficients.csv")
+
+n_sample = len(sample)
+n_panel = len(panel)
+n_high = int((sample["salary_midpoint"] > median_salary).sum())
+n_low = n_sample - n_high
+n_features = int(metrics["features"].max())
+n_skills = int(coefficients["feature"].str.startswith("skill: ").sum())
+
+best = metrics.sort_values("test_accuracy").iloc[-1]
+logit = metrics[metrics["model"] == "Logistic, all features"].iloc[0]
+role_only = metrics[metrics["model"] == "Logistic, role family only"].iloc[0]
+
+
+def pct(value):
+    return f"{value:.1%}"
+
+
+def money(value):
+    return f"${value:,.0f}"
+```
+
+## Purpose
+
+The earlier pages describe the market. This page moves from describing it to
+predicting it. The question is whether the information a posting makes public,
+its role, location, work arrangement, education level and listed skills, is
+enough to tell whether that posting pays above or below the market median.
+
+## What We Modeled
+
+We built a binary classifier. The target is whether a posting's advertised
+salary midpoint sits above the median of all postings that report usable pay,
+which is `{python} money(median_salary)`.
+
+Splitting at the median rather than at a round number keeps the two classes
+almost the same size, `{python} n_high` postings above and `{python} n_low` at
+or below. That matters for reading the results. A model that guessed the larger
+class every time would score about 50 percent, so anything above that is real
+signal rather than an artifact of unbalanced classes.
+
+::: callout-note
+## Why classification rather than salary regression
+
+Predicting an exact salary from `{python} n_sample` postings would produce wide
+error bands that are hard to act on. A job seeker deciding whether to pursue a
+posting benefits more from a reliable above or below signal, together with the
+factors driving it, than from a point estimate carrying a $40,000 margin.
+:::
+
+## Why This Matters for a Job Seeker
+
+The [Skill Gap Analysis](skill_gap_analysis.qmd) page shows which skills appear
+most often in postings. Frequency alone does not tell a job seeker where to
+spend study time, because a skill can be requested constantly and still be
+present in roles across the whole pay range. What this page adds is the
+direction and size of each factor's association with pay, which turns a list of
+in-demand skills into a ranked set of choices.
+
+## Variables Used
+
+The model uses `{python} n_features` features built from
+`{python} n_sample` postings:
+
+| Block | Treatment | Levels |
+|---|---|---|
+| Role family | One-hot | 5 |
+| Work arrangement | One-hot, Unknown kept as a category | 4 |
+| State | Six most frequent states, plus Unspecified and Other | 8 |
+| Education level | One-hot, missing kept as a category | 6 |
+| Listed skills | Binary indicator per skill on at least 5 percent of postings | `{python} n_skills` |
+
+Three fields were deliberately left out. Minimum years of experience is
+recorded on only 154 of these postings, so including it as a numeric variable
+would have meant discarding about three quarters of the sample. The staffing
+agency flag has 13 positive cases, too few to estimate. Occupation group was
+dropped because it is derived from the job title in the same way as role family
+and the two would carry the same information twice.
+
+Work arrangement and state both keep their missing categories rather than
+dropping those rows. Work arrangement is unknown for 278 of these postings and
+state is unspecified for 164, so dropping them would have cost roughly half the
+sample. Treating missing as its own category is also honest about the data:
+whether an employer publishes this information may itself carry signal.
+
+## How We Evaluated Performance
+
+The sample was split 75 / 25 into 443 training and 148 test postings, stratified
+so both halves keep the same class balance. Models were compared by five-fold
+cross-validation inside the training set. The test set was scored once, at the
+end, after the choice of model was already fixed.
+
+This sequence matters at this sample size. With `{python} n_sample` rows it is
+easy to adjust a model repeatedly against the test set and report a number that
+will not survive new data.
+
+Four specifications were fitted, two of them as reference points rather than as
+candidates:
+
+1. **Majority-class baseline.** Predicts the larger class every time. Sets the floor.
+2. **Logistic regression on role family only.** Tests whether anything beyond the job title helps.
+3. **Logistic regression on all features.** L2 regularized, features standardized.
+4. **Random forest on all features.** 500 trees, minimum three samples per leaf.
+
+```{python}
+#| label: tbl-model-metrics
+#| tbl-cap: "Model performance. Cross-validation accuracy is measured inside the training set; test figures come from the single held-out evaluation."
+
+display = metrics.copy()
+display.columns = [
+    "Model", "Features", "CV accuracy", "CV sd",
+    "Test accuracy", "Precision", "Recall", "F1",
+]
+display
+```
+
+## Results
+
+The baseline lands on `{python} pct(metrics.iloc[0]['test_accuracy'])`, which
+confirms the balanced design. Role family alone reaches
+`{python} pct(role_only['test_accuracy'])` on the test set. Adding location,
+education, work arrangement and skills lifts the logistic model to
+`{python} pct(logit['test_accuracy'])`, and the random forest reaches
+`{python} pct(best['test_accuracy'])`.
+
+The gap between role-family-only and the full feature set is the result that
+matters most for this product. Job title alone is a weak predictor of pay. The
+rest of what a posting makes public carries a substantial amount of additional
+information.
+
+![Predicted against actual salary class for the logistic model.](figures/model_confusion_matrix.png){#fig-confusion fig-alt="Confusion matrix showing correct and incorrect classifications for the logistic model on the held-out test set."}
+
+::: callout-warning
+## How precisely to read these numbers
+
+The test set holds 148 postings, so accuracy carries a standard error near four
+percentage points. Differences of two or three points between models should not
+be treated as meaningful. The forest's advantage over the logistic model is
+larger than that, but the ranking of two closely spaced models could change on a
+different split.
+
+The role-family-only specification shows
+`{python} pct(role_only['cv_accuracy_mean'])` in cross-validation against
+`{python} pct(role_only['test_accuracy'])` on test. That gap is about two
+standard errors and is most likely sampling variation, but it is a reason not to
+build an argument on that row alone.
+:::
+
+## What Separates Higher-Paying Postings
+
+The logistic model is reported alongside the forest because its coefficients are
+readable. Each one is the change in log-odds of an above-median salary for a one
+standard deviation change in that feature, holding the others fixed. Positive
+values push toward above-median pay and negative values away from it.
+
+![Features most strongly associated with an above-median salary.](figures/model_top_features.png){#fig-features fig-alt="Horizontal bar chart of the fifteen largest logistic coefficients, with positive and negative values distinguished by color."}
+
+```{python}
+#| label: tbl-coefficients
+#| tbl-cap: "Ten strongest features by absolute logistic coefficient, with the random forest's importance for the same feature."
+
+top = coefficients.head(10)[["feature", "logistic_coefficient", "forest_importance"]].copy()
+top.columns = ["Feature", "Logistic coefficient", "Forest importance"]
+top.reset_index(drop=True)
+```
+
+The two models do not agree on what matters, and the disagreement is
+informative. The forest places its weight on state and role family, which are
+broad structural factors. The logistic model gives its largest coefficients to
+individual skills. A reasonable reading is that structure sets the general pay
+level while specific skills shift a posting within it.
+
+::: callout-important
+## A finding worth stating plainly
+
+Three of the strongest skill coefficients cut against the assumption that the
+most requested skills are the best paid. Checked against raw medians inside this
+sample:
+
+| Skill | Postings | Median with | Median without | Difference |
+|---|---:|---:|---:|---:|
+| Statistical Modeling | 33 | $211,200 | $148,100 | +$63,100 |
+| Power BI | 59 | $122,500 | $155,725 | -$33,225 |
+| PostgreSQL | 42 | $123,760 | $155,000 | -$31,240 |
+
+Power BI is not standing in for business analyst roles. Business Analyst makes up
+14 percent of Power BI postings against 15 percent of the sample overall, so the
+negative coefficient is not absorbing a role effect.
+:::
+
+## Revisiting Our Own Skill Targets
+
+This result is uncomfortable for the plan on the [Skill Gap Analysis](skill_gap_analysis.qmd) page. Section 4 sets a target level for every skill from how often it appears in postings, so a skill in 20 percent or more gets a target of 4 and anything below 10 percent gets a 2. That rule treats frequency as a proxy for value. The model says the two come apart.
+
+Statistical Modeling appears in 6.4 percent of postings, which puts it near the bottom of our target list, and it carries the largest positive coefficient in the model. Power BI sits higher on frequency at 11.2 percent and is associated with pay roughly $33,000 below the rest of the sample. A plan built on counts alone would have us study the second and skip the first.
+
+For my own ratings the gap is direct. I rated myself 5 on Power BI and 2 on Statistical Modeling, which is close to the inverse of what this slice of the market pays for.
+
+I would keep frequency as the measure of how likely a skill is to get an interview, and add the pay association as a separate measure of where that skill leads. The two answer different questions, and the plan as written only asks one of them.
+
+## What This Means in Practical Career Terms
+
+For a student targeting analytics roles in this industry, three things follow
+from the model.
+
+**Job title is a weak signal.** Role family alone classified pay no better than
+`{python} pct(role_only['test_accuracy'])`. Searching by title, or assuming one
+title pays better than another, leaves out most of what the market is actually
+pricing.
+
+**Location remains a strong structural factor.** California carries the largest
+positive coefficient of any non-skill feature, and the highest forest importance
+of any feature in the model. For a candidate who cannot relocate, this is a
+constraint worth naming rather than a skill to acquire.
+
+**Not all in-demand skills are priced alike.** The skills that appear most often
+in postings are not the skills most associated with higher pay. A study plan
+built only on frequency counts will point at the wrong things.
+
+## Limitations
+
+- Salary is advertised on `{python} n_sample` of `{python} n_panel` postings, or about 33 percent. Everything here describes employers who publish pay, which may not resemble those who do not.
+- The skill findings rest on small subgroups. Statistical Modeling appears on 33 postings and Power BI on 59, so those estimates are imprecise.
+- These are associations within one industry over one twelve-month window. Nothing here establishes that acquiring a skill would change an individual's pay.
+- Skills are recorded as a list per posting with no indication of whether a skill is required or merely preferred.
+- The two models disagree on feature ranking, so the ordering of individual features should be read as indicative rather than settled.
+
+## Reproducing the Results
+
+The models, metrics and figures are produced by `scripts/build_models.py`, which
+reads `data/processed/career_market_panel.csv` and writes
+`data/processed/model_metrics.csv`, `data/processed/model_coefficients.csv` and
+two static PNGs to `figures/`. The random seed is fixed at 688, so the figures
+quoted on this page reproduce exactly.
+
+To rebuild them, run `python scripts/build_models.py` from the repository root.
+
+## References
+
+::: {#refs}
+:::
