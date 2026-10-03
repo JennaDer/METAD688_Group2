@@ -52,7 +52,7 @@ These results describe the postings available in the course dataset. They should
 
 Data Scientists make up the largest group, followed by Database Architects. Together, these two groups account for 72.6% of the dataset.
 
-The occupation names come from the O\*NET classifications in the source data. As a result, some positions with titles such as Data Analyst or Data Engineer may be included under a broader occupation group. Job seekers may want to search across several related titles instead of searching only for “Data Analyst.”
+The occupation names come from the O\*NET classifications in the source data [@onet2026datascientists]. As a result, some positions with titles such as Data Analyst or Data Engineer may be included under a broader occupation group. Job seekers may want to search across several related titles instead of searching only for “Data Analyst.”
 
 ## Salary Distribution
 
@@ -109,6 +109,22 @@ The postings are spread across several major technology and business markets. Ho
 ## Experience and Education
 
 Minimum experience information is available for 520 of the 1,790 postings (29.1%). Among postings with usable minimum-experience information, the median minimum requirement is 5 years.
+
+![Minimum years of experience requested, among postings that state a requirement.](figures/experience_distribution.png){#fig-experience fig-alt="Bar chart showing minimum years of experience requested across five bands, with five to seven years the largest group."}
+
+### Experience Distribution
+
+| Minimum Experience | Postings | Share of Postings with Data |
+|--------------------|---------:|----------------------------:|
+| 1-2 years          |      102 |                       19.6% |
+| 3-4 years          |      137 |                       26.3% |
+| 5-7 years          |      188 |                       36.2% |
+| 8-10 years         |       73 |                       14.0% |
+| More than 10 years |       20 |                        3.8% |
+
+The largest group asks for five to seven years. Only 102 of the 520 postings with usable experience data request two years or less, which is 19.6% of that subset. For a student or early-career candidate, this suggests that most advertised roles in this industry are not entry-level, and that the postings open to less experience are a small share of the market.
+
+Shares in this table are calculated against the 520 postings that state a requirement, not against the full dataset.
 
 ### Education Distribution
 
@@ -218,3 +234,8 @@ Candidates may also benefit from showing a mix of technical and business skills.
 The figures and data dictionary were created from `data/processed/career_market_panel.csv` by `scripts/build_market_baseline.py`. All charts use the team's shared Plotly theme (`scripts/plot_theme.py`) and are saved as static images in `figures/` so the site renders reliably on GitHub Pages.
 
 To rebuild them, run `python scripts/build_market_baseline.py` from the repository root.
+
+## References
+
+::: {#refs}
+:::

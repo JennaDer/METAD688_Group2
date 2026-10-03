@@ -217,6 +217,52 @@ fig.update_traces(hovertemplate="%{y}: $%{x:,.0f}<extra></extra>")
 plot_theme.save(fig, "median_salary_by_occupation")
 
 # ------------------------------------------------------------
+# 7. Minimum experience requirement
+# ------------------------------------------------------------
+
+experience_bands = [
+    "1-2 years",
+    "3-4 years",
+    "5-7 years",
+    "8-10 years",
+    "More than 10",
+]
+experience = panel["min_years_experience"].dropna()
+experience_counts = (
+    pd.cut(
+        experience,
+        bins=[0, 2, 4, 7, 10, 100],
+        labels=experience_bands,
+        right=True,
+    )
+    .value_counts()
+    .reindex(experience_bands, fill_value=0)
+)
+
+fig = go.Figure(
+    go.Bar(
+        x=[str(label) for label in experience_counts.index],
+        y=experience_counts.values,
+        marker_color=[LIGHT_BLUE, AQUA, TEAL, NAVY, GRAY],
+        text=[
+            f"{v}<br>({v / len(experience):.1%})" for v in experience_counts.values
+        ],
+        textposition="outside",
+        textfont=dict(color=NAVY),
+        cliponaxis=False,
+        hovertemplate="%{x}: %{y:,}<extra></extra>",
+    )
+)
+fig.update_layout(
+    title="Minimum Years of Experience Requested", showlegend=False
+)
+fig.update_xaxes(showgrid=False, title="Minimum experience requested")
+fig.update_yaxes(
+    title="Number of postings", range=[0, experience_counts.max() * 1.2]
+)
+plot_theme.save(fig, "experience_distribution")
+
+# ------------------------------------------------------------
 # Data dictionary
 # ------------------------------------------------------------
 
@@ -252,7 +298,7 @@ dictionary = pd.DataFrame(
 dictionary.to_csv(DICTIONARY_PATH, index=False)
 
 print(f"Loaded {total_postings} postings.")
-print(f"Created six figures in: {FIGURE_DIR}")
+print(f"Created seven figures in: {FIGURE_DIR}")
 print(f"Created data dictionary: {DICTIONARY_PATH}")
 print(f"Postings with usable salary: {len(salary)}")
 print(f"Median salary midpoint: ${salary_median:,.2f}")
