@@ -2,6 +2,7 @@
 title: "Data Preparation"
 subtitle: "Filtering and Cleaning the Career Market Panel"
 bibliography: references.bib
+csl: csl/econometrica.csl
 ---
 
 ```{python}

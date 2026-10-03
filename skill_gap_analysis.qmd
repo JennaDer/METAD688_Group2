@@ -2,6 +2,7 @@
 title: "Skill-Gap Analysis"
 subtitle: "Team Skills Compared With Analytics Job Postings in NAICS 5415"
 bibliography: references.bib
+csl: csl/econometrica.csl
 toc: true
 execute:
   echo: true

@@ -2,6 +2,7 @@
 title: "Project Foundation"
 subtitle: "Product Framing and Industry Scope"
 bibliography: references.bib
+csl: csl/econometrica.csl
 ---
 
 ## Project at a Glance
@@ -24,7 +25,6 @@ This page defines the foundation of our career-evaluation product. It explains w
 ## 1. Career Pathway
 
 <!-- SECTION OWNER: Entire team -->
-<!-- INSTRUCTIONS: Select one career pathway related to analytics, business intelligence, data science, machine learning, or data engineering. -->
 
 **Selected career pathway:** Data Analytics
 
@@ -34,7 +34,6 @@ Data Analytics was selected because it represents a broad and practical career p
 ## 2. Industry Selection
 
 <!-- SECTION OWNER: Jenna -->
-<!-- INSTRUCTIONS: Explain why NAICS 5415 is relevant to the selected analytics career pathway. -->
 
 **Selected industry:** Computer Systems Design and Related Services
 **NAICS code:** 5415
@@ -50,7 +49,6 @@ Analytics professionals in this industry support areas such as business intellig
 ## 3. Target User
 
 <!-- SECTION OWNER: Mariam  -->
-<!-- INSTRUCTIONS: Describe the type of student or job seeker who would use this career-evaluation product. -->
 
 ### User Profile
 
@@ -63,7 +61,6 @@ Before applying for analytics positions in Computer Systems Design and Related S
 ## 4. Product Question
 
 <!-- SECTION OWNER: Entire team -->
-<!-- INSTRUCTIONS: Agree on one primary product question and supporting analytical questions. -->
 
 ### Primary Question
 
@@ -80,7 +77,6 @@ Before applying for analytics positions in Computer Systems Design and Related S
 ## 5. Project Rationale
 
 <!-- SECTION OWNER: Mariam -->
-<!-- INSTRUCTIONS: Explain the problem, why it matters, and how the finished product will help its intended user. -->
 
 ### Problem Statement
 
@@ -116,7 +112,7 @@ The finished product will provide job seekers with the insights and information 
 
 ## 7. Expected Dataset Fields
 
-<!-- SECTION OWNER: Sebastian -->
+<!-- SECTION OWNER: Juan -->
 
 The table below lists the main fields used in the project and what each field supports.
 
@@ -141,7 +137,7 @@ The original NAICS 3254 industry scope produced too few relevant analytics posti
 
 ## 8. What We Expect to Explore
 
-<!-- SECTION OWNER: Sebastian -->
+<!-- SECTION OWNER: Juan -->
 
 Within Computer Systems Design and Related Services, we expect analytics opportunities to span several related role types and employer contexts. Our analysis will examine how demand varies across job titles, employers, salary levels, education requirements, geographic markets, and work arrangements. We will also evaluate the skills information available in the dataset while documenting limitations in the source data rather than assuming that missing skills or experience fields represent employer preferences. These expectations will be tested against the data and revised where the evidence supports a different conclusion.
 
@@ -150,7 +146,6 @@ Within Computer Systems Design and Related Services, we expect analytics opportu
 ## 9. Project Scope and Boundaries
 
 <!-- SECTION OWNER: Jenna -->
-<!-- INSTRUCTIONS: Review and revise the included and excluded project boundaries. -->
 
 ### Included
 

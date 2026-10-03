@@ -2,6 +2,7 @@
 title: "Market Baseline"
 subtitle: "Analytics Careers in Computer Systems Design and Related Services"
 bibliography: references.bib
+csl: csl/econometrica.csl
 toc: true
 ---
 
