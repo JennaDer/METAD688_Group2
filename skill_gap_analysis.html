@@ -61,7 +61,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -148,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./eda.html"> 
-<span class="menu-text">Exploratory Analysis</span></a>
+<span class="menu-text">Market Baseline</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./skill_gap_analysis.html" aria-current="page"> 
@@ -196,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#demand-for-the-teams-skills" id="toc-demand-for-the-teams-skills" class="nav-link" data-scroll-target="#demand-for-the-teams-skills">Demand for the Team’s Skills</a></li>
   <li><a href="#demand-depends-on-the-role" id="toc-demand-depends-on-the-role" class="nav-link" data-scroll-target="#demand-depends-on-the-role">Demand Depends on the Role</a></li>
   </ul></li>
-  <li><a href="#comparing-team-skills-with-market-requirements" id="toc-comparing-team-skills-with-market-requirements" class="nav-link" data-scroll-target="#comparing-team-skills-with-market-requirements">3. Comparing Team Skills With Market Requirements</a>
+  <li><a href="#career-evaluation-logic-team-skills-against-market-requirements" id="toc-career-evaluation-logic-team-skills-against-market-requirements" class="nav-link" data-scroll-target="#career-evaluation-logic-team-skills-against-market-requirements">3. Career Evaluation Logic: Team Skills Against Market Requirements</a>
   <ul class="collapse">
   <li><a href="#where-the-team-falls-short" id="toc-where-the-team-falls-short" class="nav-link" data-scroll-target="#where-the-team-falls-short">Where the Team Falls Short</a></li>
   <li><a href="#individual-gaps" id="toc-individual-gaps" class="nav-link" data-scroll-target="#individual-gaps">Individual Gaps</a></li>
@@ -214,6 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline">4.5 Timeline</a></li>
   <li><a href="#tracking-progress" id="toc-tracking-progress" class="nav-link" data-scroll-target="#tracking-progress">4.6 Tracking Progress</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -509,7 +529,7 @@ Figure&nbsp;1: Team skill levels, sorted by team average. Darker cells show stro
 </section>
 <section id="skills-requested-in-job-postings" class="level2">
 <h2 class="anchored" data-anchor-id="skills-requested-in-job-postings">2. Skills Requested in Job Postings</h2>
-<p>We extracted skills from the <code>SKILLS_NAME</code> field. Each posting stores its skills as a list, so we count <strong>how many postings mention each skill</strong> rather than total mentions. This stops a single long posting from inflating a skill’s importance.</p>
+<p>We extracted skills from the <code>SKILLS_NAME</code> field. Each posting stores its skills as a list, so we count <strong>how many postings mention each skill</strong> rather than total mentions. This stops a single long posting from inflating a skill’s importance. Content analysis of analytics job advertisements has used the same posting-level approach to compare skill requirements across business analyst, data analyst, and data scientist roles <span class="citation" data-cites="verma2019skills">(<a href="#ref-verma2019skills" role="doc-biblioref">Verma et al. (2019)</a>)</span>.</p>
 <div id="extract-skills" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -747,8 +767,8 @@ Figure&nbsp;3: Share of postings in each role family that request each skill. Sk
 </ul>
 </section>
 </section>
-<section id="comparing-team-skills-with-market-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="comparing-team-skills-with-market-requirements">3. Comparing Team Skills With Market Requirements</h2>
+<section id="career-evaluation-logic-team-skills-against-market-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="career-evaluation-logic-team-skills-against-market-requirements">3. Career Evaluation Logic: Team Skills Against Market Requirements</h2>
 <p>Job postings list skills but not the proficiency level employers expect. To compare the two, we set a <strong>target level</strong> for each skill using a transparent rule based on how often the skill is requested across all postings:</p>
 <table class="caption-top table">
 <thead>
@@ -2044,9 +2064,17 @@ Table&nbsp;7: Skills with at least one gap, the members who have it, and the tea
 <section id="tracking-progress" class="level3">
 <h3 class="anchored" data-anchor-id="tracking-progress">4.6 Tracking Progress</h3>
 <p>At the end of each four-week phase, every member re-rates themselves in <code>data/processed/team_skills_v2.csv</code>. The tables in this section are calculated from that file, so the plan updates itself and shows which gaps have closed.</p>
-
-
 </section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-verma2019skills" class="csl-entry" role="listitem">
+<span class="smallcaps">Verma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova</span>. (2019): <span>“<a href="https://doi.org/10.1080/08832323.2018.1520685">An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements</a>,”</span> <em>Journal of Education for Business</em>, 94, 243–50.
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -2123,7 +2151,7 @@ Table&nbsp;7: Skills with at least one gap, the members who have it, and the tea
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/JennaDer\.github\.io\/METAD688_Group2\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

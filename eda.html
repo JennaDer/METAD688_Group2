@@ -26,7 +26,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -110,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./eda.html" aria-current="page"> 
-<span class="menu-text">Exploratory Analysis</span></a>
+<span class="menu-text">Market Baseline</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./skill_gap_analysis.html"> 
@@ -167,6 +186,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#experience-and-education" id="toc-experience-and-education" class="nav-link" data-scroll-target="#experience-and-education">Experience and Education</a>
   <ul class="collapse">
+  <li><a href="#experience-distribution" id="toc-experience-distribution" class="nav-link" data-scroll-target="#experience-distribution">Experience Distribution</a></li>
   <li><a href="#education-distribution" id="toc-education-distribution" class="nav-link" data-scroll-target="#education-distribution">Education Distribution</a></li>
   </ul></li>
   <li><a href="#remote-hybrid-and-on-site-work" id="toc-remote-hybrid-and-on-site-work" class="nav-link" data-scroll-target="#remote-hybrid-and-on-site-work">Remote, Hybrid, and On-site Work</a></li>
@@ -178,6 +198,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#job-market-snapshot" id="toc-job-market-snapshot" class="nav-link" data-scroll-target="#job-market-snapshot">Job Market Snapshot</a></li>
   <li><a href="#reproducing-the-results" id="toc-reproducing-the-results" class="nav-link" data-scroll-target="#reproducing-the-results">Reproducing the Results</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -299,7 +320,7 @@ Figure&nbsp;1: Job postings by occupation group.
 </tbody>
 </table>
 <p>Data Scientists make up the largest group, followed by Database Architects. Together, these two groups account for 72.6% of the dataset.</p>
-<p>The occupation names come from the O*NET classifications in the source data. As a result, some positions with titles such as Data Analyst or Data Engineer may be included under a broader occupation group. Job seekers may want to search across several related titles instead of searching only for “Data Analyst.”</p>
+<p>The occupation names come from the O*NET classifications in the source data <span class="citation" data-cites="onet2026datascientists">(<a href="#ref-onet2026datascientists" role="doc-biblioref">O*NET OnLine (2026)</a>)</span>. As a result, some positions with titles such as Data Analyst or Data Engineer may be included under a broader occupation group. Job seekers may want to search across several related titles instead of searching only for “Data Analyst.”</p>
 </section>
 </section>
 <section id="salary-distribution" class="level2">
@@ -449,6 +470,57 @@ Figure&nbsp;4: States with the most identified job postings.
 <section id="experience-and-education" class="level2">
 <h2 class="anchored" data-anchor-id="experience-and-education">Experience and Education</h2>
 <p>Minimum experience information is available for 520 of the 1,790 postings (29.1%). Among postings with usable minimum-experience information, the median minimum requirement is 5 years.</p>
+<div id="fig-experience" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Bar chart showing minimum years of experience requested across five bands, with five to seven years the largest group.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-experience-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/experience_distribution.png" class="img-fluid figure-img" alt="Bar chart showing minimum years of experience requested across five bands, with five to seven years the largest group.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-experience-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Minimum years of experience requested, among postings that state a requirement.
+</figcaption>
+</figure>
+</div>
+<section id="experience-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="experience-distribution">Experience Distribution</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Minimum Experience</th>
+<th style="text-align: right;">Postings</th>
+<th style="text-align: right;">Share of Postings with Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1-2 years</td>
+<td style="text-align: right;">102</td>
+<td style="text-align: right;">19.6%</td>
+</tr>
+<tr class="even">
+<td>3-4 years</td>
+<td style="text-align: right;">137</td>
+<td style="text-align: right;">26.3%</td>
+</tr>
+<tr class="odd">
+<td>5-7 years</td>
+<td style="text-align: right;">188</td>
+<td style="text-align: right;">36.2%</td>
+</tr>
+<tr class="even">
+<td>8-10 years</td>
+<td style="text-align: right;">73</td>
+<td style="text-align: right;">14.0%</td>
+</tr>
+<tr class="odd">
+<td>More than 10 years</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">3.8%</td>
+</tr>
+</tbody>
+</table>
+<p>The largest group asks for five to seven years. Only 102 of the 520 postings with usable experience data request two years or less, which is 19.6% of that subset. For a student or early-career candidate, this suggests that most advertised roles in this industry are not entry-level, and that the postings open to less experience are a small share of the market.</p>
+<p>Shares in this table are calculated against the 520 postings that state a requirement, not against the full dataset.</p>
+</section>
 <section id="education-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="education-distribution">Education Distribution</h3>
 <table class="caption-top table">
@@ -517,7 +589,7 @@ Figure&nbsp;4: States with the most identified job postings.
 <img src="figures/work_arrangement.png" class="img-fluid figure-img" alt="Bar chart comparing remote, hybrid, on-site, and unknown work arrangements.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-work-arrangement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Job postings by work arrangement.
+Figure&nbsp;6: Job postings by work arrangement.
 </figcaption>
 </figure>
 </div>
@@ -563,7 +635,7 @@ Figure&nbsp;5: Job postings by work arrangement.
 <img src="figures/top_employers.png" class="img-fluid figure-img" alt="Horizontal bar chart showing the employers with the most postings.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Employer labels with the most job postings.
+Figure&nbsp;7: Employer labels with the most job postings.
 </figcaption>
 </figure>
 </div>
@@ -656,6 +728,14 @@ Figure&nbsp;6: Employer labels with the most job postings.
 <h2 class="anchored" data-anchor-id="reproducing-the-results">Reproducing the Results</h2>
 <p>The figures and data dictionary were created from <code>data/processed/career_market_panel.csv</code> by <code>scripts/build_market_baseline.py</code>. All charts use the team’s shared Plotly theme (<code>scripts/plot_theme.py</code>) and are saved as static images in <code>figures/</code> so the site renders reliably on GitHub Pages.</p>
 <p>To rebuild them, run <code>python scripts/build_market_baseline.py</code> from the repository root.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-onet2026datascientists" class="csl-entry" role="listitem">
+<span class="smallcaps">O*NET OnLine</span>. (2026): <span>“Data Scientists, 15-2051.00,”</span><a href="https://www.onetonline.org/link/summary/15-2051.00" class="uri">https://www.onetonline.org/link/summary/15-2051.00</a>.
+</div>
+</div>
 
 
 </section>
@@ -734,7 +814,7 @@ Figure&nbsp;6: Employer labels with the most job postings.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/JennaDer\.github\.io\/METAD688_Group2\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

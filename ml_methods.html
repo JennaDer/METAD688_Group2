@@ -26,10 +26,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -74,6 +128,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -110,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./eda.html"> 
-<span class="menu-text">Exploratory Analysis</span></a>
+<span class="menu-text">Market Baseline</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./skill_gap_analysis.html"> 
@@ -142,8 +199,25 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#what-we-modeled" id="toc-what-we-modeled" class="nav-link" data-scroll-target="#what-we-modeled">What We Modeled</a></li>
+  <li><a href="#why-this-matters-for-a-job-seeker" id="toc-why-this-matters-for-a-job-seeker" class="nav-link" data-scroll-target="#why-this-matters-for-a-job-seeker">Why This Matters for a Job Seeker</a></li>
+  <li><a href="#variables-used" id="toc-variables-used" class="nav-link" data-scroll-target="#variables-used">Variables Used</a></li>
+  <li><a href="#how-we-evaluated-performance" id="toc-how-we-evaluated-performance" class="nav-link" data-scroll-target="#how-we-evaluated-performance">How We Evaluated Performance</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#what-separates-higher-paying-postings" id="toc-what-separates-higher-paying-postings" class="nav-link" data-scroll-target="#what-separates-higher-paying-postings">What Separates Higher-Paying Postings</a></li>
+  <li><a href="#revisiting-our-own-skill-targets" id="toc-revisiting-our-own-skill-targets" class="nav-link" data-scroll-target="#revisiting-our-own-skill-targets">Revisiting Our Own Skill Targets</a></li>
+  <li><a href="#what-this-means-in-practical-career-terms" id="toc-what-this-means-in-practical-career-terms" class="nav-link" data-scroll-target="#what-this-means-in-practical-career-terms">What This Means in Practical Career Terms</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#reproducing-the-results" id="toc-reproducing-the-results" class="nav-link" data-scroll-target="#reproducing-the-results">Reproducing the Results</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -151,6 +225,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Predictive Modeling</h1>
+<p class="subtitle lead">Which Postings Pay Above the Median, and What Separates Them</p>
 </div>
 
 
@@ -167,9 +242,406 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This page will be completed in a later module.</em></p>
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>The earlier pages describe the market. This page moves from describing it to predicting it. The question is whether the information a posting makes public, its role, location, work arrangement, education level and listed skills, is enough to tell whether that posting pays above or below the market median.</p>
+</section>
+<section id="what-we-modeled" class="level2">
+<h2 class="anchored" data-anchor-id="what-we-modeled">What We Modeled</h2>
+<p>We built a binary classifier. The target is whether a posting’s advertised salary midpoint sits above the median of all postings that report usable pay, which is $151,475.</p>
+<p>Splitting at the median rather than at a round number keeps the two classes almost the same size, 295 postings above and 296 at or below. That matters for reading the results. A model that guessed the larger class every time would score about 50 percent, so anything above that is real signal rather than an artifact of unbalanced classes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why classification rather than salary regression
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Predicting an exact salary from 591 postings would produce wide error bands that are hard to act on. A job seeker deciding whether to pursue a posting benefits more from a reliable above or below signal, together with the factors driving it, than from a point estimate carrying a $40,000 margin.</p>
+</div>
+</div>
+</section>
+<section id="why-this-matters-for-a-job-seeker" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters-for-a-job-seeker">Why This Matters for a Job Seeker</h2>
+<p>The <a href="./skill_gap_analysis.html">Skill Gap Analysis</a> page shows which skills appear most often in postings, following the posting-level counting approach used in content analyses of analytics job advertisements <span class="citation" data-cites="verma2019skills">(<a href="#ref-verma2019skills" role="doc-biblioref">Verma et al. (2019)</a>)</span>. Frequency alone does not tell a job seeker where to spend study time, because a skill can be requested constantly and still be present in roles across the whole pay range. What this page adds is the direction and size of each factor’s association with pay, which turns a list of in-demand skills into a ranked set of choices.</p>
+</section>
+<section id="variables-used" class="level2">
+<h2 class="anchored" data-anchor-id="variables-used">Variables Used</h2>
+<p>The model uses 55 features built from 591 postings:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Block</th>
+<th>Treatment</th>
+<th>Levels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Role family</td>
+<td>One-hot</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Work arrangement</td>
+<td>One-hot, Unknown kept as a category</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>State</td>
+<td>Six most frequent states, plus Unspecified and Other</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>Education level</td>
+<td>One-hot, missing kept as a category</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>Listed skills</td>
+<td>Binary indicator per skill on at least 5 percent of postings</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+<p>Three fields were deliberately left out. Minimum years of experience is recorded on only 154 of these postings, so including it as a numeric variable would have meant discarding about three quarters of the sample. The staffing agency flag has 13 positive cases, too few to estimate. Occupation group was dropped because it is derived from the job title in the same way as role family and the two would carry the same information twice.</p>
+<p>Work arrangement and state both keep their missing categories rather than dropping those rows. Work arrangement is unknown for 278 of these postings and state is unspecified for 164, so dropping them would have cost roughly half the sample. Treating missing as its own category is also honest about the data: whether an employer publishes this information may itself carry signal.</p>
+</section>
+<section id="how-we-evaluated-performance" class="level2">
+<h2 class="anchored" data-anchor-id="how-we-evaluated-performance">How We Evaluated Performance</h2>
+<p>The sample was split 75 / 25 into 443 training and 148 test postings, stratified so both halves keep the same class balance. Models were compared by five-fold cross-validation inside the training set. The test set was scored once, at the end, after the choice of model was already fixed.</p>
+<p>This sequence matters at this sample size. With 591 rows it is easy to adjust a model repeatedly against the test set and report a number that will not survive new data.</p>
+<p>Four specifications were fitted, two of them as reference points rather than as candidates:</p>
+<ol type="1">
+<li><strong>Majority-class baseline.</strong> Predicts the larger class every time. Sets the floor.</li>
+<li><strong>Logistic regression on role family only.</strong> Tests whether anything beyond the job title helps.</li>
+<li><strong>Logistic regression on all features.</strong> L2 regularized, features standardized.</li>
+<li><strong>Random forest on all features.</strong> 500 trees, minimum three samples per leaf.</li>
+</ol>
+<div class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>display <span class="op">=</span> metrics.copy()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>display.columns <span class="op">=</span> [</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Model"</span>, <span class="st">"Features"</span>, <span class="st">"CV accuracy"</span>, <span class="st">"CV sd"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Test accuracy"</span>, <span class="st">"Precision"</span>, <span class="st">"Recall"</span>, <span class="st">"F1"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>display</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-model-metrics" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-model-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Model performance. Cross-validation accuracy is measured inside the training set; test figures come from the single held-out evaluation.
+</figcaption>
+<div aria-describedby="tbl-model-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
 
 
+<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Model</th>
+<th data-quarto-table-cell-role="th">Features</th>
+<th data-quarto-table-cell-role="th">CV accuracy</th>
+<th data-quarto-table-cell-role="th">CV sd</th>
+<th data-quarto-table-cell-role="th">Test accuracy</th>
+<th data-quarto-table-cell-role="th">Precision</th>
+<th data-quarto-table-cell-role="th">Recall</th>
+<th data-quarto-table-cell-role="th">F1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Majority-class baseline</td>
+<td>55</td>
+<td>0.5011</td>
+<td>0.0042</td>
+<td>0.5000</td>
+<td>0.0000</td>
+<td>0.0000</td>
+<td>0.0000</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Logistic, role family only</td>
+<td>5</td>
+<td>0.6883</td>
+<td>0.0339</td>
+<td>0.5946</td>
+<td>0.5603</td>
+<td>0.8784</td>
+<td>0.6842</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Logistic, all features</td>
+<td>55</td>
+<td>0.7336</td>
+<td>0.0340</td>
+<td>0.7230</td>
+<td>0.7143</td>
+<td>0.7432</td>
+<td>0.7285</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Random forest, all features</td>
+<td>55</td>
+<td>0.8171</td>
+<td>0.0372</td>
+<td>0.7838</td>
+<td>0.7763</td>
+<td>0.7973</td>
+<td>0.7867</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>The baseline lands on 50.0%, which confirms the balanced design. Role family alone reaches 59.5% on the test set. Adding location, education, work arrangement and skills lifts the logistic model to 72.3%, and the random forest reaches 78.4%.</p>
+<p>The gap between role-family-only and the full feature set is the result that matters most for this product. Job title alone is a weak predictor of pay. The rest of what a posting makes public carries a substantial amount of additional information.</p>
+<div id="fig-confusion" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Confusion matrix showing correct and incorrect classifications for the logistic model on the held-out test set.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-confusion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/model_confusion_matrix.png" class="img-fluid figure-img" alt="Confusion matrix showing correct and incorrect classifications for the logistic model on the held-out test set.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-confusion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Predicted against actual salary class for the logistic model.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>How precisely to read these numbers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The test set holds 148 postings, so accuracy carries a standard error near four percentage points. Differences of two or three points between models should not be treated as meaningful. The forest’s advantage over the logistic model is larger than that, but the ranking of two closely spaced models could change on a different split.</p>
+<p>The role-family-only specification shows 68.8% in cross-validation against 59.5% on test. That gap is about two standard errors and is most likely sampling variation, but it is a reason not to build an argument on that row alone.</p>
+</div>
+</div>
+</section>
+<section id="what-separates-higher-paying-postings" class="level2">
+<h2 class="anchored" data-anchor-id="what-separates-higher-paying-postings">What Separates Higher-Paying Postings</h2>
+<p>The logistic model is reported alongside the forest because its coefficients are readable. Each one is the change in log-odds of an above-median salary for a one standard deviation change in that feature, holding the others fixed. Positive values push toward above-median pay and negative values away from it.</p>
+<div id="fig-features" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal bar chart of the fifteen largest logistic coefficients, with positive and negative values distinguished by color.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/model_top_features.png" class="img-fluid figure-img" alt="Horizontal bar chart of the fifteen largest logistic coefficients, with positive and negative values distinguished by color.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Features most strongly associated with an above-median salary.
+</figcaption>
+</figure>
+</div>
+<div class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>top <span class="op">=</span> coefficients.head(<span class="dv">10</span>)[[<span class="st">"feature"</span>, <span class="st">"logistic_coefficient"</span>, <span class="st">"forest_importance"</span>]].copy()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>top.columns <span class="op">=</span> [<span class="st">"Feature"</span>, <span class="st">"Logistic coefficient"</span>, <span class="st">"Forest importance"</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>top.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-coefficients" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-coefficients-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Ten strongest features by absolute logistic coefficient, with the random forest’s importance for the same feature.
+</figcaption>
+<div aria-describedby="tbl-coefficients-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Feature</th>
+<th data-quarto-table-cell-role="th">Logistic coefficient</th>
+<th data-quarto-table-cell-role="th">Forest importance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>skill: Statistical Modeling</td>
+<td>1.109191</td>
+<td>0.024191</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>role: Business Analyst</td>
+<td>-0.860149</td>
+<td>0.056789</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>state: California</td>
+<td>0.745376</td>
+<td>0.104603</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>skill: Power BI</td>
+<td>-0.665396</td>
+<td>0.019781</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>skill: PostgreSQL</td>
+<td>-0.632117</td>
+<td>0.014308</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>role: Data Scientist</td>
+<td>0.546338</td>
+<td>0.064809</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>state: Maryland</td>
+<td>-0.449149</td>
+<td>0.009304</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>state: Other state</td>
+<td>-0.433772</td>
+<td>0.052921</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>skill: Business Intelligence</td>
+<td>-0.431863</td>
+<td>0.003800</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>role: Business Intelligence</td>
+<td>0.416418</td>
+<td>0.004479</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The two models do not agree on what matters, and the disagreement is informative. The forest places its weight on state and role family, which are broad structural factors. The logistic model gives its largest coefficients to individual skills. A reasonable reading is that structure sets the general pay level while specific skills shift a posting within it.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>A finding worth stating plainly
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Three of the strongest skill coefficients cut against the assumption that the most requested skills are the best paid. Checked against raw medians inside this sample:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Skill</th>
+<th style="text-align: right;">Postings</th>
+<th style="text-align: right;">Median with</th>
+<th style="text-align: right;">Median without</th>
+<th style="text-align: right;">Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Statistical Modeling</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">$211,200</td>
+<td style="text-align: right;">$148,100</td>
+<td style="text-align: right;">+$63,100</td>
+</tr>
+<tr class="even">
+<td>Power BI</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">$122,500</td>
+<td style="text-align: right;">$155,725</td>
+<td style="text-align: right;">-$33,225</td>
+</tr>
+<tr class="odd">
+<td>PostgreSQL</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">$123,760</td>
+<td style="text-align: right;">$155,000</td>
+<td style="text-align: right;">-$31,240</td>
+</tr>
+</tbody>
+</table>
+<p>Power BI is not standing in for business analyst roles. Business Analyst makes up 14 percent of Power BI postings against 15 percent of the sample overall, so the negative coefficient is not absorbing a role effect.</p>
+</div>
+</div>
+</section>
+<section id="revisiting-our-own-skill-targets" class="level2">
+<h2 class="anchored" data-anchor-id="revisiting-our-own-skill-targets">Revisiting Our Own Skill Targets</h2>
+<p>This result is uncomfortable for the plan on the <a href="./skill_gap_analysis.html">Skill Gap Analysis</a> page. Section 4 sets a target level for every skill from how often it appears in postings, so a skill in 20 percent or more gets a target of 4 and anything below 10 percent gets a 2. That rule treats frequency as a proxy for value. The model says the two come apart.</p>
+<p>Statistical Modeling appears in 6.4 percent of postings, which puts it near the bottom of our target list, and it carries the largest positive coefficient in the model. Power BI sits higher on frequency at 11.2 percent and is associated with pay roughly $33,000 below the rest of the sample. A plan built on counts alone would have us study the second and skip the first.</p>
+<p>For my own ratings the gap is direct. I rated myself 5 on Power BI and 2 on Statistical Modeling, which is close to the inverse of what this slice of the market pays for.</p>
+<p>I would keep frequency as the measure of how likely a skill is to get an interview, and add the pay association as a separate measure of where that skill leads. The two answer different questions, and the plan as written only asks one of them.</p>
+</section>
+<section id="what-this-means-in-practical-career-terms" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-means-in-practical-career-terms">What This Means in Practical Career Terms</h2>
+<p>For a student targeting analytics roles in this industry, three things follow from the model.</p>
+<p><strong>Job title is a weak signal.</strong> Role family alone classified pay no better than 59.5%. Searching by title, or assuming one title pays better than another, leaves out most of what the market is actually pricing.</p>
+<p><strong>Location remains a strong structural factor.</strong> California carries the largest positive coefficient of any non-skill feature, and the highest forest importance of any feature in the model. For a candidate who cannot relocate, this is a constraint worth naming rather than a skill to acquire.</p>
+<p><strong>Not all in-demand skills are priced alike.</strong> The skills that appear most often in postings are not the skills most associated with higher pay. A study plan built only on frequency counts will point at the wrong things.</p>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<ul>
+<li>Salary is advertised on 591 of 1790 postings, or about 33 percent. Everything here describes employers who publish pay, which may not resemble those who do not.</li>
+<li>The skill findings rest on small subgroups. Statistical Modeling appears on 33 postings and Power BI on 59, so those estimates are imprecise.</li>
+<li>These are associations within one industry over one twelve-month window. Nothing here establishes that acquiring a skill would change an individual’s pay.</li>
+<li>Skills are recorded as a list per posting with no indication of whether a skill is required or merely preferred.</li>
+<li>The two models disagree on feature ranking, so the ordering of individual features should be read as indicative rather than settled.</li>
+</ul>
+</section>
+<section id="reproducing-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="reproducing-the-results">Reproducing the Results</h2>
+<p>The models, metrics and figures are produced by <code>scripts/build_models.py</code>, which reads <code>data/processed/career_market_panel.csv</code> and writes <code>data/processed/model_metrics.csv</code>, <code>data/processed/model_coefficients.csv</code> and two static PNGs to <code>figures/</code>. The random seed is fixed at 688, so the figures quoted on this page reproduce exactly.</p>
+<p>To rebuild them, run <code>python scripts/build_models.py</code> from the repository root.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-verma2019skills" class="csl-entry" role="listitem">
+<span class="smallcaps">Verma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova</span>. (2019): <span>“<a href="https://doi.org/10.1080/08832323.2018.1520685">An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements</a>,”</span> <em>Journal of Education for Business</em>, 94, 243–50.
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -245,7 +717,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/JennaDer\.github\.io\/METAD688_Group2\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

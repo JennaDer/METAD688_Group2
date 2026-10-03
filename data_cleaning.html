@@ -61,7 +61,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -148,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./eda.html"> 
-<span class="menu-text">Exploratory Analysis</span></a>
+<span class="menu-text">Market Baseline</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./skill_gap_analysis.html"> 
@@ -209,6 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#missing-value-summary" id="toc-missing-value-summary" class="nav-link" data-scroll-target="#missing-value-summary">Missing-Value Summary</a></li>
   <li><a href="#analytical-limitations" id="toc-analytical-limitations" class="nav-link" data-scroll-target="#analytical-limitations">Analytical Limitations</a></li>
   <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -307,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="industry-filter" class="level2">
 <h2 class="anchored" data-anchor-id="industry-filter">Industry Filter</h2>
-<p>We filtered on <code>NAICS_2022_4</code>, the four-digit 2022 NAICS code attached to each posting, keeping the 19,886 postings coded 5415. The extract also carries two-, three-, five-, and six-digit variants. We used the four-digit field because the assignment specifies four- or six-digit codes, and we take the industry label from <code>NAICS_2022_6_NAME</code>.</p>
+<p>We filtered on <code>NAICS_2022_4</code>, the four-digit 2022 NAICS code attached to each posting <span class="citation" data-cites="census2022naics5415">(<a href="#ref-census2022naics5415" role="doc-biblioref">U.S. Census Bureau (2022)</a>)</span>, keeping the 19,886 postings coded 5415. The extract also carries two-, three-, five-, and six-digit variants. We used the four-digit field because the assignment specifies four- or six-digit codes, and we take the industry label from <code>NAICS_2022_6_NAME</code>.</p>
 </section>
 <section id="career-pathway-filter" class="level2">
 <h2 class="anchored" data-anchor-id="career-pathway-filter">Career-Pathway Filter</h2>
@@ -1297,6 +1317,14 @@ Table&nbsp;9
 </div>
 <p>To rebuild the panel from source, place the 21 Parquet files of the v2 extract in <code>data/MET_CareerCompass_2026_v2/</code> and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/build_panel.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-census2022naics5415" class="csl-entry" role="listitem">
+<span class="smallcaps">U.S. Census Bureau</span>. (2022): <span>“2022 NAICS Definition: Computer Systems Design and Related Services (5415),”</span><a href="https://www.census.gov/naics/?input=5415&amp;year=2022&amp;details=5415" class="uri">https://www.census.gov/naics/?input=5415&amp;year=2022&amp;details=5415</a>.
+</div>
+</div>
 
 
 </section>
@@ -1375,7 +1403,7 @@ Table&nbsp;9
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/JennaDer\.github\.io\/METAD688_Group2\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
