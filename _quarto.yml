@@ -23,6 +23,8 @@ website:
         text: Predictive Modeling
       - href: career_plan.qmd
         text: Career Strategy
+      - href: about.qmd
+        text: About
 
     right:
       - icon: github

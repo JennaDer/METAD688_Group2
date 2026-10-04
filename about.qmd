@@ -1,5 +1,90 @@
 ---
 title: "About"
+subtitle: "The Project, the Team, and Who Did What"
+toc: true
 ---
 
-About this site
+## About This Site
+
+This site is a career evaluation product built for MET AD 688, Big Data and
+Cloud Analytics for Business, at Boston University Metropolitan College. It
+helps a student or early-career professional judge the job market for Data
+Analytics roles in Computer Systems Design and Related Services (NAICS 5415).
+
+The product answers one question: how can an aspiring analytics professional
+evaluate career opportunities in this industry and decide which skills,
+qualifications, and experiences to put first?
+
+| | |
+|---|---|
+| **Course** | MET AD 688, Big Data and Cloud Analytics for Business |
+| **Team** | Group 2 |
+| **Industry** | Computer Systems Design and Related Services (NAICS 5415) |
+| **Career pathway** | Data Analytics |
+| **Data** | MET CareerCompass 2026 v2 job-postings extract |
+| **Analytical sample** | 1,790 analytics postings, September 2025 to September 2026 |
+
+## How to Read the Site
+
+The pages follow the order of the analysis.
+
+| Page | What it covers |
+|---|---|
+| [Project Overview](introduction.qmd) | Target user, product question, industry choice, and scope |
+| [Data Preparation](data_cleaning.qmd) | How 504,208 raw postings were filtered and cleaned to the 1,790 used here |
+| [Market Baseline](eda.qmd) | Demand, salary, location, experience, education, and work arrangement |
+| [Skill Gap Analysis](skill_gap_analysis.qmd) | Skills employers request compared with the team's own ratings, and an improvement plan |
+| [Predictive Modeling](ml_methods.qmd) | A classifier for above-median pay and the factors that separate higher-paying postings |
+| [Career Strategy](career_plan.qmd) | Final recommendations for the target user |
+
+## The Team
+
+The three of us are also the product's test users. Each member has a different
+target role, and the [Skill Gap Analysis](skill_gap_analysis.qmd) page measures
+our own skills against the market.
+
+| Member | Target role | Background |
+|---|---|---|
+| Jenna DeRosa | Business Intelligence / Business Analyst | Strong Excel, BI, and communication skills; some Power BI; beginner in coding |
+| Mariam El Jouzou | Business Analyst | Strong business requirements and analysis skills; beginner in coding |
+| Juan Franco | Data Analyst, moving toward Data Scientist | Expert in Excel, Power BI, Tableau, and data analysis; intermediate in SQL and Python |
+
+## Team Contributions
+
+The table shows who led each part of the project.
+
+| Part of the project | Lead |
+|---|---|
+| Career pathway and product question | Entire team |
+| Industry selection and project scope | Jenna |
+| Target user and project rationale | Mariam |
+| Expected dataset fields and exploration plan | Juan |
+| Data preparation and panel build | Mariam |
+| Market baseline analysis | Jenna |
+| Skill-gap analysis and career evaluation logic | Jenna |
+| Improvement plan | Juan |
+| Home page and site design | Mariam |
+| Predictive modeling | Juan |
+| Career strategy and final recommendations | Jenna |
+| About page and team contributions | Jenna |
+| Final report and weekly standup document | Mariam |
+
+## Data and Methods
+
+The source is the MET CareerCompass 2026 v2 job-postings extract provided for
+the course. The analytical panel keeps analytics-related postings in NAICS 5415
+from the most recent twelve months. The filtering steps and their counts are
+documented on the [Data Preparation](data_cleaning.qmd) page.
+
+The site is built with Quarto and Python. The cleaned panel, the scripts that
+build it, and the model outputs are all stored in the repository, so every
+figure on the site can be reproduced.
+
+The results describe advertised job postings in one industry over one year.
+They are not a complete picture of the U.S. analytics job market, and each page
+lists its own limitations.
+
+## Repository
+
+The code, data, and page sources are on GitHub:
+[JennaDer/METAD688_Group2](https://github.com/JennaDer/METAD688_Group2).
