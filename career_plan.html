@@ -26,10 +26,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -74,6 +128,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -124,6 +181,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./career_plan.html" aria-current="page"> 
 <span class="menu-text">Career Strategy</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -142,8 +203,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#how-the-roles-compare" id="toc-how-the-roles-compare" class="nav-link" data-scroll-target="#how-the-roles-compare">How the Roles Compare</a></li>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations">Recommendations</a>
+  <ul class="collapse">
+  <li><a href="#enter-through-business-analyst-or-data-analyst-roles" id="toc-enter-through-business-analyst-or-data-analyst-roles" class="nav-link" data-scroll-target="#enter-through-business-analyst-or-data-analyst-roles">1. Enter through Business Analyst or Data Analyst roles</a></li>
+  <li><a href="#learn-sql-first-then-python" id="toc-learn-sql-first-then-python" class="nav-link" data-scroll-target="#learn-sql-first-then-python">2. Learn SQL first, then Python</a></li>
+  <li><a href="#add-statistical-modeling-as-the-skill-for-moving-up-in-pay" id="toc-add-statistical-modeling-as-the-skill-for-moving-up-in-pay" class="nav-link" data-scroll-target="#add-statistical-modeling-as-the-skill-for-moving-up-in-pay">3. Add statistical modeling as the skill for moving up in pay</a></li>
+  <li><a href="#search-by-skills-and-across-titles-not-by-one-job-title" id="toc-search-by-skills-and-across-titles-not-by-one-job-title" class="nav-link" data-scroll-target="#search-by-skills-and-across-titles-not-by-one-job-title">4. Search by skills and across titles, not by one job title</a></li>
+  <li><a href="#treat-location-as-a-pay-factor-and-use-remote-and-hybrid-roles" id="toc-treat-location-as-a-pay-factor-and-use-remote-and-hybrid-roles" class="nav-link" data-scroll-target="#treat-location-as-a-pay-factor-and-use-remote-and-hybrid-roles">5. Treat location as a pay factor, and use remote and hybrid roles</a></li>
+  </ul></li>
+  <li><a href="#applying-the-strategy-to-our-team" id="toc-applying-the-strategy-to-our-team" class="nav-link" data-scroll-target="#applying-the-strategy-to-our-team">Applying the Strategy to Our Team</a></li>
+  <li><a href="#action-plan" id="toc-action-plan" class="nav-link" data-scroll-target="#action-plan">Action Plan</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -151,6 +231,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Career Strategy</h1>
+<p class="subtitle lead">Final Recommendations for Analytics Careers in Computer Systems Design</p>
 </div>
 
 
@@ -167,9 +248,384 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This page will be completed in a later module.</em></p>
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>The earlier pages describe the market, measure our skills against it, and model what separates higher-paying postings. This page turns that evidence into recommendations. It answers the product question set on the <a href="./introduction.html">Project Overview</a> page: how an aspiring analytics professional should evaluate opportunities in Computer Systems Design and Related Services (NAICS 5415), and which skills and experiences to put first.</p>
+<p>The recommendations are written for the target user: a student, recent graduate, or early-career professional. Each one names the evidence behind it and the page where that evidence is shown.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The Short Version
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Enter through Business Analyst or Data Analyst roles.</li>
+<li>Learn SQL first, then Python.</li>
+<li>Add statistical modeling as the skill for moving up in pay.</li>
+<li>Search by skills and across titles, not by one job title.</li>
+<li>Treat location as a pay factor, and use remote and hybrid roles if relocating is not an option.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="how-the-roles-compare" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-roles-compare">How the Roles Compare</h2>
+<p>A job seeker choosing a target role is weighing three things: how many openings there are, what they pay, and whether an early-career candidate can get one. The table puts those side by side for the five role families in our 1,790 postings.</p>
+<div class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Postings"</span>: roles[<span class="st">"Postings"</span>].<span class="bu">map</span>(<span class="st">"</span><span class="sc">{:,}</span><span class="st">"</span>.<span class="bu">format</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Median pay"</span>: roles[<span class="st">"Median pay"</span>].<span class="bu">map</span>(money),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Median years asked"</span>: roles[<span class="st">"Median years asked"</span>].<span class="bu">map</span>(<span class="st">"</span><span class="sc">{:.0f}</span><span class="st">"</span>.<span class="bu">format</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Asks 2 years or less"</span>: roles[<span class="st">"Entry share"</span>].<span class="bu">map</span>(pct),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Remote or hybrid"</span>: roles[<span class="st">"Remote or hybrid"</span>].<span class="bu">map</span>(pct),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Postings with pay"</span>: roles[<span class="st">"Postings with pay"</span>],</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Postings with experience"</span>: roles[<span class="st">"Postings with experience"</span>],</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>table.index.name <span class="op">=</span> <span class="st">"Role family"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-role-comparison" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-role-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Demand, pay, accessibility, and flexibility by role family. Pay and experience are calculated only from the postings that state them.
+</figcaption>
+<div aria-describedby="tbl-role-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
 
 
+<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Postings</th>
+<th data-quarto-table-cell-role="th">Median pay</th>
+<th data-quarto-table-cell-role="th">Median years asked</th>
+<th data-quarto-table-cell-role="th">Asks 2 years or less</th>
+<th data-quarto-table-cell-role="th">Remote or hybrid</th>
+<th data-quarto-table-cell-role="th">Postings with pay</th>
+<th data-quarto-table-cell-role="th">Postings with experience</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Role family</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Data Engineer</th>
+<td>615</td>
+<td>$152,150</td>
+<td>5</td>
+<td>12%</td>
+<td>41%</td>
+<td>196</td>
+<td>197</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Scientist</th>
+<td>552</td>
+<td>$185,000</td>
+<td>5</td>
+<td>17%</td>
+<td>41%</td>
+<td>203</td>
+<td>121</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Business Analyst</th>
+<td>292</td>
+<td>$103,750</td>
+<td>3</td>
+<td>33%</td>
+<td>45%</td>
+<td>88</td>
+<td>89</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Data Analyst</th>
+<td>250</td>
+<td>$122,500</td>
+<td>3</td>
+<td>29%</td>
+<td>35%</td>
+<td>74</td>
+<td>95</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Business Intelligence</th>
+<td>81</td>
+<td>$161,000</td>
+<td>5</td>
+<td>6%</td>
+<td>56%</td>
+<td>30</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div id="cell-fig-pay-access" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">5.2</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>entry_roles <span class="op">=</span> roles.index.isin([<span class="st">"Business Analyst"</span>, <span class="st">"Data Analyst"</span>])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ax.scatter(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    roles[<span class="st">"Entry share"</span>],</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    roles[<span class="st">"Median pay"</span>] <span class="op">/</span> <span class="dv">1000</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    s<span class="op">=</span>roles[<span class="st">"Postings"</span>] <span class="op">*</span> <span class="fl">1.6</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span>[GOLD <span class="cf">if</span> e <span class="cf">else</span> TEAL <span class="cf">for</span> e <span class="kw">in</span> entry_roles],</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.85</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    edgecolor<span class="op">=</span><span class="st">"white"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="fl">1.5</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    zorder<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, row <span class="kw">in</span> roles.iterrows():</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    radius <span class="op">=</span> (row[<span class="st">"Postings"</span>] <span class="op">*</span> <span class="fl">1.6</span>) <span class="op">**</span> <span class="fl">0.5</span> <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    above <span class="op">=</span> name <span class="op">==</span> <span class="st">"Business Intelligence"</span>  <span class="co"># keeps its label clear of the median line</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    ax.annotate(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ch">\n</span><span class="sc">{</span>money(row[<span class="st">'Median pay'</span>])<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        (row[<span class="st">"Entry share"</span>], row[<span class="st">"Median pay"</span>] <span class="op">/</span> <span class="dv">1000</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        xytext<span class="op">=</span>(<span class="dv">0</span>, radius <span class="op">+</span> <span class="dv">3</span> <span class="cf">if</span> above <span class="cf">else</span> <span class="op">-</span>radius <span class="op">-</span> <span class="dv">3</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        textcoords<span class="op">=</span><span class="st">"offset points"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        ha<span class="op">=</span><span class="st">"center"</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        va<span class="op">=</span><span class="st">"bottom"</span> <span class="cf">if</span> above <span class="cf">else</span> <span class="st">"top"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">9</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>TEXT,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>ax.axhline(median_salary <span class="op">/</span> <span class="dv">1000</span>, color<span class="op">=</span>GRAY, linewidth<span class="op">=</span><span class="dv">1</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, zorder<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">36.5</span>, median_salary <span class="op">/</span> <span class="dv">1000</span> <span class="op">+</span> <span class="dv">2</span>, <span class="ss">f"Market median </span><span class="sc">{</span>money(median_salary)<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        ha<span class="op">=</span><span class="st">"right"</span>, va<span class="op">=</span><span class="st">"bottom"</span>, fontsize<span class="op">=</span><span class="fl">8.5</span>, color<span class="op">=</span>GRAY)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Share of postings asking for 2 years of experience or less (%)"</span>, color<span class="op">=</span>TEXT)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Median advertised pay ($ thousands)"</span>, color<span class="op">=</span>TEXT)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">38</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">70</span>, <span class="dv">205</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>ax.grid(color<span class="op">=</span>GRID, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>ax.set_axisbelow(<span class="va">True</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">"left"</span>, <span class="st">"bottom"</span>]].set_color(<span class="st">"#D9E2E5"</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>ax.tick_params(colors<span class="op">=</span>TEXT)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"The Best-Paid Roles Are the Hardest to Enter"</span>, color<span class="op">=</span>NAVY, fontweight<span class="op">=</span><span class="st">"bold"</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>plt.savefig(FIGURES <span class="op">/</span> <span class="st">"role_pay_vs_access.png"</span>, dpi<span class="op">=</span><span class="dv">200</span>, bbox_inches<span class="op">=</span><span class="st">"tight"</span>, facecolor<span class="op">=</span><span class="st">"white"</span>)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-pay-access" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pay-access-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="career_plan_files/figure-html/fig-pay-access-output-1.png" width="759" height="489" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pay-access-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Pay against accessibility for each role family. Circle size shows the number of postings. Roles further right are more open to early-career candidates; roles higher up pay more. Gold marks the two recommended entry roles.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The pattern is a trade-off. Data Scientist and Data Engineer roles are the largest groups and pay at or above the market median, but they usually ask for five years of experience. Business Analyst and Data Analyst roles pay less and are the most open: about three in ten of their postings that state a requirement ask for two years or less.</p>
+<p>Business Intelligence looks attractive on pay and flexibility, but it is the smallest group. Its pay figure rests on 30 postings and its experience figure on 18, so we treat it as a direction to grow into rather than a first target.</p>
+</section>
+<section id="recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>
+<section id="enter-through-business-analyst-or-data-analyst-roles" class="level3">
+<h3 class="anchored" data-anchor-id="enter-through-business-analyst-or-data-analyst-roles">1. Enter through Business Analyst or Data Analyst roles</h3>
+<p><strong>Evidence.</strong> Across all postings that state a requirement, the median is five years and only 19.6% ask for two years or less (<a href="./eda.html">Market Baseline</a>). The share is 33% for Business Analyst and 29% for Data Analyst roles, against 17% for Data Scientist and 12% for Data Engineer roles.</p>
+<p><strong>What to do.</strong> Aim first applications at Business Analyst and Data Analyst postings, and treat Data Scientist, Data Engineer, and Business Intelligence roles as the second step. These entry roles also match what an early-career candidate tends to have already: on the <a href="./skill_gap_analysis.html">Skill Gap Analysis</a> page, business requirements, business analysis, Excel, and communication were the skills where our team already meets the market.</p>
+<p><strong>The cost.</strong> The entry roles pay less. Business Analyst postings have a median of $103,750 and Data Analyst postings $122,500, against a market median of $151,475. The next two recommendations are about closing that distance.</p>
+</section>
+<section id="learn-sql-first-then-python" class="level3">
+<h3 class="anchored" data-anchor-id="learn-sql-first-then-python">2. Learn SQL first, then Python</h3>
+<p><strong>Evidence.</strong> Python appears in 62.5% of postings and SQL in 61.8%, roughly three times as often as the next skill. They are also the two highest-priority gaps for our team (<a href="./skill_gap_analysis.html">Skill Gap Analysis</a>). Both carry positive coefficients in the pay model, so they are associated with higher-paying postings as well as with more of them (<a href="./ml_methods.html">Predictive Modeling</a>).</p>
+<p><strong>What to do.</strong> Start with SQL. It is the one skill every role family asks for, from 36% of Business Analyst postings to 80% of Business Intelligence postings, so it pays off whichever role a candidate ends up in. Python comes second because its value depends on the role: it appears in 82% of Data Scientist postings but only 14% of Business Analyst postings. A candidate targeting business analyst roles can reach interviews on SQL alone; a candidate targeting data science cannot.</p>
+</section>
+<section id="add-statistical-modeling-as-the-skill-for-moving-up-in-pay" class="level3">
+<h3 class="anchored" data-anchor-id="add-statistical-modeling-as-the-skill-for-moving-up-in-pay">3. Add statistical modeling as the skill for moving up in pay</h3>
+<p><strong>Evidence.</strong> The <a href="./ml_methods.html">Predictive Modeling</a> page found that the most requested skills are not the best-paid ones. Statistical Modeling appears in only 6.4% of postings, yet it carries the largest positive coefficient in the model, and postings that list it have a median $63,100 higher than those that do not. Power BI is requested more often and is associated with lower advertised pay.</p>
+<p><strong>How we reconcile this with the skill-gap targets.</strong> Our skill-gap targets were set from how often a skill is requested. The model shows that frequency and pay measure different things, so we now read them as two separate questions:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Measure</th>
+<th>Skills it points to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What gets a candidate considered?</td>
+<td>Share of postings requesting the skill</td>
+<td>SQL, Python, data pipelines</td>
+</tr>
+<tr class="even">
+<td>What moves a candidate toward higher pay?</td>
+<td>Association with above-median pay</td>
+<td>Statistical modeling, Python, SQL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What to do.</strong> Keep the frequency-based plan for the first stage, because a candidate has to be considered before pay matters. Then add statistical modeling ahead of further BI tool certifications. Power BI and Tableau remain worth knowing for Business Intelligence and Business Analyst roles, where they are requested often, but the evidence does not support treating another BI certification as a route to higher pay.</p>
+<p>This is an association in one year of postings, not proof that learning a skill raises an individual’s pay. Statistical Modeling appears on only 33 postings with pay, so the size of the difference is imprecise.</p>
+</section>
+<section id="search-by-skills-and-across-titles-not-by-one-job-title" class="level3">
+<h3 class="anchored" data-anchor-id="search-by-skills-and-across-titles-not-by-one-job-title">4. Search by skills and across titles, not by one job title</h3>
+<p><strong>Evidence.</strong> Role family alone identified above-median postings 59% of the time. Adding skills, location, education, and work arrangement raised that to 78% (<a href="./ml_methods.html">Predictive Modeling</a>). The source data also groups titles broadly: a posting titled Data Analyst or Data Engineer may be classified under Data Scientists or Database Architects <span class="citation" data-cites="onet2026datascientists">(<a href="#ref-onet2026datascientists" role="doc-biblioref">O*NET OnLine (2026)</a>)</span>. Earlier research on analytics job advertisements found the same overlap, with business analyst, data analyst, and data scientist roles sharing a core of skills <span class="citation" data-cites="verma2019skills">(<a href="#ref-verma2019skills" role="doc-biblioref">Verma et al. (2019)</a>)</span>.</p>
+<p><strong>What to do.</strong> Search on skill keywords such as SQL, Python, and statistical modeling, and include all five titles: Data Analyst, Business Analyst, Business Intelligence Analyst, Data Scientist, and Data Engineer. Read the skills list before the title when deciding whether a posting is worth an application, since the skills say more about the pay level than the title does.</p>
+</section>
+<section id="treat-location-as-a-pay-factor-and-use-remote-and-hybrid-roles" class="level3">
+<h3 class="anchored" data-anchor-id="treat-location-as-a-pay-factor-and-use-remote-and-hybrid-roles">5. Treat location as a pay factor, and use remote and hybrid roles</h3>
+<p><strong>Evidence.</strong> California carries the largest positive coefficient of any non-skill feature in the pay model. Its postings have a median of $210,000 across 127 postings with pay, against $151,475 for the market. California, Virginia, New York, and Texas lead on volume (<a href="./eda.html">Market Baseline</a>). Remote and hybrid postings make up 41% of the dataset, and where pay is stated they sit close to the market: a median of $147,500 for remote and $145,850 for hybrid postings.</p>
+<p><strong>What to do.</strong> A candidate who can relocate should weigh California’s higher advertised pay against its cost of living, which this dataset does not measure. A candidate who cannot relocate should include remote and hybrid postings in every search. The data does not show a pay penalty for them.</p>
+</section>
+</section>
+<section id="applying-the-strategy-to-our-team" class="level2">
+<h2 class="anchored" data-anchor-id="applying-the-strategy-to-our-team">Applying the Strategy to Our Team</h2>
+<p>The three of us are examples of the target user, each with a different target role. The priorities below combine each member’s role-specific gaps from the <a href="./skill_gap_analysis.html">Skill Gap Analysis</a> page with the pay findings above.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Member</th>
+<th>Target role</th>
+<th>First priority</th>
+<th>Next</th>
+<th>Entry point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jenna</td>
+<td>Business Intelligence / Business Analyst</td>
+<td>SQL, from Beginner to Advanced</td>
+<td>Business requirements, then Python</td>
+<td>Business Analyst postings, moving to Business Intelligence with experience</td>
+</tr>
+<tr class="even">
+<td>Mariam</td>
+<td>Business Analyst</td>
+<td>SQL</td>
+<td>Business analysis and Excel</td>
+<td>Business Analyst postings directly</td>
+</tr>
+<tr class="odd">
+<td>Juan</td>
+<td>Data Analyst, moving toward Data Scientist</td>
+<td>Python and machine learning</td>
+<td>Statistical modeling</td>
+<td>Data Analyst postings, moving to Data Scientist</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Jenna.</strong> SQL appears in 45% of her target postings and is her largest gap. Her BI tool skills already meet the target for these roles, so more time on Power BI or Tableau would add little. Business Intelligence postings usually ask for about five years, which is why Business Analyst is the entry point.</li>
+<li><strong>Mariam.</strong> Her target role is the most accessible of the five. SQL is the clear first step. Python appears in only 14% of Business Analyst postings, so it can wait until SQL, business analysis, and Excel are in place.</li>
+<li><strong>Juan.</strong> He has the smallest gaps and the highest-paying target. Statistical modeling is the skill most associated with higher pay and one of his lowest ratings, so it belongs in his plan alongside Python and machine learning.</li>
+</ul>
+</section>
+<section id="action-plan" class="level2">
+<h2 class="anchored" data-anchor-id="action-plan">Action Plan</h2>
+<p>The timeline follows the twelve-week study plan in Section 4 of the <a href="./skill_gap_analysis.html">Skill Gap Analysis</a> page and extends it to the job search.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>When</th>
+<th>Skills</th>
+<th>Job search</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Weeks 1 to 4</td>
+<td>SQL and Python foundations</td>
+<td>Build a list of target postings across all five titles; note which skills recur</td>
+</tr>
+<tr class="even">
+<td>Weeks 5 to 8</td>
+<td>Data pipelines; BI tools for members with gaps there</td>
+<td>Rewrite the résumé around skills rather than titles, leading with business strengths</td>
+</tr>
+<tr class="odd">
+<td>Weeks 9 to 12</td>
+<td>Machine learning basics and statistical modeling</td>
+<td>Publish one portfolio project that uses SQL, Python, and a model, such as this site</td>
+</tr>
+<tr class="even">
+<td>After week 12</td>
+<td>One certification matched to target role</td>
+<td>Apply to Business Analyst and Data Analyst postings, including remote and hybrid</td>
+</tr>
+<tr class="odd">
+<td>First one to two years in role</td>
+<td>Deepen statistical modeling and Python on the job</td>
+<td>Move toward Data Scientist, Data Engineer, or Business Intelligence roles</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<ul>
+<li><strong>Advertised pay only.</strong> Salary is stated on 591 of 1,790 postings. The pay comparisons describe employers who publish pay.</li>
+<li><strong>Experience is stated on a minority of postings.</strong> The accessibility figures use the 520 postings that give a minimum. Missing experience was not treated as zero.</li>
+<li><strong>Small groups.</strong> Business Intelligence has 81 postings, and the statistical modeling finding rests on 33.</li>
+<li><strong>Associations, not causes.</strong> The model shows which features go with higher-paying postings. It does not show that acquiring a skill or moving to a state would change an individual’s pay.</li>
+<li><strong>Postings are not hires.</strong> The data shows what employers advertise, not who they hire or what they finally pay.</li>
+<li><strong>No cost of living.</strong> Pay differences between states are not adjusted for living costs.</li>
+<li><strong>One industry, one year.</strong> The recommendations apply to analytics roles in NAICS 5415 from September 2025 to September 2026.</li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-onet2026datascientists" class="csl-entry" role="listitem">
+<span class="smallcaps">O*NET OnLine</span>. (2026): <span>“Data Scientists, 15-2051.00,”</span><a href="https://www.onetonline.org/link/summary/15-2051.00" class="uri">https://www.onetonline.org/link/summary/15-2051.00</a>.
+</div>
+<div id="ref-verma2019skills" class="csl-entry" role="listitem">
+<span class="smallcaps">Verma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova</span>. (2019): <span>“<a href="https://doi.org/10.1080/08832323.2018.1520685">An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements</a>,”</span> <em>Journal of Education for Business</em>, 94, 243–50.
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

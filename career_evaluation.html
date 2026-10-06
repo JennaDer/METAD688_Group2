@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Computer Systems Design Analytics Career Pathways</title>
+<title>career_evaluation – Computer Systems Design Analytics Career Pathways</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -102,31 +102,45 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./introduction.html"> 
-<span class="menu-text">Project Overview</span></a>
+<span class="menu-text">Project Foundation</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-market-analysis" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Market Analysis</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-market-analysis">    
+        <li>
+    <a class="dropdown-item" href="./data_preparation.html">
+ <span class="dropdown-text">Data Preparation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./market_baseline.html">
+ <span class="dropdown-text">Market Baseline</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-career-evaluation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Career Evaluation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-career-evaluation">    
+        <li>
+    <a class="dropdown-item" href="./skill_gap_analysis.html">
+ <span class="dropdown-text">Skill-Gap Analysis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./career_evaluation.html">
+ <span class="dropdown-text">Career Scorecard</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./final_recommendations.html"> 
+<span class="menu-text">Recommendations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data_cleaning.html"> 
-<span class="menu-text">Data Preparation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./eda.html"> 
-<span class="menu-text">Market Baseline</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./skill_gap_analysis.html"> 
-<span class="menu-text">Skill Gap Analysis</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./ml_methods.html"> 
-<span class="menu-text">Predictive Modeling</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./career_plan.html"> 
-<span class="menu-text">Career Strategy</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Team</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -146,231 +160,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about-this-site" id="toc-about-this-site" class="nav-link active" data-scroll-target="#about-this-site">About This Site</a></li>
-  <li><a href="#how-to-read-the-site" id="toc-how-to-read-the-site" class="nav-link" data-scroll-target="#how-to-read-the-site">How to Read the Site</a></li>
-  <li><a href="#the-team" id="toc-the-team" class="nav-link" data-scroll-target="#the-team">The Team</a></li>
-  <li><a href="#team-contributions" id="toc-team-contributions" class="nav-link" data-scroll-target="#team-contributions">Team Contributions</a></li>
-  <li><a href="#data-and-methods" id="toc-data-and-methods" class="nav-link" data-scroll-target="#data-and-methods">Data and Methods</a></li>
-  <li><a href="#repository" id="toc-repository" class="nav-link" data-scroll-target="#repository">Repository</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-<p class="subtitle lead">The Project, the Team, and Who Did What</p>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
 
-
-<section id="about-this-site" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-site">About This Site</h2>
-<p>This site is a career evaluation product built for MET AD 688, Big Data and Cloud Analytics for Business, at Boston University Metropolitan College. It helps a student or early-career professional judge the job market for Data Analytics roles in Computer Systems Design and Related Services (NAICS 5415).</p>
-<p>The product answers one question: how can an aspiring analytics professional evaluate career opportunities in this industry and decide which skills, qualifications, and experiences to put first?</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Course</strong></td>
-<td>MET AD 688, Big Data and Cloud Analytics for Business</td>
-</tr>
-<tr class="even">
-<td><strong>Team</strong></td>
-<td>Group 2</td>
-</tr>
-<tr class="odd">
-<td><strong>Industry</strong></td>
-<td>Computer Systems Design and Related Services (NAICS 5415)</td>
-</tr>
-<tr class="even">
-<td><strong>Career pathway</strong></td>
-<td>Data Analytics</td>
-</tr>
-<tr class="odd">
-<td><strong>Data</strong></td>
-<td>MET CareerCompass 2026 v2 job-postings extract</td>
-</tr>
-<tr class="even">
-<td><strong>Analytical sample</strong></td>
-<td>1,790 analytics postings, September 2025 to September 2026</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="how-to-read-the-site" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-read-the-site">How to Read the Site</h2>
-<p>The pages follow the order of the analysis.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Page</th>
-<th>What it covers</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="./introduction.html">Project Overview</a></td>
-<td>Target user, product question, industry choice, and scope</td>
-</tr>
-<tr class="even">
-<td><a href="./data_cleaning.html">Data Preparation</a></td>
-<td>How 504,208 raw postings were filtered and cleaned to the 1,790 used here</td>
-</tr>
-<tr class="odd">
-<td><a href="./eda.html">Market Baseline</a></td>
-<td>Demand, salary, location, experience, education, and work arrangement</td>
-</tr>
-<tr class="even">
-<td><a href="./skill_gap_analysis.html">Skill Gap Analysis</a></td>
-<td>Skills employers request compared with the team’s own ratings, and an improvement plan</td>
-</tr>
-<tr class="odd">
-<td><a href="./ml_methods.html">Predictive Modeling</a></td>
-<td>A classifier for above-median pay and the factors that separate higher-paying postings</td>
-</tr>
-<tr class="even">
-<td><a href="./career_plan.html">Career Strategy</a></td>
-<td>Final recommendations for the target user</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="the-team" class="level2">
-<h2 class="anchored" data-anchor-id="the-team">The Team</h2>
-<p>The three of us are also the product’s test users. Each member has a different target role, and the <a href="./skill_gap_analysis.html">Skill Gap Analysis</a> page measures our own skills against the market.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Member</th>
-<th>Target role</th>
-<th>Background</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Jenna DeRosa</td>
-<td>Business Intelligence / Business Analyst</td>
-<td>Strong Excel, BI, and communication skills; some Power BI; beginner in coding</td>
-</tr>
-<tr class="even">
-<td>Mariam El Jouzou</td>
-<td>Business Analyst</td>
-<td>Strong business requirements and analysis skills; beginner in coding</td>
-</tr>
-<tr class="odd">
-<td>Juan Franco</td>
-<td>Data Analyst, moving toward Data Scientist</td>
-<td>Expert in Excel, Power BI, Tableau, and data analysis; intermediate in SQL and Python</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="team-contributions" class="level2">
-<h2 class="anchored" data-anchor-id="team-contributions">Team Contributions</h2>
-<p>The table shows who led each part of the project.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Part of the project</th>
-<th>Lead</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Career pathway and product question</td>
-<td>Entire team</td>
-</tr>
-<tr class="even">
-<td>Industry selection and project scope</td>
-<td>Jenna</td>
-</tr>
-<tr class="odd">
-<td>Target user and project rationale</td>
-<td>Mariam</td>
-</tr>
-<tr class="even">
-<td>Expected dataset fields and exploration plan</td>
-<td>Juan</td>
-</tr>
-<tr class="odd">
-<td>Data preparation and panel build</td>
-<td>Mariam</td>
-</tr>
-<tr class="even">
-<td>Market baseline analysis</td>
-<td>Jenna</td>
-</tr>
-<tr class="odd">
-<td>Skill-gap analysis and career evaluation logic</td>
-<td>Jenna</td>
-</tr>
-<tr class="even">
-<td>Improvement plan</td>
-<td>Juan</td>
-</tr>
-<tr class="odd">
-<td>Home page and site design</td>
-<td>Mariam</td>
-</tr>
-<tr class="even">
-<td>Predictive modeling</td>
-<td>Juan</td>
-</tr>
-<tr class="odd">
-<td>Career strategy and final recommendations</td>
-<td>Jenna</td>
-</tr>
-<tr class="even">
-<td>About page and team contributions</td>
-<td>Jenna</td>
-</tr>
-<tr class="odd">
-<td>Final report and weekly standup document</td>
-<td>Mariam</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="data-and-methods" class="level2">
-<h2 class="anchored" data-anchor-id="data-and-methods">Data and Methods</h2>
-<p>The source is the MET CareerCompass 2026 v2 job-postings extract provided for the course. The analytical panel keeps analytics-related postings in NAICS 5415 from the most recent twelve months. The filtering steps and their counts are documented on the <a href="./data_cleaning.html">Data Preparation</a> page.</p>
-<p>The site is built with Quarto and Python. The cleaned panel, the scripts that build it, and the model outputs are all stored in the repository, so every figure on the site can be reproduced.</p>
-<p>The results describe advertised job postings in one industry over one year. They are not a complete picture of the U.S. analytics job market, and each page lists its own limitations.</p>
-</section>
-<section id="repository" class="level2">
-<h2 class="anchored" data-anchor-id="repository">Repository</h2>
-<p>The code, data, and page sources are on GitHub: <a href="https://github.com/JennaDer/METAD688_Group2">JennaDer/METAD688_Group2</a>.</p>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

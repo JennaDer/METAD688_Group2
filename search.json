@@ -4,7 +4,56 @@
     "href": "career_plan.html",
     "title": "Career Strategy",
     "section": "",
-    "text": "This page will be completed in a later module."
+    "text": "The earlier pages describe the market, measure our skills against it, and model what separates higher-paying postings. This page turns that evidence into recommendations. It answers the product question set on the Project Overview page: how an aspiring analytics professional should evaluate opportunities in Computer Systems Design and Related Services (NAICS 5415), and which skills and experiences to put first.\nThe recommendations are written for the target user: a student, recent graduate, or early-career professional. Each one names the evidence behind it and the page where that evidence is shown.\n\n\n\n\n\n\nTipThe Short Version\n\n\n\n\nEnter through Business Analyst or Data Analyst roles.\nLearn SQL first, then Python.\nAdd statistical modeling as the skill for moving up in pay.\nSearch by skills and across titles, not by one job title.\nTreat location as a pay factor, and use remote and hybrid roles if relocating is not an option."
+  },
+  {
+    "objectID": "career_plan.html#purpose",
+    "href": "career_plan.html#purpose",
+    "title": "Career Strategy",
+    "section": "",
+    "text": "The earlier pages describe the market, measure our skills against it, and model what separates higher-paying postings. This page turns that evidence into recommendations. It answers the product question set on the Project Overview page: how an aspiring analytics professional should evaluate opportunities in Computer Systems Design and Related Services (NAICS 5415), and which skills and experiences to put first.\nThe recommendations are written for the target user: a student, recent graduate, or early-career professional. Each one names the evidence behind it and the page where that evidence is shown.\n\n\n\n\n\n\nTipThe Short Version\n\n\n\n\nEnter through Business Analyst or Data Analyst roles.\nLearn SQL first, then Python.\nAdd statistical modeling as the skill for moving up in pay.\nSearch by skills and across titles, not by one job title.\nTreat location as a pay factor, and use remote and hybrid roles if relocating is not an option."
+  },
+  {
+    "objectID": "career_plan.html#how-the-roles-compare",
+    "href": "career_plan.html#how-the-roles-compare",
+    "title": "Career Strategy",
+    "section": "How the Roles Compare",
+    "text": "How the Roles Compare\nA job seeker choosing a target role is weighing three things: how many openings there are, what they pay, and whether an early-career candidate can get one. The table puts those side by side for the five role families in our 1,790 postings.\n\n\nShow code\ntable = pd.DataFrame(\n    {\n        \"Postings\": roles[\"Postings\"].map(\"{:,}\".format),\n        \"Median pay\": roles[\"Median pay\"].map(money),\n        \"Median years asked\": roles[\"Median years asked\"].map(\"{:.0f}\".format),\n        \"Asks 2 years or less\": roles[\"Entry share\"].map(pct),\n        \"Remote or hybrid\": roles[\"Remote or hybrid\"].map(pct),\n        \"Postings with pay\": roles[\"Postings with pay\"],\n        \"Postings with experience\": roles[\"Postings with experience\"],\n    }\n)\ntable.index.name = \"Role family\"\ntable\n\n\n\n\nTable 1: Demand, pay, accessibility, and flexibility by role family. Pay and experience are calculated only from the postings that state them.\n\n\n\n\n\n\n\n\n\n\nPostings\nMedian pay\nMedian years asked\nAsks 2 years or less\nRemote or hybrid\nPostings with pay\nPostings with experience\n\n\nRole family\n\n\n\n\n\n\n\n\n\n\n\nData Engineer\n615\n$152,150\n5\n12%\n41%\n196\n197\n\n\nData Scientist\n552\n$185,000\n5\n17%\n41%\n203\n121\n\n\nBusiness Analyst\n292\n$103,750\n3\n33%\n45%\n88\n89\n\n\nData Analyst\n250\n$122,500\n3\n29%\n35%\n74\n95\n\n\nBusiness Intelligence\n81\n$161,000\n5\n6%\n56%\n30\n18\n\n\n\n\n\n\n\n\n\n\n\n\nShow code\nfig, ax = plt.subplots(figsize=(8, 5.2))\nentry_roles = roles.index.isin([\"Business Analyst\", \"Data Analyst\"])\nax.scatter(\n    roles[\"Entry share\"],\n    roles[\"Median pay\"] / 1000,\n    s=roles[\"Postings\"] * 1.6,\n    color=[GOLD if e else TEAL for e in entry_roles],\n    alpha=0.85,\n    edgecolor=\"white\",\n    linewidth=1.5,\n    zorder=3,\n)\nfor name, row in roles.iterrows():\n    radius = (row[\"Postings\"] * 1.6) ** 0.5 / 2\n    above = name == \"Business Intelligence\"  # keeps its label clear of the median line\n    ax.annotate(\n        f\"{name}\\n{money(row['Median pay'])}\",\n        (row[\"Entry share\"], row[\"Median pay\"] / 1000),\n        xytext=(0, radius + 3 if above else -radius - 3),\n        textcoords=\"offset points\",\n        ha=\"center\",\n        va=\"bottom\" if above else \"top\",\n        fontsize=9,\n        color=TEXT,\n    )\n\nax.axhline(median_salary / 1000, color=GRAY, linewidth=1, linestyle=\"--\", zorder=1)\nax.text(36.5, median_salary / 1000 + 2, f\"Market median {money(median_salary)}\",\n        ha=\"right\", va=\"bottom\", fontsize=8.5, color=GRAY)\n\nax.set_xlabel(\"Share of postings asking for 2 years of experience or less (%)\", color=TEXT)\nax.set_ylabel(\"Median advertised pay ($ thousands)\", color=TEXT)\nax.set_xlim(0, 38)\nax.set_ylim(70, 205)\nax.grid(color=GRID, linewidth=0.8)\nax.set_axisbelow(True)\nax.spines[[\"top\", \"right\"]].set_visible(False)\nax.spines[[\"left\", \"bottom\"]].set_color(\"#D9E2E5\")\nax.tick_params(colors=TEXT)\nax.set_title(\"The Best-Paid Roles Are the Hardest to Enter\", color=NAVY, fontweight=\"bold\", fontsize=13)\n\nplt.tight_layout()\nplt.savefig(FIGURES / \"role_pay_vs_access.png\", dpi=200, bbox_inches=\"tight\", facecolor=\"white\")\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: Pay against accessibility for each role family. Circle size shows the number of postings. Roles further right are more open to early-career candidates; roles higher up pay more. Gold marks the two recommended entry roles.\n\n\n\n\n\nThe pattern is a trade-off. Data Scientist and Data Engineer roles are the largest groups and pay at or above the market median, but they usually ask for five years of experience. Business Analyst and Data Analyst roles pay less and are the most open: about three in ten of their postings that state a requirement ask for two years or less.\nBusiness Intelligence looks attractive on pay and flexibility, but it is the smallest group. Its pay figure rests on 30 postings and its experience figure on 18, so we treat it as a direction to grow into rather than a first target."
+  },
+  {
+    "objectID": "career_plan.html#recommendations",
+    "href": "career_plan.html#recommendations",
+    "title": "Career Strategy",
+    "section": "Recommendations",
+    "text": "Recommendations\n\n1. Enter through Business Analyst or Data Analyst roles\nEvidence. Across all postings that state a requirement, the median is five years and only 19.6% ask for two years or less (Market Baseline). The share is 33% for Business Analyst and 29% for Data Analyst roles, against 17% for Data Scientist and 12% for Data Engineer roles.\nWhat to do. Aim first applications at Business Analyst and Data Analyst postings, and treat Data Scientist, Data Engineer, and Business Intelligence roles as the second step. These entry roles also match what an early-career candidate tends to have already: on the Skill Gap Analysis page, business requirements, business analysis, Excel, and communication were the skills where our team already meets the market.\nThe cost. The entry roles pay less. Business Analyst postings have a median of $103,750 and Data Analyst postings $122,500, against a market median of $151,475. The next two recommendations are about closing that distance.\n\n\n2. Learn SQL first, then Python\nEvidence. Python appears in 62.5% of postings and SQL in 61.8%, roughly three times as often as the next skill. They are also the two highest-priority gaps for our team (Skill Gap Analysis). Both carry positive coefficients in the pay model, so they are associated with higher-paying postings as well as with more of them (Predictive Modeling).\nWhat to do. Start with SQL. It is the one skill every role family asks for, from 36% of Business Analyst postings to 80% of Business Intelligence postings, so it pays off whichever role a candidate ends up in. Python comes second because its value depends on the role: it appears in 82% of Data Scientist postings but only 14% of Business Analyst postings. A candidate targeting business analyst roles can reach interviews on SQL alone; a candidate targeting data science cannot.\n\n\n3. Add statistical modeling as the skill for moving up in pay\nEvidence. The Predictive Modeling page found that the most requested skills are not the best-paid ones. Statistical Modeling appears in only 6.4% of postings, yet it carries the largest positive coefficient in the model, and postings that list it have a median $63,100 higher than those that do not. Power BI is requested more often and is associated with lower advertised pay.\nHow we reconcile this with the skill-gap targets. Our skill-gap targets were set from how often a skill is requested. The model shows that frequency and pay measure different things, so we now read them as two separate questions:\n\n\n\n\n\n\n\n\nQuestion\nMeasure\nSkills it points to\n\n\n\n\nWhat gets a candidate considered?\nShare of postings requesting the skill\nSQL, Python, data pipelines\n\n\nWhat moves a candidate toward higher pay?\nAssociation with above-median pay\nStatistical modeling, Python, SQL\n\n\n\nWhat to do. Keep the frequency-based plan for the first stage, because a candidate has to be considered before pay matters. Then add statistical modeling ahead of further BI tool certifications. Power BI and Tableau remain worth knowing for Business Intelligence and Business Analyst roles, where they are requested often, but the evidence does not support treating another BI certification as a route to higher pay.\nThis is an association in one year of postings, not proof that learning a skill raises an individual’s pay. Statistical Modeling appears on only 33 postings with pay, so the size of the difference is imprecise.\n\n\n4. Search by skills and across titles, not by one job title\nEvidence. Role family alone identified above-median postings 59% of the time. Adding skills, location, education, and work arrangement raised that to 78% (Predictive Modeling). The source data also groups titles broadly: a posting titled Data Analyst or Data Engineer may be classified under Data Scientists or Database Architects (O*NET OnLine (2026)). Earlier research on analytics job advertisements found the same overlap, with business analyst, data analyst, and data scientist roles sharing a core of skills (Verma et al. (2019)).\nWhat to do. Search on skill keywords such as SQL, Python, and statistical modeling, and include all five titles: Data Analyst, Business Analyst, Business Intelligence Analyst, Data Scientist, and Data Engineer. Read the skills list before the title when deciding whether a posting is worth an application, since the skills say more about the pay level than the title does.\n\n\n5. Treat location as a pay factor, and use remote and hybrid roles\nEvidence. California carries the largest positive coefficient of any non-skill feature in the pay model. Its postings have a median of $210,000 across 127 postings with pay, against $151,475 for the market. California, Virginia, New York, and Texas lead on volume (Market Baseline). Remote and hybrid postings make up 41% of the dataset, and where pay is stated they sit close to the market: a median of $147,500 for remote and $145,850 for hybrid postings.\nWhat to do. A candidate who can relocate should weigh California’s higher advertised pay against its cost of living, which this dataset does not measure. A candidate who cannot relocate should include remote and hybrid postings in every search. The data does not show a pay penalty for them."
+  },
+  {
+    "objectID": "career_plan.html#applying-the-strategy-to-our-team",
+    "href": "career_plan.html#applying-the-strategy-to-our-team",
+    "title": "Career Strategy",
+    "section": "Applying the Strategy to Our Team",
+    "text": "Applying the Strategy to Our Team\nThe three of us are examples of the target user, each with a different target role. The priorities below combine each member’s role-specific gaps from the Skill Gap Analysis page with the pay findings above.\n\n\n\n\n\n\n\n\n\n\nMember\nTarget role\nFirst priority\nNext\nEntry point\n\n\n\n\nJenna\nBusiness Intelligence / Business Analyst\nSQL, from Beginner to Advanced\nBusiness requirements, then Python\nBusiness Analyst postings, moving to Business Intelligence with experience\n\n\nMariam\nBusiness Analyst\nSQL\nBusiness analysis and Excel\nBusiness Analyst postings directly\n\n\nJuan\nData Analyst, moving toward Data Scientist\nPython and machine learning\nStatistical modeling\nData Analyst postings, moving to Data Scientist\n\n\n\n\nJenna. SQL appears in 45% of her target postings and is her largest gap. Her BI tool skills already meet the target for these roles, so more time on Power BI or Tableau would add little. Business Intelligence postings usually ask for about five years, which is why Business Analyst is the entry point.\nMariam. Her target role is the most accessible of the five. SQL is the clear first step. Python appears in only 14% of Business Analyst postings, so it can wait until SQL, business analysis, and Excel are in place.\nJuan. He has the smallest gaps and the highest-paying target. Statistical modeling is the skill most associated with higher pay and one of his lowest ratings, so it belongs in his plan alongside Python and machine learning."
+  },
+  {
+    "objectID": "career_plan.html#action-plan",
+    "href": "career_plan.html#action-plan",
+    "title": "Career Strategy",
+    "section": "Action Plan",
+    "text": "Action Plan\nThe timeline follows the twelve-week study plan in Section 4 of the Skill Gap Analysis page and extends it to the job search.\n\n\n\n\n\n\n\n\nWhen\nSkills\nJob search\n\n\n\n\nWeeks 1 to 4\nSQL and Python foundations\nBuild a list of target postings across all five titles; note which skills recur\n\n\nWeeks 5 to 8\nData pipelines; BI tools for members with gaps there\nRewrite the résumé around skills rather than titles, leading with business strengths\n\n\nWeeks 9 to 12\nMachine learning basics and statistical modeling\nPublish one portfolio project that uses SQL, Python, and a model, such as this site\n\n\nAfter week 12\nOne certification matched to target role\nApply to Business Analyst and Data Analyst postings, including remote and hybrid\n\n\nFirst one to two years in role\nDeepen statistical modeling and Python on the job\nMove toward Data Scientist, Data Engineer, or Business Intelligence roles"
+  },
+  {
+    "objectID": "career_plan.html#limitations",
+    "href": "career_plan.html#limitations",
+    "title": "Career Strategy",
+    "section": "Limitations",
+    "text": "Limitations\n\nAdvertised pay only. Salary is stated on 591 of 1,790 postings. The pay comparisons describe employers who publish pay.\nExperience is stated on a minority of postings. The accessibility figures use the 520 postings that give a minimum. Missing experience was not treated as zero.\nSmall groups. Business Intelligence has 81 postings, and the statistical modeling finding rests on 33.\nAssociations, not causes. The model shows which features go with higher-paying postings. It does not show that acquiring a skill or moving to a state would change an individual’s pay.\nPostings are not hires. The data shows what employers advertise, not who they hire or what they finally pay.\nNo cost of living. Pay differences between states are not adjusted for living costs.\nOne industry, one year. The recommendations apply to analytics roles in NAICS 5415 from September 2025 to September 2026."
+  },
+  {
+    "objectID": "career_plan.html#references",
+    "href": "career_plan.html#references",
+    "title": "Career Strategy",
+    "section": "References",
+    "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,”https://www.onetonline.org/link/summary/15-2051.00.\n\n\nVerma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova. (2019): “An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements,” Journal of Education for Business, 94, 243–50."
   },
   {
     "objectID": "skill_gap_analysis.html",
@@ -140,188 +189,6 @@
     "text": "References\n\n\nU.S. Census Bureau. (2022): “2022 NAICS Definition: Computer Systems Design and Related Services (5415),”https://www.census.gov/naics/?input=5415&year=2022&details=5415."
   },
   {
-    "objectID": "introduction.html",
-    "href": "introduction.html",
-    "title": "Project Foundation",
-    "section": "",
-    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nComputer Systems Design and Related Services\n\n\nNAICS Code\n5415\n\n\nCareer Pathway\nData Analytics\n\n\nPrimary Focus Area\nAnalytics career opportunities, qualifications, and market patterns\n\n\nTarget User\nStudents, recent graduates, and early-career professionals pursuing analytics roles\n\n\nProduct Question\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why Computer Systems Design and Related Services is a relevant industry for analytics careers."
-  },
-  {
-    "objectID": "introduction.html#project-at-a-glance",
-    "href": "introduction.html#project-at-a-glance",
-    "title": "Project Foundation",
-    "section": "",
-    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nComputer Systems Design and Related Services\n\n\nNAICS Code\n5415\n\n\nCareer Pathway\nData Analytics\n\n\nPrimary Focus Area\nAnalytics career opportunities, qualifications, and market patterns\n\n\nTarget User\nStudents, recent graduates, and early-career professionals pursuing analytics roles\n\n\nProduct Question\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why Computer Systems Design and Related Services is a relevant industry for analytics careers."
-  },
-  {
-    "objectID": "introduction.html#career-pathway",
-    "href": "introduction.html#career-pathway",
-    "title": "Project Foundation",
-    "section": "1. Career Pathway",
-    "text": "1. Career Pathway\n\nSelected career pathway: Data Analytics\nWhy we selected it: Data Analytics was selected because it represents a broad and practical career pathway that appears across many technology-driven organizations. It also allows the team to evaluate multiple related role types while focusing on the skills, qualifications, compensation, and market conditions most relevant to aspiring analytics professionals."
-  },
-  {
-    "objectID": "introduction.html#industry-selection",
-    "href": "introduction.html#industry-selection",
-    "title": "Project Foundation",
-    "section": "2. Industry Selection",
-    "text": "2. Industry Selection\n\nSelected industry: Computer Systems Design and Related Services NAICS code: 5415\n\nIndustry Justification\nComputer Systems Design and Related Services is highly relevant to the Data Analytics career pathway because organizations in this industry rely heavily on data, software, information systems, and technology-enabled decision-making. The industry also gives the project enough data to work with: the v2 course extract holds 19,886 postings in NAICS 5415, and 1,790 of them are analytics roles posted in the last 12 months. That is enough to compare salary, location, experience, work arrangements, and skills across several analytics roles.\n\n\nRole of Analytics in This Industry\nAnalytics professionals in this industry support areas such as business intelligence, data analysis, systems performance, technology consulting, reporting, forecasting, and data-driven decision-making. These roles may require candidates to interpret large datasets, identify trends, build reports and dashboards, and translate analytical findings into recommendations for clients or internal business teams."
-  },
-  {
-    "objectID": "introduction.html#target-user",
-    "href": "introduction.html#target-user",
-    "title": "Project Foundation",
-    "section": "3. Target User",
-    "text": "3. Target User\n\n\nUser Profile\nThe target user is a student, recent graduate, or early-career professional interested in pursuing an analytics-related career within the Computer Systems Design and Related Services industry. The user may have foundational experience with data analysis, statistics, business analytics, or related disciplines and some exposure to tools such as Excel, SQL, Python, R, or data visualization platforms. However, they may have limited professional experience in technology-focused organizations and may not yet understand how their existing skills align with available analytics roles.\n\n\nUser Needs\nBefore applying for analytics positions in Computer Systems Design and Related Services, the target user needs a clearer understanding of the types of analytics roles available, the technical and professional skills employers commonly request, typical education requirements, salary expectations, geographic and remote work patterns, and potential skill gaps. This information can help the user evaluate their current qualifications and identify which skills or experiences they should prioritize to become a more competitive candidate."
-  },
-  {
-    "objectID": "introduction.html#product-question",
-    "href": "introduction.html#product-question",
-    "title": "Project Foundation",
-    "section": "4. Product Question",
-    "text": "4. Product Question\n\n\nPrimary Question\n\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?\n\n\n\nSupporting Questions\n\nWhat analytics roles appear most frequently in Computer Systems Design and Related Services?\nWhich technical and professional skills are most commonly requested?\nHow do salary, experience, location, and remote-work patterns vary?\nWhere does the target user have skill gaps?\nWhich skills should the target user prioritize?"
-  },
-  {
-    "objectID": "introduction.html#project-rationale",
-    "href": "introduction.html#project-rationale",
-    "title": "Project Foundation",
-    "section": "5. Project Rationale",
-    "text": "5. Project Rationale\n\n\nProblem Statement\nStudents and early-career professionals may not have a clear understanding of the skills and job-market needs required for analytics roles within Computer Systems Design and Related Services, which can result in difficulty identifying appropriate roles and determining how well their qualifications align with employer expectations.\n\n\nWhy the Question Matters\nUnderstanding these requirements is important because students and early-career professionals may need more than general analytics knowledge when preparing for a career in a specific industry. Knowing which skills, qualifications, and experience employers are seeking can help job seekers make more informed decisions about their career preparation and identify areas they may need to develop before applying. It also enables them to better communicate their own skill sets to align with market needs.\n\n\nValue of the Product\nThe finished product will provide job seekers with the insights and information needed to better position themselves in the job market, assess their skills and identify areas for self-improvement, and better communicate their strengths based on what employers are seeking. By bringing together information about available roles, required skills and qualifications, salary, location, and work arrangements, the product can support users in their job search and help them better understand current market needs."
-  },
-  {
-    "objectID": "introduction.html#literature-review",
-    "href": "introduction.html#literature-review",
-    "title": "Project Foundation",
-    "section": "6. Literature Review",
-    "text": "6. Literature Review\n\nSource 1: NAICS 5415 Industry Definition\nCitation: U.S. Census Bureau. (2022). 2022 NAICS definition: Computer Systems Design and Related Services (5415).\nSummary and relevance: The U.S. Census Bureau defines NAICS 5415 as establishments that provide computer systems design and related services. This includes work involving computer hardware, software, and communication technologies (U.S. Census Bureau (2022)). The definition helps keep our analysis focused on the industry selected by the team.\n\n\nSource 2: Data Scientist Career Profile\nCitation: O*NET OnLine. (2026). Data Scientists, 15-2051.00.\nSummary and relevance: O*NET describes Data Scientists as professionals who turn raw data into useful information through programming, visualization, data mining, modeling, and related methods (O*NET OnLine (2026)). It also lists tasks such as preparing data, creating charts, explaining results, and recommending data-based solutions. This supports our decision to study several connected analytics roles rather than one exact job title.\n\n\nSource 3: Skills in Analytics Job Advertisements\nCitation: Verma, A., Yurov, K. M., Lane, P. L., & Yurova, Y. V. (2019). An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements. Journal of Education for Business, 94(4), 243–250.\nSummary and relevance: This study compares the skills requested for Business Analyst, Data Analyst, and Data Scientist positions (Verma et al. (2019)). It shows that the roles share some skills but also have important differences. This supports the use of job postings to compare related career paths and explains why we grouped several analytics titles while still reporting separate occupation categories."
-  },
-  {
-    "objectID": "introduction.html#expected-dataset-fields",
-    "href": "introduction.html#expected-dataset-fields",
-    "title": "Project Foundation",
-    "section": "7. Expected Dataset Fields",
-    "text": "7. Expected Dataset Fields\n\nThe table below lists the main fields used in the project and what each field supports.\n\n\n\n\n\n\n\nField or Variable\nHow the Team Uses It\n\n\n\n\nIndustry or NAICS code\nFilter postings to NAICS 5415, Computer Systems Design and Related Services\n\n\nJob title\nIdentify which analytics roles appear and group them into a role family\n\n\nCompany or employer\nCheck how concentrated hiring is across employers in Computer Systems Design and Related Services\n\n\nSkills\nPrimary input to the skill-gap analysis; rank the tools and competencies employers request\n\n\nSoftware or specialized skills\nSeparate tool requirements such as SQL, Python, R, Tableau, and Power BI from general competencies\n\n\nCertifications\nIdentify professional or technical credentials included in analytics postings\n\n\nExperience (minimum and maximum years)\nJudge which roles are realistic for an early-career candidate\n\n\nEducation level\nRecord degree expectations, which we expect to run higher in this industry than in analytics generally\n\n\nSalary (minimum and maximum)\nDescribe advertised compensation ranges for the selected analytics roles\n\n\nCity, state, and metropolitan area\nMap where analytics opportunities are geographically concentrated\n\n\nRemote-work status\nCompare remote, hybrid, and onsite postings\n\n\nPosting date and duration\nConfirm the postings are recent and check whether the sample is spread evenly over time\n\n\n\n\nNote on Data Volume\nThe original NAICS 3254 industry scope produced too few relevant analytics postings to support meaningful distribution-level analysis. In Module 2, the team therefore revised the industry scope to NAICS 5415, Computer Systems Design and Related Services. In Module 3 the panel was rebuilt on the corrected v2 extract and limited to the most recent 12 months of postings, as documented on the Data Preparation page. This provides a stronger basis for evaluating salary, geography, education, work arrangements, employers, and other labor-market patterns."
-  },
-  {
-    "objectID": "introduction.html#what-we-expect-to-explore",
-    "href": "introduction.html#what-we-expect-to-explore",
-    "title": "Project Foundation",
-    "section": "8. What We Expect to Explore",
-    "text": "8. What We Expect to Explore\n\nWithin Computer Systems Design and Related Services, we expect analytics opportunities to span several related role types and employer contexts. Our analysis will examine how demand varies across job titles, employers, salary levels, education requirements, geographic markets, and work arrangements. We will also evaluate the skills information available in the dataset while documenting limitations in the source data rather than assuming that missing skills or experience fields represent employer preferences. These expectations will be tested against the data and revised where the evidence supports a different conclusion.\nWhere each expectation is tested: The Exploratory Analysis page covers roles, employers, salary, location, education, experience, and work arrangements. The Skill Gap Analysis page compares the skills employers request with the team’s own ratings. The Career Strategy page will bring both together into recommendations for the target user."
-  },
-  {
-    "objectID": "introduction.html#project-scope-and-boundaries",
-    "href": "introduction.html#project-scope-and-boundaries",
-    "title": "Project Foundation",
-    "section": "9. Project Scope and Boundaries",
-    "text": "9. Project Scope and Boundaries\n\n\nIncluded\n\nJob postings connected to the selected career pathway\nComputer Systems Design and Related Services under NAICS 5415\nRelevant skills, experience, salary, geography, and work arrangements\nCareer-readiness recommendations for the target user\n\n\n\nNot Included\n\nThe entire labor market\nCareers unrelated to the selected pathway\nIndustries outside the selected industry scope unless needed for context\nClaims that cannot be supported by the available data"
-  },
-  {
-    "objectID": "introduction.html#module-1-completion-checklist",
-    "href": "introduction.html#module-1-completion-checklist",
-    "title": "Project Foundation",
-    "section": "Module 1 Completion Checklist",
-    "text": "Module 1 Completion Checklist\n\nCareer pathway selected\nNAICS 5415 selected\nIndustry identified\nTarget user defined\nProduct question approved by the team\nProject rationale completed\nThree to five sources reviewed\nExpected dataset fields documented\nGitHub repository created\nQuarto website created\nInitial website published\nAll sections reviewed by the team"
-  },
-  {
-    "objectID": "introduction.html#references",
-    "href": "introduction.html#references",
-    "title": "Project Foundation",
-    "section": "References",
-    "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,”https://www.onetonline.org/link/summary/15-2051.00.\n\n\nU.S. Census Bureau. (2022): “2022 NAICS Definition: Computer Systems Design and Related Services (5415),”https://www.census.gov/naics/?input=5415&year=2022&details=5415.\n\n\nVerma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova. (2019): “An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements,” Journal of Education for Business, 94, 243–50."
-  },
-  {
-    "objectID": "ml_methods.html",
-    "href": "ml_methods.html",
-    "title": "Predictive Modeling",
-    "section": "",
-    "text": "The earlier pages describe the market. This page moves from describing it to predicting it. The question is whether the information a posting makes public, its role, location, work arrangement, education level and listed skills, is enough to tell whether that posting pays above or below the market median."
-  },
-  {
-    "objectID": "ml_methods.html#purpose",
-    "href": "ml_methods.html#purpose",
-    "title": "Predictive Modeling",
-    "section": "",
-    "text": "The earlier pages describe the market. This page moves from describing it to predicting it. The question is whether the information a posting makes public, its role, location, work arrangement, education level and listed skills, is enough to tell whether that posting pays above or below the market median."
-  },
-  {
-    "objectID": "ml_methods.html#what-we-modeled",
-    "href": "ml_methods.html#what-we-modeled",
-    "title": "Predictive Modeling",
-    "section": "What We Modeled",
-    "text": "What We Modeled\nWe built a binary classifier. The target is whether a posting’s advertised salary midpoint sits above the median of all postings that report usable pay, which is $151,475.\nSplitting at the median rather than at a round number keeps the two classes almost the same size, 295 postings above and 296 at or below. That matters for reading the results. A model that guessed the larger class every time would score about 50 percent, so anything above that is real signal rather than an artifact of unbalanced classes.\n\n\n\n\n\n\nNoteWhy classification rather than salary regression\n\n\n\nPredicting an exact salary from 591 postings would produce wide error bands that are hard to act on. A job seeker deciding whether to pursue a posting benefits more from a reliable above or below signal, together with the factors driving it, than from a point estimate carrying a $40,000 margin."
-  },
-  {
-    "objectID": "ml_methods.html#why-this-matters-for-a-job-seeker",
-    "href": "ml_methods.html#why-this-matters-for-a-job-seeker",
-    "title": "Predictive Modeling",
-    "section": "Why This Matters for a Job Seeker",
-    "text": "Why This Matters for a Job Seeker\nThe Skill Gap Analysis page shows which skills appear most often in postings, following the posting-level counting approach used in content analyses of analytics job advertisements (Verma et al. (2019)). Frequency alone does not tell a job seeker where to spend study time, because a skill can be requested constantly and still be present in roles across the whole pay range. What this page adds is the direction and size of each factor’s association with pay, which turns a list of in-demand skills into a ranked set of choices."
-  },
-  {
-    "objectID": "ml_methods.html#variables-used",
-    "href": "ml_methods.html#variables-used",
-    "title": "Predictive Modeling",
-    "section": "Variables Used",
-    "text": "Variables Used\nThe model uses 55 features built from 591 postings:\n\n\n\n\n\n\n\n\nBlock\nTreatment\nLevels\n\n\n\n\nRole family\nOne-hot\n5\n\n\nWork arrangement\nOne-hot, Unknown kept as a category\n4\n\n\nState\nSix most frequent states, plus Unspecified and Other\n8\n\n\nEducation level\nOne-hot, missing kept as a category\n6\n\n\nListed skills\nBinary indicator per skill on at least 5 percent of postings\n32\n\n\n\nThree fields were deliberately left out. Minimum years of experience is recorded on only 154 of these postings, so including it as a numeric variable would have meant discarding about three quarters of the sample. The staffing agency flag has 13 positive cases, too few to estimate. Occupation group was dropped because it is derived from the job title in the same way as role family and the two would carry the same information twice.\nWork arrangement and state both keep their missing categories rather than dropping those rows. Work arrangement is unknown for 278 of these postings and state is unspecified for 164, so dropping them would have cost roughly half the sample. Treating missing as its own category is also honest about the data: whether an employer publishes this information may itself carry signal."
-  },
-  {
-    "objectID": "ml_methods.html#how-we-evaluated-performance",
-    "href": "ml_methods.html#how-we-evaluated-performance",
-    "title": "Predictive Modeling",
-    "section": "How We Evaluated Performance",
-    "text": "How We Evaluated Performance\nThe sample was split 75 / 25 into 443 training and 148 test postings, stratified so both halves keep the same class balance. Models were compared by five-fold cross-validation inside the training set. The test set was scored once, at the end, after the choice of model was already fixed.\nThis sequence matters at this sample size. With 591 rows it is easy to adjust a model repeatedly against the test set and report a number that will not survive new data.\nFour specifications were fitted, two of them as reference points rather than as candidates:\n\nMajority-class baseline. Predicts the larger class every time. Sets the floor.\nLogistic regression on role family only. Tests whether anything beyond the job title helps.\nLogistic regression on all features. L2 regularized, features standardized.\nRandom forest on all features. 500 trees, minimum three samples per leaf.\n\n\n\nCode\ndisplay = metrics.copy()\ndisplay.columns = [\n    \"Model\", \"Features\", \"CV accuracy\", \"CV sd\",\n    \"Test accuracy\", \"Precision\", \"Recall\", \"F1\",\n]\ndisplay\n\n\n\n\nTable 1: Model performance. Cross-validation accuracy is measured inside the training set; test figures come from the single held-out evaluation.\n\n\n\n\n\n\n\n\n\n\nModel\nFeatures\nCV accuracy\nCV sd\nTest accuracy\nPrecision\nRecall\nF1\n\n\n\n\n0\nMajority-class baseline\n55\n0.5011\n0.0042\n0.5000\n0.0000\n0.0000\n0.0000\n\n\n1\nLogistic, role family only\n5\n0.6883\n0.0339\n0.5946\n0.5603\n0.8784\n0.6842\n\n\n2\nLogistic, all features\n55\n0.7336\n0.0340\n0.7230\n0.7143\n0.7432\n0.7285\n\n\n3\nRandom forest, all features\n55\n0.8171\n0.0372\n0.7838\n0.7763\n0.7973\n0.7867"
-  },
-  {
-    "objectID": "ml_methods.html#results",
-    "href": "ml_methods.html#results",
-    "title": "Predictive Modeling",
-    "section": "Results",
-    "text": "Results\nThe baseline lands on 50.0%, which confirms the balanced design. Role family alone reaches 59.5% on the test set. Adding location, education, work arrangement and skills lifts the logistic model to 72.3%, and the random forest reaches 78.4%.\nThe gap between role-family-only and the full feature set is the result that matters most for this product. Job title alone is a weak predictor of pay. The rest of what a posting makes public carries a substantial amount of additional information.\n\n\n\n\n\n\nFigure 1: Predicted against actual salary class for the logistic model.\n\n\n\n\n\n\n\n\n\nWarningHow precisely to read these numbers\n\n\n\nThe test set holds 148 postings, so accuracy carries a standard error near four percentage points. Differences of two or three points between models should not be treated as meaningful. The forest’s advantage over the logistic model is larger than that, but the ranking of two closely spaced models could change on a different split.\nThe role-family-only specification shows 68.8% in cross-validation against 59.5% on test. That gap is about two standard errors and is most likely sampling variation, but it is a reason not to build an argument on that row alone."
-  },
-  {
-    "objectID": "ml_methods.html#what-separates-higher-paying-postings",
-    "href": "ml_methods.html#what-separates-higher-paying-postings",
-    "title": "Predictive Modeling",
-    "section": "What Separates Higher-Paying Postings",
-    "text": "What Separates Higher-Paying Postings\nThe logistic model is reported alongside the forest because its coefficients are readable. Each one is the change in log-odds of an above-median salary for a one standard deviation change in that feature, holding the others fixed. Positive values push toward above-median pay and negative values away from it.\n\n\n\n\n\n\nFigure 2: Features most strongly associated with an above-median salary.\n\n\n\n\n\nCode\ntop = coefficients.head(10)[[\"feature\", \"logistic_coefficient\", \"forest_importance\"]].copy()\ntop.columns = [\"Feature\", \"Logistic coefficient\", \"Forest importance\"]\ntop.reset_index(drop=True)\n\n\n\n\nTable 2: Ten strongest features by absolute logistic coefficient, with the random forest’s importance for the same feature.\n\n\n\n\n\n\n\n\n\n\nFeature\nLogistic coefficient\nForest importance\n\n\n\n\n0\nskill: Statistical Modeling\n1.109191\n0.024191\n\n\n1\nrole: Business Analyst\n-0.860149\n0.056789\n\n\n2\nstate: California\n0.745376\n0.104603\n\n\n3\nskill: Power BI\n-0.665396\n0.019781\n\n\n4\nskill: PostgreSQL\n-0.632117\n0.014308\n\n\n5\nrole: Data Scientist\n0.546338\n0.064809\n\n\n6\nstate: Maryland\n-0.449149\n0.009304\n\n\n7\nstate: Other state\n-0.433772\n0.052921\n\n\n8\nskill: Business Intelligence\n-0.431863\n0.003800\n\n\n9\nrole: Business Intelligence\n0.416418\n0.004479\n\n\n\n\n\n\n\n\n\n\nThe two models do not agree on what matters, and the disagreement is informative. The forest places its weight on state and role family, which are broad structural factors. The logistic model gives its largest coefficients to individual skills. A reasonable reading is that structure sets the general pay level while specific skills shift a posting within it.\n\n\n\n\n\n\nImportantA finding worth stating plainly\n\n\n\nThree of the strongest skill coefficients cut against the assumption that the most requested skills are the best paid. Checked against raw medians inside this sample:\n\n\n\nSkill\nPostings\nMedian with\nMedian without\nDifference\n\n\n\n\nStatistical Modeling\n33\n$211,200\n$148,100\n+$63,100\n\n\nPower BI\n59\n$122,500\n$155,725\n-$33,225\n\n\nPostgreSQL\n42\n$123,760\n$155,000\n-$31,240\n\n\n\nPower BI is not standing in for business analyst roles. Business Analyst makes up 14 percent of Power BI postings against 15 percent of the sample overall, so the negative coefficient is not absorbing a role effect."
-  },
-  {
-    "objectID": "ml_methods.html#revisiting-our-own-skill-targets",
-    "href": "ml_methods.html#revisiting-our-own-skill-targets",
-    "title": "Predictive Modeling",
-    "section": "Revisiting Our Own Skill Targets",
-    "text": "Revisiting Our Own Skill Targets\nThis result is uncomfortable for the plan on the Skill Gap Analysis page. Section 4 sets a target level for every skill from how often it appears in postings, so a skill in 20 percent or more gets a target of 4 and anything below 10 percent gets a 2. That rule treats frequency as a proxy for value. The model says the two come apart.\nStatistical Modeling appears in 6.4 percent of postings, which puts it near the bottom of our target list, and it carries the largest positive coefficient in the model. Power BI sits higher on frequency at 11.2 percent and is associated with pay roughly $33,000 below the rest of the sample. A plan built on counts alone would have us study the second and skip the first.\nFor my own ratings the gap is direct. I rated myself 5 on Power BI and 2 on Statistical Modeling, which is close to the inverse of what this slice of the market pays for.\nI would keep frequency as the measure of how likely a skill is to get an interview, and add the pay association as a separate measure of where that skill leads. The two answer different questions, and the plan as written only asks one of them."
-  },
-  {
-    "objectID": "ml_methods.html#what-this-means-in-practical-career-terms",
-    "href": "ml_methods.html#what-this-means-in-practical-career-terms",
-    "title": "Predictive Modeling",
-    "section": "What This Means in Practical Career Terms",
-    "text": "What This Means in Practical Career Terms\nFor a student targeting analytics roles in this industry, three things follow from the model.\nJob title is a weak signal. Role family alone classified pay no better than 59.5%. Searching by title, or assuming one title pays better than another, leaves out most of what the market is actually pricing.\nLocation remains a strong structural factor. California carries the largest positive coefficient of any non-skill feature, and the highest forest importance of any feature in the model. For a candidate who cannot relocate, this is a constraint worth naming rather than a skill to acquire.\nNot all in-demand skills are priced alike. The skills that appear most often in postings are not the skills most associated with higher pay. A study plan built only on frequency counts will point at the wrong things."
-  },
-  {
-    "objectID": "ml_methods.html#limitations",
-    "href": "ml_methods.html#limitations",
-    "title": "Predictive Modeling",
-    "section": "Limitations",
-    "text": "Limitations\n\nSalary is advertised on 591 of 1790 postings, or about 33 percent. Everything here describes employers who publish pay, which may not resemble those who do not.\nThe skill findings rest on small subgroups. Statistical Modeling appears on 33 postings and Power BI on 59, so those estimates are imprecise.\nThese are associations within one industry over one twelve-month window. Nothing here establishes that acquiring a skill would change an individual’s pay.\nSkills are recorded as a list per posting with no indication of whether a skill is required or merely preferred.\nThe two models disagree on feature ranking, so the ordering of individual features should be read as indicative rather than settled."
-  },
-  {
-    "objectID": "ml_methods.html#reproducing-the-results",
-    "href": "ml_methods.html#reproducing-the-results",
-    "title": "Predictive Modeling",
-    "section": "Reproducing the Results",
-    "text": "Reproducing the Results\nThe models, metrics and figures are produced by scripts/build_models.py, which reads data/processed/career_market_panel.csv and writes data/processed/model_metrics.csv, data/processed/model_coefficients.csv and two static PNGs to figures/. The random seed is fixed at 688, so the figures quoted on this page reproduce exactly.\nTo rebuild them, run python scripts/build_models.py from the repository root."
-  },
-  {
-    "objectID": "ml_methods.html#references",
-    "href": "ml_methods.html#references",
-    "title": "Predictive Modeling",
-    "section": "References",
-    "text": "References\n\n\nVerma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova. (2019): “An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements,” Journal of Education for Business, 94, 243–50."
-  },
-  {
     "objectID": "eda.html",
     "href": "eda.html",
     "title": "Market Baseline",
@@ -420,11 +287,235 @@
     "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,”https://www.onetonline.org/link/summary/15-2051.00."
   },
   {
+    "objectID": "ml_methods.html",
+    "href": "ml_methods.html",
+    "title": "Predictive Modeling",
+    "section": "",
+    "text": "The earlier pages describe the market. This page moves from describing it to predicting it. The question is whether the information a posting makes public, its role, location, work arrangement, education level and listed skills, is enough to tell whether that posting pays above or below the market median."
+  },
+  {
+    "objectID": "ml_methods.html#purpose",
+    "href": "ml_methods.html#purpose",
+    "title": "Predictive Modeling",
+    "section": "",
+    "text": "The earlier pages describe the market. This page moves from describing it to predicting it. The question is whether the information a posting makes public, its role, location, work arrangement, education level and listed skills, is enough to tell whether that posting pays above or below the market median."
+  },
+  {
+    "objectID": "ml_methods.html#what-we-modeled",
+    "href": "ml_methods.html#what-we-modeled",
+    "title": "Predictive Modeling",
+    "section": "What We Modeled",
+    "text": "What We Modeled\nWe built a binary classifier. The target is whether a posting’s advertised salary midpoint sits above the median of all postings that report usable pay, which is $151,475.\nSplitting at the median rather than at a round number keeps the two classes almost the same size, 295 postings above and 296 at or below. That matters for reading the results. A model that guessed the larger class every time would score about 50 percent, so anything above that is real signal rather than an artifact of unbalanced classes.\n\n\n\n\n\n\nNoteWhy classification rather than salary regression\n\n\n\nPredicting an exact salary from 591 postings would produce wide error bands that are hard to act on. A job seeker deciding whether to pursue a posting benefits more from a reliable above or below signal, together with the factors driving it, than from a point estimate carrying a $40,000 margin."
+  },
+  {
+    "objectID": "ml_methods.html#why-this-matters-for-a-job-seeker",
+    "href": "ml_methods.html#why-this-matters-for-a-job-seeker",
+    "title": "Predictive Modeling",
+    "section": "Why This Matters for a Job Seeker",
+    "text": "Why This Matters for a Job Seeker\nThe Skill Gap Analysis page shows which skills appear most often in postings, following the posting-level counting approach used in content analyses of analytics job advertisements (Verma et al. (2019)). Frequency alone does not tell a job seeker where to spend study time, because a skill can be requested constantly and still be present in roles across the whole pay range. What this page adds is the direction and size of each factor’s association with pay, which turns a list of in-demand skills into a ranked set of choices."
+  },
+  {
+    "objectID": "ml_methods.html#variables-used",
+    "href": "ml_methods.html#variables-used",
+    "title": "Predictive Modeling",
+    "section": "Variables Used",
+    "text": "Variables Used\nThe model uses 55 features built from 591 postings:\n\n\n\n\n\n\n\n\nBlock\nTreatment\nLevels\n\n\n\n\nRole family\nOne-hot\n5\n\n\nWork arrangement\nOne-hot, Unknown kept as a category\n4\n\n\nState\nSix most frequent states, plus Unspecified and Other\n8\n\n\nEducation level\nOne-hot, missing kept as a category\n6\n\n\nListed skills\nBinary indicator per skill on at least 5 percent of postings\n32\n\n\n\nThree fields were deliberately left out. Minimum years of experience is recorded on only 154 of these postings, so including it as a numeric variable would have meant discarding about three quarters of the sample. The staffing agency flag has 13 positive cases, too few to estimate. Occupation group was dropped because it is derived from the job title in the same way as role family and the two would carry the same information twice.\nWork arrangement and state both keep their missing categories rather than dropping those rows. Work arrangement is unknown for 278 of these postings and state is unspecified for 164, so dropping them would have cost roughly half the sample. Treating missing as its own category is also honest about the data: whether an employer publishes this information may itself carry signal."
+  },
+  {
+    "objectID": "ml_methods.html#how-we-evaluated-performance",
+    "href": "ml_methods.html#how-we-evaluated-performance",
+    "title": "Predictive Modeling",
+    "section": "How We Evaluated Performance",
+    "text": "How We Evaluated Performance\nThe sample was split 75 / 25 into 443 training and 148 test postings, stratified so both halves keep the same class balance. Models were compared by five-fold cross-validation inside the training set. The test set was scored once, at the end, after the choice of model was already fixed.\nThis sequence matters at this sample size. With 591 rows it is easy to adjust a model repeatedly against the test set and report a number that will not survive new data.\nFour specifications were fitted, two of them as reference points rather than as candidates:\n\nMajority-class baseline. Predicts the larger class every time. Sets the floor.\nLogistic regression on role family only. Tests whether anything beyond the job title helps.\nLogistic regression on all features. L2 regularized, features standardized.\nRandom forest on all features. 500 trees, minimum three samples per leaf.\n\n\n\nCode\ndisplay = metrics.copy()\ndisplay.columns = [\n    \"Model\", \"Features\", \"CV accuracy\", \"CV sd\",\n    \"Test accuracy\", \"Precision\", \"Recall\", \"F1\",\n]\ndisplay\n\n\n\n\nTable 1: Model performance. Cross-validation accuracy is measured inside the training set; test figures come from the single held-out evaluation.\n\n\n\n\n\n\n\n\n\n\nModel\nFeatures\nCV accuracy\nCV sd\nTest accuracy\nPrecision\nRecall\nF1\n\n\n\n\n0\nMajority-class baseline\n55\n0.5011\n0.0042\n0.5000\n0.0000\n0.0000\n0.0000\n\n\n1\nLogistic, role family only\n5\n0.6883\n0.0339\n0.5946\n0.5603\n0.8784\n0.6842\n\n\n2\nLogistic, all features\n55\n0.7336\n0.0340\n0.7230\n0.7143\n0.7432\n0.7285\n\n\n3\nRandom forest, all features\n55\n0.8171\n0.0372\n0.7838\n0.7763\n0.7973\n0.7867"
+  },
+  {
+    "objectID": "ml_methods.html#results",
+    "href": "ml_methods.html#results",
+    "title": "Predictive Modeling",
+    "section": "Results",
+    "text": "Results\nThe baseline lands on 50.0%, which confirms the balanced design. Role family alone reaches 59.5% on the test set. Adding location, education, work arrangement and skills lifts the logistic model to 72.3%, and the random forest reaches 78.4%.\nThe gap between role-family-only and the full feature set is the result that matters most for this product. Job title alone is a weak predictor of pay. The rest of what a posting makes public carries a substantial amount of additional information.\n\n\n\n\n\n\nFigure 1: Predicted against actual salary class for the logistic model.\n\n\n\n\n\n\n\n\n\nWarningHow precisely to read these numbers\n\n\n\nThe test set holds 148 postings, so accuracy carries a standard error near four percentage points. Differences of two or three points between models should not be treated as meaningful. The forest’s advantage over the logistic model is larger than that, but the ranking of two closely spaced models could change on a different split.\nThe role-family-only specification shows 68.8% in cross-validation against 59.5% on test. That gap is about two standard errors and is most likely sampling variation, but it is a reason not to build an argument on that row alone."
+  },
+  {
+    "objectID": "ml_methods.html#what-separates-higher-paying-postings",
+    "href": "ml_methods.html#what-separates-higher-paying-postings",
+    "title": "Predictive Modeling",
+    "section": "What Separates Higher-Paying Postings",
+    "text": "What Separates Higher-Paying Postings\nThe logistic model is reported alongside the forest because its coefficients are readable. Each one is the change in log-odds of an above-median salary for a one standard deviation change in that feature, holding the others fixed. Positive values push toward above-median pay and negative values away from it.\n\n\n\n\n\n\nFigure 2: Features most strongly associated with an above-median salary.\n\n\n\n\n\nCode\ntop = coefficients.head(10)[[\"feature\", \"logistic_coefficient\", \"forest_importance\"]].copy()\ntop.columns = [\"Feature\", \"Logistic coefficient\", \"Forest importance\"]\ntop.reset_index(drop=True)\n\n\n\n\nTable 2: Ten strongest features by absolute logistic coefficient, with the random forest’s importance for the same feature.\n\n\n\n\n\n\n\n\n\n\nFeature\nLogistic coefficient\nForest importance\n\n\n\n\n0\nskill: Statistical Modeling\n1.109191\n0.024191\n\n\n1\nrole: Business Analyst\n-0.860149\n0.056789\n\n\n2\nstate: California\n0.745376\n0.104603\n\n\n3\nskill: Power BI\n-0.665396\n0.019781\n\n\n4\nskill: PostgreSQL\n-0.632117\n0.014308\n\n\n5\nrole: Data Scientist\n0.546338\n0.064809\n\n\n6\nstate: Maryland\n-0.449149\n0.009304\n\n\n7\nstate: Other state\n-0.433772\n0.052921\n\n\n8\nskill: Business Intelligence\n-0.431863\n0.003800\n\n\n9\nrole: Business Intelligence\n0.416418\n0.004479\n\n\n\n\n\n\n\n\n\n\nThe two models do not agree on what matters, and the disagreement is informative. The forest places its weight on state and role family, which are broad structural factors. The logistic model gives its largest coefficients to individual skills. A reasonable reading is that structure sets the general pay level while specific skills shift a posting within it.\n\n\n\n\n\n\nImportantA finding worth stating plainly\n\n\n\nThree of the strongest skill coefficients cut against the assumption that the most requested skills are the best paid. Checked against raw medians inside this sample:\n\n\n\nSkill\nPostings\nMedian with\nMedian without\nDifference\n\n\n\n\nStatistical Modeling\n33\n$211,200\n$148,100\n+$63,100\n\n\nPower BI\n59\n$122,500\n$155,725\n-$33,225\n\n\nPostgreSQL\n42\n$123,760\n$155,000\n-$31,240\n\n\n\nPower BI is not standing in for business analyst roles. Business Analyst makes up 14 percent of Power BI postings against 15 percent of the sample overall, so the negative coefficient is not absorbing a role effect."
+  },
+  {
+    "objectID": "ml_methods.html#revisiting-our-own-skill-targets",
+    "href": "ml_methods.html#revisiting-our-own-skill-targets",
+    "title": "Predictive Modeling",
+    "section": "Revisiting Our Own Skill Targets",
+    "text": "Revisiting Our Own Skill Targets\nThis result is uncomfortable for the plan on the Skill Gap Analysis page. Section 4 sets a target level for every skill from how often it appears in postings, so a skill in 20 percent or more gets a target of 4 and anything below 10 percent gets a 2. That rule treats frequency as a proxy for value. The model says the two come apart.\nStatistical Modeling appears in 6.4 percent of postings, which puts it near the bottom of our target list, and it carries the largest positive coefficient in the model. Power BI sits higher on frequency at 11.2 percent and is associated with pay roughly $33,000 below the rest of the sample. A plan built on counts alone would have us study the second and skip the first.\nFor my own ratings the gap is direct. I rated myself 5 on Power BI and 2 on Statistical Modeling, which is close to the inverse of what this slice of the market pays for.\nI would keep frequency as the measure of how likely a skill is to get an interview, and add the pay association as a separate measure of where that skill leads. The two answer different questions, and the plan as written only asks one of them."
+  },
+  {
+    "objectID": "ml_methods.html#what-this-means-in-practical-career-terms",
+    "href": "ml_methods.html#what-this-means-in-practical-career-terms",
+    "title": "Predictive Modeling",
+    "section": "What This Means in Practical Career Terms",
+    "text": "What This Means in Practical Career Terms\nFor a student targeting analytics roles in this industry, three things follow from the model.\nJob title is a weak signal. Role family alone classified pay no better than 59.5%. Searching by title, or assuming one title pays better than another, leaves out most of what the market is actually pricing.\nLocation remains a strong structural factor. California carries the largest positive coefficient of any non-skill feature, and the highest forest importance of any feature in the model. For a candidate who cannot relocate, this is a constraint worth naming rather than a skill to acquire.\nNot all in-demand skills are priced alike. The skills that appear most often in postings are not the skills most associated with higher pay. A study plan built only on frequency counts will point at the wrong things."
+  },
+  {
+    "objectID": "ml_methods.html#limitations",
+    "href": "ml_methods.html#limitations",
+    "title": "Predictive Modeling",
+    "section": "Limitations",
+    "text": "Limitations\n\nSalary is advertised on 591 of 1790 postings, or about 33 percent. Everything here describes employers who publish pay, which may not resemble those who do not.\nThe skill findings rest on small subgroups. Statistical Modeling appears on 33 postings and Power BI on 59, so those estimates are imprecise.\nThese are associations within one industry over one twelve-month window. Nothing here establishes that acquiring a skill would change an individual’s pay.\nSkills are recorded as a list per posting with no indication of whether a skill is required or merely preferred.\nThe two models disagree on feature ranking, so the ordering of individual features should be read as indicative rather than settled."
+  },
+  {
+    "objectID": "ml_methods.html#reproducing-the-results",
+    "href": "ml_methods.html#reproducing-the-results",
+    "title": "Predictive Modeling",
+    "section": "Reproducing the Results",
+    "text": "Reproducing the Results\nThe models, metrics and figures are produced by scripts/build_models.py, which reads data/processed/career_market_panel.csv and writes data/processed/model_metrics.csv, data/processed/model_coefficients.csv and two static PNGs to figures/. The random seed is fixed at 688, so the figures quoted on this page reproduce exactly.\nTo rebuild them, run python scripts/build_models.py from the repository root."
+  },
+  {
+    "objectID": "ml_methods.html#references",
+    "href": "ml_methods.html#references",
+    "title": "Predictive Modeling",
+    "section": "References",
+    "text": "References\n\n\nVerma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova. (2019): “An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements,” Journal of Education for Business, 94, 243–50."
+  },
+  {
+    "objectID": "introduction.html",
+    "href": "introduction.html",
+    "title": "Project Foundation",
+    "section": "",
+    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nComputer Systems Design and Related Services\n\n\nNAICS Code\n5415\n\n\nCareer Pathway\nData Analytics\n\n\nPrimary Focus Area\nAnalytics career opportunities, qualifications, and market patterns\n\n\nTarget User\nStudents, recent graduates, and early-career professionals pursuing analytics roles\n\n\nProduct Question\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why Computer Systems Design and Related Services is a relevant industry for analytics careers."
+  },
+  {
+    "objectID": "introduction.html#project-at-a-glance",
+    "href": "introduction.html#project-at-a-glance",
+    "title": "Project Foundation",
+    "section": "",
+    "text": "Project Element\nTeam Selection\n\n\n\n\nIndustry\nComputer Systems Design and Related Services\n\n\nNAICS Code\n5415\n\n\nCareer Pathway\nData Analytics\n\n\nPrimary Focus Area\nAnalytics career opportunities, qualifications, and market patterns\n\n\nTarget User\nStudents, recent graduates, and early-career professionals pursuing analytics roles\n\n\nProduct Question\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?\n\n\n\n\n\n\n\n\n\nTipPurpose of This Page\n\n\n\nThis page defines the foundation of our career-evaluation product. It explains who the product is designed for, what career question it will answer, and why Computer Systems Design and Related Services is a relevant industry for analytics careers."
+  },
+  {
+    "objectID": "introduction.html#career-pathway",
+    "href": "introduction.html#career-pathway",
+    "title": "Project Foundation",
+    "section": "1. Career Pathway",
+    "text": "1. Career Pathway\n\nSelected career pathway: Data Analytics\nWhy we selected it: Data Analytics was selected because it represents a broad and practical career pathway that appears across many technology-driven organizations. It also allows the team to evaluate multiple related role types while focusing on the skills, qualifications, compensation, and market conditions most relevant to aspiring analytics professionals."
+  },
+  {
+    "objectID": "introduction.html#industry-selection",
+    "href": "introduction.html#industry-selection",
+    "title": "Project Foundation",
+    "section": "2. Industry Selection",
+    "text": "2. Industry Selection\n\nSelected industry: Computer Systems Design and Related Services NAICS code: 5415\n\nIndustry Justification\nComputer Systems Design and Related Services is highly relevant to the Data Analytics career pathway because organizations in this industry rely heavily on data, software, information systems, and technology-enabled decision-making. The industry also gives the project enough data to work with: the v2 course extract holds 19,886 postings in NAICS 5415, and 1,790 of them are analytics roles posted in the last 12 months. That is enough to compare salary, location, experience, work arrangements, and skills across several analytics roles.\n\n\nRole of Analytics in This Industry\nAnalytics professionals in this industry support areas such as business intelligence, data analysis, systems performance, technology consulting, reporting, forecasting, and data-driven decision-making. These roles may require candidates to interpret large datasets, identify trends, build reports and dashboards, and translate analytical findings into recommendations for clients or internal business teams."
+  },
+  {
+    "objectID": "introduction.html#target-user",
+    "href": "introduction.html#target-user",
+    "title": "Project Foundation",
+    "section": "3. Target User",
+    "text": "3. Target User\n\n\nUser Profile\nThe target user is a student, recent graduate, or early-career professional interested in pursuing an analytics-related career within the Computer Systems Design and Related Services industry. The user may have foundational experience with data analysis, statistics, business analytics, or related disciplines and some exposure to tools such as Excel, SQL, Python, R, or data visualization platforms. However, they may have limited professional experience in technology-focused organizations and may not yet understand how their existing skills align with available analytics roles.\n\n\nUser Needs\nBefore applying for analytics positions in Computer Systems Design and Related Services, the target user needs a clearer understanding of the types of analytics roles available, the technical and professional skills employers commonly request, typical education requirements, salary expectations, geographic and remote work patterns, and potential skill gaps. This information can help the user evaluate their current qualifications and identify which skills or experiences they should prioritize to become a more competitive candidate."
+  },
+  {
+    "objectID": "introduction.html#product-question",
+    "href": "introduction.html#product-question",
+    "title": "Project Foundation",
+    "section": "4. Product Question",
+    "text": "4. Product Question\n\n\nPrimary Question\n\nHow can an aspiring analytics professional evaluate career opportunities in Computer Systems Design and Related Services and determine which skills, qualifications, and experiences to prioritize to become a competitive candidate?\n\n\n\nSupporting Questions\n\nWhat analytics roles appear most frequently in Computer Systems Design and Related Services?\nWhich technical and professional skills are most commonly requested?\nHow do salary, experience, location, and remote-work patterns vary?\nWhere does the target user have skill gaps?\nWhich skills should the target user prioritize?"
+  },
+  {
+    "objectID": "introduction.html#project-rationale",
+    "href": "introduction.html#project-rationale",
+    "title": "Project Foundation",
+    "section": "5. Project Rationale",
+    "text": "5. Project Rationale\n\n\nProblem Statement\nStudents and early-career professionals may not have a clear understanding of the skills and job-market needs required for analytics roles within Computer Systems Design and Related Services, which can result in difficulty identifying appropriate roles and determining how well their qualifications align with employer expectations.\n\n\nWhy the Question Matters\nUnderstanding these requirements is important because students and early-career professionals may need more than general analytics knowledge when preparing for a career in a specific industry. Knowing which skills, qualifications, and experience employers are seeking can help job seekers make more informed decisions about their career preparation and identify areas they may need to develop before applying. It also enables them to better communicate their own skill sets to align with market needs.\n\n\nValue of the Product\nThe finished product will provide job seekers with the insights and information needed to better position themselves in the job market, assess their skills and identify areas for self-improvement, and better communicate their strengths based on what employers are seeking. By bringing together information about available roles, required skills and qualifications, salary, location, and work arrangements, the product can support users in their job search and help them better understand current market needs."
+  },
+  {
+    "objectID": "introduction.html#literature-review",
+    "href": "introduction.html#literature-review",
+    "title": "Project Foundation",
+    "section": "6. Literature Review",
+    "text": "6. Literature Review\n\nSource 1: NAICS 5415 Industry Definition\nCitation: U.S. Census Bureau. (2022). 2022 NAICS definition: Computer Systems Design and Related Services (5415).\nSummary and relevance: The U.S. Census Bureau defines NAICS 5415 as establishments that provide computer systems design and related services. This includes work involving computer hardware, software, and communication technologies (U.S. Census Bureau (2022)). The definition helps keep our analysis focused on the industry selected by the team.\n\n\nSource 2: Data Scientist Career Profile\nCitation: O*NET OnLine. (2026). Data Scientists, 15-2051.00.\nSummary and relevance: O*NET describes Data Scientists as professionals who turn raw data into useful information through programming, visualization, data mining, modeling, and related methods (O*NET OnLine (2026)). It also lists tasks such as preparing data, creating charts, explaining results, and recommending data-based solutions. This supports our decision to study several connected analytics roles rather than one exact job title.\n\n\nSource 3: Skills in Analytics Job Advertisements\nCitation: Verma, A., Yurov, K. M., Lane, P. L., & Yurova, Y. V. (2019). An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements. Journal of Education for Business, 94(4), 243–250.\nSummary and relevance: This study compares the skills requested for Business Analyst, Data Analyst, and Data Scientist positions (Verma et al. (2019)). It shows that the roles share some skills but also have important differences. This supports the use of job postings to compare related career paths and explains why we grouped several analytics titles while still reporting separate occupation categories."
+  },
+  {
+    "objectID": "introduction.html#expected-dataset-fields",
+    "href": "introduction.html#expected-dataset-fields",
+    "title": "Project Foundation",
+    "section": "7. Expected Dataset Fields",
+    "text": "7. Expected Dataset Fields\n\nThe table below lists the main fields used in the project and what each field supports.\n\n\n\n\n\n\n\nField or Variable\nHow the Team Uses It\n\n\n\n\nIndustry or NAICS code\nFilter postings to NAICS 5415, Computer Systems Design and Related Services\n\n\nJob title\nIdentify which analytics roles appear and group them into a role family\n\n\nCompany or employer\nCheck how concentrated hiring is across employers in Computer Systems Design and Related Services\n\n\nSkills\nPrimary input to the skill-gap analysis; rank the tools and competencies employers request\n\n\nSoftware or specialized skills\nSeparate tool requirements such as SQL, Python, R, Tableau, and Power BI from general competencies\n\n\nCertifications\nIdentify professional or technical credentials included in analytics postings\n\n\nExperience (minimum and maximum years)\nJudge which roles are realistic for an early-career candidate\n\n\nEducation level\nRecord degree expectations, which we expect to run higher in this industry than in analytics generally\n\n\nSalary (minimum and maximum)\nDescribe advertised compensation ranges for the selected analytics roles\n\n\nCity, state, and metropolitan area\nMap where analytics opportunities are geographically concentrated\n\n\nRemote-work status\nCompare remote, hybrid, and onsite postings\n\n\nPosting date and duration\nConfirm the postings are recent and check whether the sample is spread evenly over time\n\n\n\n\nNote on Data Volume\nThe original NAICS 3254 industry scope produced too few relevant analytics postings to support meaningful distribution-level analysis. In Module 2, the team therefore revised the industry scope to NAICS 5415, Computer Systems Design and Related Services. In Module 3 the panel was rebuilt on the corrected v2 extract and limited to the most recent 12 months of postings, as documented on the Data Preparation page. This provides a stronger basis for evaluating salary, geography, education, work arrangements, employers, and other labor-market patterns."
+  },
+  {
+    "objectID": "introduction.html#what-we-expect-to-explore",
+    "href": "introduction.html#what-we-expect-to-explore",
+    "title": "Project Foundation",
+    "section": "8. What We Expect to Explore",
+    "text": "8. What We Expect to Explore\n\nWithin Computer Systems Design and Related Services, we expect analytics opportunities to span several related role types and employer contexts. Our analysis will examine how demand varies across job titles, employers, salary levels, education requirements, geographic markets, and work arrangements. We will also evaluate the skills information available in the dataset while documenting limitations in the source data rather than assuming that missing skills or experience fields represent employer preferences. These expectations will be tested against the data and revised where the evidence supports a different conclusion.\nWhere each expectation is tested: The Exploratory Analysis page covers roles, employers, salary, location, education, experience, and work arrangements. The Skill Gap Analysis page compares the skills employers request with the team’s own ratings. The Career Strategy page will bring both together into recommendations for the target user."
+  },
+  {
+    "objectID": "introduction.html#project-scope-and-boundaries",
+    "href": "introduction.html#project-scope-and-boundaries",
+    "title": "Project Foundation",
+    "section": "9. Project Scope and Boundaries",
+    "text": "9. Project Scope and Boundaries\n\n\nIncluded\n\nJob postings connected to the selected career pathway\nComputer Systems Design and Related Services under NAICS 5415\nRelevant skills, experience, salary, geography, and work arrangements\nCareer-readiness recommendations for the target user\n\n\n\nNot Included\n\nThe entire labor market\nCareers unrelated to the selected pathway\nIndustries outside the selected industry scope unless needed for context\nClaims that cannot be supported by the available data"
+  },
+  {
+    "objectID": "introduction.html#module-1-completion-checklist",
+    "href": "introduction.html#module-1-completion-checklist",
+    "title": "Project Foundation",
+    "section": "Module 1 Completion Checklist",
+    "text": "Module 1 Completion Checklist\n\nCareer pathway selected\nNAICS 5415 selected\nIndustry identified\nTarget user defined\nProduct question approved by the team\nProject rationale completed\nThree to five sources reviewed\nExpected dataset fields documented\nGitHub repository created\nQuarto website created\nInitial website published\nAll sections reviewed by the team"
+  },
+  {
+    "objectID": "introduction.html#references",
+    "href": "introduction.html#references",
+    "title": "Project Foundation",
+    "section": "References",
+    "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,”https://www.onetonline.org/link/summary/15-2051.00.\n\n\nU.S. Census Bureau. (2022): “2022 NAICS Definition: Computer Systems Design and Related Services (5415),”https://www.census.gov/naics/?input=5415&year=2022&details=5415.\n\n\nVerma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova. (2019): “An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements,” Journal of Education for Business, 94, 243–50."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "This site is a career evaluation product built for MET AD 688, Big Data and Cloud Analytics for Business, at Boston University Metropolitan College. It helps a student or early-career professional judge the job market for Data Analytics roles in Computer Systems Design and Related Services (NAICS 5415).\nThe product answers one question: how can an aspiring analytics professional evaluate career opportunities in this industry and decide which skills, qualifications, and experiences to put first?\n\n\n\n\n\n\n\nCourse\nMET AD 688, Big Data and Cloud Analytics for Business\n\n\nTeam\nGroup 2\n\n\nIndustry\nComputer Systems Design and Related Services (NAICS 5415)\n\n\nCareer pathway\nData Analytics\n\n\nData\nMET CareerCompass 2026 v2 job-postings extract\n\n\nAnalytical sample\n1,790 analytics postings, September 2025 to September 2026"
+  },
+  {
+    "objectID": "about.html#about-this-site",
+    "href": "about.html#about-this-site",
+    "title": "About",
+    "section": "",
+    "text": "This site is a career evaluation product built for MET AD 688, Big Data and Cloud Analytics for Business, at Boston University Metropolitan College. It helps a student or early-career professional judge the job market for Data Analytics roles in Computer Systems Design and Related Services (NAICS 5415).\nThe product answers one question: how can an aspiring analytics professional evaluate career opportunities in this industry and decide which skills, qualifications, and experiences to put first?\n\n\n\n\n\n\n\nCourse\nMET AD 688, Big Data and Cloud Analytics for Business\n\n\nTeam\nGroup 2\n\n\nIndustry\nComputer Systems Design and Related Services (NAICS 5415)\n\n\nCareer pathway\nData Analytics\n\n\nData\nMET CareerCompass 2026 v2 job-postings extract\n\n\nAnalytical sample\n1,790 analytics postings, September 2025 to September 2026"
+  },
+  {
+    "objectID": "about.html#how-to-read-the-site",
+    "href": "about.html#how-to-read-the-site",
+    "title": "About",
+    "section": "How to Read the Site",
+    "text": "How to Read the Site\nThe pages follow the order of the analysis.\n\n\n\nPage\nWhat it covers\n\n\n\n\nProject Overview\nTarget user, product question, industry choice, and scope\n\n\nData Preparation\nHow 504,208 raw postings were filtered and cleaned to the 1,790 used here\n\n\nMarket Baseline\nDemand, salary, location, experience, education, and work arrangement\n\n\nSkill Gap Analysis\nSkills employers request compared with the team’s own ratings, and an improvement plan\n\n\nPredictive Modeling\nA classifier for above-median pay and the factors that separate higher-paying postings\n\n\nCareer Strategy\nFinal recommendations for the target user"
+  },
+  {
+    "objectID": "about.html#the-team",
+    "href": "about.html#the-team",
+    "title": "About",
+    "section": "The Team",
+    "text": "The Team\nThe three of us are also the product’s test users. Each member has a different target role, and the Skill Gap Analysis page measures our own skills against the market.\n\n\n\n\n\n\n\n\nMember\nTarget role\nBackground\n\n\n\n\nJenna DeRosa\nBusiness Intelligence / Business Analyst\nStrong Excel, BI, and communication skills; some Power BI; beginner in coding\n\n\nMariam El Jouzou\nBusiness Analyst\nStrong business requirements and analysis skills; beginner in coding\n\n\nJuan Franco\nData Analyst, moving toward Data Scientist\nExpert in Excel, Power BI, Tableau, and data analysis; intermediate in SQL and Python"
+  },
+  {
+    "objectID": "about.html#team-contributions",
+    "href": "about.html#team-contributions",
+    "title": "About",
+    "section": "Team Contributions",
+    "text": "Team Contributions\nThe table shows who led each part of the project.\n\n\n\nPart of the project\nLead\n\n\n\n\nCareer pathway and product question\nEntire team\n\n\nIndustry selection and project scope\nJenna\n\n\nTarget user and project rationale\nMariam\n\n\nExpected dataset fields and exploration plan\nJuan\n\n\nData preparation and panel build\nMariam\n\n\nMarket baseline analysis\nJenna\n\n\nSkill-gap analysis and career evaluation logic\nJenna\n\n\nImprovement plan\nJuan\n\n\nHome page and site design\nMariam\n\n\nPredictive modeling\nJuan\n\n\nCareer strategy and final recommendations\nJenna\n\n\nAbout page and team contributions\nJenna\n\n\nFinal report and weekly standup document\nMariam"
+  },
+  {
+    "objectID": "about.html#data-and-methods",
+    "href": "about.html#data-and-methods",
+    "title": "About",
+    "section": "Data and Methods",
+    "text": "Data and Methods\nThe source is the MET CareerCompass 2026 v2 job-postings extract provided for the course. The analytical panel keeps analytics-related postings in NAICS 5415 from the most recent twelve months. The filtering steps and their counts are documented on the Data Preparation page.\nThe site is built with Quarto and Python. The cleaned panel, the scripts that build it, and the model outputs are all stored in the repository, so every figure on the site can be reproduced.\nThe results describe advertised job postings in one industry over one year. They are not a complete picture of the U.S. analytics job market, and each page lists its own limitations."
+  },
+  {
+    "objectID": "about.html#repository",
+    "href": "about.html#repository",
+    "title": "About",
+    "section": "Repository",
+    "text": "Repository\nThe code, data, and page sources are on GitHub: JennaDer/METAD688_Group2."
   },
   {
     "objectID": "index.html",

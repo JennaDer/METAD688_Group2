@@ -26,26 +26,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -121,31 +102,45 @@ div.csl-indent {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./introduction.html"> 
-<span class="menu-text">Project Overview</span></a>
+<span class="menu-text">Project Foundation</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./data_cleaning.html"> 
-<span class="menu-text">Data Preparation</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-market-analysis" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Market Analysis</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-market-analysis">    
+        <li>
+    <a class="dropdown-item" href="./data_preparation.html">
+ <span class="dropdown-text">Data Preparation</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./eda.html" aria-current="page"> 
-<span class="menu-text">Market Baseline</span></a>
+        <li>
+    <a class="dropdown-item" href="./market_baseline.html">
+ <span class="dropdown-text">Market Baseline</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./skill_gap_analysis.html"> 
-<span class="menu-text">Skill Gap Analysis</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-career-evaluation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Career Evaluation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-career-evaluation">    
+        <li>
+    <a class="dropdown-item" href="./skill_gap_analysis.html">
+ <span class="dropdown-text">Skill-Gap Analysis</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./ml_methods.html"> 
-<span class="menu-text">Predictive Modeling</span></a>
+        <li>
+    <a class="dropdown-item" href="./career_evaluation.html">
+ <span class="dropdown-text">Career Scorecard</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./career_plan.html"> 
-<span class="menu-text">Career Strategy</span></a>
+    <a class="nav-link" href="./final_recommendations.html"> 
+<span class="menu-text">Recommendations</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">Team</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -190,7 +185,6 @@ div.csl-indent {
   </ul></li>
   <li><a href="#experience-and-education" id="toc-experience-and-education" class="nav-link" data-scroll-target="#experience-and-education">Experience and Education</a>
   <ul class="collapse">
-  <li><a href="#experience-distribution" id="toc-experience-distribution" class="nav-link" data-scroll-target="#experience-distribution">Experience Distribution</a></li>
   <li><a href="#education-distribution" id="toc-education-distribution" class="nav-link" data-scroll-target="#education-distribution">Education Distribution</a></li>
   </ul></li>
   <li><a href="#remote-hybrid-and-on-site-work" id="toc-remote-hybrid-and-on-site-work" class="nav-link" data-scroll-target="#remote-hybrid-and-on-site-work">Remote, Hybrid, and On-site Work</a></li>
@@ -202,7 +196,6 @@ div.csl-indent {
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#job-market-snapshot" id="toc-job-market-snapshot" class="nav-link" data-scroll-target="#job-market-snapshot">Job Market Snapshot</a></li>
   <li><a href="#reproducing-the-results" id="toc-reproducing-the-results" class="nav-link" data-scroll-target="#reproducing-the-results">Reproducing the Results</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -245,24 +238,24 @@ div.csl-indent {
 <p><strong>Industry:</strong> Computer Systems Design and Related Services<br>
 <strong>NAICS code:</strong> 5415<br>
 <strong>Career pathway:</strong> Data Analytics<br>
-<strong>Dates covered:</strong> September 11, 2025-September 10, 2026<br>
-<strong>Final dataset:</strong> 1,790 job postings</p>
+<strong>Dates covered:</strong> March 25, 2026–June 29, 2026<br>
+<strong>Final dataset:</strong> 287 job postings</p>
 </div>
 </div>
 </section>
 <section id="market-overview" class="level2">
 <h2 class="anchored" data-anchor-id="market-overview">Market Overview</h2>
-<p>Our cleaned dataset contains 1,790 job postings related to Data Analytics within NAICS 5415. It includes positions in data analysis, data science, data engineering, business analysis, and business intelligence.</p>
+<p>Our cleaned dataset contains 287 job postings related to Data Analytics within NAICS 5415. It includes positions in data analysis, data science, data engineering, business analysis, and business intelligence.</p>
 <p>These results describe the postings available in the course dataset. They should not be treated as a complete picture of every analytics job in the United States.</p>
 <section id="main-findings" class="level3">
 <h3 class="anchored" data-anchor-id="main-findings">Main Findings</h3>
 <ul>
-<li>The final dataset contains 1,790 relevant postings.</li>
+<li>The final dataset contains 287 relevant postings.</li>
 <li>Data Scientists and Database Architects are the two largest occupation groups.</li>
-<li>Salary information is available for 591 postings.</li>
-<li>The median advertised salary midpoint is $151,475.</li>
+<li>Salary information is available for 112 postings.</li>
+<li>The median advertised salary midpoint is $150,708.</li>
 <li>California has the most postings with an identified state.</li>
-<li>Remote and hybrid jobs together account for 41.3% of the dataset.</li>
+<li>Remote and hybrid jobs together account for 41.5% of the dataset.</li>
 <li>Some fields have a large amount of missing or unknown information.</li>
 </ul>
 </section>
@@ -294,37 +287,37 @@ Figure&nbsp;1: Job postings by occupation group.
 <tr class="odd">
 <td style="text-align: right;">1</td>
 <td>Data Scientists</td>
-<td style="text-align: right;">769</td>
-<td style="text-align: right;">43.0%</td>
+<td style="text-align: right;">135</td>
+<td style="text-align: right;">47.0%</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
 <td>Database Architects</td>
-<td style="text-align: right;">531</td>
-<td style="text-align: right;">29.7%</td>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;">34.1%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
 <td>Management Analysts</td>
-<td style="text-align: right;">297</td>
-<td style="text-align: right;">16.6%</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">11.5%</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
 <td>Other matched analytics roles</td>
-<td style="text-align: right;">161</td>
-<td style="text-align: right;">9.0%</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">5.6%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
 <td>Business Intelligence Analysts</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: right;">1.8%</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1.7%</td>
 </tr>
 </tbody>
 </table>
-<p>Data Scientists make up the largest group, followed by Database Architects. Together, these two groups account for 72.6% of the dataset.</p>
-<p>The occupation names come from the O*NET classifications in the source data <span class="citation" data-cites="onet2026datascientists">(<a href="#ref-onet2026datascientists" role="doc-biblioref">O*NET OnLine (2026)</a>)</span>. As a result, some positions with titles such as Data Analyst or Data Engineer may be included under a broader occupation group. Job seekers may want to search across several related titles instead of searching only for “Data Analyst.”</p>
+<p>Data Scientists make up the largest group, followed by Database Architects. Together, these two groups account for 81.1% of the dataset.</p>
+<p>The occupation names come from the O*NET classifications in the source data. As a result, some positions with titles such as Data Analyst or Data Engineer may be included under a broader occupation group. Job seekers may want to search across several related titles instead of searching only for “Data Analyst.”</p>
 </section>
 </section>
 <section id="salary-distribution" class="level2">
@@ -351,19 +344,19 @@ Figure&nbsp;2: Distribution of advertised annual salary midpoints.
 <tbody>
 <tr class="odd">
 <td>Postings with usable salary data</td>
-<td style="text-align: right;">591 of 1,790 (33.0%)</td>
+<td style="text-align: right;">112 of 287 (39.0%)</td>
 </tr>
 <tr class="even">
 <td>Median minimum salary</td>
-<td style="text-align: right;">$130,000</td>
+<td style="text-align: right;">$125,000</td>
 </tr>
 <tr class="odd">
 <td>Median maximum salary</td>
-<td style="text-align: right;">$170,300</td>
+<td style="text-align: right;">$173,000</td>
 </tr>
 <tr class="even">
 <td>Median salary midpoint</td>
-<td style="text-align: right;">$151,475</td>
+<td style="text-align: right;">$150,708</td>
 </tr>
 <tr class="odd">
 <td>25th-percentile midpoint</td>
@@ -371,15 +364,15 @@ Figure&nbsp;2: Distribution of advertised annual salary midpoints.
 </tr>
 <tr class="even">
 <td>75th-percentile midpoint</td>
-<td style="text-align: right;">$187,500</td>
+<td style="text-align: right;">$180,000</td>
 </tr>
 <tr class="odd">
 <td>Highest retained midpoint</td>
-<td style="text-align: right;">$340,555</td>
+<td style="text-align: right;">$318,250</td>
 </tr>
 </tbody>
 </table>
-<p>Among postings that include salary information, the middle half of salary midpoints falls between $120,000 and $187,500. The median midpoint is $151,475.</p>
+<p>Among postings that include salary information, the middle half of salary midpoints falls between $120,000 and $180,000. The median midpoint is $150,708.</p>
 <p>Salary information is missing from most of the postings, so these numbers only describe employers that included usable pay information.</p>
 </section>
 <section id="salary-by-occupation-segment" class="level3">
@@ -394,7 +387,7 @@ Figure&nbsp;3: Median advertised salary midpoint by occupation segment.
 </figcaption>
 </figure>
 </div>
-<p>Among occupation groups with at least 10 postings containing usable salary data, Data Scientists have the highest median advertised salary midpoint at $174,800, followed by Database Architects at $155,225. Other matched analytics roles have a median midpoint of $131,500, Business Intelligence Analysts have a median midpoint of $122,500, and Management Analysts have a median midpoint of $99,000.</p>
+<p>Among occupation groups with at least 10 postings containing usable salary data, Data Scientists / Data Analysts have the highest median advertised salary midpoint at $163,025, followed by Database Architects / Data Engineers at $155,450. Management Analysts have a lower median midpoint of $92,500.</p>
 <p>This comparison includes only occupation groups with at least 10 usable salary observations to avoid drawing conclusions from very small samples. The results are descriptive of postings in this dataset that reported usable salary information and should not be interpreted as salary estimates for all positions in these occupations.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -406,7 +399,7 @@ Figure&nbsp;3: Median advertised salary midpoint by occupation segment.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Hourly pay was converted to an annual amount using 2,080 work hours per year. Zero values were treated as missing, and salaries below $20,000 were removed as unrealistic. Salary results are based on 591 postings rather than the full dataset.</p>
+<p>Hourly pay was converted to an annual amount using 2,080 work hours per year. Zero values were treated as missing, and salaries below $20,000 were removed as unrealistic. Salary results are based on 112 postings rather than the full dataset.</p>
 </div>
 </div>
 </section>
@@ -423,7 +416,7 @@ Figure&nbsp;4: States with the most identified job postings.
 </figcaption>
 </figure>
 </div>
-<p>California has the highest number of postings with an identified state, with 258. Virginia follows with 171, New York with 156, Texas with 132, and Washington with 70.</p>
+<p>California has the highest number of postings with an identified state, with 45. Texas follows with 21. Washington, New York, and Virginia each have 18.</p>
 <section id="top-identified-states" class="level3">
 <h3 class="anchored" data-anchor-id="top-identified-states">Top Identified States</h3>
 <table class="caption-top table">
@@ -439,92 +432,42 @@ Figure&nbsp;4: States with the most identified job postings.
 <tr class="odd">
 <td style="text-align: right;">1</td>
 <td>California</td>
-<td style="text-align: right;">258</td>
-<td style="text-align: right;">14.4%</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">15.7%</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td>Virginia</td>
-<td style="text-align: right;">171</td>
-<td style="text-align: right;">9.6%</td>
+<td>Texas</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">7.3%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
-<td>New York</td>
-<td style="text-align: right;">156</td>
-<td style="text-align: right;">8.7%</td>
+<td>Washington</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">6.3%</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">4</td>
-<td>Texas</td>
-<td style="text-align: right;">132</td>
-<td style="text-align: right;">7.4%</td>
+<td style="text-align: right;">3</td>
+<td>New York</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">6.3%</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">5</td>
-<td>Washington</td>
-<td style="text-align: right;">70</td>
-<td style="text-align: right;">3.9%</td>
+<td style="text-align: right;">3</td>
+<td>Virginia</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">6.3%</td>
 </tr>
 </tbody>
 </table>
-<p>The postings are spread across several major technology and business markets. However, 377 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset.</p>
+<p>The postings are spread across several major technology and business markets. However, 82 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset.</p>
 </section>
 </section>
 <section id="experience-and-education" class="level2">
 <h2 class="anchored" data-anchor-id="experience-and-education">Experience and Education</h2>
-<p>Minimum experience information is available for 520 of the 1,790 postings (29.1%). Among postings with usable minimum-experience information, the median minimum requirement is 5 years.</p>
-<div id="fig-experience" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Bar chart showing minimum years of experience requested across five bands, with five to seven years the largest group.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-experience-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/experience_distribution.png" class="img-fluid figure-img" alt="Bar chart showing minimum years of experience requested across five bands, with five to seven years the largest group.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-experience-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Minimum years of experience requested, among postings that state a requirement.
-</figcaption>
-</figure>
-</div>
-<section id="experience-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="experience-distribution">Experience Distribution</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Minimum Experience</th>
-<th style="text-align: right;">Postings</th>
-<th style="text-align: right;">Share of Postings with Data</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1-2 years</td>
-<td style="text-align: right;">102</td>
-<td style="text-align: right;">19.6%</td>
-</tr>
-<tr class="even">
-<td>3-4 years</td>
-<td style="text-align: right;">137</td>
-<td style="text-align: right;">26.3%</td>
-</tr>
-<tr class="odd">
-<td>5-7 years</td>
-<td style="text-align: right;">188</td>
-<td style="text-align: right;">36.2%</td>
-</tr>
-<tr class="even">
-<td>8-10 years</td>
-<td style="text-align: right;">73</td>
-<td style="text-align: right;">14.0%</td>
-</tr>
-<tr class="odd">
-<td>More than 10 years</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">3.8%</td>
-</tr>
-</tbody>
-</table>
-<p>The largest group asks for five to seven years. Only 102 of the 520 postings with usable experience data request two years or less, which is 19.6% of that subset. For a student or early-career candidate, this suggests that most advertised roles in this industry are not entry-level, and that the postings open to less experience are a small share of the market.</p>
-<p>Shares in this table are calculated against the 520 postings that state a requirement, not against the full dataset.</p>
-</section>
+<p>The course dataset includes minimum and maximum experience fields, but both are blank across all 165,386 original records. This means we cannot create a reliable experience distribution.</p>
+<p>Instead, we report education as the available qualification measure.</p>
 <section id="education-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="education-distribution">Education Distribution</h3>
 <table class="caption-top table">
@@ -537,38 +480,28 @@ Figure&nbsp;5: Minimum years of experience requested, among postings that state 
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bachelor’s degree</td>
-<td style="text-align: right;">615</td>
-<td style="text-align: right;">34.4%</td>
-</tr>
-<tr class="even">
 <td>Master’s degree</td>
-<td style="text-align: right;">385</td>
-<td style="text-align: right;">21.5%</td>
-</tr>
-<tr class="odd">
-<td>High school diploma or equivalent</td>
-<td style="text-align: right;">308</td>
-<td style="text-align: right;">17.2%</td>
+<td style="text-align: right;">101</td>
+<td style="text-align: right;">35.2%</td>
 </tr>
 <tr class="even">
-<td>Doctoral or professional degree</td>
-<td style="text-align: right;">176</td>
-<td style="text-align: right;">9.8%</td>
+<td>Bachelor’s degree</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">32.8%</td>
 </tr>
 <tr class="odd">
 <td>Associate’s degree</td>
-<td style="text-align: right;">53</td>
-<td style="text-align: right;">3.0%</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">16.7%</td>
 </tr>
 <tr class="even">
-<td>Missing or not specified</td>
-<td style="text-align: right;">253</td>
-<td style="text-align: right;">14.1%</td>
+<td>Doctoral or professional degree</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">15.3%</td>
 </tr>
 </tbody>
 </table>
-<p>Bachelor’s and master’s degree categories together account for 55.9% of the full dataset. Education information is missing or not specified for 253 postings.</p>
+<p>Bachelor’s and master’s degree categories together account for 68.0% of the education values in the final dataset.</p>
 <p>The education fields appear to be standardized or modeled values. They may not represent an education requirement written directly by each employer.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -576,11 +509,11 @@ Figure&nbsp;5: Minimum years of experience requested, among postings that state 
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Limited Experience Information
+<span class="screen-reader-only">Warning</span>Missing Experience Information
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We did not treat missing experience as zero years of experience. Minimum-experience information is available for 520 postings, so the experience findings describe only the subset of postings with usable experience data.</p>
+<p>We did not treat missing experience as zero years of experience. The source data does not provide enough information to determine how much experience employers require.</p>
 </div>
 </div>
 </section>
@@ -593,7 +526,7 @@ Figure&nbsp;5: Minimum years of experience requested, among postings that state 
 <img src="figures/work_arrangement.png" class="img-fluid figure-img" alt="Bar chart comparing remote, hybrid, on-site, and unknown work arrangements.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-work-arrangement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Job postings by work arrangement.
+Figure&nbsp;5: Job postings by work arrangement.
 </figcaption>
 </figure>
 </div>
@@ -608,27 +541,27 @@ Figure&nbsp;6: Job postings by work arrangement.
 <tbody>
 <tr class="odd">
 <td>Remote</td>
-<td style="text-align: right;">362</td>
-<td style="text-align: right;">20.2%</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">22.6%</td>
 </tr>
 <tr class="even">
 <td>Hybrid</td>
-<td style="text-align: right;">378</td>
-<td style="text-align: right;">21.1%</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">18.8%</td>
 </tr>
 <tr class="odd">
 <td>On-site</td>
-<td style="text-align: right;">120</td>
-<td style="text-align: right;">6.7%</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">8.0%</td>
 </tr>
 <tr class="even">
 <td>Unknown or not specified</td>
-<td style="text-align: right;">930</td>
-<td style="text-align: right;">52.0%</td>
+<td style="text-align: right;">145</td>
+<td style="text-align: right;">50.5%</td>
 </tr>
 </tbody>
 </table>
-<p>Remote and hybrid jobs together account for 740 postings, or 41.3% of the dataset. However, the work arrangement is unknown for 930 postings.</p>
+<p>Remote and hybrid jobs together account for 119 postings, or 41.5% of the dataset. However, the work arrangement is unknown for 145 postings.</p>
 <p>The Unknown category should not be counted as on-site work. It only means that the source did not provide a usable classification.</p>
 </section>
 <section id="top-employers" class="level2">
@@ -639,7 +572,7 @@ Figure&nbsp;6: Job postings by work arrangement.
 <img src="figures/top_employers.png" class="img-fluid figure-img" alt="Horizontal bar chart showing the employers with the most postings.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-employers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Employer labels with the most job postings.
+Figure&nbsp;6: Employer labels with the most job postings.
 </figcaption>
 </figure>
 </div>
@@ -649,7 +582,7 @@ Figure&nbsp;7: Employer labels with the most job postings.
 <thead>
 <tr class="header">
 <th style="text-align: right;">Rank</th>
-<th>Employer</th>
+<th>Employer Label</th>
 <th style="text-align: right;">Postings</th>
 </tr>
 </thead>
@@ -657,55 +590,56 @@ Figure&nbsp;7: Employer labels with the most job postings.
 <tr class="odd">
 <td style="text-align: right;">1</td>
 <td>Amazon</td>
-<td style="text-align: right;">95</td>
+<td style="text-align: right;">16</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td>Jobs via Dice</td>
-<td style="text-align: right;">94</td>
+<td>Esri</td>
+<td style="text-align: right;">8</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
-<td>Capital One</td>
-<td style="text-align: right;">57</td>
+<td>Turnitin</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
+<td style="text-align: right;">3</td>
+<td>Turnitinllc</td>
 <td style="text-align: right;">4</td>
-<td>Jobgether</td>
-<td style="text-align: right;">21</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">5</td>
-<td>Booz Allen Hamilton</td>
-<td style="text-align: right;">20</td>
+<td style="text-align: right;">3</td>
+<td>Abbvie</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">6</td>
-<td>Esri</td>
-<td style="text-align: right;">19</td>
+<td style="text-align: right;">3</td>
+<td>Jobgether</td>
+<td style="text-align: right;">4</td>
 </tr>
 </tbody>
 </table>
-<p>Amazon has the highest number of postings in the dataset, closely followed by Jobs via Dice, with Capital One as the third-largest employer label.</p>
+<p>Amazon has the highest number of postings in the dataset, followed by Esri.</p>
 <p>Employer names are not fully consistent. For example, Turnitin and Turnitinllc appear as separate labels even though they may represent the same company. The employer counts provide a general picture of hiring activity, but they may undercount companies that appear under more than one name.</p>
 </section>
 </section>
 <section id="what-this-means-for-job-seekers" class="level2">
 <h2 class="anchored" data-anchor-id="what-this-means-for-job-seekers">What This Means for Job Seekers</h2>
 <p>Job seekers should search across several related titles, including Data Analyst, Data Scientist, Data Engineer, Business Analyst, and Business Intelligence Analyst. Searching only for one title could leave out relevant opportunities.</p>
-<p>California has the most postings with a known state, but the data also shows opportunities in Virginia, New York, Texas, Washington, and remote positions.</p>
+<p>California has the most postings with a known state, but the data also shows opportunities in Texas, Washington, New York, Virginia, and remote positions.</p>
 <p>Candidates may also benefit from showing a mix of technical and business skills. Employers may expect candidates to analyze data, prepare or manage data, explain findings, and connect their work to business needs.</p>
 </section>
 <section id="limitations" class="level2">
 <h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
 <ul>
-<li>The dataset contains 1,790 selected postings and does not represent the entire U.S. job market.</li>
-<li>Salary information is available for only 591 postings.</li>
-<li>Minimum-experience information is available for only 520 postings, so experience findings are based on a subset of the dataset.</li>
-<li>State information is unavailable for 377 postings.</li>
-<li>Work arrangement is unknown for 930 postings.</li>
+<li>The dataset contains 287 selected postings and does not represent the entire U.S. job market.</li>
+<li>Salary information is available for only 112 postings.</li>
+<li>Experience fields are empty across the source data.</li>
+<li>State information is unavailable for 82 postings.</li>
+<li>Work arrangement is unknown for 145 postings.</li>
 <li>Employer names are not fully standardized.</li>
-<li>The analysis covers postings dated September 11, 2025 through September 10, 2026 and does not represent periods outside that window.</li>
+<li>The skills fields appear to be alphabetically cut off. Skills beginning with letters from D through Z, including Python and SQL, are not available.</li>
+<li>The data covers approximately one quarter, so it cannot show annual or seasonal hiring patterns.</li>
 </ul>
 </section>
 <section id="job-market-snapshot" class="level2">
@@ -713,33 +647,25 @@ Figure&nbsp;7: Employer labels with the most job postings.
 <div class="metric-grid">
 <section id="job-postings" class="level3 metric-card">
 <h3 class="anchored" data-anchor-id="job-postings">Job Postings</h3>
-<p><span class="metric-value">1,790</span></p>
+<p><span class="metric-value">287</span></p>
 <p><span class="metric-note">Relevant postings within NAICS 5415</span></p>
 </section>
 <section id="median-salary" class="level3 metric-card">
 <h3 class="anchored" data-anchor-id="median-salary">Median Salary</h3>
-<p><span class="metric-value">$151,475</span></p>
-<p><span class="metric-note">Based on 591 postings with usable salary data</span></p>
+<p><span class="metric-value">$150,708</span></p>
+<p><span class="metric-note">Based on 112 postings with usable salary data</span></p>
 </section>
 <section id="remote-or-hybrid" class="level3 metric-card">
 <h3 class="anchored" data-anchor-id="remote-or-hybrid">Remote or Hybrid</h3>
-<p><span class="metric-value">41.3%</span></p>
-<p><span class="metric-note">740 postings classified as remote or hybrid</span></p>
+<p><span class="metric-value">41.5%</span></p>
+<p><span class="metric-note">119 postings classified as remote or hybrid</span></p>
 </section>
 </div>
 </section>
 <section id="reproducing-the-results" class="level2">
 <h2 class="anchored" data-anchor-id="reproducing-the-results">Reproducing the Results</h2>
-<p>The figures and data dictionary were created from <code>data/processed/career_market_panel.csv</code> by <code>scripts/build_market_baseline.py</code>. All charts use the team’s shared Plotly theme (<code>scripts/plot_theme.py</code>) and are saved as static images in <code>figures/</code> so the site renders reliably on GitHub Pages.</p>
+<p>The figures and data dictionary were created from <code>data/processed/career_market_panel.csv</code>.</p>
 <p>To rebuild them, run <code>python scripts/build_market_baseline.py</code> from the repository root.</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-onet2026datascientists" class="csl-entry" role="listitem">
-<span class="smallcaps">O*NET OnLine</span>. (2026): <span>“Data Scientists, 15-2051.00,”</span><a href="https://www.onetonline.org/link/summary/15-2051.00" class="uri">https://www.onetonline.org/link/summary/15-2051.00</a>.
-</div>
-</div>
 
 
 </section>
