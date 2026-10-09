@@ -25,6 +25,8 @@ website:
         text: Career Strategy
       - href: about.qmd
         text: About
+      - href: final_report.qmd
+        text: Final Report
 
     right:
       - icon: github
