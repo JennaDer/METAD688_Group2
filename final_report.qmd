@@ -1,6 +1,10 @@
 ---
 title: "Career Evaluation Project: Data Analytics in Computer Systems Design"
 subtitle: "MET AD 688 | Group 2 Final Report"
+author:
+  - Jenna DeRosa
+  - Mariam El Jouzou
+  - Juan Franco
 bibliography: references.bib
 csl: csl/econometrica.csl
 format:
@@ -28,6 +32,9 @@ def md_table(df):
         lines.append("| " + " | ".join(str(v) for v in row) + " |")
     print("\n".join(lines))
 ```
+
+**Project website:** <https://jennader.github.io/METAD688_Group2/>  
+**GitHub repository:** <https://github.com/JennaDer/METAD688_Group2>
 
 # Product Framing
 

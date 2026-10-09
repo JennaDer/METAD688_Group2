@@ -2,6 +2,10 @@
 
 ## Career Evaluation Project
 
+**Live site:** https://jennader.github.io/METAD688_Group2/  
+**Final report:** https://jennader.github.io/METAD688_Group2/final_report.docx  
+**Team:** Jenna DeRosa, Mariam El Jouzou, Juan Franco
+
 This project examines Data Analytics career opportunities within Computer Systems Design and Related Services.
 
 - **Industry:** Computer Systems Design and Related Services
