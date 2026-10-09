@@ -137,7 +137,7 @@ display.columns = [
     "Model", "Features", "CV accuracy", "CV sd",
     "Test accuracy", "Precision", "Recall", "F1",
 ]
-display
+display.style.hide(axis="index").format(precision=3)
 ```
 
 ## Results
@@ -187,7 +187,7 @@ values push toward above-median pay and negative values away from it.
 
 top = coefficients.head(10)[["feature", "logistic_coefficient", "forest_importance"]].copy()
 top.columns = ["Feature", "Logistic coefficient", "Forest importance"]
-top.reset_index(drop=True)
+top.style.hide(axis="index").format(precision=3)
 ```
 
 The two models do not agree on what matters, and the disagreement is
