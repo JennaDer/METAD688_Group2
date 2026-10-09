@@ -134,7 +134,7 @@ Where one member is clearly ahead, they lead that topic. Where the strongest mem
 - **A weekly study session** of about an hour, working through the same Kaggle Learn or Zoomcamp module and comparing solutions.
 - **Rotating who writes the code.** For each remaining module of this project, the member with the largest gap writes the first version of the code, and the strongest member reviews it through a pull request. The work gets done and the practice counts double.
 - **Pairing on the BI tools.** The members strongest in Power BI and Tableau walk the others through rebuilding one Market Baseline chart in each tool.
-- **Business framing from the business-side members.** Members targeting business analyst roles lead on turning findings into requirements and recommendations for the Career Plan page.
+- **Business framing from the business-side members.** Members targeting business analyst roles lead on turning findings into requirements and recommendations for the Career Strategy page.
 
 ### 4.5 Timeline
 
@@ -142,7 +142,7 @@ Where one member is clearly ahead, they lead that topic. Where the strongest mem
 |---|---|---|
 | 1 to 4 | Python and SQL foundations through Kaggle Learn, with the weekly study session | Everyone |
 | 5 to 8 | Data pipelines through the Data Engineering Zoomcamp; Power BI and Tableau practice for members with gaps there | Everyone, plus individual BI practice |
-| 9 to 12 | Machine learning basics and the salary-prediction project, which feeds the ML Methods page | Everyone |
+| 9 to 12 | Machine learning basics and the salary-prediction project, which feeds the Predictive Modeling page | Everyone |
 | After week 12 | One certification each, matched to target role: PL-300 or Tableau Data Analyst for business intelligence and business analyst roles, Databricks Data Engineer Associate for data roles | Individual |
 
 A member's target role can matter as much as the posting counts. Juan is targeting data scientist roles, so machine learning is more important for him than its share of postings alone suggests, and he should move to it earlier.

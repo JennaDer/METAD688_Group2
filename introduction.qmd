@@ -141,7 +141,7 @@ The original NAICS 3254 industry scope produced too few relevant analytics posti
 
 Within Computer Systems Design and Related Services, we expect analytics opportunities to span several related role types and employer contexts. Our analysis will examine how demand varies across job titles, employers, salary levels, education requirements, geographic markets, and work arrangements. We will also evaluate the skills information available in the dataset while documenting limitations in the source data rather than assuming that missing skills or experience fields represent employer preferences. These expectations will be tested against the data and revised where the evidence supports a different conclusion.
 
-**Where each expectation is tested:** The [Exploratory Analysis](eda.qmd) page covers roles, employers, salary, location, education, experience, and work arrangements. The [Skill Gap Analysis](skill_gap_analysis.qmd) page compares the skills employers request with the team's own ratings. The [Career Strategy](career_plan.qmd) page will bring both together into recommendations for the target user.
+**Where each expectation is tested:** The [Market Baseline](eda.qmd) page covers roles, employers, salary, location, education, experience, and work arrangements. The [Skill Gap Analysis](skill_gap_analysis.qmd) page compares the skills employers request with the team's own ratings. The [Predictive Modeling](ml_methods.qmd) page tests which posting features go with higher pay, and the [Career Strategy](career_plan.qmd) page brings the evidence together into recommendations for the target user.
 
 ## 9. Project Scope and Boundaries
 

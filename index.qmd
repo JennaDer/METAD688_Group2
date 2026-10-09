@@ -207,7 +207,7 @@ Job title alone separates higher-paying postings only 59% of the time. Adding sk
 
 ## Evidence translated into action
 
-Our final recommendations will connect labor-market patterns with practical steps for candidates considering careers in computer systems design and related services.
+Our final recommendations connect labor-market patterns with practical steps for candidates considering careers in computer systems design and related services.
 
 [View final recommendations](career_plan.qmd){.cta-button}
 
