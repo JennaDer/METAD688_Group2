@@ -162,7 +162,7 @@
         <text variable="title" quotes="true" suffix=","/>
       </else-if>
       <else>
-        <text variable="title" text-case="title" quotes="true" suffix=","/>
+        <text variable="title" text-case="title" quotes="true" suffix=", "/>
       </else>
     </choose>
   </macro>
