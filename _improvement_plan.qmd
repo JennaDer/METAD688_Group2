@@ -75,7 +75,7 @@ A member's gap is the target minus their current rating, or zero if they already
 #| label: tbl-plan-targets
 #| tbl-cap: "Target level for each skill, set by its share of postings."
 
-plan[["Demand (%)", "Target"] + _MEMBERS].sort_values("Demand (%)", ascending=False)
+plan[["Demand (%)", "Target"] + _MEMBERS].sort_values("Demand (%)", ascending=False).rename_axis("Skill").reset_index().style.hide(axis="index").format("{:.1f}", subset=["Demand (%)"])
 ```
 
 ### 4.2 Priorities by Member
@@ -86,7 +86,7 @@ plan[["Demand (%)", "Target"] + _MEMBERS].sort_values("Demand (%)", ascending=Fa
 
 _top = plan_gaps.sort_values(["Member", "Priority"], ascending=[True, False]).groupby("Member").head(3)
 _top["Member"] = pd.Categorical(_top["Member"], _MEMBERS, ordered=True)
-_top.sort_values(["Member", "Priority"], ascending=[True, False]).reset_index(drop=True)
+_top.sort_values(["Member", "Priority"], ascending=[True, False]).style.hide(axis="index").format(precision=2).format("{:.1f}", subset=["Demand (%)"])
 ```
 
 `{python} pending_note`
@@ -126,7 +126,7 @@ _collab = plan_gaps.groupby("Skill").agg(
 _collab["Strongest on the team"] = [
     f"{_strongest[s]} ({int(plan.loc[s, _strongest[s]])})" for s in _collab.index
 ]
-_collab.sort_values("Total gap", ascending=False)
+_collab.sort_values("Total gap", ascending=False).reset_index().style.hide(axis="index")
 ```
 
 Where one member is clearly ahead, they lead that topic. Where the strongest member still has a gap themselves, as with Python and SQL, the team studies together rather than relying on one person to teach. In practice:

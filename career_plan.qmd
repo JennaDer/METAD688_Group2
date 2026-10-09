@@ -121,7 +121,7 @@ table = pd.DataFrame(
     }
 )
 table.index.name = "Role family"
-table
+table.reset_index().style.hide(axis="index")
 ```
 
 ```{python}

@@ -136,7 +136,7 @@ ratings = pd.read_csv("data/processed/team_skills_v2.csv").set_index("skill")
 df_skills = ratings[MEMBERS].T
 df_skills.index.name = "Name"
 
-df_skills.T
+df_skills.T.rename_axis("Skill").rename_axis(None, axis=1).reset_index().style.hide(axis="index")
 ```
 
 ### Team Skill Heatmap
@@ -222,7 +222,7 @@ demand = ratings["panel_skill_name"].map(lambda name: skill_postings.get(name, 0
 demand = demand.to_frame()
 demand["Share of postings (%)"] = (demand["Postings"] / n_postings * 100).round(1)
 demand = demand.sort_values("Postings", ascending=False)
-demand
+demand.rename_axis("Skill").reset_index().style.hide(axis="index").format(precision=1)
 ```
 
 ### Demand Depends on the Role
@@ -394,7 +394,7 @@ for member, roles in TARGET_ROLES.items():
 role_gaps = pd.DataFrame(rows)
 role_gaps["Member"] = pd.Categorical(role_gaps["Member"], MEMBERS, ordered=True)
 role_gaps = role_gaps.sort_values(["Member", "Demand in role (%)"], ascending=[True, False])
-role_gaps.reset_index(drop=True)
+role_gaps.style.hide(axis="index").format(precision=1)
 ```
 
 This view sharpens each member's priorities:
@@ -409,7 +409,7 @@ This view sharpens each member's priorities:
 #| label: tbl-gap-summary
 #| tbl-cap: "Skill gaps by member across all postings, ordered by priority score."
 
-gap_table
+gap_table.rename_axis("Skill").reset_index().style.hide(axis="index").format(precision=2).format("{:.1f}", subset=["Demand (%)"])
 ```
 
 ### Key Findings

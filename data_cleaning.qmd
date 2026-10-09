@@ -73,6 +73,7 @@ The inclusion rule kept `{python} fmt(stats["after_role_include"])` postings, an
 
 ```{python}
 #| label: tbl-funnel
+#| tbl-cap: "Postings remaining after each filtering step."
 
 funnel = pd.DataFrame(
     {
@@ -94,7 +95,7 @@ funnel = pd.DataFrame(
 )
 funnel["Share of raw extract"] = (funnel["Postings"] / stats["raw_postings"] * 100).round(2).astype(str) + "%"
 funnel["Postings"] = funnel["Postings"].map(fmt)
-funnel
+funnel.style.hide(axis="index")
 ```
 
 ## Date Window
@@ -172,6 +173,7 @@ Grouping by title, employer, and posted date does surface repeats: `{python} fmt
 
 ```{python}
 #| label: tbl-salary
+#| tbl-cap: "Advertised salary midpoints after cleaning."
 
 sal = panel["salary_midpoint"].dropna()
 pd.DataFrame(
@@ -186,7 +188,7 @@ pd.DataFrame(
             f"${sal.max():,.0f}",
         ],
     }
-)
+).style.hide(axis="index")
 ```
 
 Salary appears on `{python} pct(int(usable.sum()))` of the panel, which is normal for job-posting data. Salary findings describe the postings that disclose pay rather than the whole market.
@@ -209,6 +211,7 @@ One caution: `{python} fmt(hs_min)` postings list a high school diploma as the m
 
 ```{python}
 #| label: tbl-education
+#| tbl-cap: "Postings by minimum required and highest mentioned education level."
 
 levels = [
     "High school diploma or equivalent",
@@ -225,7 +228,7 @@ edu = pd.DataFrame(
     }
 ).reindex(levels).fillna(0).astype(int)
 edu.index.name = "Education level"
-edu
+edu.reset_index().style.hide(axis="index")
 ```
 
 ### Skill Fields
@@ -234,6 +237,7 @@ The extract carries four skill fields. Coverage within the panel:
 
 ```{python}
 #| label: tbl-skill-fields
+#| tbl-cap: "Postings with content in each of the four skill fields."
 
 sf = stats["skill_field_coverage"]
 pd.DataFrame(
@@ -242,19 +246,20 @@ pd.DataFrame(
         "Postings with content": [fmt(v) for v in sf.values()],
         "Share of panel": [pct(v) for v in sf.values()],
     }
-)
+).style.hide(axis="index")
 ```
 
 The original extract had cut off every skill name beginning with a letter from D to Z, so Python, SQL, Tableau, and similar tools never appeared, and `SOFTWARE_SKILLS_NAME` was empty. v2 fixes both. Of the `{python} fmt(len(distinct_skills))` distinct skills in the panel, `{python} fmt(d_to_z)` begin with a letter from D to Z. This is the main reason the project moved to v2, because the skill gap analysis depends on seeing the tools employers ask for most.
 
 ```{python}
 #| label: tbl-top-skills
+#| tbl-cap: "The ten skills requested in the most postings."
 
 top = pd.Series([s for row in skills for s in set(row)]).value_counts().head(10)
 top = top.rename("Postings").to_frame()
 top["Share of panel"] = (top["Postings"] / n * 100).round(1).astype(str) + "%"
 top.index.name = "Skill"
-top
+top.reset_index().style.hide(axis="index")
 ```
 
 ### Work Arrangement
@@ -265,12 +270,13 @@ That gives `{python} fmt(remote_unknown)` postings with no stated arrangement, o
 
 ```{python}
 #| label: tbl-remote
+#| tbl-cap: "Work arrangement among postings that state one."
 
 stated = panel.loc[panel["REMOTE_TYPE_NAME"] != "Unknown", "REMOTE_TYPE_NAME"].value_counts()
 rem = stated.rename("Postings").to_frame()
 rem["Share of stated"] = (rem["Postings"] / remote_stated * 100).round(1).astype(str) + "%"
 rem.index.name = "Work arrangement"
-rem
+rem.reset_index().style.hide(axis="index")
 ```
 
 ### Location
@@ -309,11 +315,12 @@ We therefore added `role_family`, taken from the job title, which is the same fi
 
 ```{python}
 #| label: tbl-role-family
+#| tbl-cap: "Postings by role family."
 
 rf = panel["role_family"].value_counts().rename("Postings").to_frame()
 rf["Share of panel"] = (rf["Postings"] / n * 100).round(1).astype(str) + "%"
 rf.index.name = "Role family"
-rf
+rf.reset_index().style.hide(axis="index")
 ```
 
 `occupation_group`, based on ONET, remains in the panel for reference.
@@ -326,6 +333,7 @@ Employer names are not standardized. `{python} fmt(multi_spelling)` employers ap
 
 ```{python}
 #| label: tbl-missing
+#| tbl-cap: "Populated and missing values for the main analysis fields."
 
 has_skills = skills.map(len) > 0
 checks = {
@@ -348,7 +356,7 @@ pd.DataFrame(
         "Missing": [fmt(int(n - s.sum())) for s in checks.values()],
         "Coverage": [pct(int(s.sum())) for s in checks.values()],
     }
-)
+).style.hide(axis="index")
 ```
 
 Coverage varies widely. Title, employer, role family, date, and skills are essentially complete. Salary, experience, and work arrangement are partial, and each is reported against its own denominator rather than the full panel.
@@ -375,6 +383,7 @@ The cleaned panel is written to `data/processed/career_market_panel.csv`, and th
 
 ```{python}
 #| label: tbl-schema
+#| tbl-cap: "Columns in the cleaned panel."
 
 pd.DataFrame(
     {
@@ -382,7 +391,7 @@ pd.DataFrame(
         "Type": [str(t) for t in panel.dtypes],
         "Non-null": [fmt(int(v)) for v in panel.notna().sum().values],
     }
-)
+).style.hide(axis="index")
 ```
 
 To rebuild the panel from source, place the `{python} stats["source_files"]` Parquet files of the v2 extract in `data/MET_CareerCompass_2026_v2/` and run:
