@@ -185,6 +185,10 @@ div.csl-indent {
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./final_report.docx"> 
+<span class="menu-text">Final Report</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -363,7 +367,7 @@ div.csl-indent {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df_skills <span class="op">=</span> ratings[MEMBERS].T</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df_skills.index.name <span class="op">=</span> <span class="st">"Name"</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df_skills.T</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df_skills.T.rename_axis(<span class="st">"Skill"</span>).rename_axis(<span class="va">None</span>, axis<span class="op">=</span><span class="dv">1</span>).reset_index().style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-team-skills" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -372,125 +376,117 @@ Table&nbsp;1: Self-assessed skill levels (1 = Beginner, 5 = Expert).
 </figcaption>
 <div aria-describedby="tbl-team-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="2">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<table id="T_826c2" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Jenna</th>
-<th data-quarto-table-cell-role="th">Mariam</th>
-<th data-quarto-table-cell-role="th">Juan</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">skill</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th id="T_826c2_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Skill</th>
+<th id="T_826c2_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Jenna</th>
+<th id="T_826c2_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Mariam</th>
+<th id="T_826c2_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Juan</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">SQL</th>
-<td>1</td>
-<td>2</td>
-<td>3</td>
+<td id="T_826c2_row0_col0" class="data row0 col0">SQL</td>
+<td id="T_826c2_row0_col1" class="data row0 col1">1</td>
+<td id="T_826c2_row0_col2" class="data row0 col2">2</td>
+<td id="T_826c2_row0_col3" class="data row0 col3">3</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Python</th>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td id="T_826c2_row1_col0" class="data row1 col0">Python</td>
+<td id="T_826c2_row1_col1" class="data row1 col1">1</td>
+<td id="T_826c2_row1_col2" class="data row1 col2">1</td>
+<td id="T_826c2_row1_col3" class="data row1 col3">3</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Pipelines</th>
-<td>1</td>
-<td>1</td>
-<td>2</td>
+<td id="T_826c2_row2_col0" class="data row2 col0">Data Pipelines</td>
+<td id="T_826c2_row2_col1" class="data row2 col1">1</td>
+<td id="T_826c2_row2_col2" class="data row2 col2">1</td>
+<td id="T_826c2_row2_col3" class="data row2 col3">2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Machine Learning</th>
-<td>2</td>
-<td>2</td>
-<td>2</td>
+<td id="T_826c2_row3_col0" class="data row3 col0">Machine Learning</td>
+<td id="T_826c2_row3_col1" class="data row3 col1">2</td>
+<td id="T_826c2_row3_col2" class="data row3 col2">2</td>
+<td id="T_826c2_row3_col3" class="data row3 col3">2</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Tableau</th>
-<td>3</td>
-<td>1</td>
-<td>5</td>
+<td id="T_826c2_row4_col0" class="data row4 col0">Tableau</td>
+<td id="T_826c2_row4_col1" class="data row4 col1">3</td>
+<td id="T_826c2_row4_col2" class="data row4 col2">1</td>
+<td id="T_826c2_row4_col3" class="data row4 col3">5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Quality</th>
-<td>3</td>
-<td>2</td>
-<td>5</td>
+<td id="T_826c2_row5_col0" class="data row5 col0">Data Quality</td>
+<td id="T_826c2_row5_col1" class="data row5 col1">3</td>
+<td id="T_826c2_row5_col2" class="data row5 col2">2</td>
+<td id="T_826c2_row5_col3" class="data row5 col3">5</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Business Requirements</th>
-<td>3</td>
-<td>4</td>
-<td>5</td>
+<td id="T_826c2_row6_col0" class="data row6 col0">Business Requirements</td>
+<td id="T_826c2_row6_col1" class="data row6 col1">3</td>
+<td id="T_826c2_row6_col2" class="data row6 col2">4</td>
+<td id="T_826c2_row6_col3" class="data row6 col3">5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Power BI</th>
-<td>3</td>
-<td>1</td>
-<td>5</td>
+<td id="T_826c2_row7_col0" class="data row7 col0">Power BI</td>
+<td id="T_826c2_row7_col1" class="data row7 col1">3</td>
+<td id="T_826c2_row7_col2" class="data row7 col2">1</td>
+<td id="T_826c2_row7_col3" class="data row7 col3">5</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Databricks</th>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td id="T_826c2_row8_col0" class="data row8 col0">Databricks</td>
+<td id="T_826c2_row8_col1" class="data row8 col1">1</td>
+<td id="T_826c2_row8_col2" class="data row8 col2">1</td>
+<td id="T_826c2_row8_col3" class="data row8 col3">3</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Microsoft Excel</th>
-<td>4</td>
-<td>2</td>
-<td>5</td>
+<td id="T_826c2_row9_col0" class="data row9 col0">Microsoft Excel</td>
+<td id="T_826c2_row9_col1" class="data row9 col1">4</td>
+<td id="T_826c2_row9_col2" class="data row9 col2">2</td>
+<td id="T_826c2_row9_col3" class="data row9 col3">5</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Analysis</th>
-<td>4</td>
-<td>4</td>
-<td>5</td>
+<td id="T_826c2_row10_col0" class="data row10 col0">Data Analysis</td>
+<td id="T_826c2_row10_col1" class="data row10 col1">4</td>
+<td id="T_826c2_row10_col2" class="data row10 col2">4</td>
+<td id="T_826c2_row10_col3" class="data row10 col3">5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Modeling</th>
-<td>3</td>
-<td>1</td>
-<td>4</td>
+<td id="T_826c2_row11_col0" class="data row11 col0">Data Modeling</td>
+<td id="T_826c2_row11_col1" class="data row11 col1">3</td>
+<td id="T_826c2_row11_col2" class="data row11 col2">1</td>
+<td id="T_826c2_row11_col3" class="data row11 col3">4</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Verbal Communication</th>
-<td>5</td>
-<td>4</td>
-<td>4</td>
+<td id="T_826c2_row12_col0" class="data row12 col0">Verbal Communication</td>
+<td id="T_826c2_row12_col1" class="data row12 col1">5</td>
+<td id="T_826c2_row12_col2" class="data row12 col2">4</td>
+<td id="T_826c2_row12_col3" class="data row12 col3">4</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Business Analysis</th>
-<td>4</td>
-<td>3</td>
-<td>4</td>
+<td id="T_826c2_row13_col0" class="data row13 col0">Business Analysis</td>
+<td id="T_826c2_row13_col1" class="data row13 col1">4</td>
+<td id="T_826c2_row13_col2" class="data row13 col2">3</td>
+<td id="T_826c2_row13_col3" class="data row13 col3">4</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Statistical Modeling</th>
-<td>2</td>
-<td>1</td>
-<td>2</td>
+<td id="T_826c2_row14_col0" class="data row14 col0">Statistical Modeling</td>
+<td id="T_826c2_row14_col1" class="data row14 col1">2</td>
+<td id="T_826c2_row14_col2" class="data row14 col2">1</td>
+<td id="T_826c2_row14_col3" class="data row14 col3">2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Visualization</th>
-<td>3</td>
-<td>1</td>
-<td>5</td>
+<td id="T_826c2_row15_col0" class="data row15 col0">Data Visualization</td>
+<td id="T_826c2_row15_col1" class="data row15 col1">3</td>
+<td id="T_826c2_row15_col2" class="data row15 col2">1</td>
+<td id="T_826c2_row15_col3" class="data row15 col3">5</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -605,7 +601,7 @@ Figure&nbsp;2: The 20 skills mentioned in the most postings. Teal bars are skill
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> demand.to_frame()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>demand[<span class="st">"Share of postings (%)"</span>] <span class="op">=</span> (demand[<span class="st">"Postings"</span>] <span class="op">/</span> n_postings <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> demand.sort_values(<span class="st">"Postings"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>demand</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>demand.rename_axis(<span class="st">"Skill"</span>).reset_index().style.hide(axis<span class="op">=</span><span class="st">"index"</span>).<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-skill-demand" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="6">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -614,107 +610,100 @@ Table&nbsp;2: Share of all 1,790 postings that request each skill on the team’
 </figcaption>
 <div aria-describedby="tbl-skill-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="6">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<table id="T_0c38d" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Postings</th>
-<th data-quarto-table-cell-role="th">Share of postings (%)</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">skill</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th id="T_0c38d_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Skill</th>
+<th id="T_0c38d_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Postings</th>
+<th id="T_0c38d_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Share of postings (%)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Python</th>
-<td>1119</td>
-<td>62.5</td>
+<td id="T_0c38d_row0_col0" class="data row0 col0">Python</td>
+<td id="T_0c38d_row0_col1" class="data row0 col1">1119</td>
+<td id="T_0c38d_row0_col2" class="data row0 col2">62.5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">SQL</th>
-<td>1106</td>
-<td>61.8</td>
+<td id="T_0c38d_row1_col0" class="data row1 col0">SQL</td>
+<td id="T_0c38d_row1_col1" class="data row1 col1">1106</td>
+<td id="T_0c38d_row1_col2" class="data row1 col2">61.8</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Pipelines</th>
-<td>388</td>
-<td>21.7</td>
+<td id="T_0c38d_row2_col0" class="data row2 col0">Data Pipelines</td>
+<td id="T_0c38d_row2_col1" class="data row2 col1">388</td>
+<td id="T_0c38d_row2_col2" class="data row2 col2">21.7</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Machine Learning</th>
-<td>345</td>
-<td>19.3</td>
+<td id="T_0c38d_row3_col0" class="data row3 col0">Machine Learning</td>
+<td id="T_0c38d_row3_col1" class="data row3 col1">345</td>
+<td id="T_0c38d_row3_col2" class="data row3 col2">19.3</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Tableau</th>
-<td>280</td>
-<td>15.6</td>
+<td id="T_0c38d_row4_col0" class="data row4 col0">Tableau</td>
+<td id="T_0c38d_row4_col1" class="data row4 col1">280</td>
+<td id="T_0c38d_row4_col2" class="data row4 col2">15.6</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Quality</th>
-<td>254</td>
-<td>14.2</td>
+<td id="T_0c38d_row5_col0" class="data row5 col0">Data Quality</td>
+<td id="T_0c38d_row5_col1" class="data row5 col1">254</td>
+<td id="T_0c38d_row5_col2" class="data row5 col2">14.2</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Power BI</th>
-<td>200</td>
-<td>11.2</td>
+<td id="T_0c38d_row6_col0" class="data row6 col0">Power BI</td>
+<td id="T_0c38d_row6_col1" class="data row6 col1">200</td>
+<td id="T_0c38d_row6_col2" class="data row6 col2">11.2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Databricks</th>
-<td>199</td>
-<td>11.1</td>
+<td id="T_0c38d_row7_col0" class="data row7 col0">Databricks</td>
+<td id="T_0c38d_row7_col1" class="data row7 col1">199</td>
+<td id="T_0c38d_row7_col2" class="data row7 col2">11.1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Business Requirements</th>
-<td>182</td>
-<td>10.2</td>
+<td id="T_0c38d_row8_col0" class="data row8 col0">Business Requirements</td>
+<td id="T_0c38d_row8_col1" class="data row8 col1">182</td>
+<td id="T_0c38d_row8_col2" class="data row8 col2">10.2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Microsoft Excel</th>
-<td>169</td>
-<td>9.4</td>
+<td id="T_0c38d_row9_col0" class="data row9 col0">Microsoft Excel</td>
+<td id="T_0c38d_row9_col1" class="data row9 col1">169</td>
+<td id="T_0c38d_row9_col2" class="data row9 col2">9.4</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Analysis</th>
-<td>160</td>
-<td>8.9</td>
+<td id="T_0c38d_row10_col0" class="data row10 col0">Data Analysis</td>
+<td id="T_0c38d_row10_col1" class="data row10 col1">160</td>
+<td id="T_0c38d_row10_col2" class="data row10 col2">8.9</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Modeling</th>
-<td>150</td>
-<td>8.4</td>
+<td id="T_0c38d_row11_col0" class="data row11 col0">Data Modeling</td>
+<td id="T_0c38d_row11_col1" class="data row11 col1">150</td>
+<td id="T_0c38d_row11_col2" class="data row11 col2">8.4</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Verbal Communication</th>
-<td>135</td>
-<td>7.5</td>
+<td id="T_0c38d_row12_col0" class="data row12 col0">Verbal Communication</td>
+<td id="T_0c38d_row12_col1" class="data row12 col1">135</td>
+<td id="T_0c38d_row12_col2" class="data row12 col2">7.5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Statistical Modeling</th>
-<td>115</td>
-<td>6.4</td>
+<td id="T_0c38d_row13_col0" class="data row13 col0">Statistical Modeling</td>
+<td id="T_0c38d_row13_col1" class="data row13 col1">115</td>
+<td id="T_0c38d_row13_col2" class="data row13 col2">6.4</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Business Analysis</th>
-<td>104</td>
-<td>5.8</td>
+<td id="T_0c38d_row14_col0" class="data row14 col0">Business Analysis</td>
+<td id="T_0c38d_row14_col1" class="data row14 col1">104</td>
+<td id="T_0c38d_row14_col2" class="data row14 col2">5.8</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Visualization</th>
-<td>102</td>
-<td>5.7</td>
+<td id="T_0c38d_row15_col0" class="data row15 col0">Data Visualization</td>
+<td id="T_0c38d_row15_col1" class="data row15 col1">102</td>
+<td id="T_0c38d_row15_col2" class="data row15 col2">5.7</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -939,7 +928,7 @@ Figure&nbsp;5: Levels each member needs to gain to reach the target. Blank cells
 <span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>role_gaps <span class="op">=</span> pd.DataFrame(rows)</span>
 <span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>role_gaps[<span class="st">"Member"</span>] <span class="op">=</span> pd.Categorical(role_gaps[<span class="st">"Member"</span>], MEMBERS, ordered<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>role_gaps <span class="op">=</span> role_gaps.sort_values([<span class="st">"Member"</span>, <span class="st">"Demand in role (%)"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>role_gaps.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>role_gaps.style.hide(axis<span class="op">=</span><span class="st">"index"</span>).<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-role-gaps" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="11">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -948,237 +937,213 @@ Table&nbsp;3: Each member’s skills that fall short of the target for their own
 </figcaption>
 <div aria-describedby="tbl-role-gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="11">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<table id="T_fbf2f" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Member</th>
-<th data-quarto-table-cell-role="th">Target role</th>
-<th data-quarto-table-cell-role="th">Skill</th>
-<th data-quarto-table-cell-role="th">Demand in role (%)</th>
-<th data-quarto-table-cell-role="th">Current</th>
-<th data-quarto-table-cell-role="th">Target</th>
-<th data-quarto-table-cell-role="th">Gap</th>
+<th id="T_fbf2f_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Member</th>
+<th id="T_fbf2f_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Target role</th>
+<th id="T_fbf2f_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Skill</th>
+<th id="T_fbf2f_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Demand in role (%)</th>
+<th id="T_fbf2f_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Current</th>
+<th id="T_fbf2f_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Target</th>
+<th id="T_fbf2f_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Gap</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>Jenna</td>
-<td>Business Intelligence / Business Analyst</td>
-<td>SQL</td>
-<td>45.3</td>
-<td>1</td>
-<td>4</td>
-<td>3</td>
+<td id="T_fbf2f_row0_col0" class="data row0 col0">Jenna</td>
+<td id="T_fbf2f_row0_col1" class="data row0 col1">Business Intelligence / Business Analyst</td>
+<td id="T_fbf2f_row0_col2" class="data row0 col2">SQL</td>
+<td id="T_fbf2f_row0_col3" class="data row0 col3">45.3</td>
+<td id="T_fbf2f_row0_col4" class="data row0 col4">1</td>
+<td id="T_fbf2f_row0_col5" class="data row0 col5">4</td>
+<td id="T_fbf2f_row0_col6" class="data row0 col6">3</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>Jenna</td>
-<td>Business Intelligence / Business Analyst</td>
-<td>Business Requirements</td>
-<td>32.2</td>
-<td>3</td>
-<td>4</td>
-<td>1</td>
+<td id="T_fbf2f_row1_col0" class="data row1 col0">Jenna</td>
+<td id="T_fbf2f_row1_col1" class="data row1 col1">Business Intelligence / Business Analyst</td>
+<td id="T_fbf2f_row1_col2" class="data row1 col2">Business Requirements</td>
+<td id="T_fbf2f_row1_col3" class="data row1 col3">32.2</td>
+<td id="T_fbf2f_row1_col4" class="data row1 col4">3</td>
+<td id="T_fbf2f_row1_col5" class="data row1 col5">4</td>
+<td id="T_fbf2f_row1_col6" class="data row1 col6">1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>Jenna</td>
-<td>Business Intelligence / Business Analyst</td>
-<td>Python</td>
-<td>21.7</td>
-<td>1</td>
-<td>4</td>
-<td>3</td>
+<td id="T_fbf2f_row2_col0" class="data row2 col0">Jenna</td>
+<td id="T_fbf2f_row2_col1" class="data row2 col1">Business Intelligence / Business Analyst</td>
+<td id="T_fbf2f_row2_col2" class="data row2 col2">Python</td>
+<td id="T_fbf2f_row2_col3" class="data row2 col3">21.7</td>
+<td id="T_fbf2f_row2_col4" class="data row2 col4">1</td>
+<td id="T_fbf2f_row2_col5" class="data row2 col5">4</td>
+<td id="T_fbf2f_row2_col6" class="data row2 col6">3</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>Jenna</td>
-<td>Business Intelligence / Business Analyst</td>
-<td>Data Pipelines</td>
-<td>2.4</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
+<td id="T_fbf2f_row3_col0" class="data row3 col0">Jenna</td>
+<td id="T_fbf2f_row3_col1" class="data row3 col1">Business Intelligence / Business Analyst</td>
+<td id="T_fbf2f_row3_col2" class="data row3 col2">Data Pipelines</td>
+<td id="T_fbf2f_row3_col3" class="data row3 col3">2.4</td>
+<td id="T_fbf2f_row3_col4" class="data row3 col4">1</td>
+<td id="T_fbf2f_row3_col5" class="data row3 col5">2</td>
+<td id="T_fbf2f_row3_col6" class="data row3 col6">1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>Jenna</td>
-<td>Business Intelligence / Business Analyst</td>
-<td>Databricks</td>
-<td>1.6</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
+<td id="T_fbf2f_row4_col0" class="data row4 col0">Jenna</td>
+<td id="T_fbf2f_row4_col1" class="data row4 col1">Business Intelligence / Business Analyst</td>
+<td id="T_fbf2f_row4_col2" class="data row4 col2">Databricks</td>
+<td id="T_fbf2f_row4_col3" class="data row4 col3">1.6</td>
+<td id="T_fbf2f_row4_col4" class="data row4 col4">1</td>
+<td id="T_fbf2f_row4_col5" class="data row4 col5">2</td>
+<td id="T_fbf2f_row4_col6" class="data row4 col6">1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>SQL</td>
-<td>35.6</td>
-<td>2</td>
-<td>4</td>
-<td>2</td>
+<td id="T_fbf2f_row5_col0" class="data row5 col0">Mariam</td>
+<td id="T_fbf2f_row5_col1" class="data row5 col1">Business Analyst</td>
+<td id="T_fbf2f_row5_col2" class="data row5 col2">SQL</td>
+<td id="T_fbf2f_row5_col3" class="data row5 col3">35.6</td>
+<td id="T_fbf2f_row5_col4" class="data row5 col4">2</td>
+<td id="T_fbf2f_row5_col5" class="data row5 col5">4</td>
+<td id="T_fbf2f_row5_col6" class="data row5 col6">2</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">6</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Business Analysis</td>
-<td>34.2</td>
-<td>3</td>
-<td>4</td>
-<td>1</td>
+<td id="T_fbf2f_row6_col0" class="data row6 col0">Mariam</td>
+<td id="T_fbf2f_row6_col1" class="data row6 col1">Business Analyst</td>
+<td id="T_fbf2f_row6_col2" class="data row6 col2">Business Analysis</td>
+<td id="T_fbf2f_row6_col3" class="data row6 col3">34.2</td>
+<td id="T_fbf2f_row6_col4" class="data row6 col4">3</td>
+<td id="T_fbf2f_row6_col5" class="data row6 col5">4</td>
+<td id="T_fbf2f_row6_col6" class="data row6 col6">1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">7</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Microsoft Excel</td>
-<td>29.1</td>
-<td>2</td>
-<td>4</td>
-<td>2</td>
+<td id="T_fbf2f_row7_col0" class="data row7 col0">Mariam</td>
+<td id="T_fbf2f_row7_col1" class="data row7 col1">Business Analyst</td>
+<td id="T_fbf2f_row7_col2" class="data row7 col2">Microsoft Excel</td>
+<td id="T_fbf2f_row7_col3" class="data row7 col3">29.1</td>
+<td id="T_fbf2f_row7_col4" class="data row7 col4">2</td>
+<td id="T_fbf2f_row7_col5" class="data row7 col5">4</td>
+<td id="T_fbf2f_row7_col6" class="data row7 col6">2</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">8</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Python</td>
-<td>14.4</td>
-<td>1</td>
-<td>3</td>
-<td>2</td>
+<td id="T_fbf2f_row8_col0" class="data row8 col0">Mariam</td>
+<td id="T_fbf2f_row8_col1" class="data row8 col1">Business Analyst</td>
+<td id="T_fbf2f_row8_col2" class="data row8 col2">Python</td>
+<td id="T_fbf2f_row8_col3" class="data row8 col3">14.4</td>
+<td id="T_fbf2f_row8_col4" class="data row8 col4">1</td>
+<td id="T_fbf2f_row8_col5" class="data row8 col5">3</td>
+<td id="T_fbf2f_row8_col6" class="data row8 col6">2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">9</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Power BI</td>
-<td>7.5</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
+<td id="T_fbf2f_row9_col0" class="data row9 col0">Mariam</td>
+<td id="T_fbf2f_row9_col1" class="data row9 col1">Business Analyst</td>
+<td id="T_fbf2f_row9_col2" class="data row9 col2">Power BI</td>
+<td id="T_fbf2f_row9_col3" class="data row9 col3">7.5</td>
+<td id="T_fbf2f_row9_col4" class="data row9 col4">1</td>
+<td id="T_fbf2f_row9_col5" class="data row9 col5">2</td>
+<td id="T_fbf2f_row9_col6" class="data row9 col6">1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">10</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Tableau</td>
-<td>5.8</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
+<td id="T_fbf2f_row10_col0" class="data row10 col0">Mariam</td>
+<td id="T_fbf2f_row10_col1" class="data row10 col1">Business Analyst</td>
+<td id="T_fbf2f_row10_col2" class="data row10 col2">Tableau</td>
+<td id="T_fbf2f_row10_col3" class="data row10 col3">5.8</td>
+<td id="T_fbf2f_row10_col4" class="data row10 col4">1</td>
+<td id="T_fbf2f_row10_col5" class="data row10 col5">2</td>
+<td id="T_fbf2f_row10_col6" class="data row10 col6">1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">11</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Data Modeling</td>
-<td>5.1</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
+<td id="T_fbf2f_row11_col0" class="data row11 col0">Mariam</td>
+<td id="T_fbf2f_row11_col1" class="data row11 col1">Business Analyst</td>
+<td id="T_fbf2f_row11_col2" class="data row11 col2">Data Modeling</td>
+<td id="T_fbf2f_row11_col3" class="data row11 col3">5.1</td>
+<td id="T_fbf2f_row11_col4" class="data row11 col4">1</td>
+<td id="T_fbf2f_row11_col5" class="data row11 col5">2</td>
+<td id="T_fbf2f_row11_col6" class="data row11 col6">1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">12</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Data Pipelines</td>
-<td>2.4</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
+<td id="T_fbf2f_row12_col0" class="data row12 col0">Mariam</td>
+<td id="T_fbf2f_row12_col1" class="data row12 col1">Business Analyst</td>
+<td id="T_fbf2f_row12_col2" class="data row12 col2">Data Pipelines</td>
+<td id="T_fbf2f_row12_col3" class="data row12 col3">2.4</td>
+<td id="T_fbf2f_row12_col4" class="data row12 col4">1</td>
+<td id="T_fbf2f_row12_col5" class="data row12 col5">2</td>
+<td id="T_fbf2f_row12_col6" class="data row12 col6">1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">13</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Data Visualization</td>
-<td>1.7</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
+<td id="T_fbf2f_row13_col0" class="data row13 col0">Mariam</td>
+<td id="T_fbf2f_row13_col1" class="data row13 col1">Business Analyst</td>
+<td id="T_fbf2f_row13_col2" class="data row13 col2">Data Visualization</td>
+<td id="T_fbf2f_row13_col3" class="data row13 col3">1.7</td>
+<td id="T_fbf2f_row13_col4" class="data row13 col4">1</td>
+<td id="T_fbf2f_row13_col5" class="data row13 col5">2</td>
+<td id="T_fbf2f_row13_col6" class="data row13 col6">1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">14</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Databricks</td>
-<td>0.0</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
+<td id="T_fbf2f_row14_col0" class="data row14 col0">Mariam</td>
+<td id="T_fbf2f_row14_col1" class="data row14 col1">Business Analyst</td>
+<td id="T_fbf2f_row14_col2" class="data row14 col2">Databricks</td>
+<td id="T_fbf2f_row14_col3" class="data row14 col3">0.0</td>
+<td id="T_fbf2f_row14_col4" class="data row14 col4">1</td>
+<td id="T_fbf2f_row14_col5" class="data row14 col5">2</td>
+<td id="T_fbf2f_row14_col6" class="data row14 col6">1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">15</th>
-<td>Mariam</td>
-<td>Business Analyst</td>
-<td>Statistical Modeling</td>
-<td>0.0</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
+<td id="T_fbf2f_row15_col0" class="data row15 col0">Mariam</td>
+<td id="T_fbf2f_row15_col1" class="data row15 col1">Business Analyst</td>
+<td id="T_fbf2f_row15_col2" class="data row15 col2">Statistical Modeling</td>
+<td id="T_fbf2f_row15_col3" class="data row15 col3">0.0</td>
+<td id="T_fbf2f_row15_col4" class="data row15 col4">1</td>
+<td id="T_fbf2f_row15_col5" class="data row15 col5">2</td>
+<td id="T_fbf2f_row15_col6" class="data row15 col6">1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">16</th>
-<td>Juan</td>
-<td>Data Scientist</td>
-<td>Python</td>
-<td>82.4</td>
-<td>3</td>
-<td>4</td>
-<td>1</td>
+<td id="T_fbf2f_row16_col0" class="data row16 col0">Juan</td>
+<td id="T_fbf2f_row16_col1" class="data row16 col1">Data Scientist</td>
+<td id="T_fbf2f_row16_col2" class="data row16 col2">Python</td>
+<td id="T_fbf2f_row16_col3" class="data row16 col3">82.4</td>
+<td id="T_fbf2f_row16_col4" class="data row16 col4">3</td>
+<td id="T_fbf2f_row16_col5" class="data row16 col5">4</td>
+<td id="T_fbf2f_row16_col6" class="data row16 col6">1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">17</th>
-<td>Juan</td>
-<td>Data Scientist</td>
-<td>SQL</td>
-<td>61.8</td>
-<td>3</td>
-<td>4</td>
-<td>1</td>
+<td id="T_fbf2f_row17_col0" class="data row17 col0">Juan</td>
+<td id="T_fbf2f_row17_col1" class="data row17 col1">Data Scientist</td>
+<td id="T_fbf2f_row17_col2" class="data row17 col2">SQL</td>
+<td id="T_fbf2f_row17_col3" class="data row17 col3">61.8</td>
+<td id="T_fbf2f_row17_col4" class="data row17 col4">3</td>
+<td id="T_fbf2f_row17_col5" class="data row17 col5">4</td>
+<td id="T_fbf2f_row17_col6" class="data row17 col6">1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">18</th>
-<td>Juan</td>
-<td>Data Scientist</td>
-<td>Machine Learning</td>
-<td>44.7</td>
-<td>2</td>
-<td>4</td>
-<td>2</td>
+<td id="T_fbf2f_row18_col0" class="data row18 col0">Juan</td>
+<td id="T_fbf2f_row18_col1" class="data row18 col1">Data Scientist</td>
+<td id="T_fbf2f_row18_col2" class="data row18 col2">Machine Learning</td>
+<td id="T_fbf2f_row18_col3" class="data row18 col3">44.7</td>
+<td id="T_fbf2f_row18_col4" class="data row18 col4">2</td>
+<td id="T_fbf2f_row18_col5" class="data row18 col5">4</td>
+<td id="T_fbf2f_row18_col6" class="data row18 col6">2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">19</th>
-<td>Juan</td>
-<td>Data Scientist</td>
-<td>Data Pipelines</td>
-<td>14.3</td>
-<td>2</td>
-<td>3</td>
-<td>1</td>
+<td id="T_fbf2f_row19_col0" class="data row19 col0">Juan</td>
+<td id="T_fbf2f_row19_col1" class="data row19 col1">Data Scientist</td>
+<td id="T_fbf2f_row19_col2" class="data row19 col2">Data Pipelines</td>
+<td id="T_fbf2f_row19_col3" class="data row19 col3">14.3</td>
+<td id="T_fbf2f_row19_col4" class="data row19 col4">2</td>
+<td id="T_fbf2f_row19_col5" class="data row19 col5">3</td>
+<td id="T_fbf2f_row19_col6" class="data row19 col6">1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">20</th>
-<td>Juan</td>
-<td>Data Scientist</td>
-<td>Statistical Modeling</td>
-<td>12.1</td>
-<td>2</td>
-<td>3</td>
-<td>1</td>
+<td id="T_fbf2f_row20_col0" class="data row20 col0">Juan</td>
+<td id="T_fbf2f_row20_col1" class="data row20 col1">Data Scientist</td>
+<td id="T_fbf2f_row20_col2" class="data row20 col2">Statistical Modeling</td>
+<td id="T_fbf2f_row20_col3" class="data row20 col3">12.1</td>
+<td id="T_fbf2f_row20_col4" class="data row20 col4">2</td>
+<td id="T_fbf2f_row20_col5" class="data row20 col5">3</td>
+<td id="T_fbf2f_row20_col6" class="data row20 col6">1</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -1196,7 +1161,7 @@ Table&nbsp;3: Each member’s skills that fall short of the target for their own
 <div class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gap_table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gap_table.rename_axis(<span class="st">"Skill"</span>).reset_index().style.hide(axis<span class="op">=</span><span class="st">"index"</span>).<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).<span class="bu">format</span>(<span class="st">"</span><span class="sc">{:.1f}</span><span class="st">"</span>, subset<span class="op">=</span>[<span class="st">"Demand (%)"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-gap-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="12">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1205,215 +1170,202 @@ Table&nbsp;4: Skill gaps by member across all postings, ordered by priority scor
 </figcaption>
 <div aria-describedby="tbl-gap-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="12">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<table id="T_ad8cc" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Demand (%)</th>
-<th data-quarto-table-cell-role="th">Target level</th>
-<th data-quarto-table-cell-role="th">Team average</th>
-<th data-quarto-table-cell-role="th">Jenna gap</th>
-<th data-quarto-table-cell-role="th">Mariam gap</th>
-<th data-quarto-table-cell-role="th">Juan gap</th>
-<th data-quarto-table-cell-role="th">Average gap</th>
-<th data-quarto-table-cell-role="th">Priority score</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">skill</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th id="T_ad8cc_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Skill</th>
+<th id="T_ad8cc_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Demand (%)</th>
+<th id="T_ad8cc_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Target level</th>
+<th id="T_ad8cc_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Team average</th>
+<th id="T_ad8cc_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Jenna gap</th>
+<th id="T_ad8cc_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Mariam gap</th>
+<th id="T_ad8cc_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Juan gap</th>
+<th id="T_ad8cc_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Average gap</th>
+<th id="T_ad8cc_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Priority score</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Python</th>
-<td>62.5</td>
-<td>4</td>
-<td>1.67</td>
-<td>3</td>
-<td>3</td>
-<td>1</td>
-<td>2.33</td>
-<td>1.46</td>
+<td id="T_ad8cc_row0_col0" class="data row0 col0">Python</td>
+<td id="T_ad8cc_row0_col1" class="data row0 col1">62.5</td>
+<td id="T_ad8cc_row0_col2" class="data row0 col2">4</td>
+<td id="T_ad8cc_row0_col3" class="data row0 col3">1.67</td>
+<td id="T_ad8cc_row0_col4" class="data row0 col4">3</td>
+<td id="T_ad8cc_row0_col5" class="data row0 col5">3</td>
+<td id="T_ad8cc_row0_col6" class="data row0 col6">1</td>
+<td id="T_ad8cc_row0_col7" class="data row0 col7">2.33</td>
+<td id="T_ad8cc_row0_col8" class="data row0 col8">1.46</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">SQL</th>
-<td>61.8</td>
-<td>4</td>
-<td>2.00</td>
-<td>3</td>
-<td>2</td>
-<td>1</td>
-<td>2.00</td>
-<td>1.24</td>
+<td id="T_ad8cc_row1_col0" class="data row1 col0">SQL</td>
+<td id="T_ad8cc_row1_col1" class="data row1 col1">61.8</td>
+<td id="T_ad8cc_row1_col2" class="data row1 col2">4</td>
+<td id="T_ad8cc_row1_col3" class="data row1 col3">2.00</td>
+<td id="T_ad8cc_row1_col4" class="data row1 col4">3</td>
+<td id="T_ad8cc_row1_col5" class="data row1 col5">2</td>
+<td id="T_ad8cc_row1_col6" class="data row1 col6">1</td>
+<td id="T_ad8cc_row1_col7" class="data row1 col7">2.00</td>
+<td id="T_ad8cc_row1_col8" class="data row1 col8">1.24</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Pipelines</th>
-<td>21.7</td>
-<td>4</td>
-<td>1.33</td>
-<td>3</td>
-<td>3</td>
-<td>2</td>
-<td>2.67</td>
-<td>0.58</td>
+<td id="T_ad8cc_row2_col0" class="data row2 col0">Data Pipelines</td>
+<td id="T_ad8cc_row2_col1" class="data row2 col1">21.7</td>
+<td id="T_ad8cc_row2_col2" class="data row2 col2">4</td>
+<td id="T_ad8cc_row2_col3" class="data row2 col3">1.33</td>
+<td id="T_ad8cc_row2_col4" class="data row2 col4">3</td>
+<td id="T_ad8cc_row2_col5" class="data row2 col5">3</td>
+<td id="T_ad8cc_row2_col6" class="data row2 col6">2</td>
+<td id="T_ad8cc_row2_col7" class="data row2 col7">2.67</td>
+<td id="T_ad8cc_row2_col8" class="data row2 col8">0.58</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Machine Learning</th>
-<td>19.3</td>
-<td>3</td>
-<td>2.00</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1.00</td>
-<td>0.19</td>
+<td id="T_ad8cc_row3_col0" class="data row3 col0">Machine Learning</td>
+<td id="T_ad8cc_row3_col1" class="data row3 col1">19.3</td>
+<td id="T_ad8cc_row3_col2" class="data row3 col2">3</td>
+<td id="T_ad8cc_row3_col3" class="data row3 col3">2.00</td>
+<td id="T_ad8cc_row3_col4" class="data row3 col4">1</td>
+<td id="T_ad8cc_row3_col5" class="data row3 col5">1</td>
+<td id="T_ad8cc_row3_col6" class="data row3 col6">1</td>
+<td id="T_ad8cc_row3_col7" class="data row3 col7">1.00</td>
+<td id="T_ad8cc_row3_col8" class="data row3 col8">0.19</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Databricks</th>
-<td>11.1</td>
-<td>3</td>
-<td>1.67</td>
-<td>2</td>
-<td>2</td>
-<td>0</td>
-<td>1.33</td>
-<td>0.15</td>
+<td id="T_ad8cc_row4_col0" class="data row4 col0">Databricks</td>
+<td id="T_ad8cc_row4_col1" class="data row4 col1">11.1</td>
+<td id="T_ad8cc_row4_col2" class="data row4 col2">3</td>
+<td id="T_ad8cc_row4_col3" class="data row4 col3">1.67</td>
+<td id="T_ad8cc_row4_col4" class="data row4 col4">2</td>
+<td id="T_ad8cc_row4_col5" class="data row4 col5">2</td>
+<td id="T_ad8cc_row4_col6" class="data row4 col6">0</td>
+<td id="T_ad8cc_row4_col7" class="data row4 col7">1.33</td>
+<td id="T_ad8cc_row4_col8" class="data row4 col8">0.15</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Tableau</th>
-<td>15.6</td>
-<td>3</td>
-<td>3.00</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>0.67</td>
-<td>0.10</td>
+<td id="T_ad8cc_row5_col0" class="data row5 col0">Tableau</td>
+<td id="T_ad8cc_row5_col1" class="data row5 col1">15.6</td>
+<td id="T_ad8cc_row5_col2" class="data row5 col2">3</td>
+<td id="T_ad8cc_row5_col3" class="data row5 col3">3.00</td>
+<td id="T_ad8cc_row5_col4" class="data row5 col4">0</td>
+<td id="T_ad8cc_row5_col5" class="data row5 col5">2</td>
+<td id="T_ad8cc_row5_col6" class="data row5 col6">0</td>
+<td id="T_ad8cc_row5_col7" class="data row5 col7">0.67</td>
+<td id="T_ad8cc_row5_col8" class="data row5 col8">0.10</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Power BI</th>
-<td>11.2</td>
-<td>3</td>
-<td>3.00</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>0.67</td>
-<td>0.08</td>
+<td id="T_ad8cc_row6_col0" class="data row6 col0">Power BI</td>
+<td id="T_ad8cc_row6_col1" class="data row6 col1">11.2</td>
+<td id="T_ad8cc_row6_col2" class="data row6 col2">3</td>
+<td id="T_ad8cc_row6_col3" class="data row6 col3">3.00</td>
+<td id="T_ad8cc_row6_col4" class="data row6 col4">0</td>
+<td id="T_ad8cc_row6_col5" class="data row6 col5">2</td>
+<td id="T_ad8cc_row6_col6" class="data row6 col6">0</td>
+<td id="T_ad8cc_row6_col7" class="data row6 col7">0.67</td>
+<td id="T_ad8cc_row6_col8" class="data row6 col8">0.08</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Quality</th>
-<td>14.2</td>
-<td>3</td>
-<td>3.33</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0.33</td>
-<td>0.05</td>
+<td id="T_ad8cc_row7_col0" class="data row7 col0">Data Quality</td>
+<td id="T_ad8cc_row7_col1" class="data row7 col1">14.2</td>
+<td id="T_ad8cc_row7_col2" class="data row7 col2">3</td>
+<td id="T_ad8cc_row7_col3" class="data row7 col3">3.33</td>
+<td id="T_ad8cc_row7_col4" class="data row7 col4">0</td>
+<td id="T_ad8cc_row7_col5" class="data row7 col5">1</td>
+<td id="T_ad8cc_row7_col6" class="data row7 col6">0</td>
+<td id="T_ad8cc_row7_col7" class="data row7 col7">0.33</td>
+<td id="T_ad8cc_row7_col8" class="data row7 col8">0.05</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Modeling</th>
-<td>8.4</td>
-<td>2</td>
-<td>2.67</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0.33</td>
-<td>0.03</td>
+<td id="T_ad8cc_row8_col0" class="data row8 col0">Data Modeling</td>
+<td id="T_ad8cc_row8_col1" class="data row8 col1">8.4</td>
+<td id="T_ad8cc_row8_col2" class="data row8 col2">2</td>
+<td id="T_ad8cc_row8_col3" class="data row8 col3">2.67</td>
+<td id="T_ad8cc_row8_col4" class="data row8 col4">0</td>
+<td id="T_ad8cc_row8_col5" class="data row8 col5">1</td>
+<td id="T_ad8cc_row8_col6" class="data row8 col6">0</td>
+<td id="T_ad8cc_row8_col7" class="data row8 col7">0.33</td>
+<td id="T_ad8cc_row8_col8" class="data row8 col8">0.03</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Statistical Modeling</th>
-<td>6.4</td>
-<td>2</td>
-<td>1.67</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0.33</td>
-<td>0.02</td>
+<td id="T_ad8cc_row9_col0" class="data row9 col0">Statistical Modeling</td>
+<td id="T_ad8cc_row9_col1" class="data row9 col1">6.4</td>
+<td id="T_ad8cc_row9_col2" class="data row9 col2">2</td>
+<td id="T_ad8cc_row9_col3" class="data row9 col3">1.67</td>
+<td id="T_ad8cc_row9_col4" class="data row9 col4">0</td>
+<td id="T_ad8cc_row9_col5" class="data row9 col5">1</td>
+<td id="T_ad8cc_row9_col6" class="data row9 col6">0</td>
+<td id="T_ad8cc_row9_col7" class="data row9 col7">0.33</td>
+<td id="T_ad8cc_row9_col8" class="data row9 col8">0.02</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Visualization</th>
-<td>5.7</td>
-<td>2</td>
-<td>3.00</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0.33</td>
-<td>0.02</td>
+<td id="T_ad8cc_row10_col0" class="data row10 col0">Data Visualization</td>
+<td id="T_ad8cc_row10_col1" class="data row10 col1">5.7</td>
+<td id="T_ad8cc_row10_col2" class="data row10 col2">2</td>
+<td id="T_ad8cc_row10_col3" class="data row10 col3">3.00</td>
+<td id="T_ad8cc_row10_col4" class="data row10 col4">0</td>
+<td id="T_ad8cc_row10_col5" class="data row10 col5">1</td>
+<td id="T_ad8cc_row10_col6" class="data row10 col6">0</td>
+<td id="T_ad8cc_row10_col7" class="data row10 col7">0.33</td>
+<td id="T_ad8cc_row10_col8" class="data row10 col8">0.02</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Business Requirements</th>
-<td>10.2</td>
-<td>3</td>
-<td>4.00</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0.00</td>
-<td>0.00</td>
+<td id="T_ad8cc_row11_col0" class="data row11 col0">Business Requirements</td>
+<td id="T_ad8cc_row11_col1" class="data row11 col1">10.2</td>
+<td id="T_ad8cc_row11_col2" class="data row11 col2">3</td>
+<td id="T_ad8cc_row11_col3" class="data row11 col3">4.00</td>
+<td id="T_ad8cc_row11_col4" class="data row11 col4">0</td>
+<td id="T_ad8cc_row11_col5" class="data row11 col5">0</td>
+<td id="T_ad8cc_row11_col6" class="data row11 col6">0</td>
+<td id="T_ad8cc_row11_col7" class="data row11 col7">0.00</td>
+<td id="T_ad8cc_row11_col8" class="data row11 col8">0.00</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Microsoft Excel</th>
-<td>9.4</td>
-<td>2</td>
-<td>3.67</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0.00</td>
-<td>0.00</td>
+<td id="T_ad8cc_row12_col0" class="data row12 col0">Microsoft Excel</td>
+<td id="T_ad8cc_row12_col1" class="data row12 col1">9.4</td>
+<td id="T_ad8cc_row12_col2" class="data row12 col2">2</td>
+<td id="T_ad8cc_row12_col3" class="data row12 col3">3.67</td>
+<td id="T_ad8cc_row12_col4" class="data row12 col4">0</td>
+<td id="T_ad8cc_row12_col5" class="data row12 col5">0</td>
+<td id="T_ad8cc_row12_col6" class="data row12 col6">0</td>
+<td id="T_ad8cc_row12_col7" class="data row12 col7">0.00</td>
+<td id="T_ad8cc_row12_col8" class="data row12 col8">0.00</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Analysis</th>
-<td>8.9</td>
-<td>2</td>
-<td>4.33</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0.00</td>
-<td>0.00</td>
+<td id="T_ad8cc_row13_col0" class="data row13 col0">Data Analysis</td>
+<td id="T_ad8cc_row13_col1" class="data row13 col1">8.9</td>
+<td id="T_ad8cc_row13_col2" class="data row13 col2">2</td>
+<td id="T_ad8cc_row13_col3" class="data row13 col3">4.33</td>
+<td id="T_ad8cc_row13_col4" class="data row13 col4">0</td>
+<td id="T_ad8cc_row13_col5" class="data row13 col5">0</td>
+<td id="T_ad8cc_row13_col6" class="data row13 col6">0</td>
+<td id="T_ad8cc_row13_col7" class="data row13 col7">0.00</td>
+<td id="T_ad8cc_row13_col8" class="data row13 col8">0.00</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Verbal Communication</th>
-<td>7.5</td>
-<td>2</td>
-<td>4.33</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0.00</td>
-<td>0.00</td>
+<td id="T_ad8cc_row14_col0" class="data row14 col0">Verbal Communication</td>
+<td id="T_ad8cc_row14_col1" class="data row14 col1">7.5</td>
+<td id="T_ad8cc_row14_col2" class="data row14 col2">2</td>
+<td id="T_ad8cc_row14_col3" class="data row14 col3">4.33</td>
+<td id="T_ad8cc_row14_col4" class="data row14 col4">0</td>
+<td id="T_ad8cc_row14_col5" class="data row14 col5">0</td>
+<td id="T_ad8cc_row14_col6" class="data row14 col6">0</td>
+<td id="T_ad8cc_row14_col7" class="data row14 col7">0.00</td>
+<td id="T_ad8cc_row14_col8" class="data row14 col8">0.00</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Business Analysis</th>
-<td>5.8</td>
-<td>2</td>
-<td>3.67</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0.00</td>
-<td>0.00</td>
+<td id="T_ad8cc_row15_col0" class="data row15 col0">Business Analysis</td>
+<td id="T_ad8cc_row15_col1" class="data row15 col1">5.8</td>
+<td id="T_ad8cc_row15_col2" class="data row15 col2">2</td>
+<td id="T_ad8cc_row15_col3" class="data row15 col3">3.67</td>
+<td id="T_ad8cc_row15_col4" class="data row15 col4">0</td>
+<td id="T_ad8cc_row15_col5" class="data row15 col5">0</td>
+<td id="T_ad8cc_row15_col6" class="data row15 col6">0</td>
+<td id="T_ad8cc_row15_col7" class="data row15 col7">0.00</td>
+<td id="T_ad8cc_row15_col8" class="data row15 col8">0.00</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -1523,7 +1475,7 @@ Total levels to close per member: Jenna 12, Mariam 19, Juan 5</code></pre>
 <div class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plan[[<span class="st">"Demand (%)"</span>, <span class="st">"Target"</span>] <span class="op">+</span> _MEMBERS].sort_values(<span class="st">"Demand (%)"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plan[[<span class="st">"Demand (%)"</span>, <span class="st">"Target"</span>] <span class="op">+</span> _MEMBERS].sort_values(<span class="st">"Demand (%)"</span>, ascending<span class="op">=</span><span class="va">False</span>).rename_axis(<span class="st">"Skill"</span>).reset_index().style.hide(axis<span class="op">=</span><span class="st">"index"</span>).<span class="bu">format</span>(<span class="st">"</span><span class="sc">{:.1f}</span><span class="st">"</span>, subset<span class="op">=</span>[<span class="st">"Demand (%)"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-plan-targets" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="15">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1532,161 +1484,151 @@ Table&nbsp;5: Target level for each skill, set by its share of postings.
 </figcaption>
 <div aria-describedby="tbl-plan-targets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="15">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<table id="T_5a85e" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Demand (%)</th>
-<th data-quarto-table-cell-role="th">Target</th>
-<th data-quarto-table-cell-role="th">Jenna</th>
-<th data-quarto-table-cell-role="th">Mariam</th>
-<th data-quarto-table-cell-role="th">Juan</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">skill</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th id="T_5a85e_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Skill</th>
+<th id="T_5a85e_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Demand (%)</th>
+<th id="T_5a85e_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Target</th>
+<th id="T_5a85e_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Jenna</th>
+<th id="T_5a85e_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Mariam</th>
+<th id="T_5a85e_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Juan</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Python</th>
-<td>62.5</td>
-<td>4</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td id="T_5a85e_row0_col0" class="data row0 col0">Python</td>
+<td id="T_5a85e_row0_col1" class="data row0 col1">62.5</td>
+<td id="T_5a85e_row0_col2" class="data row0 col2">4</td>
+<td id="T_5a85e_row0_col3" class="data row0 col3">1</td>
+<td id="T_5a85e_row0_col4" class="data row0 col4">1</td>
+<td id="T_5a85e_row0_col5" class="data row0 col5">3</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">SQL</th>
-<td>61.8</td>
-<td>4</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
+<td id="T_5a85e_row1_col0" class="data row1 col0">SQL</td>
+<td id="T_5a85e_row1_col1" class="data row1 col1">61.8</td>
+<td id="T_5a85e_row1_col2" class="data row1 col2">4</td>
+<td id="T_5a85e_row1_col3" class="data row1 col3">1</td>
+<td id="T_5a85e_row1_col4" class="data row1 col4">2</td>
+<td id="T_5a85e_row1_col5" class="data row1 col5">3</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Pipelines</th>
-<td>21.7</td>
-<td>4</td>
-<td>1</td>
-<td>1</td>
-<td>2</td>
+<td id="T_5a85e_row2_col0" class="data row2 col0">Data Pipelines</td>
+<td id="T_5a85e_row2_col1" class="data row2 col1">21.7</td>
+<td id="T_5a85e_row2_col2" class="data row2 col2">4</td>
+<td id="T_5a85e_row2_col3" class="data row2 col3">1</td>
+<td id="T_5a85e_row2_col4" class="data row2 col4">1</td>
+<td id="T_5a85e_row2_col5" class="data row2 col5">2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Machine Learning</th>
-<td>19.3</td>
-<td>3</td>
-<td>2</td>
-<td>2</td>
-<td>2</td>
+<td id="T_5a85e_row3_col0" class="data row3 col0">Machine Learning</td>
+<td id="T_5a85e_row3_col1" class="data row3 col1">19.3</td>
+<td id="T_5a85e_row3_col2" class="data row3 col2">3</td>
+<td id="T_5a85e_row3_col3" class="data row3 col3">2</td>
+<td id="T_5a85e_row3_col4" class="data row3 col4">2</td>
+<td id="T_5a85e_row3_col5" class="data row3 col5">2</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Tableau</th>
-<td>15.6</td>
-<td>3</td>
-<td>3</td>
-<td>1</td>
-<td>5</td>
+<td id="T_5a85e_row4_col0" class="data row4 col0">Tableau</td>
+<td id="T_5a85e_row4_col1" class="data row4 col1">15.6</td>
+<td id="T_5a85e_row4_col2" class="data row4 col2">3</td>
+<td id="T_5a85e_row4_col3" class="data row4 col3">3</td>
+<td id="T_5a85e_row4_col4" class="data row4 col4">1</td>
+<td id="T_5a85e_row4_col5" class="data row4 col5">5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Quality</th>
-<td>14.2</td>
-<td>3</td>
-<td>3</td>
-<td>2</td>
-<td>5</td>
+<td id="T_5a85e_row5_col0" class="data row5 col0">Data Quality</td>
+<td id="T_5a85e_row5_col1" class="data row5 col1">14.2</td>
+<td id="T_5a85e_row5_col2" class="data row5 col2">3</td>
+<td id="T_5a85e_row5_col3" class="data row5 col3">3</td>
+<td id="T_5a85e_row5_col4" class="data row5 col4">2</td>
+<td id="T_5a85e_row5_col5" class="data row5 col5">5</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Power BI</th>
-<td>11.2</td>
-<td>3</td>
-<td>3</td>
-<td>1</td>
-<td>5</td>
+<td id="T_5a85e_row6_col0" class="data row6 col0">Power BI</td>
+<td id="T_5a85e_row6_col1" class="data row6 col1">11.2</td>
+<td id="T_5a85e_row6_col2" class="data row6 col2">3</td>
+<td id="T_5a85e_row6_col3" class="data row6 col3">3</td>
+<td id="T_5a85e_row6_col4" class="data row6 col4">1</td>
+<td id="T_5a85e_row6_col5" class="data row6 col5">5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Databricks</th>
-<td>11.1</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td id="T_5a85e_row7_col0" class="data row7 col0">Databricks</td>
+<td id="T_5a85e_row7_col1" class="data row7 col1">11.1</td>
+<td id="T_5a85e_row7_col2" class="data row7 col2">3</td>
+<td id="T_5a85e_row7_col3" class="data row7 col3">1</td>
+<td id="T_5a85e_row7_col4" class="data row7 col4">1</td>
+<td id="T_5a85e_row7_col5" class="data row7 col5">3</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Business Requirements</th>
-<td>10.2</td>
-<td>3</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
+<td id="T_5a85e_row8_col0" class="data row8 col0">Business Requirements</td>
+<td id="T_5a85e_row8_col1" class="data row8 col1">10.2</td>
+<td id="T_5a85e_row8_col2" class="data row8 col2">3</td>
+<td id="T_5a85e_row8_col3" class="data row8 col3">3</td>
+<td id="T_5a85e_row8_col4" class="data row8 col4">4</td>
+<td id="T_5a85e_row8_col5" class="data row8 col5">5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Microsoft Excel</th>
-<td>9.4</td>
-<td>2</td>
-<td>4</td>
-<td>2</td>
-<td>5</td>
+<td id="T_5a85e_row9_col0" class="data row9 col0">Microsoft Excel</td>
+<td id="T_5a85e_row9_col1" class="data row9 col1">9.4</td>
+<td id="T_5a85e_row9_col2" class="data row9 col2">2</td>
+<td id="T_5a85e_row9_col3" class="data row9 col3">4</td>
+<td id="T_5a85e_row9_col4" class="data row9 col4">2</td>
+<td id="T_5a85e_row9_col5" class="data row9 col5">5</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Analysis</th>
-<td>8.9</td>
-<td>2</td>
-<td>4</td>
-<td>4</td>
-<td>5</td>
+<td id="T_5a85e_row10_col0" class="data row10 col0">Data Analysis</td>
+<td id="T_5a85e_row10_col1" class="data row10 col1">8.9</td>
+<td id="T_5a85e_row10_col2" class="data row10 col2">2</td>
+<td id="T_5a85e_row10_col3" class="data row10 col3">4</td>
+<td id="T_5a85e_row10_col4" class="data row10 col4">4</td>
+<td id="T_5a85e_row10_col5" class="data row10 col5">5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Modeling</th>
-<td>8.4</td>
-<td>2</td>
-<td>3</td>
-<td>1</td>
-<td>4</td>
+<td id="T_5a85e_row11_col0" class="data row11 col0">Data Modeling</td>
+<td id="T_5a85e_row11_col1" class="data row11 col1">8.4</td>
+<td id="T_5a85e_row11_col2" class="data row11 col2">2</td>
+<td id="T_5a85e_row11_col3" class="data row11 col3">3</td>
+<td id="T_5a85e_row11_col4" class="data row11 col4">1</td>
+<td id="T_5a85e_row11_col5" class="data row11 col5">4</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Verbal Communication</th>
-<td>7.5</td>
-<td>2</td>
-<td>5</td>
-<td>4</td>
-<td>4</td>
+<td id="T_5a85e_row12_col0" class="data row12 col0">Verbal Communication</td>
+<td id="T_5a85e_row12_col1" class="data row12 col1">7.5</td>
+<td id="T_5a85e_row12_col2" class="data row12 col2">2</td>
+<td id="T_5a85e_row12_col3" class="data row12 col3">5</td>
+<td id="T_5a85e_row12_col4" class="data row12 col4">4</td>
+<td id="T_5a85e_row12_col5" class="data row12 col5">4</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Statistical Modeling</th>
-<td>6.4</td>
-<td>2</td>
-<td>2</td>
-<td>1</td>
-<td>2</td>
+<td id="T_5a85e_row13_col0" class="data row13 col0">Statistical Modeling</td>
+<td id="T_5a85e_row13_col1" class="data row13 col1">6.4</td>
+<td id="T_5a85e_row13_col2" class="data row13 col2">2</td>
+<td id="T_5a85e_row13_col3" class="data row13 col3">2</td>
+<td id="T_5a85e_row13_col4" class="data row13 col4">1</td>
+<td id="T_5a85e_row13_col5" class="data row13 col5">2</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Business Analysis</th>
-<td>5.8</td>
-<td>2</td>
-<td>4</td>
-<td>3</td>
-<td>4</td>
+<td id="T_5a85e_row14_col0" class="data row14 col0">Business Analysis</td>
+<td id="T_5a85e_row14_col1" class="data row14 col1">5.8</td>
+<td id="T_5a85e_row14_col2" class="data row14 col2">2</td>
+<td id="T_5a85e_row14_col3" class="data row14 col3">4</td>
+<td id="T_5a85e_row14_col4" class="data row14 col4">3</td>
+<td id="T_5a85e_row14_col5" class="data row14 col5">4</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Visualization</th>
-<td>5.7</td>
-<td>2</td>
-<td>3</td>
-<td>1</td>
-<td>5</td>
+<td id="T_5a85e_row15_col0" class="data row15 col0">Data Visualization</td>
+<td id="T_5a85e_row15_col1" class="data row15 col1">5.7</td>
+<td id="T_5a85e_row15_col2" class="data row15 col2">2</td>
+<td id="T_5a85e_row15_col3" class="data row15 col3">3</td>
+<td id="T_5a85e_row15_col4" class="data row15 col4">1</td>
+<td id="T_5a85e_row15_col5" class="data row15 col5">5</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -1700,7 +1642,7 @@ Table&nbsp;5: Target level for each skill, set by its share of postings.
 <summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>_top <span class="op">=</span> plan_gaps.sort_values([<span class="st">"Member"</span>, <span class="st">"Priority"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>]).groupby(<span class="st">"Member"</span>).head(<span class="dv">3</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>_top[<span class="st">"Member"</span>] <span class="op">=</span> pd.Categorical(_top[<span class="st">"Member"</span>], _MEMBERS, ordered<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>_top.sort_values([<span class="st">"Member"</span>, <span class="st">"Priority"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>_top.sort_values([<span class="st">"Member"</span>, <span class="st">"Priority"</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>]).style.hide(axis<span class="op">=</span><span class="st">"index"</span>).<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">2</span>).<span class="bu">format</span>(<span class="st">"</span><span class="sc">{:.1f}</span><span class="st">"</span>, subset<span class="op">=</span>[<span class="st">"Demand (%)"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-plan-priorities" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="16">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1709,117 +1651,105 @@ Table&nbsp;6: Each member’s three highest-priority skills.
 </figcaption>
 <div aria-describedby="tbl-plan-priorities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="16">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<table id="T_51e57" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Member</th>
-<th data-quarto-table-cell-role="th">Skill</th>
-<th data-quarto-table-cell-role="th">Current</th>
-<th data-quarto-table-cell-role="th">Target</th>
-<th data-quarto-table-cell-role="th">Gap</th>
-<th data-quarto-table-cell-role="th">Demand (%)</th>
-<th data-quarto-table-cell-role="th">Priority</th>
+<th id="T_51e57_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Member</th>
+<th id="T_51e57_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Skill</th>
+<th id="T_51e57_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Current</th>
+<th id="T_51e57_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Target</th>
+<th id="T_51e57_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Gap</th>
+<th id="T_51e57_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Demand (%)</th>
+<th id="T_51e57_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Priority</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>Jenna</td>
-<td>Python</td>
-<td>1</td>
-<td>4</td>
-<td>3</td>
-<td>62.5</td>
-<td>1.88</td>
+<td id="T_51e57_row0_col0" class="data row0 col0">Jenna</td>
+<td id="T_51e57_row0_col1" class="data row0 col1">Python</td>
+<td id="T_51e57_row0_col2" class="data row0 col2">1</td>
+<td id="T_51e57_row0_col3" class="data row0 col3">4</td>
+<td id="T_51e57_row0_col4" class="data row0 col4">3</td>
+<td id="T_51e57_row0_col5" class="data row0 col5">62.5</td>
+<td id="T_51e57_row0_col6" class="data row0 col6">1.88</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>Jenna</td>
-<td>SQL</td>
-<td>1</td>
-<td>4</td>
-<td>3</td>
-<td>61.8</td>
-<td>1.85</td>
+<td id="T_51e57_row1_col0" class="data row1 col0">Jenna</td>
+<td id="T_51e57_row1_col1" class="data row1 col1">SQL</td>
+<td id="T_51e57_row1_col2" class="data row1 col2">1</td>
+<td id="T_51e57_row1_col3" class="data row1 col3">4</td>
+<td id="T_51e57_row1_col4" class="data row1 col4">3</td>
+<td id="T_51e57_row1_col5" class="data row1 col5">61.8</td>
+<td id="T_51e57_row1_col6" class="data row1 col6">1.85</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>Jenna</td>
-<td>Data Pipelines</td>
-<td>1</td>
-<td>4</td>
-<td>3</td>
-<td>21.7</td>
-<td>0.65</td>
+<td id="T_51e57_row2_col0" class="data row2 col0">Jenna</td>
+<td id="T_51e57_row2_col1" class="data row2 col1">Data Pipelines</td>
+<td id="T_51e57_row2_col2" class="data row2 col2">1</td>
+<td id="T_51e57_row2_col3" class="data row2 col3">4</td>
+<td id="T_51e57_row2_col4" class="data row2 col4">3</td>
+<td id="T_51e57_row2_col5" class="data row2 col5">21.7</td>
+<td id="T_51e57_row2_col6" class="data row2 col6">0.65</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>Mariam</td>
-<td>Python</td>
-<td>1</td>
-<td>4</td>
-<td>3</td>
-<td>62.5</td>
-<td>1.88</td>
+<td id="T_51e57_row3_col0" class="data row3 col0">Mariam</td>
+<td id="T_51e57_row3_col1" class="data row3 col1">Python</td>
+<td id="T_51e57_row3_col2" class="data row3 col2">1</td>
+<td id="T_51e57_row3_col3" class="data row3 col3">4</td>
+<td id="T_51e57_row3_col4" class="data row3 col4">3</td>
+<td id="T_51e57_row3_col5" class="data row3 col5">62.5</td>
+<td id="T_51e57_row3_col6" class="data row3 col6">1.88</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>Mariam</td>
-<td>SQL</td>
-<td>2</td>
-<td>4</td>
-<td>2</td>
-<td>61.8</td>
-<td>1.24</td>
+<td id="T_51e57_row4_col0" class="data row4 col0">Mariam</td>
+<td id="T_51e57_row4_col1" class="data row4 col1">SQL</td>
+<td id="T_51e57_row4_col2" class="data row4 col2">2</td>
+<td id="T_51e57_row4_col3" class="data row4 col3">4</td>
+<td id="T_51e57_row4_col4" class="data row4 col4">2</td>
+<td id="T_51e57_row4_col5" class="data row4 col5">61.8</td>
+<td id="T_51e57_row4_col6" class="data row4 col6">1.24</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5</th>
-<td>Mariam</td>
-<td>Data Pipelines</td>
-<td>1</td>
-<td>4</td>
-<td>3</td>
-<td>21.7</td>
-<td>0.65</td>
+<td id="T_51e57_row5_col0" class="data row5 col0">Mariam</td>
+<td id="T_51e57_row5_col1" class="data row5 col1">Data Pipelines</td>
+<td id="T_51e57_row5_col2" class="data row5 col2">1</td>
+<td id="T_51e57_row5_col3" class="data row5 col3">4</td>
+<td id="T_51e57_row5_col4" class="data row5 col4">3</td>
+<td id="T_51e57_row5_col5" class="data row5 col5">21.7</td>
+<td id="T_51e57_row5_col6" class="data row5 col6">0.65</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">6</th>
-<td>Juan</td>
-<td>SQL</td>
-<td>3</td>
-<td>4</td>
-<td>1</td>
-<td>61.8</td>
-<td>0.62</td>
+<td id="T_51e57_row6_col0" class="data row6 col0">Juan</td>
+<td id="T_51e57_row6_col1" class="data row6 col1">SQL</td>
+<td id="T_51e57_row6_col2" class="data row6 col2">3</td>
+<td id="T_51e57_row6_col3" class="data row6 col3">4</td>
+<td id="T_51e57_row6_col4" class="data row6 col4">1</td>
+<td id="T_51e57_row6_col5" class="data row6 col5">61.8</td>
+<td id="T_51e57_row6_col6" class="data row6 col6">0.62</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">7</th>
-<td>Juan</td>
-<td>Python</td>
-<td>3</td>
-<td>4</td>
-<td>1</td>
-<td>62.5</td>
-<td>0.62</td>
+<td id="T_51e57_row7_col0" class="data row7 col0">Juan</td>
+<td id="T_51e57_row7_col1" class="data row7 col1">Python</td>
+<td id="T_51e57_row7_col2" class="data row7 col2">3</td>
+<td id="T_51e57_row7_col3" class="data row7 col3">4</td>
+<td id="T_51e57_row7_col4" class="data row7 col4">1</td>
+<td id="T_51e57_row7_col5" class="data row7 col5">62.5</td>
+<td id="T_51e57_row7_col6" class="data row7 col6">0.62</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">8</th>
-<td>Juan</td>
-<td>Data Pipelines</td>
-<td>2</td>
-<td>4</td>
-<td>2</td>
-<td>21.7</td>
-<td>0.43</td>
+<td id="T_51e57_row8_col0" class="data row8 col0">Juan</td>
+<td id="T_51e57_row8_col1" class="data row8 col1">Data Pipelines</td>
+<td id="T_51e57_row8_col2" class="data row8 col2">2</td>
+<td id="T_51e57_row8_col3" class="data row8 col3">4</td>
+<td id="T_51e57_row8_col4" class="data row8 col4">2</td>
+<td id="T_51e57_row8_col5" class="data row8 col5">21.7</td>
+<td id="T_51e57_row8_col6" class="data row8 col6">0.43</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -1914,7 +1844,7 @@ Table&nbsp;6: Each member’s three highest-priority skills.
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>_collab[<span class="st">"Strongest on the team"</span>] <span class="op">=</span> [</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>_strongest[s]<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span><span class="bu">int</span>(plan.loc[s, _strongest[s]])<span class="sc">}</span><span class="ss">)"</span> <span class="cf">for</span> s <span class="kw">in</span> _collab.index</span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>_collab.sort_values(<span class="st">"Total gap"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>_collab.sort_values(<span class="st">"Total gap"</span>, ascending<span class="op">=</span><span class="va">False</span>).reset_index().style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-plan-collaboration" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="17">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1923,95 +1853,87 @@ Table&nbsp;7: Skills with at least one gap, the members who have it, and the tea
 </figcaption>
 <div aria-describedby="tbl-plan-collaboration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="17">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<table id="T_72476" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Members with a gap</th>
-<th data-quarto-table-cell-role="th">Total gap</th>
-<th data-quarto-table-cell-role="th">Strongest on the team</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Skill</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th id="T_72476_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Skill</th>
+<th id="T_72476_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Members with a gap</th>
+<th id="T_72476_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Total gap</th>
+<th id="T_72476_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Strongest on the team</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Pipelines</th>
-<td>Jenna, Mariam, Juan</td>
-<td>8</td>
-<td>Juan (2)</td>
+<td id="T_72476_row0_col0" class="data row0 col0">Data Pipelines</td>
+<td id="T_72476_row0_col1" class="data row0 col1">Jenna, Mariam, Juan</td>
+<td id="T_72476_row0_col2" class="data row0 col2">8</td>
+<td id="T_72476_row0_col3" class="data row0 col3">Juan (2)</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Python</th>
-<td>Jenna, Mariam, Juan</td>
-<td>7</td>
-<td>Juan (3)</td>
+<td id="T_72476_row1_col0" class="data row1 col0">Python</td>
+<td id="T_72476_row1_col1" class="data row1 col1">Jenna, Mariam, Juan</td>
+<td id="T_72476_row1_col2" class="data row1 col2">7</td>
+<td id="T_72476_row1_col3" class="data row1 col3">Juan (3)</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">SQL</th>
-<td>Jenna, Mariam, Juan</td>
-<td>6</td>
-<td>Juan (3)</td>
+<td id="T_72476_row2_col0" class="data row2 col0">SQL</td>
+<td id="T_72476_row2_col1" class="data row2 col1">Jenna, Mariam, Juan</td>
+<td id="T_72476_row2_col2" class="data row2 col2">6</td>
+<td id="T_72476_row2_col3" class="data row2 col3">Juan (3)</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Databricks</th>
-<td>Jenna, Mariam</td>
-<td>4</td>
-<td>Juan (3)</td>
+<td id="T_72476_row3_col0" class="data row3 col0">Databricks</td>
+<td id="T_72476_row3_col1" class="data row3 col1">Jenna, Mariam</td>
+<td id="T_72476_row3_col2" class="data row3 col2">4</td>
+<td id="T_72476_row3_col3" class="data row3 col3">Juan (3)</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Machine Learning</th>
-<td>Jenna, Mariam, Juan</td>
-<td>3</td>
-<td>Jenna (2)</td>
+<td id="T_72476_row4_col0" class="data row4 col0">Machine Learning</td>
+<td id="T_72476_row4_col1" class="data row4 col1">Jenna, Mariam, Juan</td>
+<td id="T_72476_row4_col2" class="data row4 col2">3</td>
+<td id="T_72476_row4_col3" class="data row4 col3">Jenna (2)</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Tableau</th>
-<td>Mariam</td>
-<td>2</td>
-<td>Juan (5)</td>
+<td id="T_72476_row5_col0" class="data row5 col0">Tableau</td>
+<td id="T_72476_row5_col1" class="data row5 col1">Mariam</td>
+<td id="T_72476_row5_col2" class="data row5 col2">2</td>
+<td id="T_72476_row5_col3" class="data row5 col3">Juan (5)</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Power BI</th>
-<td>Mariam</td>
-<td>2</td>
-<td>Juan (5)</td>
+<td id="T_72476_row6_col0" class="data row6 col0">Power BI</td>
+<td id="T_72476_row6_col1" class="data row6 col1">Mariam</td>
+<td id="T_72476_row6_col2" class="data row6 col2">2</td>
+<td id="T_72476_row6_col3" class="data row6 col3">Juan (5)</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Quality</th>
-<td>Mariam</td>
-<td>1</td>
-<td>Juan (5)</td>
+<td id="T_72476_row7_col0" class="data row7 col0">Data Quality</td>
+<td id="T_72476_row7_col1" class="data row7 col1">Mariam</td>
+<td id="T_72476_row7_col2" class="data row7 col2">1</td>
+<td id="T_72476_row7_col3" class="data row7 col3">Juan (5)</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Modeling</th>
-<td>Mariam</td>
-<td>1</td>
-<td>Juan (4)</td>
+<td id="T_72476_row8_col0" class="data row8 col0">Data Modeling</td>
+<td id="T_72476_row8_col1" class="data row8 col1">Mariam</td>
+<td id="T_72476_row8_col2" class="data row8 col2">1</td>
+<td id="T_72476_row8_col3" class="data row8 col3">Juan (4)</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Visualization</th>
-<td>Mariam</td>
-<td>1</td>
-<td>Juan (5)</td>
+<td id="T_72476_row9_col0" class="data row9 col0">Data Visualization</td>
+<td id="T_72476_row9_col1" class="data row9 col1">Mariam</td>
+<td id="T_72476_row9_col2" class="data row9 col2">1</td>
+<td id="T_72476_row9_col3" class="data row9 col3">Juan (5)</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Statistical Modeling</th>
-<td>Mariam</td>
-<td>1</td>
-<td>Jenna (2)</td>
+<td id="T_72476_row10_col0" class="data row10 col0">Statistical Modeling</td>
+<td id="T_72476_row10_col1" class="data row10 col1">Mariam</td>
+<td id="T_72476_row10_col2" class="data row10 col2">1</td>
+<td id="T_72476_row10_col3" class="data row10 col3">Jenna (2)</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -2022,7 +1944,7 @@ Table&nbsp;7: Skills with at least one gap, the members who have it, and the tea
 <li><strong>A weekly study session</strong> of about an hour, working through the same Kaggle Learn or Zoomcamp module and comparing solutions.</li>
 <li><strong>Rotating who writes the code.</strong> For each remaining module of this project, the member with the largest gap writes the first version of the code, and the strongest member reviews it through a pull request. The work gets done and the practice counts double.</li>
 <li><strong>Pairing on the BI tools.</strong> The members strongest in Power BI and Tableau walk the others through rebuilding one Market Baseline chart in each tool.</li>
-<li><strong>Business framing from the business-side members.</strong> Members targeting business analyst roles lead on turning findings into requirements and recommendations for the Career Plan page.</li>
+<li><strong>Business framing from the business-side members.</strong> Members targeting business analyst roles lead on turning findings into requirements and recommendations for the Career Strategy page.</li>
 </ul>
 </section>
 <section id="timeline" class="level3">
@@ -2053,7 +1975,7 @@ Table&nbsp;7: Skills with at least one gap, the members who have it, and the tea
 </tr>
 <tr class="odd">
 <td>9 to 12</td>
-<td>Machine learning basics and the salary-prediction project, which feeds the ML Methods page</td>
+<td>Machine learning basics and the salary-prediction project, which feeds the Predictive Modeling page</td>
 <td>Everyone</td>
 </tr>
 <tr class="even">

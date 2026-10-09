@@ -185,6 +185,10 @@ div.csl-indent {
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./final_report.docx"> 
+<span class="menu-text">Final Report</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -366,62 +370,54 @@ div.csl-indent {
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>funnel[<span class="st">"Share of raw extract"</span>] <span class="op">=</span> (funnel[<span class="st">"Postings"</span>] <span class="op">/</span> stats[<span class="st">"raw_postings"</span>] <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">2</span>).astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">"%"</span></span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>funnel[<span class="st">"Postings"</span>] <span class="op">=</span> funnel[<span class="st">"Postings"</span>].<span class="bu">map</span>(fmt)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>funnel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>funnel.style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-funnel" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Postings remaining after each filtering step.
 </figcaption>
 <div aria-describedby="tbl-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="2">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_4c208" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Step</th>
-<th data-quarto-table-cell-role="th">Postings</th>
-<th data-quarto-table-cell-role="th">Share of raw extract</th>
+<th id="T_4c208_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Step</th>
+<th id="T_4c208_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Postings</th>
+<th id="T_4c208_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Share of raw extract</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>Raw extract</td>
-<td>504,208</td>
-<td>100.0%</td>
+<td id="T_4c208_row0_col0" class="data row0 col0">Raw extract</td>
+<td id="T_4c208_row0_col1" class="data row0 col1">504,208</td>
+<td id="T_4c208_row0_col2" class="data row0 col2">100.0%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>After NAICS 5415 filter</td>
-<td>19,886</td>
-<td>3.94%</td>
+<td id="T_4c208_row1_col0" class="data row1 col0">After NAICS 5415 filter</td>
+<td id="T_4c208_row1_col1" class="data row1 col1">19,886</td>
+<td id="T_4c208_row1_col2" class="data row1 col2">3.94%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>After role-family inclusion</td>
-<td>2,308</td>
-<td>0.46%</td>
+<td id="T_4c208_row2_col0" class="data row2 col0">After role-family inclusion</td>
+<td id="T_4c208_row2_col1" class="data row2 col1">2,308</td>
+<td id="T_4c208_row2_col2" class="data row2 col2">0.46%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>After role-family exclusion</td>
-<td>2,268</td>
-<td>0.45%</td>
+<td id="T_4c208_row3_col0" class="data row3 col0">After role-family exclusion</td>
+<td id="T_4c208_row3_col1" class="data row3 col1">2,268</td>
+<td id="T_4c208_row3_col2" class="data row3 col2">0.45%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>Within the 12-month date window</td>
-<td>1,790</td>
-<td>0.36%</td>
+<td id="T_4c208_row4_col0" class="data row4 col0">Within the 12-month date window</td>
+<td id="T_4c208_row4_col1" class="data row4 col1">1,790</td>
+<td id="T_4c208_row4_col2" class="data row4 col2">0.36%</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -515,61 +511,52 @@ Table&nbsp;1
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"$</span><span class="sc">{</span>sal<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:,.0f}</span><span class="ss">"</span>,</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        ],</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>).style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-salary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="4">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-salary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-salary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Advertised salary midpoints after cleaning.
 </figcaption>
 <div aria-describedby="tbl-salary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="4">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_08df1" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Measure</th>
-<th data-quarto-table-cell-role="th">Value</th>
+<th id="T_08df1_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Measure</th>
+<th id="T_08df1_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>Postings with usable salary</td>
-<td>591</td>
+<td id="T_08df1_row0_col0" class="data row0 col0">Postings with usable salary</td>
+<td id="T_08df1_row0_col1" class="data row0 col1">591</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>Share of panel</td>
-<td>33%</td>
+<td id="T_08df1_row1_col0" class="data row1 col0">Share of panel</td>
+<td id="T_08df1_row1_col1" class="data row1 col1">33%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>Minimum</td>
-<td>$46,800</td>
+<td id="T_08df1_row2_col0" class="data row2 col0">Minimum</td>
+<td id="T_08df1_row2_col1" class="data row2 col1">$46,800</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>Median</td>
-<td>$151,475</td>
+<td id="T_08df1_row3_col0" class="data row3 col0">Median</td>
+<td id="T_08df1_row3_col1" class="data row3 col1">$151,475</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>Mean</td>
-<td>$157,662</td>
+<td id="T_08df1_row4_col0" class="data row4 col0">Mean</td>
+<td id="T_08df1_row4_col1" class="data row4 col1">$157,662</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5</th>
-<td>Maximum</td>
-<td>$340,555</td>
+<td id="T_08df1_row5_col0" class="data row5 col0">Maximum</td>
+<td id="T_08df1_row5_col1" class="data row5 col1">$340,555</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -606,66 +593,59 @@ Table&nbsp;2
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>).reindex(levels).fillna(<span class="dv">0</span>).astype(<span class="bu">int</span>)</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>edu.index.name <span class="op">=</span> <span class="st">"Education level"</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>edu.reset_index().style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-education" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="5">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Postings by minimum required and highest mentioned education level.
 </figcaption>
 <div aria-describedby="tbl-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="5">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_a1c01" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Minimum required</th>
-<th data-quarto-table-cell-role="th">Highest mentioned</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Education level</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th id="T_a1c01_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Education level</th>
+<th id="T_a1c01_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Minimum required</th>
+<th id="T_a1c01_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Highest mentioned</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">High school diploma or equivalent</th>
-<td>348</td>
-<td>308</td>
+<td id="T_a1c01_row0_col0" class="data row0 col0">High school diploma or equivalent</td>
+<td id="T_a1c01_row0_col1" class="data row0 col1">348</td>
+<td id="T_a1c01_row0_col2" class="data row0 col2">308</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Postsecondary nondegree award</th>
-<td>27</td>
-<td>0</td>
+<td id="T_a1c01_row1_col0" class="data row1 col0">Postsecondary nondegree award</td>
+<td id="T_a1c01_row1_col1" class="data row1 col1">27</td>
+<td id="T_a1c01_row1_col2" class="data row1 col2">0</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Associate's degree</th>
-<td>247</td>
-<td>53</td>
+<td id="T_a1c01_row2_col0" class="data row2 col0">Associate's degree</td>
+<td id="T_a1c01_row2_col1" class="data row2 col1">247</td>
+<td id="T_a1c01_row2_col2" class="data row2 col2">53</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Bachelor's degree</th>
-<td>352</td>
-<td>615</td>
+<td id="T_a1c01_row3_col0" class="data row3 col0">Bachelor's degree</td>
+<td id="T_a1c01_row3_col1" class="data row3 col1">352</td>
+<td id="T_a1c01_row3_col2" class="data row3 col2">615</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Master's degree</th>
-<td>62</td>
-<td>385</td>
+<td id="T_a1c01_row4_col0" class="data row4 col0">Master's degree</td>
+<td id="T_a1c01_row4_col1" class="data row4 col1">62</td>
+<td id="T_a1c01_row4_col2" class="data row4 col2">385</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Doctoral or professional degree</th>
-<td>37</td>
-<td>176</td>
+<td id="T_a1c01_row5_col0" class="data row5 col0">Doctoral or professional degree</td>
+<td id="T_a1c01_row5_col1" class="data row5 col1">37</td>
+<td id="T_a1c01_row5_col2" class="data row5 col2">176</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -685,56 +665,49 @@ Table&nbsp;3
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Postings with content"</span>: [fmt(v) <span class="cf">for</span> v <span class="kw">in</span> sf.values()],</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Share of panel"</span>: [pct(v) <span class="cf">for</span> v <span class="kw">in</span> sf.values()],</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>).style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-skill-fields" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="6">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-skill-fields-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-skill-fields-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Postings with content in each of the four skill fields.
 </figcaption>
 <div aria-describedby="tbl-skill-fields-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="6">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_ca75f" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Field</th>
-<th data-quarto-table-cell-role="th">Postings with content</th>
-<th data-quarto-table-cell-role="th">Share of panel</th>
+<th id="T_ca75f_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Field</th>
+<th id="T_ca75f_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Postings with content</th>
+<th id="T_ca75f_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Share of panel</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>SKILLS_NAME</td>
-<td>1,785</td>
-<td>100%</td>
+<td id="T_ca75f_row0_col0" class="data row0 col0">SKILLS_NAME</td>
+<td id="T_ca75f_row0_col1" class="data row0 col1">1,785</td>
+<td id="T_ca75f_row0_col2" class="data row0 col2">100%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>SPECIALIZED_SKILLS_NAME</td>
-<td>1,785</td>
-<td>100%</td>
+<td id="T_ca75f_row1_col0" class="data row1 col0">SPECIALIZED_SKILLS_NAME</td>
+<td id="T_ca75f_row1_col1" class="data row1 col1">1,785</td>
+<td id="T_ca75f_row1_col2" class="data row1 col2">100%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>COMMON_SKILLS_NAME</td>
-<td>844</td>
-<td>47%</td>
+<td id="T_ca75f_row2_col0" class="data row2 col0">COMMON_SKILLS_NAME</td>
+<td id="T_ca75f_row2_col1" class="data row2 col1">844</td>
+<td id="T_ca75f_row2_col2" class="data row2 col2">47%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>SOFTWARE_SKILLS_NAME</td>
-<td>1,593</td>
-<td>89%</td>
+<td id="T_ca75f_row3_col0" class="data row3 col0">SOFTWARE_SKILLS_NAME</td>
+<td id="T_ca75f_row3_col1" class="data row3 col1">1,593</td>
+<td id="T_ca75f_row3_col2" class="data row3 col2">89%</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -748,86 +721,79 @@ Table&nbsp;4
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>top <span class="op">=</span> top.rename(<span class="st">"Postings"</span>).to_frame()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>top[<span class="st">"Share of panel"</span>] <span class="op">=</span> (top[<span class="st">"Postings"</span>] <span class="op">/</span> n <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>).astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">"%"</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>top.index.name <span class="op">=</span> <span class="st">"Skill"</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>top</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>top.reset_index().style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-top-skills" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="7">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: The ten skills requested in the most postings.
 </figcaption>
 <div aria-describedby="tbl-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="7">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_364b7" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Postings</th>
-<th data-quarto-table-cell-role="th">Share of panel</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Skill</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th id="T_364b7_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Skill</th>
+<th id="T_364b7_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Postings</th>
+<th id="T_364b7_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Share of panel</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Python (Programming Language)</th>
-<td>1119</td>
-<td>62.5%</td>
+<td id="T_364b7_row0_col0" class="data row0 col0">Python (Programming Language)</td>
+<td id="T_364b7_row0_col1" class="data row0 col1">1119</td>
+<td id="T_364b7_row0_col2" class="data row0 col2">62.5%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">SQL (Programming Language)</th>
-<td>1106</td>
-<td>61.8%</td>
+<td id="T_364b7_row1_col0" class="data row1 col0">SQL (Programming Language)</td>
+<td id="T_364b7_row1_col1" class="data row1 col1">1106</td>
+<td id="T_364b7_row1_col2" class="data row1 col2">61.8%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Science</th>
-<td>422</td>
-<td>23.6%</td>
+<td id="T_364b7_row2_col0" class="data row2 col0">Data Science</td>
+<td id="T_364b7_row2_col1" class="data row2 col1">422</td>
+<td id="T_364b7_row2_col2" class="data row2 col2">23.6%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Pipelines</th>
-<td>388</td>
-<td>21.7%</td>
+<td id="T_364b7_row3_col0" class="data row3 col0">Data Pipelines</td>
+<td id="T_364b7_row3_col1" class="data row3 col1">388</td>
+<td id="T_364b7_row3_col2" class="data row3 col2">21.7%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Computer Science</th>
-<td>365</td>
-<td>20.4%</td>
+<td id="T_364b7_row4_col0" class="data row4 col0">Computer Science</td>
+<td id="T_364b7_row4_col1" class="data row4 col1">365</td>
+<td id="T_364b7_row4_col2" class="data row4 col2">20.4%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Machine Learning</th>
-<td>345</td>
-<td>19.3%</td>
+<td id="T_364b7_row5_col0" class="data row5 col0">Machine Learning</td>
+<td id="T_364b7_row5_col1" class="data row5 col1">345</td>
+<td id="T_364b7_row5_col2" class="data row5 col2">19.3%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Engineering</th>
-<td>330</td>
-<td>18.4%</td>
+<td id="T_364b7_row6_col0" class="data row6 col0">Data Engineering</td>
+<td id="T_364b7_row6_col1" class="data row6 col1">330</td>
+<td id="T_364b7_row6_col2" class="data row6 col2">18.4%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Tableau (Business Intelligence Software)</th>
-<td>280</td>
-<td>15.6%</td>
+<td id="T_364b7_row7_col0" class="data row7 col0">Tableau (Business Intelligence Software)</td>
+<td id="T_364b7_row7_col1" class="data row7 col1">280</td>
+<td id="T_364b7_row7_col2" class="data row7 col2">15.6%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Quality</th>
-<td>254</td>
-<td>14.2%</td>
+<td id="T_364b7_row8_col0" class="data row8 col0">Data Quality</td>
+<td id="T_364b7_row8_col1" class="data row8 col1">254</td>
+<td id="T_364b7_row8_col2" class="data row8 col2">14.2%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Software Engineering</th>
-<td>218</td>
-<td>12.2%</td>
+<td id="T_364b7_row9_col0" class="data row9 col0">Software Engineering</td>
+<td id="T_364b7_row9_col1" class="data row9 col1">218</td>
+<td id="T_364b7_row9_col2" class="data row9 col2">12.2%</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -845,51 +811,44 @@ Table&nbsp;5
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>rem <span class="op">=</span> stated.rename(<span class="st">"Postings"</span>).to_frame()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>rem[<span class="st">"Share of stated"</span>] <span class="op">=</span> (rem[<span class="st">"Postings"</span>] <span class="op">/</span> remote_stated <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>).astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">"%"</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>rem.index.name <span class="op">=</span> <span class="st">"Work arrangement"</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>rem</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>rem.reset_index().style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-remote" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="8">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-remote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-remote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Work arrangement among postings that state one.
 </figcaption>
 <div aria-describedby="tbl-remote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="8">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_f8b2d" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Postings</th>
-<th data-quarto-table-cell-role="th">Share of stated</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Work arrangement</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th id="T_f8b2d_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Work arrangement</th>
+<th id="T_f8b2d_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Postings</th>
+<th id="T_f8b2d_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Share of stated</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Hybrid</th>
-<td>378</td>
-<td>44.0%</td>
+<td id="T_f8b2d_row0_col0" class="data row0 col0">Hybrid</td>
+<td id="T_f8b2d_row0_col1" class="data row0 col1">378</td>
+<td id="T_f8b2d_row0_col2" class="data row0 col2">44.0%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Remote</th>
-<td>362</td>
-<td>42.1%</td>
+<td id="T_f8b2d_row1_col0" class="data row1 col0">Remote</td>
+<td id="T_f8b2d_row1_col1" class="data row1 col1">362</td>
+<td id="T_f8b2d_row1_col2" class="data row1 col2">42.1%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">On-site</th>
-<td>120</td>
-<td>14.0%</td>
+<td id="T_f8b2d_row2_col0" class="data row2 col0">On-site</td>
+<td id="T_f8b2d_row2_col1" class="data row2 col1">120</td>
+<td id="T_f8b2d_row2_col2" class="data row2 col2">14.0%</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -930,61 +889,54 @@ Table&nbsp;6
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rf <span class="op">=</span> panel[<span class="st">"role_family"</span>].value_counts().rename(<span class="st">"Postings"</span>).to_frame()</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>rf[<span class="st">"Share of panel"</span>] <span class="op">=</span> (rf[<span class="st">"Postings"</span>] <span class="op">/</span> n <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>).astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">"%"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>rf.index.name <span class="op">=</span> <span class="st">"Role family"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>rf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>rf.reset_index().style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-role-family" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="10">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-role-family-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-role-family-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Postings by role family.
 </figcaption>
 <div aria-describedby="tbl-role-family-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="10">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_1198f" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Postings</th>
-<th data-quarto-table-cell-role="th">Share of panel</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Role family</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th id="T_1198f_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Role family</th>
+<th id="T_1198f_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Postings</th>
+<th id="T_1198f_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Share of panel</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Data Engineer</th>
-<td>615</td>
-<td>34.4%</td>
+<td id="T_1198f_row0_col0" class="data row0 col0">Data Engineer</td>
+<td id="T_1198f_row0_col1" class="data row0 col1">615</td>
+<td id="T_1198f_row0_col2" class="data row0 col2">34.4%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Scientist</th>
-<td>552</td>
-<td>30.8%</td>
+<td id="T_1198f_row1_col0" class="data row1 col0">Data Scientist</td>
+<td id="T_1198f_row1_col1" class="data row1 col1">552</td>
+<td id="T_1198f_row1_col2" class="data row1 col2">30.8%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Business Analyst</th>
-<td>292</td>
-<td>16.3%</td>
+<td id="T_1198f_row2_col0" class="data row2 col0">Business Analyst</td>
+<td id="T_1198f_row2_col1" class="data row2 col1">292</td>
+<td id="T_1198f_row2_col2" class="data row2 col2">16.3%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Data Analyst</th>
-<td>250</td>
-<td>14.0%</td>
+<td id="T_1198f_row3_col0" class="data row3 col0">Data Analyst</td>
+<td id="T_1198f_row3_col1" class="data row3 col1">250</td>
+<td id="T_1198f_row3_col2" class="data row3 col2">14.0%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Business Intelligence</th>
-<td>81</td>
-<td>4.5%</td>
+<td id="T_1198f_row4_col0" class="data row4 col0">Business Intelligence</td>
+<td id="T_1198f_row4_col1" class="data row4 col1">81</td>
+<td id="T_1198f_row4_col2" class="data row4 col2">4.5%</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -1023,110 +975,96 @@ Table&nbsp;7
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Missing"</span>: [fmt(<span class="bu">int</span>(n <span class="op">-</span> s.<span class="bu">sum</span>())) <span class="cf">for</span> s <span class="kw">in</span> checks.values()],</span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Coverage"</span>: [pct(<span class="bu">int</span>(s.<span class="bu">sum</span>())) <span class="cf">for</span> s <span class="kw">in</span> checks.values()],</span>
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>).style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-missing" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="11">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8: Populated and missing values for the main analysis fields.
 </figcaption>
 <div aria-describedby="tbl-missing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="11">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_3d7f1" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Field</th>
-<th data-quarto-table-cell-role="th">Populated</th>
-<th data-quarto-table-cell-role="th">Missing</th>
-<th data-quarto-table-cell-role="th">Coverage</th>
+<th id="T_3d7f1_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Field</th>
+<th id="T_3d7f1_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Populated</th>
+<th id="T_3d7f1_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Missing</th>
+<th id="T_3d7f1_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Coverage</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>Job title</td>
-<td>1,790</td>
-<td>0</td>
-<td>100%</td>
+<td id="T_3d7f1_row0_col0" class="data row0 col0">Job title</td>
+<td id="T_3d7f1_row0_col1" class="data row0 col1">1,790</td>
+<td id="T_3d7f1_row0_col2" class="data row0 col2">0</td>
+<td id="T_3d7f1_row0_col3" class="data row0 col3">100%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>Employer</td>
-<td>1,790</td>
-<td>0</td>
-<td>100%</td>
+<td id="T_3d7f1_row1_col0" class="data row1 col0">Employer</td>
+<td id="T_3d7f1_row1_col1" class="data row1 col1">1,790</td>
+<td id="T_3d7f1_row1_col2" class="data row1 col2">0</td>
+<td id="T_3d7f1_row1_col3" class="data row1 col3">100%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>Role family</td>
-<td>1,790</td>
-<td>0</td>
-<td>100%</td>
+<td id="T_3d7f1_row2_col0" class="data row2 col0">Role family</td>
+<td id="T_3d7f1_row2_col1" class="data row2 col1">1,790</td>
+<td id="T_3d7f1_row2_col2" class="data row2 col2">0</td>
+<td id="T_3d7f1_row2_col3" class="data row2 col3">100%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>Posted date</td>
-<td>1,790</td>
-<td>0</td>
-<td>100%</td>
+<td id="T_3d7f1_row3_col0" class="data row3 col0">Posted date</td>
+<td id="T_3d7f1_row3_col1" class="data row3 col1">1,790</td>
+<td id="T_3d7f1_row3_col2" class="data row3 col2">0</td>
+<td id="T_3d7f1_row3_col3" class="data row3 col3">100%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>Skills</td>
-<td>1,785</td>
-<td>5</td>
-<td>100%</td>
+<td id="T_3d7f1_row4_col0" class="data row4 col0">Skills</td>
+<td id="T_3d7f1_row4_col1" class="data row4 col1">1,785</td>
+<td id="T_3d7f1_row4_col2" class="data row4 col2">5</td>
+<td id="T_3d7f1_row4_col3" class="data row4 col3">100%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5</th>
-<td>Highest education mentioned</td>
-<td>1,537</td>
-<td>253</td>
-<td>86%</td>
+<td id="T_3d7f1_row5_col0" class="data row5 col0">Highest education mentioned</td>
+<td id="T_3d7f1_row5_col1" class="data row5 col1">1,537</td>
+<td id="T_3d7f1_row5_col2" class="data row5 col2">253</td>
+<td id="T_3d7f1_row5_col3" class="data row5 col3">86%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">6</th>
-<td>State (derived)</td>
-<td>1,413</td>
-<td>377</td>
-<td>79%</td>
+<td id="T_3d7f1_row6_col0" class="data row6 col0">State (derived)</td>
+<td id="T_3d7f1_row6_col1" class="data row6 col1">1,413</td>
+<td id="T_3d7f1_row6_col2" class="data row6 col2">377</td>
+<td id="T_3d7f1_row6_col3" class="data row6 col3">79%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">7</th>
-<td>Minimum education</td>
-<td>1,073</td>
-<td>717</td>
-<td>60%</td>
+<td id="T_3d7f1_row7_col0" class="data row7 col0">Minimum education</td>
+<td id="T_3d7f1_row7_col1" class="data row7 col1">1,073</td>
+<td id="T_3d7f1_row7_col2" class="data row7 col2">717</td>
+<td id="T_3d7f1_row7_col3" class="data row7 col3">60%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">8</th>
-<td>Work arrangement</td>
-<td>860</td>
-<td>930</td>
-<td>48%</td>
+<td id="T_3d7f1_row8_col0" class="data row8 col0">Work arrangement</td>
+<td id="T_3d7f1_row8_col1" class="data row8 col1">860</td>
+<td id="T_3d7f1_row8_col2" class="data row8 col2">930</td>
+<td id="T_3d7f1_row8_col3" class="data row8 col3">48%</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">9</th>
-<td>Salary midpoint</td>
-<td>591</td>
-<td>1,199</td>
-<td>33%</td>
+<td id="T_3d7f1_row9_col0" class="data row9 col0">Salary midpoint</td>
+<td id="T_3d7f1_row9_col1" class="data row9 col1">591</td>
+<td id="T_3d7f1_row9_col2" class="data row9 col2">1,199</td>
+<td id="T_3d7f1_row9_col3" class="data row9 col3">33%</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">10</th>
-<td>Minimum experience</td>
-<td>520</td>
-<td>1,270</td>
-<td>29%</td>
+<td id="T_3d7f1_row10_col0" class="data row10 col0">Minimum experience</td>
+<td id="T_3d7f1_row10_col1" class="data row10 col1">520</td>
+<td id="T_3d7f1_row10_col2" class="data row10 col2">1,270</td>
+<td id="T_3d7f1_row10_col3" class="data row10 col3">29%</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -1156,164 +1094,139 @@ Table&nbsp;8
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Type"</span>: [<span class="bu">str</span>(t) <span class="cf">for</span> t <span class="kw">in</span> panel.dtypes],</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Non-null"</span>: [fmt(<span class="bu">int</span>(v)) <span class="cf">for</span> v <span class="kw">in</span> panel.notna().<span class="bu">sum</span>().values],</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>).style.hide(axis<span class="op">=</span><span class="st">"index"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-schema" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="12">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-schema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-schema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9: Columns in the cleaned panel.
 </figcaption>
 <div aria-describedby="tbl-schema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="12">
-<div>
+<style type="text/css">
+</style>
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table id="T_f3b32" class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Column</th>
-<th data-quarto-table-cell-role="th">Type</th>
-<th data-quarto-table-cell-role="th">Non-null</th>
+<th id="T_f3b32_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Column</th>
+<th id="T_f3b32_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Type</th>
+<th id="T_f3b32_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Non-null</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>ID</td>
-<td>int64</td>
-<td>1,790</td>
+<td id="T_f3b32_row0_col0" class="data row0 col0">ID</td>
+<td id="T_f3b32_row0_col1" class="data row0 col1">int64</td>
+<td id="T_f3b32_row0_col2" class="data row0 col2">1,790</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>TITLE_CLEAN</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row1_col0" class="data row1 col0">TITLE_CLEAN</td>
+<td id="T_f3b32_row1_col1" class="data row1 col1">object</td>
+<td id="T_f3b32_row1_col2" class="data row1 col2">1,790</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>COMPANY_NAME</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row2_col0" class="data row2 col0">COMPANY_NAME</td>
+<td id="T_f3b32_row2_col1" class="data row2 col1">object</td>
+<td id="T_f3b32_row2_col2" class="data row2 col2">1,790</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>COMPANY_IS_STAFFING</td>
-<td>float64</td>
-<td>294</td>
+<td id="T_f3b32_row3_col0" class="data row3 col0">COMPANY_IS_STAFFING</td>
+<td id="T_f3b32_row3_col1" class="data row3 col1">float64</td>
+<td id="T_f3b32_row3_col2" class="data row3 col2">294</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>occupation_group</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row4_col0" class="data row4 col0">occupation_group</td>
+<td id="T_f3b32_row4_col1" class="data row4 col1">object</td>
+<td id="T_f3b32_row4_col2" class="data row4 col2">1,790</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5</th>
-<td>role_family</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row5_col0" class="data row5 col0">role_family</td>
+<td id="T_f3b32_row5_col1" class="data row5 col1">object</td>
+<td id="T_f3b32_row5_col2" class="data row5 col2">1,790</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">6</th>
-<td>posted_date</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row6_col0" class="data row6 col0">posted_date</td>
+<td id="T_f3b32_row6_col1" class="data row6 col1">object</td>
+<td id="T_f3b32_row6_col2" class="data row6 col2">1,790</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">7</th>
-<td>state</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row7_col0" class="data row7 col0">state</td>
+<td id="T_f3b32_row7_col1" class="data row7 col1">object</td>
+<td id="T_f3b32_row7_col2" class="data row7 col2">1,790</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">8</th>
-<td>LOCATION</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row8_col0" class="data row8 col0">LOCATION</td>
+<td id="T_f3b32_row8_col1" class="data row8 col1">object</td>
+<td id="T_f3b32_row8_col2" class="data row8 col2">1,790</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">9</th>
-<td>REMOTE_TYPE_NAME</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row9_col0" class="data row9 col0">REMOTE_TYPE_NAME</td>
+<td id="T_f3b32_row9_col1" class="data row9 col1">object</td>
+<td id="T_f3b32_row9_col2" class="data row9 col2">1,790</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">10</th>
-<td>MAX_EDULEVELS_NAME</td>
-<td>object</td>
-<td>1,537</td>
+<td id="T_f3b32_row10_col0" class="data row10 col0">MAX_EDULEVELS_NAME</td>
+<td id="T_f3b32_row10_col1" class="data row10 col1">object</td>
+<td id="T_f3b32_row10_col2" class="data row10 col2">1,537</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">11</th>
-<td>MIN_EDULEVELS_NAME</td>
-<td>object</td>
-<td>1,073</td>
+<td id="T_f3b32_row11_col0" class="data row11 col0">MIN_EDULEVELS_NAME</td>
+<td id="T_f3b32_row11_col1" class="data row11 col1">object</td>
+<td id="T_f3b32_row11_col2" class="data row11 col2">1,073</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">12</th>
-<td>min_years_experience</td>
-<td>float64</td>
-<td>520</td>
+<td id="T_f3b32_row12_col0" class="data row12 col0">min_years_experience</td>
+<td id="T_f3b32_row12_col1" class="data row12 col1">float64</td>
+<td id="T_f3b32_row12_col2" class="data row12 col2">520</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">13</th>
-<td>max_years_experience</td>
-<td>float64</td>
-<td>441</td>
+<td id="T_f3b32_row13_col0" class="data row13 col0">max_years_experience</td>
+<td id="T_f3b32_row13_col1" class="data row13 col1">float64</td>
+<td id="T_f3b32_row13_col2" class="data row13 col2">441</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">14</th>
-<td>salary_from_annual</td>
-<td>float64</td>
-<td>591</td>
+<td id="T_f3b32_row14_col0" class="data row14 col0">salary_from_annual</td>
+<td id="T_f3b32_row14_col1" class="data row14 col1">float64</td>
+<td id="T_f3b32_row14_col2" class="data row14 col2">591</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">15</th>
-<td>salary_to_annual</td>
-<td>float64</td>
-<td>586</td>
+<td id="T_f3b32_row15_col0" class="data row15 col0">salary_to_annual</td>
+<td id="T_f3b32_row15_col1" class="data row15 col1">float64</td>
+<td id="T_f3b32_row15_col2" class="data row15 col2">586</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">16</th>
-<td>salary_midpoint</td>
-<td>float64</td>
-<td>591</td>
+<td id="T_f3b32_row16_col0" class="data row16 col0">salary_midpoint</td>
+<td id="T_f3b32_row16_col1" class="data row16 col1">float64</td>
+<td id="T_f3b32_row16_col2" class="data row16 col2">591</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">17</th>
-<td>ORIGINAL_PAY_PERIOD</td>
-<td>object</td>
-<td>620</td>
+<td id="T_f3b32_row17_col0" class="data row17 col0">ORIGINAL_PAY_PERIOD</td>
+<td id="T_f3b32_row17_col1" class="data row17 col1">object</td>
+<td id="T_f3b32_row17_col2" class="data row17 col2">620</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">18</th>
-<td>SKILLS_NAME</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row18_col0" class="data row18 col0">SKILLS_NAME</td>
+<td id="T_f3b32_row18_col1" class="data row18 col1">object</td>
+<td id="T_f3b32_row18_col2" class="data row18 col2">1,790</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">19</th>
-<td>SPECIALIZED_SKILLS_NAME</td>
-<td>object</td>
-<td>1,790</td>
+<td id="T_f3b32_row19_col0" class="data row19 col0">SPECIALIZED_SKILLS_NAME</td>
+<td id="T_f3b32_row19_col1" class="data row19 col1">object</td>
+<td id="T_f3b32_row19_col2" class="data row19 col2">1,790</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">20</th>
-<td>NAICS_2022_4</td>
-<td>int64</td>
-<td>1,790</td>
+<td id="T_f3b32_row20_col0" class="data row20 col0">NAICS_2022_4</td>
+<td id="T_f3b32_row20_col1" class="data row20 col1">int64</td>
+<td id="T_f3b32_row20_col2" class="data row20 col2">1,790</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">21</th>
-<td>NAICS_2022_6_NAME</td>
-<td>object</td>
-<td>18</td>
+<td id="T_f3b32_row21_col0" class="data row21 col0">NAICS_2022_6_NAME</td>
+<td id="T_f3b32_row21_col1" class="data row21 col1">object</td>
+<td id="T_f3b32_row21_col2" class="data row21 col2">18</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
