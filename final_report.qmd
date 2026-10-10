@@ -215,3 +215,11 @@ The table shows who led each part of the project. The commit history in the GitH
 ::: {}
 :::
 ::::
+
+# Appendix: AI Use Disclosure {.unnumbered}
+
+Our team used generative AI tools such as Claude and ChatGPT to help us build this project. We used them to explain code, act as a tutor, review code, brainstorm ideas, debug errors, provide examples, and help write and edit code and text. The links to the conversations can be found below:
+
+- Jenna DeRosa: links to be added
+- Mariam El Jouzou: links to be added
+- Juan Franco: links to be added

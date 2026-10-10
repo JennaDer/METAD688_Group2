@@ -87,6 +87,14 @@ The results describe advertised job postings in one industry over one year.
 They are not a complete picture of the U.S. analytics job market, and each page
 lists its own limitations.
 
+## AI Use Disclosure
+
+Our team used generative AI tools such as Claude and ChatGPT to help us build this project. We used them to explain code, act as a tutor, review code, brainstorm ideas, debug errors, provide examples, and help write and edit code and text. The links to the conversations can be found below:
+
+- Jenna DeRosa: links to be added
+- Mariam El Jouzou: links to be added
+- Juan Franco: links to be added
+
 ## Repository
 
 The code, data, and page sources are on GitHub:
