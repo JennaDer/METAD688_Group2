@@ -27,7 +27,10 @@ metrics = pd.read_csv("data/processed/model_metrics.csv")
 def md_table(df):
     # Pipe table so the table renders natively in Word
     cols = [str(c) for c in df.columns]
-    lines = ["| " + " | ".join(cols) + " |", "|" + "|".join("---" for _ in cols) + "|"]
+    # Dash counts set relative column widths in Word; the first column gets more room
+    weights = [32, 14, 14, 14, 13, 13] if len(cols) == 6 else [50] * len(cols)
+    seps = ["-" * w for w in weights]
+    lines = ["| " + " | ".join(cols) + " |", "|" + "|".join(seps) + "|"]
     for row in df.itertuples(index=False):
         lines.append("| " + " | ".join(str(v) for v in row) + " |")
     print("\n".join(lines))
@@ -90,7 +93,7 @@ The market also shows a meaningful experience barrier for early-career candidate
 
 ![Minimum years of experience requested, among postings that state a requirement.](figures/experience_distribution.png){#fig-experience width="6in"}
 
-Geographically, California has the largest number of postings with an identified state at 258, followed by Virginia, New York, Texas, and Washington. Flexible work is also significant: 362 postings are classified as remote and 378 as hybrid, together representing 41.3% of the full panel. However, work arrangement is unknown for 930 postings, so the flexible-work share should be interpreted cautiously (@fig-states and @fig-remote).
+Geographically, California has the largest number of postings with an identified state at 258, followed by Virginia, New York, and Texas, with Washington and the District of Columbia tied for fifth at 70 each. Flexible work is also significant: 362 postings are classified as remote and 378 as hybrid, together representing 41.3% of the full panel. However, work arrangement is unknown for 930 postings, so the flexible-work share should be interpreted cautiously (@fig-states and @fig-remote).
 
 ![States with the most identified job postings.](figures/leading_states.png){#fig-states width="6in"}
 
@@ -133,8 +136,13 @@ Model performance was evaluated using a 75/25 stratified train-test split. Five-
 m = metrics.copy()
 for c in ["cv_accuracy_mean", "test_accuracy", "test_precision", "test_recall", "test_f1"]:
     m[c] = (m[c] * 100).map("{:.1f}%".format)
-md_table(m[["model", "features", "cv_accuracy_mean", "test_accuracy", "test_precision", "test_recall", "test_f1"]]
-         .set_axis(["Model", "Features", "CV accuracy", "Test accuracy", "Precision", "Recall", "F1"], axis=1))
+m["model"] = m["model"].replace({
+    "Logistic, role family only": "Logistic, role family only (5 features)",
+    "Logistic, all features": "Logistic, all 55 features",
+    "Random forest, all features": "Random forest, all 55 features",
+})
+md_table(m[["model", "cv_accuracy_mean", "test_accuracy", "test_precision", "test_recall", "test_f1"]]
+         .set_axis(["Model", "CV accuracy", "Test accuracy", "Precision", "Recall", "F1"], axis=1))
 ```
 
 The results show that role family alone is a relatively weak predictor of whether a posting pays above the market median. Adding location, education, work arrangement, and skills substantially improves predictive performance, demonstrating that job title alone does not capture much of the information associated with compensation. The random forest achieved the strongest test performance, while the logistic model was retained alongside it because its coefficients provide a more interpretable view of the factors associated with higher or lower pay (@fig-confusion).
