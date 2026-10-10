@@ -222,7 +222,7 @@ demand = ratings["panel_skill_name"].map(lambda name: skill_postings.get(name, 0
 demand = demand.to_frame()
 demand["Share of postings (%)"] = (demand["Postings"] / n_postings * 100).round(1)
 demand = demand.sort_values("Postings", ascending=False)
-demand.rename_axis("Skill").reset_index().style.hide(axis="index").format(precision=1)
+demand.rename_axis("Skill").reset_index().style.hide(axis="index").format(precision=1).format("{:,}", subset=["Postings"])
 ```
 
 ### Demand Depends on the Role

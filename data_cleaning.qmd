@@ -259,7 +259,7 @@ top = pd.Series([s for row in skills for s in set(row)]).value_counts().head(10)
 top = top.rename("Postings").to_frame()
 top["Share of panel"] = (top["Postings"] / n * 100).round(1).astype(str) + "%"
 top.index.name = "Skill"
-top.reset_index().style.hide(axis="index")
+top.reset_index().style.hide(axis="index").format(thousands=",")
 ```
 
 ### Work Arrangement

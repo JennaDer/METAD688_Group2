@@ -245,7 +245,7 @@ built only on frequency counts will point at the wrong things.
 
 ## Limitations
 
-- Salary is advertised on `{python} n_sample` of `{python} n_panel` postings, or about 33 percent. Everything here describes employers who publish pay, which may not resemble those who do not.
+- Salary is advertised on `{python} f"{n_sample:,}"` of `{python} f"{n_panel:,}"` postings, or about 33 percent. Everything here describes employers who publish pay, which may not resemble those who do not.
 - The skill findings rest on small subgroups. Statistical Modeling appears on 33 postings and Power BI on 59, so those estimates are imprecise.
 - These are associations within one industry over one twelve-month window. Nothing here establishes that acquiring a skill would change an individual's pay.
 - Skills are recorded as a list per posting with no indication of whether a skill is required or merely preferred.
