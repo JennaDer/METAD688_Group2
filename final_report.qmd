@@ -187,6 +187,28 @@ The dataset contains job advertisements rather than hiring outcomes. It shows wh
 
 Finally, the analysis is limited to analytics-related positions within Computer Systems Design and Related Services (NAICS 5415) during the September 11, 2025 through September 10, 2026 period. The findings should not automatically be generalized to other industries, occupations, or time periods.
 
+# Team Contributions
+
+The table shows who led each part of the project. The commit history in the GitHub repository records each member's work in detail.
+
+| Part of the project | Lead |
+|---|---|
+| Career pathway and product question | Entire team |
+| Industry selection and project scope | Jenna DeRosa, with Juan Franco's industry volume check |
+| Target user and project rationale | Mariam El Jouzou |
+| Literature review, expected dataset fields, and exploration plan | Juan Franco |
+| Data access, repository setup, and site publishing | Jenna DeRosa |
+| Data preparation and panel build (original and v2) | Juan Franco |
+| Market baseline analysis | Mariam El Jouzou and Jenna DeRosa, with Juan Franco's v2 chart rebuild |
+| Skill-gap analysis and career evaluation logic | Jenna DeRosa, with Juan Franco's v2 update |
+| Improvement plan | Juan Franco |
+| Home page and site design | Jenna DeRosa and Mariam El Jouzou |
+| Predictive modeling | Juan Franco |
+| Career strategy and final recommendations | Jenna DeRosa |
+| Final report | Mariam El Jouzou, with Juan Franco's figures and tables |
+| Weekly standup documents | Mariam El Jouzou |
+| Final presentation | Entire team |
+
 # References {.unnumbered}
 
 :::: {#refs}
