@@ -178,7 +178,7 @@ The Unknown category should not be counted as on-site work. It only means that t
 | 5    | Booz Allen Hamilton |       20 |
 | 6    | Esri                |       19 |
 
-Amazon has the highest number of postings in the dataset, closely followed by Jobs via Dice, with Capital One as the third-largest employer label.
+Amazon has the highest number of postings in the dataset, closely followed by Jobs via Dice, with Capital One as the third-largest employer label. Jobs via Dice and Jobgether are job boards that repost openings for other companies rather than hiring directly, so among direct employers the leaders are Amazon, Capital One, Booz Allen Hamilton, and Esri.
 
 Employer names are not fully consistent. For example, Turnitin and Turnitinllc appear as separate labels even though they may represent the same company. The employer counts provide a general picture of hiring activity, but they may undercount companies that appear under more than one name.
 
