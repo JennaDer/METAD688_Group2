@@ -92,7 +92,7 @@ Hourly pay was converted to an annual amount using 2,080 work hours per year. Ze
 
 ![States with the most identified job postings.](figures/leading_states.png){#fig-states fig-alt="Horizontal bar chart showing the states with the most job postings."}
 
-California has the highest number of postings with an identified state, with 258. Virginia follows with 171, New York with 156, Texas with 132, and Washington with 70.
+California has the highest number of postings with an identified state, with 258. Virginia follows with 171, New York with 156, and Texas with 132. Washington and the District of Columbia tie for fifth with 70 each.
 
 ### Top Identified States
 
@@ -103,6 +103,7 @@ California has the highest number of postings with an identified state, with 258
 |    3 | New York   |      156 |                  8.7% |
 |    4 | Texas      |      132 |                  7.4% |
 |    5 | Washington |       70 |                  3.9% |
+|    5 | District of Columbia |       70 |                  3.9% |
 
 The postings are spread across several major technology and business markets. However, 377 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset.
 
