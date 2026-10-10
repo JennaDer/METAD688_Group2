@@ -110,6 +110,18 @@ The finished product will provide job seekers with the insights and information 
 
 **Summary and relevance:** This study compares the skills requested for Business Analyst, Data Analyst, and Data Scientist positions [@verma2019skills]. It shows that the roles share some skills but also have important differences. This supports the use of job postings to compare related career paths and explains why we grouped several analytics titles while still reporting separate occupation categories.
 
+### Source 4: Occupational Outlook for Data Scientists
+
+**Citation:** U.S. Bureau of Labor Statistics. (2026). *Occupational Outlook Handbook: Data Scientists.*
+
+**Summary and relevance:** The Bureau of Labor Statistics projects employment of data scientists to grow 35% from 2025 to 2035, much faster than the average for all occupations, and reports a median annual wage of $120,230 in May 2025 [@bls2026datascientists]. It also lists Computer Systems Design and Related Services among the largest employers of data scientists, with about 10% of these jobs. This supports both the career pathway and the industry we selected, and it gives a national pay benchmark to compare with the advertised salaries in our postings.
+
+### Source 5: Job Roles and Skill Sets in Big Data Job Postings
+
+**Citation:** De Mauro, A., Greco, M., Grimaldi, M., & Ritala, P. (2018). Human resources for Big Data professions: A systematic classification of job roles and required skill sets. *Information Processing & Management, 54*(5), 807–817.
+
+**Summary and relevance:** This study analyzed a large set of real job postings collected from the web and classified them using machine learning together with expert judgment [@demauro2018bigdata]. The authors identified four families of Big Data jobs and nine groups of skills, and showed that each job family requires a different level of competence in each skill group. This supports our approach of measuring skills directly from postings and comparing skill demand by role family instead of treating all analytics roles as one market.
+
 ## 7. Expected Dataset Fields
 
 <!-- SECTION OWNER: Juan -->
