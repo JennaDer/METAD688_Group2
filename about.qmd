@@ -56,18 +56,21 @@ The table shows who led each part of the project.
 | Part of the project | Lead |
 |---|---|
 | Career pathway and product question | Entire team |
-| Industry selection and project scope | Jenna |
+| Industry selection and project scope | Jenna, with Juan's industry volume check |
 | Target user and project rationale | Mariam |
-| Expected dataset fields and exploration plan | Juan |
-| Data preparation and panel build | Mariam |
-| Market baseline analysis | Jenna |
-| Skill-gap analysis and career evaluation logic | Jenna |
+| Literature review, expected dataset fields, and exploration plan | Juan |
+| Data access, repository setup, and site publishing | Jenna |
+| Data preparation and panel build (original and v2) | Juan |
+| Market baseline analysis | Mariam and Jenna, with Juan's v2 chart rebuild |
+| Skill-gap analysis and career evaluation logic | Jenna, with Juan's v2 update |
 | Improvement plan | Juan |
-| Home page and site design | Mariam |
+| Home page and site design | Jenna and Mariam |
 | Predictive modeling | Juan |
 | Career strategy and final recommendations | Jenna |
 | About page and team contributions | Jenna |
-| Final report and weekly standup document | Mariam |
+| Final report | Mariam, with Juan's figures and tables |
+| Weekly standup documents | Mariam |
+| Final presentation | Entire team |
 
 ## Data and Methods
 
