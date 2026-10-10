@@ -114,9 +114,13 @@ Certification fees are as listed by the providers in 2026 and may change.
 
 ```{python}
 #| label: tbl-plan-collaboration
-#| tbl-cap: "Skills with at least one gap, the members who have it, and the team's strongest member on that skill."
+#| tbl-cap: "Skills with at least one gap, the members who have it, and the team's strongest members on that skill."
 
-_strongest = plan[_MEMBERS].idxmax(axis=1)
+_top_rating = plan[_MEMBERS].max(axis=1)
+# List every member who shares the top rating, so ties are not hidden
+_strongest = {
+    s: ", ".join(m for m in _MEMBERS if plan.loc[s, m] == _top_rating[s]) for s in plan.index
+}
 _collab = plan_gaps.groupby("Skill").agg(
     **{
         "Members with a gap": ("Member", lambda s: ", ".join(s)),
@@ -124,7 +128,7 @@ _collab = plan_gaps.groupby("Skill").agg(
     }
 )
 _collab["Strongest on the team"] = [
-    f"{_strongest[s]} ({int(plan.loc[s, _strongest[s]])})" for s in _collab.index
+    f"{_strongest[s]} ({int(_top_rating[s])})" for s in _collab.index
 ]
 _collab.sort_values("Total gap", ascending=False).reset_index().style.hide(axis="index")
 ```
