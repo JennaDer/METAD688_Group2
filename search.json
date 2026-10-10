@@ -53,7 +53,7 @@
     "href": "career_plan.html#references",
     "title": "Career Strategy",
     "section": "References",
-    "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,”https://www.onetonline.org/link/summary/15-2051.00.\n\n\nVerma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova. (2019): “An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements,” Journal of Education for Business, 94, 243–50."
+    "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,” https://www.onetonline.org/link/summary/15-2051.00.\n\n\nVerma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova. (2019): “An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements,” Journal of Education for Business, 94, 243–50."
   },
   {
     "objectID": "skill_gap_analysis.html",
@@ -186,7 +186,7 @@
     "href": "data_cleaning.html#references",
     "title": "Data Preparation",
     "section": "References",
-    "text": "References\n\n\nU.S. Census Bureau. (2022): “2022 NAICS Definition: Computer Systems Design and Related Services (5415),”https://www.census.gov/naics/?input=5415&year=2022&details=5415."
+    "text": "References\n\n\nU.S. Census Bureau. (2022): “2022 NAICS Definition: Computer Systems Design and Related Services (5415),” https://www.census.gov/naics/?input=5415&year=2022&details=5415."
   },
   {
     "objectID": "eda.html",
@@ -228,7 +228,7 @@
     "href": "eda.html#geographic-patterns",
     "title": "Market Baseline",
     "section": "Geographic Patterns",
-    "text": "Geographic Patterns\n\n\n\n\n\n\nFigure 4: States with the most identified job postings.\n\n\n\nCalifornia has the highest number of postings with an identified state, with 258. Virginia follows with 171, New York with 156, Texas with 132, and Washington with 70.\n\nTop Identified States\n\n\n\nRank\nState\nPostings\nShare of Full Dataset\n\n\n\n\n1\nCalifornia\n258\n14.4%\n\n\n2\nVirginia\n171\n9.6%\n\n\n3\nNew York\n156\n8.7%\n\n\n4\nTexas\n132\n7.4%\n\n\n5\nWashington\n70\n3.9%\n\n\n\nThe postings are spread across several major technology and business markets. However, 377 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset."
+    "text": "Geographic Patterns\n\n\n\n\n\n\nFigure 4: States with the most identified job postings.\n\n\n\nCalifornia has the highest number of postings with an identified state, with 258. Virginia follows with 171, New York with 156, and Texas with 132. Washington and the District of Columbia tie for fifth with 70 each.\n\nTop Identified States\n\n\n\nRank\nState\nPostings\nShare of Full Dataset\n\n\n\n\n1\nCalifornia\n258\n14.4%\n\n\n2\nVirginia\n171\n9.6%\n\n\n3\nNew York\n156\n8.7%\n\n\n4\nTexas\n132\n7.4%\n\n\n5\nWashington\n70\n3.9%\n\n\n5\nDistrict of Columbia\n70\n3.9%\n\n\n\nThe postings are spread across several major technology and business markets. However, 377 postings do not have an identifiable state. The state results therefore show where the known locations are concentrated, not the location of every job in the dataset."
   },
   {
     "objectID": "eda.html#experience-and-education",
@@ -284,7 +284,7 @@
     "href": "eda.html#references",
     "title": "Market Baseline",
     "section": "References",
-    "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,”https://www.onetonline.org/link/summary/15-2051.00."
+    "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,” https://www.onetonline.org/link/summary/15-2051.00."
   },
   {
     "objectID": "ml_methods.html",
@@ -466,7 +466,7 @@
     "href": "introduction.html#references",
     "title": "Project Foundation",
     "section": "References",
-    "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,”https://www.onetonline.org/link/summary/15-2051.00.\n\n\nU.S. Census Bureau. (2022): “2022 NAICS Definition: Computer Systems Design and Related Services (5415),”https://www.census.gov/naics/?input=5415&year=2022&details=5415.\n\n\nVerma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova. (2019): “An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements,” Journal of Education for Business, 94, 243–50."
+    "text": "References\n\n\nO*NET OnLine. (2026): “Data Scientists, 15-2051.00,” https://www.onetonline.org/link/summary/15-2051.00.\n\n\nU.S. Census Bureau. (2022): “2022 NAICS Definition: Computer Systems Design and Related Services (5415),” https://www.census.gov/naics/?input=5415&year=2022&details=5415.\n\n\nVerma, A., K. M. Yurov, P. L. Lane, and Y. V. Yurova. (2019): “An investigation of skill requirements for business and data analytics positions: A content analysis of job advertisements,” Journal of Education for Business, 94, 243–50."
   },
   {
     "objectID": "about.html",
