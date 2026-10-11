@@ -36,7 +36,7 @@ def md_table(df):
     print("\n".join(lines))
 ```
 
-**Project website:** <https://jennader.github.io/METAD688_Group2/>  
+**Project website:** <https://jennader.github.io/METAD688_Group2/>\
 **GitHub repository:** <https://github.com/JennaDer/METAD688_Group2>
 
 # Product Framing
@@ -192,7 +192,7 @@ Finally, the analysis is limited to analytics-related positions within Computer 
 The table shows who led each part of the project. The commit history in the GitHub repository records each member's work in detail.
 
 | Part of the project | Lead |
-|---|---|
+|------------------------------------|------------------------------------|
 | Career pathway and product question | Entire team |
 | Industry selection and project scope | Jenna DeRosa, with Juan Franco's industry volume check |
 | Target user and project rationale | Mariam El Jouzou |
@@ -218,8 +218,12 @@ The table shows who led each part of the project. The commit history in the GitH
 
 # Appendix: AI Use Disclosure {.unnumbered}
 
-Our team used generative AI tools such as Claude and ChatGPT to help us build this project. We used them to explain code, act as a tutor, review code, brainstorm ideas, debug errors, provide examples, and help write and edit code and text. The links to the conversations can be found below:
+Our team used generative AI tools such as Claude, ChatGPT, and Google to help us build this project. We used them to explain code, act as a tutor, review code, brainstorm ideas, debug errors, provide examples, and help write and edit code and text. The links to the conversations can be found below:
 
-- Jenna DeRosa: links to be added
-- Mariam El Jouzou: links to be added
-- Juan Franco: links to be added
+- <https://share.google/aimode/PryxICvFOyU0rNCTe>
+
+- <https://chatgpt.com/share/6acb49f1-459c-83ed-8a1b-59a95090751e>
+
+- <https://chatgpt.com/share/6acb4a10-8818-83ed-86dc-a79e36de81e4>
+
+<https://chatgpt.com/share/6acb4a27-006c-83eb-8df0-df1dc879a345>
