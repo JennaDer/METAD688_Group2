@@ -220,10 +220,14 @@ The table shows who led each part of the project. The commit history in the GitH
 
 Our team used generative AI tools such as Claude, ChatGPT, and Google to help us build this project. We used them to explain code, act as a tutor, review code, brainstorm ideas, debug errors, provide examples, and help write and edit code and text. The links to the conversations can be found below:
 
+- <https://share.google/aimode/4qxMGCZGPL0LpWkEs>
+
 - <https://share.google/aimode/PryxICvFOyU0rNCTe>
 
 - <https://chatgpt.com/share/6acb49f1-459c-83ed-8a1b-59a95090751e>
 
 - <https://chatgpt.com/share/6acb4a10-8818-83ed-86dc-a79e36de81e4>
 
-<https://chatgpt.com/share/6acb4a27-006c-83eb-8df0-df1dc879a345>
+- <https://chatgpt.com/share/6acb4a27-006c-83eb-8df0-df1dc879a345>
+
+- <https://claude.ai/share/6c73dfc7-5656-401d-9040-216c7c1b9f96>
